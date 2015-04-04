@@ -13,7 +13,7 @@
 	<footer id="colophon" role="contentinfo">
 		<div class="site-info">
 			<?php do_action( 'twentytwelve_credits' ); ?>
-			&copy; Copyright <a href="http://www.upir.ro" target="_blank">UPIR</a>
+			&copy; 2015 <a href="http://www.upir.ro" target="_blank">UPIR</a>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
