@@ -1,0 +1,941 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: ACOSMIN <support@acosmin.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+
+#. Text in function
+#: simplified/acosmin/functions/functions-default.php:1
+msgid " Comments"
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/framework/extensions/options-theme.php:1
+msgid "\"About The Author\" box."
+msgstr ""
+
+#. Text in echo
+#: simplified/acosmin/widgets/custom-tabs-widget.php:308
+msgid "\"Recent Posts\" tab."
+msgstr ""
+
+#. Text in function
+#: simplified/comments.php:51
+msgid "&larr; Older Comments"
+msgstr ""
+
+#. Text in function
+#: simplified/functions.php:465
+msgid "&larr; Previous"
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/framework/extensions/options-theme.php:1
+msgid "- You need at least 3 posts marked as featured for the slider to show up. </br>- When you post an article click on \"Mark this post as featured\". "
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/functions/functions-default.php:1
+msgid "0 Comments"
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/functions/functions-default.php:1
+msgid "1 Comment"
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/framework/extensions/options-theme.php:1
+msgid "160x600px Ad"
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/framework/extensions/options-theme.php:1
+msgid "160x600px Ad HTML Code"
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/framework/extensions/options-theme.php:1
+msgid "160x600px Title Link:"
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/framework/extensions/options-theme.php:1
+msgid "160x600px Title:"
+msgstr ""
+
+#. Text in echo
+#: simplified/404.php:14
+msgid "404"
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/framework/extensions/options-theme.php:1
+msgid "728x90px Ad"
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/framework/extensions/options-theme.php:1
+msgid "728x90px Ad HTML Code"
+msgstr ""
+
+#. Text in function
+#: simplified/functions.php:349
+msgid "<cite class=\"fn\">%s says:</cite>"
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/widgets/custom-featured-posts-widget.php:1
+msgid "ACOSMIN: Featured Posts"
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/widgets/custom-popular-posts-widget.php:1
+msgid "ACOSMIN: Popular Posts"
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/widgets/custom-recent-posts-widget.php:1
+msgid "ACOSMIN: Recent Posts"
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/widgets/default-social-buttons-widget.php:1
+msgid "ACOSMIN: Social Buttons"
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/widgets/custom-tabs-widget.php:1
+msgid "ACOSMIN: Tabs"
+msgstr ""
+
+#. Text in echo
+#: simplified/post-templates/about-the-author.php:13
+#: simplified/author.php:32
+msgid "About the author"
+msgstr ""
+
+#. Text in echo
+#: simplified/sidebar-browse.php:58
+#: simplified/header.php:52
+msgid "Add a menu"
+msgstr ""
+
+#. Text in function
+#: simplified/sidebar.php:8
+msgid "Add some widgets! (Main Sidebar)"
+msgstr ""
+
+#. Text in function
+#: simplified/sidebar-posts.php:8
+msgid "Add some widgets! (Posts Sidebar)"
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/framework/extensions/options-theme.php:1
+msgid "Add your banner\\'s code. Example: <strong>Google Adsense or a simple HTML banner</strong>"
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/framework/extensions/options-theme.php:1
+msgid "Add your banner\\'s code. This banner will show up in the left sidebar on screen resolutions higher than 1600px. Example: <strong>Google Adsense or a simple HTML banner</strong>"
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/framework/extensions/options-theme.php:1
+msgid "Advertising"
+msgstr ""
+
+#. Text in function
+#: simplified/author.php:20
+msgid "All posts by <span>%s</span>"
+msgstr ""
+
+#. Text in echo
+#: simplified/sidebar-browse.php:66
+#: simplified/archive.php:19
+msgid "Archives"
+msgstr ""
+
+#. Text in echo
+#: simplified/post-templates/content-aside.php:24
+msgid "Aside Archive"
+msgstr ""
+
+#. Text in echo
+#: simplified/post-templates/content-audio.php:20
+msgid "Audio Archive"
+msgstr ""
+
+#. Text in echo
+#: simplified/post-templates/about-the-author.php:19
+#: simplified/author.php:38
+msgid "Author's Link"
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/framework/extensions/options-theme.php:1
+msgid "Auto Start"
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/functions/functions-theme-customizer.php:1
+msgid "Background color"
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/functions/functions-theme-customizer.php:1
+msgid "Border color"
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/functions/functions-theme-customizer.php:1
+msgid "Bottom border color"
+msgstr ""
+
+#. Text in function
+#: simplified/header.php:62
+msgid "Browse"
+msgstr ""
+
+#. Text in echo
+#: simplified/sidebar-browse.php:22
+msgid "Browse By"
+msgstr ""
+
+#. Text in echo
+#: simplified/sidebar-browse.php:75
+msgid "Calendar"
+msgstr ""
+
+#. Text in function
+#: simplified/category.php:18
+msgid "Category Archives: <span>%s</span>"
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/framework/extensions/options-theme.php:1
+msgid "Check this box if you would like to display it."
+msgstr ""
+
+#. Text in echo
+#: simplified/comments.php:58
+msgid "Comments are closed."
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/framework/extensions/options-theme.php:1
+msgid "Comments globally."
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/functions/functions-theme-customizer.php:1
+msgid "Content"
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/functions/functions-theme-customizer.php:1
+msgid "Copyright text"
+msgstr ""
+
+#. Text in function
+#: simplified/archive.php:19
+msgid "Daily Archives: <span>%s</span>"
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/functions/functions-theme-customizer.php:1
+msgid "Default font color"
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/functions/functions-theme-customizer.php:1
+msgid "Description - Font Color"
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/framework/extensions/options-theme.php:1
+msgid "Disable"
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/functions/functions-theme-customizer.php:1
+msgid "Disable Fixed Style"
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/functions/functions-theme-customizer.php:1
+msgid "Disable Mini-Sidebar"
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/widgets/default-social-buttons-widget.php:1
+msgid "Displays buttons for your social profiles."
+msgstr ""
+
+#. Text in function
+#: simplified/functions.php:353
+#: simplified/functions.php:376
+#: simplified/functions.php:382
+msgid "Edit"
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/framework/extensions/options-theme.php:1
+msgid "Eight"
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/framework/extensions/options-theme.php:1
+msgid "Example: <strong>Advertising</strong>. Leave this blank if you don\\'t want a title."
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/framework/extensions/options-theme.php:1
+msgid "Example: <strong>acosmin</strong>"
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/framework/extensions/options-theme.php:1
+msgid "Example: <strong>http://yoursite.com/advertising/"
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/framework/extensions/options-theme.php:1
+msgid "Example: <strong>https://plus.google.com/+acosmin</strong>"
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/framework/extensions/options-theme.php:1
+msgid "Example: <strong>https://www.facebook.com/acosmincom</strong>"
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/framework/extensions/options-theme.php:1
+msgid "Facebook URL"
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/widgets/custom-tabs-widget.php:1
+#: simplified/acosmin/widgets/custom-tabs-widget.php:288
+#: simplified/acosmin/widgets/custom-featured-posts-widget.php:91
+msgid "Featured Posts"
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/functions/functions-theme-customizer.php:1
+msgid "First Menu - Select"
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/functions/functions-theme-customizer.php:1
+msgid "First Menu - Title"
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/framework/extensions/options-theme.php:1
+msgid "Five"
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/functions/functions-theme-customizer.php:1
+msgid "Footer"
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/framework/extensions/options-theme.php:1
+msgid "Footer Credit Links"
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/framework/extensions/options-theme.php:1
+msgid "Four"
+msgstr ""
+
+#. Text in echo
+#: simplified/post-templates/content-gallery.php:20
+msgid "Galleries Archive"
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/functions/functions-theme-customizer.php:1
+msgid "Global Background Colors"
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/functions/functions-theme-customizer.php:1
+msgid "Global Border Colors"
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/functions/functions-theme-customizer.php:1
+msgid "Global Fonts Colors"
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/functions/functions-theme-customizer.php:1
+msgid "Global Links Colors"
+msgstr ""
+
+#. Text in function
+#: simplified/sidebar-browse.php:30
+msgid "Go Home"
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/framework/extensions/options-theme.php:1
+msgid "Google Plus Page URL"
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/functions/functions-theme-customizer.php:1
+msgid "Header"
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/functions/functions-theme-customizer.php:1
+msgid "Header - Background Color"
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/functions/functions-theme-customizer.php:1
+msgid "Header - Background Image"
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/functions/functions-theme-customizer.php:1
+msgid "Header - Bottom Border Color"
+msgstr ""
+
+#. Text in echo
+#: simplified/acosmin/widgets/custom-tabs-widget.php:304
+msgid "Hide post thumbnails in"
+msgstr ""
+
+#. Text in echo
+#: simplified/acosmin/widgets/custom-recent-posts-widget.php:104
+msgid "Hide post thumbnails."
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/framework/extensions/options-theme.php:1
+msgid "How Many Posts?"
+msgstr ""
+
+#. Text in echo
+#: simplified/acosmin/widgets/custom-recent-posts-widget.php:93
+#: simplified/acosmin/widgets/custom-tabs-widget.php:280
+#: simplified/acosmin/widgets/custom-featured-posts-widget.php:88
+#: simplified/acosmin/widgets/custom-popular-posts-widget.php:90
+msgid "How many"
+msgstr ""
+
+#. Text in echo
+#: simplified/post-templates/content-image.php:20
+msgid "Images Archive"
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/framework/extensions/options-theme.php:1
+msgid "Information"
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/functions/functions-theme-customizer.php:1
+msgid "Inner borders color"
+msgstr ""
+
+#. Text in echo
+#: simplified/404.php:15
+msgid "It looks like nothing was found at this location."
+msgstr ""
+
+#. Text in echo
+#: simplified/post-templates/content-no-articles.php:10
+msgid "It looks like nothing was found."
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/widgets/custom-tabs-widget.php:1
+msgid "Latest Posts"
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/functions/functions-theme-customizer.php:1
+msgid "Links - Hover state"
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/functions/functions-theme-customizer.php:1
+msgid "Links - Link/Visited states"
+msgstr ""
+
+#. Text in echo
+#: simplified/post-templates/content-link.php:24
+msgid "Links Archive"
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/functions/functions-theme-customizer.php:1
+msgid "Logo - Font Color"
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/functions/functions-theme-customizer.php:1
+msgid "Logo - Image"
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/functions/functions-theme-customizer.php:1
+msgid "Logo text"
+msgstr ""
+
+#. Text in function
+#: simplified/functions.php:1
+msgid "Main Menu"
+msgstr ""
+
+#. Text in function
+#: simplified/sidebar-browse.php:30
+msgid "Main Page"
+msgstr ""
+
+#. Text in function
+#: simplified/functions.php:1
+msgid "Main Sidebar"
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/functions/functions-theme-customizer.php:1
+msgid "Main border color"
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/functions/functions-theme-customizer.php:1
+msgid "Main links color"
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/functions/functions-theme-customizer.php:1
+msgid "Main links color / Active"
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/functions/functions-theme-customizer.php:1
+msgid "Main links color / Hover"
+msgstr ""
+
+#. Text in function
+#: simplified/functions.php:1
+msgid "Main sidebar that appears on the right."
+msgstr ""
+
+#. Text in echo
+#: simplified/acosmin/functions/functions-post-options.php:29
+msgid "Mark this post as featured"
+msgstr ""
+
+#. Text in echo
+#: simplified/404.php:15
+msgid "Maybe try a search?"
+msgstr ""
+
+#. Text in echo
+#: simplified/post-templates/content-no-articles.php:10
+msgid "Maybe try another search?"
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/functions/functions-theme-customizer.php:1
+msgid "Mini-Sidebar"
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/framework/extensions/options-theme.php:1
+msgid "More Settings"
+msgstr ""
+
+#. Text in function
+#: simplified/comments.php:52
+msgid "Newer Comments &rarr;"
+msgstr ""
+
+#. Text in function
+#: simplified/functions.php:465
+msgid "Next &rarr;"
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/framework/extensions/options-theme.php:1
+msgid "Nine"
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/widgets/custom-recent-posts-widget.php:45
+#: simplified/post-templates/content-quote.php:29
+#: simplified/post-templates/content-single.php:26
+#: simplified/featured-content.php:25
+#: simplified/acosmin/widgets/custom-tabs-widget.php:154
+#: simplified/post-templates/content-aside.php:29
+#: simplified/acosmin/widgets/custom-featured-posts-widget.php:46
+#: simplified/post-templates/content.php:18
+#: simplified/post-templates/content-link.php:29
+msgid "No Thumbnail"
+msgstr ""
+
+#. Text in echo
+#: simplified/acosmin/widgets/custom-recent-posts-widget.php:61
+#: simplified/acosmin/widgets/custom-tabs-widget.php:170
+#: simplified/acosmin/widgets/custom-popular-posts-widget.php:61
+msgid "No popular posts available!"
+msgstr ""
+
+#. Text in echo
+#: simplified/post-templates/content-no-articles.php:12
+msgid "No posts found. Maybe add some! :)"
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/functions/functions-theme-customizer.php:1
+msgid "Other border colors"
+msgstr ""
+
+#. Text in function
+#: simplified/functions.php:1
+msgid "Page %s"
+msgstr ""
+
+#. Text in function
+#: simplified/post-templates/content-gallery.php:23
+#: simplified/post-templates/content-quote.php:39
+#: simplified/post-templates/content-image.php:23
+#: simplified/post-templates/content-video.php:23
+#: simplified/post-templates/content-single.php:36
+#: simplified/post-templates/content-aside.php:39
+#: simplified/post-templates/content-link.php:39
+#: simplified/post-templates/content-audio.php:23
+msgid "Pages:"
+msgstr ""
+
+#. Text in echo
+#: simplified/functions.php:376
+msgid "Pingback:"
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/widgets/custom-tabs-widget.php:216
+msgid "Please select some settings for this widget - Tabs"
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/widgets/custom-tabs-widget.php:1
+#: simplified/acosmin/widgets/custom-tabs-widget.php:283
+#: simplified/acosmin/widgets/custom-popular-posts-widget.php:93
+msgid "Popular Posts"
+msgstr ""
+
+#. Text in echo
+#: simplified/acosmin/functions/functions-post-options.php:33
+msgid "Post thumbnail in single view"
+msgstr ""
+
+#. Text in function
+#: simplified/functions.php:1
+msgid "Posts Sidebar"
+msgstr ""
+
+#. Text in echo
+#: simplified/post-templates/content-quote.php:24
+msgid "Quote Archive"
+msgstr ""
+
+#. Text in echo
+#: simplified/acosmin/widgets/custom-tabs-widget.php:124
+#: simplified/acosmin/widgets/custom-featured-posts-widget.php:56
+msgid "Read More"
+msgstr ""
+
+#. Text in echo
+#: simplified/post-templates/content.php:44
+msgid "Read More..."
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/widgets/custom-tabs-widget.php:1
+#: simplified/acosmin/widgets/custom-tabs-widget.php:298
+msgid "Recent Comments"
+msgstr ""
+
+#. Text in echo
+#: simplified/acosmin/widgets/custom-recent-posts-widget.php:96
+#: simplified/acosmin/widgets/custom-tabs-widget.php:293
+msgid "Recent Posts"
+msgstr ""
+
+#. Text in function
+#: simplified/functions.php:1
+#: simplified/sidebar-browse.php:41
+msgid "Right Sidebar - First Menu"
+msgstr ""
+
+#. Text in function
+#: simplified/functions.php:1
+#: simplified/sidebar-browse.php:60
+msgid "Right Sidebar - Second Menu"
+msgstr ""
+
+#. Text in function
+#: simplified/functions.php:1
+msgid "Same as \"Main Sidebar\", designed for the posts."
+msgstr ""
+
+#. Text in echo
+#: simplified/header.php:83
+msgid "Search"
+msgstr ""
+
+#. Text in function
+#: simplified/search.php:18
+msgid "Search Results for: <span>%s</span>"
+msgstr ""
+
+#. Text in echo
+#: simplified/header.php:85
+msgid "Search for:"
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/functions/functions-theme-customizer.php:1
+msgid "Second Menu - Select"
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/functions/functions-theme-customizer.php:1
+msgid "Second Menu - Title"
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/functions/functions-theme-customizer.php:1
+msgid "Select a font family"
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/functions/functions-theme-customizer.php:1
+msgid "Select a menu"
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/framework/extensions/options-theme.php:1
+msgid "Select a number of posts you would like to display."
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/framework/extensions/options-theme.php:1
+msgid "Seven"
+msgstr ""
+
+#. Text in echo
+#: simplified/acosmin/widgets/custom-tabs-widget.php:260
+msgid "Show \"Featured Posts\" tab."
+msgstr ""
+
+#. Text in echo
+#: simplified/acosmin/widgets/custom-tabs-widget.php:255
+msgid "Show \"Popular Posts\" tab."
+msgstr ""
+
+#. Text in echo
+#: simplified/acosmin/widgets/custom-tabs-widget.php:270
+msgid "Show \"Recent Comments\" tab."
+msgstr ""
+
+#. Text in echo
+#: simplified/acosmin/widgets/custom-tabs-widget.php:265
+msgid "Show \"Recent Posts\" tab."
+msgstr ""
+
+#. Text in echo
+#: simplified/acosmin/widgets/custom-tabs-widget.php:275
+msgid "Show \"Tag Cloud\" tab."
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/framework/extensions/options-theme.php:1
+msgid "Show Featured Posts Slider"
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/framework/extensions/options-theme.php:1
+msgid "Show this banner. Add the code in the following box"
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/framework/extensions/options-theme.php:1
+msgid "Six"
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/framework/extensions/options-theme.php:1
+msgid "Slider"
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/framework/extensions/options-theme.php:1
+msgid "Social"
+msgstr ""
+
+#. Text in function
+#: simplified/post-templates/content.php:18
+msgid "Sticky Post"
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/functions/functions-theme-customizer.php:1
+msgid "Sub-menu links color"
+msgstr ""
+
+#. Text in function
+#: simplified/tag.php:18
+msgid "Tag Archives: <span>%s</span>"
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/widgets/custom-tabs-widget.php:1
+msgid "Tag Cloud"
+msgstr ""
+
+#. Text in function
+#: simplified/post-templates/content-gallery.php:23
+#: simplified/post-templates/content-quote.php:39
+#: simplified/post-templates/content-image.php:23
+#: simplified/post-templates/content-video.php:23
+#: simplified/post-templates/content-single.php:36
+#: simplified/post-templates/content-aside.php:39
+#: simplified/post-templates/content-link.php:39
+#: simplified/post-templates/content-audio.php:23
+msgid "Tagged with:"
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/framework/extensions/options-theme.php:1
+msgid "Ten"
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/framework/extensions/options-theme.php:1
+msgid "The autoscrolling interval in milliseconds <strong>(only numbers)</strong>."
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/framework/extensions/options-theme.php:1
+msgid "These elements won\\'t show up if you check the boxes."
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/framework/extensions/options-theme.php:1
+msgid "Three"
+msgstr ""
+
+#. Text in echo
+#: simplified/acosmin/widgets/custom-recent-posts-widget.php:87
+#: simplified/acosmin/widgets/custom-featured-posts-widget.php:84
+#: simplified/acosmin/widgets/custom-popular-posts-widget.php:86
+msgid "Title"
+msgstr ""
+
+#. Text in echo
+#: simplified/acosmin/widgets/default-social-buttons-widget.php:85
+msgid "Title:"
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/functions/functions-theme-customizer.php:1
+msgid "Top Menu"
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/functions/functions-theme-customizer.php:1
+msgid "Top Menu Colors"
+msgstr ""
+
+#. Text in echo
+#: simplified/functions.php:382
+msgid "Trackback:"
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/framework/extensions/options-theme.php:1
+msgid "Transition Delay"
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/framework/extensions/options-theme.php:1
+msgid "Twitter Username"
+msgstr ""
+
+#. Text in echo
+#: simplified/post-templates/content-video.php:20
+msgid "Video Archive"
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/functions/functions-default.php:1
+msgid "View all posts in %s"
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/framework/extensions/options-theme.php:1
+msgid "Whether to autostart autoscrolling."
+msgstr ""
+
+#. Text in echo
+#: simplified/functions.php:360
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#. Text in echo
+#: simplified/post-templates/content-gallery.php:18
+#: simplified/post-templates/content-quote.php:21
+#: simplified/post-templates/content-image.php:18
+#: simplified/post-templates/content-video.php:18
+#: simplified/post-templates/content-single.php:21
+#: simplified/post-templates/content-aside.php:21
+#: simplified/post-templates/content.php:47
+#: simplified/post-templates/content-link.php:21
+#: simplified/post-templates/content-audio.php:18
+msgid "by"
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/functions/functions-theme-customizer.php:1
+msgid "ex: Blogroll"
+msgstr ""
+
+#. Text in function
+#: simplified/acosmin/functions/functions-theme-customizer.php:1
+msgid "ex: Categories"
+msgstr ""
+
+#. Text in echo
+#: simplified/post-templates/content-gallery.php:19
+#: simplified/post-templates/content-quote.php:22
+#: simplified/post-templates/content-image.php:19
+#: simplified/post-templates/content-video.php:19
+#: simplified/post-templates/content-single.php:22
+#: simplified/post-templates/content-aside.php:22
+#: simplified/post-templates/content.php:48
+#: simplified/post-templates/content-link.php:22
+#: simplified/post-templates/content-audio.php:19
+msgid "in"
+msgstr ""
+
+#. Text in echo
+#: simplified/header.php:85
+msgid "type your keywords ..."
+msgstr ""
+

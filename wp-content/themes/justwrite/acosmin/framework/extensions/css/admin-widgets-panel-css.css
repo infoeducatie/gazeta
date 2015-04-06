@@ -1,0 +1,16 @@
+#widget-list > div[id*='_ac_'] .widget-top, .widgets-sortables > div[id*='_ac_'] .widget-top { background:none; background-color:#f6e6de; border-color:#e2d0c6; }
+
+.ac_widget_label, .ac_widget_heading { display:block; margin-bottom:15px; }
+.ac_widget_heading { width:100%; clear:both; margin-top:20px; line-height:170%; }
+.ac_widget_heading .ac_required { color:red; font-size:11px; }
+.ac_widget_heading span { font-size:10px; font-weight:normal; }
+.ac_upload_img { overflow:hidden; }
+.ac_upload_img input { float:left; width:65%; }
+.ac_upload_img .button { float:right; width:30%; text-align:center }
+
+.ac_break_line { width: 100%; clear: both; margin: 20px 0; height: 0px; border-bottom: 4px double rgba(0,0,0,0.1);  }
+.ac_two_columns { width: 100%; display: block; overflow: hidden; }
+.ac_two_columns.last { margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px solid rgba(0,0,0,0.1); } 
+.ac_two_columns.last:last-child { border: none; }
+.ac_two_columns label { width: 40%; float: left; line-height: 26px; }
+.ac_two_columns input { width: 55%; float: right; }

@@ -1,0 +1,14 @@
+body, .post-template-1 .details .detail em, .single-template-1 .details detail em, textarea, input, select, .about-share, .content-wrap .review-wrap-up, .content-wrap #review-statistics .review-wu-bars h3, .content-wrap .review-wu-bars span, .content-wrap #review-statistics .review-wrap-up .review-wu-right ul li, .comments-area #cwp-slider-comment .comment-form-meta-option label {
+	/* Same Font - 'PT Sans', sans-serif */
+	font-family: 'PT Sans', sans-serif;
+}
+
+.menu-main, .browse-more, .sidebar-heading, .tabs-widget-navigation, .post-template-1 .title, .single-template-1 .title, .sidebar .social-btn, .ac-popular-posts .position, .ac-popular-posts .title, .ac-featured-posts .thumbnail .details .title, .ac-ad-title-300px, .posts-pagination .paging-wrap, .page-links-wrap .page-links, .comments-pagination .paging-wrap, .footer-credits .copyright, .browse-by-title, #wp-calendar tbody td, #wp-calendar thead th, #wp-calendar #prev, #wp-calendar #next, .single-content h1, .single-content h2, .single-content h3, .single-content h4, .single-content h5, .single-content h6, .ac-recent-posts .title, .sidebar #recentcomments li a, .slider .title, .about-share .title, .comments-title, .comment-main .vcard .fn, .comment-reply-title, .form-submit input[type=submit], .page-404 h1, .main-page-title, .search-form .search-field, .search-form .search-submit, .banner-small-title, .post-thumbnail .sticky-badge, .no-comments, .logo .description, .content-wrap #review-statistics .review-wrap-up .review-wu-right h2, .content-wrap #review-statistics h1, .content-wrap #review-statistics h2, .content-wrap #review-statistics h3, .content-wrap #review-statistics h4, .content-wrap #review-statistics h5, .content-wrap #review-statistics h6, .content-wrap  #review-statistics .cwp-review-percentage span, .content-wrap .cwp-item-price, .content-wrap .affiliate-button a span { 
+	/* Same Font - Arial, Helvetica, sans-serif */
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.ac-featured-posts .category, .ac-recent-posts .category, .slider .details .info, .comments-number, .post-template-1 .details .detail, .single-template-1 .details, .detail, .ac-popular-posts .category, .ac-twitter-tweet-time, .post-template-1 .details .p-share .contents em, .sidebar #recentcomments a.url, .sidebar #recentcomments, .comments-title .comments-number, .comment-main .vcard .comm-edit, .comment-main .comment-reply-link, label { 
+	/* Same Font - Montserrat */
+	font-family: 'Montserrat', sans-serif;
+}
