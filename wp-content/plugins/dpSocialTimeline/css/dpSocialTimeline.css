@@ -1,0 +1,846 @@
+@charset "utf-8";
+/* CSS Document */
+
+.dpSocialTimelineLoading {
+	min-height: 150px;
+}
+
+div.dpSocialTimeline {
+	list-style: none;
+	padding:0;
+	margin:0;
+	font-family:Arial, Helvetica, sans-serif;
+	padding-bottom: 10px;
+	zoom: 1;
+	-moz-box-sizing: content-box;
+	-webkit-box-sizing: content-box;
+	box-sizing: content-box;
+	overflow: hidden !important;
+	width: 100%;
+}
+
+div.dpSocialTimeline .dpSocialTimeline_item {
+	list-style: none;
+	padding: 1px;
+	margin: 10px 5px 0;
+	font-size:13px;
+}
+
+div.dpSocialTimeline.dpSocialTimeline_layout_timeline .dpSocialTimeline_item {
+	margin: 10px !important;
+	margin-top: 20px !important;
+	margin-bottom: 0 !important;
+}
+
+div.dpSocialTimeline.dpSocialTimeline_layout_timeline .dpSocialTimeline_item[data-list-number="0"] { 
+    margin-top: 0 !important;
+}
+
+div.dpSocialTimeline .dpSocialTimeline_item.dpSocialTimeline_hideMe {
+	opacity: 0;
+}
+
+div.dpSocialTimeline .dpSocialTimeline_lineWrap {
+	width: 10px;
+	text-align: center;
+	margin: 0 auto;
+	display: none;
+}
+
+div.dpSocialTimeline .dpSocialTimeline_line {
+	margin: 0;
+	display: block;
+	height: 100%;
+	position: absolute;
+	width: 10px;
+}
+
+div.dpSocialTimeline .dpSocialTimeline_line span {
+	width: 16px;
+	height: 16px;
+	display: block;
+	top: 50px;
+	left: -4px;
+	position: absolute;
+}
+
+div.dpSocialTimeline .dpSocialTimeline_item div.dpSocialTimelineContentHead {
+	padding: 7px 10px;
+}
+
+div.dpSocialTimeline .dpSocialTimeline_item div.dpSocialTimelineContentFoot {
+	padding:5px 10px;
+	text-align: left;
+	line-height: 130%;
+}
+
+div.dpSocialTimeline .dpSocialTimeline_item div.dpSocialTimelineContent {
+	font-size:11px;
+	padding: 20px 15px 20px 15px;
+	text-align: left;
+	word-wrap: break-word;
+}
+
+div.dpSocialTimeline .dpSocialTimeline_item div.dpSocialTimelineText {
+	margin-bottom: 10px;
+	text-align: left;
+	word-wrap: break-word;
+}
+
+div.dpSocialTimeline .dpSocialTimeline_item div.dpSocialTimelineContent .tumblr_audio_player {
+	max-width: 100%;
+	height: 55px;
+}
+
+div.dpSocialTimeline .dpSocialTimeline_item div.dpSocialTimelineContent img {
+	position:relative;
+	margin: 0 auto 5px; 
+	padding: 3px; 
+	border:0;
+	display:block;
+	height:auto;
+	max-width: 100%;
+}
+
+div.dpSocialTimeline .dpSocialTimeline_item div.dpSocialTimelineContent div.video_icon {
+	position:absolute;
+	top:10px;
+	left:10px;
+	width: 16px;
+	height:16px;
+	-moz-box-shadow: 0; 
+	-webkit-box-shadow: 0; 
+	box-shadow: 0;
+	background: none; 
+	padding:0;
+	margin:0;
+}
+
+div.dpSocialTimeline .dpSocialTimeline_item div.dpSocialTimelineContent .dpSocialTimelineTwitterActions {
+	cleaR:both;
+	width:100%;	
+	margin-top: 10px;
+}
+
+div.dpSocialTimeline .dpSocialTimeline_item div.dpSocialTimelineContent .dpSocialTimelineTwitterActions a {
+	font-size: 10px;
+	text-transform: uppercase;
+	margin-right: 10px;
+	padding-left: 20px;
+	font-weight:bold;
+}
+
+div.dpSocialTimeline .dpSocialTimeline_item div.dpSocialTimelineContent .dpSocialTimelineTwitterActions a:hover {
+	text-decoration:none;	
+}
+
+div.dpSocialTimeline .dpSocialTimeline_item a{
+	text-decoration:none;
+	position: relative;
+	word-wrap:break-word;
+	background: none !important;
+}
+
+div.dpSocialTimeline .dpSocialTimeline_item a:hover{
+	text-decoration:underline;
+}
+
+div.dpSocialTimeline .dpSocialTimeline_item a.permalink,
+div.dpSocialTimeline .dpSocialTimeline_item a.share_twitter,
+div.dpSocialTimeline .dpSocialTimeline_item a.share_facebook{
+	float: right;
+	display:block;
+	width:16px;
+	height:16px;
+	opacity: .7;
+	text-decoration:none;
+	margin-left:5px;
+}
+
+div.dpSocialTimeline .dpSocialTimeline_item a.permalink:hover,
+div.dpSocialTimeline .dpSocialTimeline_item a.share_twitter:hover,
+div.dpSocialTimeline .dpSocialTimeline_item a.share_facebook:hover{
+	opacity: 1;
+}
+
+div.dpSocialTimeline .dpSocialTimeline_item span.time{
+	font-size:9px;
+	margin-left: 15px;
+}
+
+div.dpSocialTimeline .dpSocialTimeline_item .user{
+	font-size:11px;
+	margin-left:10px;
+	margin-top:3px;
+	text-transform:uppercase;
+	display: inline;
+	float:left;
+	line-height: 100%;
+}
+
+div.dpSocialTimeline .dpSocialTimeline_item a.img_link{
+	display:block;
+	opacity: .8;
+}
+
+div.dpSocialTimeline .dpSocialTimeline_item a.img_link:hover{
+	display:block;
+	opacity: 1;
+}
+
+/**** Social Icons ****/
+
+div.dpSocialTimeline span.favicon{
+	float: left;
+	display:block;
+	width: 16px;
+	height: 16px;
+}
+
+div.dpSocialTimeline span.favicon.twitter,
+div.dpSocialTimeline_filter span.favicon.twitter {
+	background:url(../images/favicons/twitter.png) 0 0 no-repeat;
+}
+
+div.dpSocialTimeline span.favicon.feed500px,
+div.dpSocialTimeline_filter span.favicon.feed500px {
+	background:url(../images/favicons/500px.png) 0 0 no-repeat;
+}
+
+div.dpSocialTimeline span.favicon.google,
+div.dpSocialTimeline_filter span.favicon.google {
+	background:url(../images/favicons/google.png) 0 0 no-repeat;
+}
+
+div.dpSocialTimeline span.favicon.lastfm,
+div.dpSocialTimeline_filter span.favicon.lastfm {
+	background:url(../images/favicons/lastfm.png) 0 0 no-repeat;
+}
+
+div.dpSocialTimeline span.favicon.facebook,
+div.dpSocialTimeline_filter span.favicon.facebook {
+	background:url(../images/favicons/facebook.png) 0 0 no-repeat;
+}
+
+div.dpSocialTimeline span.favicon.delicious,
+div.dpSocialTimeline_filter span.favicon.delicious {
+	background:url(../images/favicons/delicious.png) 0 0 no-repeat;
+}
+
+div.dpSocialTimeline span.favicon.digg,
+div.dpSocialTimeline_filter span.favicon.digg {
+	background:url(../images/favicons/digg.png) 0 0 no-repeat;
+}
+
+div.dpSocialTimeline span.favicon.dribbble,
+div.dpSocialTimeline_filter span.favicon.dribbble {
+	background:url(../images/favicons/dribbble.png) 0 0 no-repeat;
+}
+
+div.dpSocialTimeline span.favicon.flickr,
+div.dpSocialTimeline_filter span.favicon.flickr {
+	background:url(../images/favicons/flickr.png) 0 0 no-repeat;
+}
+
+div.dpSocialTimeline span.favicon.pinterest,
+div.dpSocialTimeline_filter span.favicon.pinterest {
+	background:url(../images/favicons/pintrest.png) 0 0 no-repeat;
+}
+
+div.dpSocialTimeline span.favicon.tumblr,
+div.dpSocialTimeline_filter span.favicon.tumblr {
+	background:url(../images/favicons/tumblr.png) 0 0 no-repeat;
+}
+
+div.dpSocialTimeline span.favicon.vimeo,
+div.dpSocialTimeline_filter span.favicon.vimeo {
+	background:url(../images/favicons/vimeo.png) 0 0 no-repeat;
+}
+
+div.dpSocialTimeline span.favicon.foursquare,
+div.dpSocialTimeline_filter span.favicon.foursquare {
+	background:url(../images/favicons/foursquare.png) 0 0 no-repeat;
+}
+
+div.dpSocialTimeline span.favicon.youtube,
+div.dpSocialTimeline_filter span.favicon.youtube {
+	background:url(../images/favicons/youtube.png) 0 0 no-repeat;
+}
+
+div.dpSocialTimeline span.favicon.instagram,
+div.dpSocialTimeline_filter span.favicon.instagram {
+	background:url(../images/favicons/instagram.png) 0 0 no-repeat;
+}
+
+/**** Filter/Layout Buttons ****/
+
+.dpSocialTimeline_filter{
+	margin: 10px;
+	float:left;
+	display:block;
+}
+
+.dpSocialTimeline_filter button,
+.dpSocialTimeline_layout button{
+	padding: 5px 10px;
+	border: 1px solid;
+	outline: 0;
+	font-weight: bold;
+	font-size: 11px;
+	white-space: nowrap;
+	word-wrap: normal;
+	vertical-align: middle;
+	cursor: pointer;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+	text-transform:capitalize;
+	margin-top: 5px;
+	opacity: .7;	
+	width: auto !important;
+	height: auto !important;
+}
+
+.dpSocialTimeline_filter button:hover,
+.dpSocialTimeline_layout button:hover {
+	opacity: 1;	
+}
+
+.dpSocialTimeline_filter button img {
+	display: block;
+}
+
+.dpSocialTimeline_layout {
+	margin: 10px;
+	float:right;
+	display:block;
+}
+
+.dpSocialTimeline_filter button span,
+.dpSocialTimeline_layout button span {
+	width: 16px;
+	height: 16px;
+	display: block;
+}
+
+div.dpSocialTimeline .dpSocialTimeline_item div.dpSocialTimelineContent video {
+	max-width: 100%;
+	height: auto;
+	margin-top: 10px;
+	margin-bottom: 0 !important;
+}
+
+
+/* Divider */
+
+.dpSocialTimeline_divider {
+	clear: both;
+	margin-bottom:10px;
+}
+
+/* Skins - Light */
+
+div.light.dpSocialTimelineLoading {
+	background: url(../images/light/ajax-loader.gif) no-repeat 50% 50%;
+}
+
+div.light div.dpSocialTimeline .dpSocialTimeline_line {
+	background: url(../images/light/timeline.png) repeat-y 0 0;
+}
+
+div.light div.dpSocialTimeline .dpSocialTimeline_line span {
+	background: url(../images/light/pointer.png) no-repeat 0 0;
+}
+
+div.light div.dpSocialTimeline .dpSocialTimeline_item div.dpSocialTimelineContent div.video_icon {
+	background: url(../images/light/video.png) no-repeat 50% 50% !important;
+}
+
+div.light div.dpSocialTimeline .dpSocialTimeline_item a.permalink{
+	background: url(../images/light/link.png) 0 0 no-repeat !important;
+}
+
+div.light div.dpSocialTimeline .dpSocialTimeline_item a.share_twitter{
+	background: url(../images/light/twitter.png) 0 0 no-repeat !important;
+}
+
+div.light div.dpSocialTimeline .dpSocialTimeline_item a.share_facebook{
+	background: url(../images/light/facebook.png) 0 0 no-repeat !important;
+}
+
+div.light .dpSocialTimeline_layout button.spineAlign span {
+	background: url(../images/light/spine.png) 0 0 no-repeat;
+}
+
+div.light .dpSocialTimeline_layout button.masonry span {
+	background: url(../images/light/columns.png) 0 0 no-repeat;
+}
+
+div.light .dpSocialTimeline_layout button.straightDown span {
+	background: url(../images/light/one_column.png) 0 0 no-repeat;
+}
+
+div.light div.dpSocialTimeline .dpSocialTimeline_item {
+	border-bottom: 1px solid #E9E9E9;
+	background: white 0px 20px no-repeat;
+	border: 1px solid #E6E6E6;
+	-moz-box-shadow: 0px 3px 2px #d6d6d6;
+	-webkit-box-shadow: 0px 3px 2px #d6d6d6;
+	box-shadow: 0px 3px 2px #d6d6d6;
+	color: #666;
+}
+
+div.light div.dpSocialTimeline .dpSocialTimeline_item div.dpSocialTimelineContentHead {
+	background: #f5f5f5;
+	border-bottom: 1px dashed #e6e6e6;
+}
+
+div.light div.dpSocialTimeline .dpSocialTimeline_item div.dpSocialTimelineContentFoot {
+	background: #f5f5f5 url(../images/light/clock.png) 5px 50% no-repeat;
+	border-top: 1px dashed #e6e6e6;
+
+}
+
+div.light div.dpSocialTimeline .dpSocialTimeline_item div.dpSocialTimelineContent img {
+	background: #eee; 
+	-moz-box-shadow: 0 0 4px #444; 
+	-webkit-box-shadow: 0 0 2px #000; 
+	box-shadow: 0 0 2px #000;
+	width: auto !important;
+	max-width: 100%;
+}
+
+div.light div.dpSocialTimeline .dpSocialTimeline_item a{
+	color: #6D84B4;
+}
+
+div.light div.dpSocialTimeline .dpSocialTimeline_item a:hover{
+	color: #6D84B4;
+}
+
+div.light div.dpSocialTimeline .dpSocialTimeline_item span.time{
+	color: #999;
+	text-shadow: 0 1px 0 white;
+}
+
+div.light div.dpSocialTimeline .dpSocialTimeline_item .user{
+	color: #999;
+	text-shadow: 0 1px 0 white;
+}
+
+div.light .dpSocialTimeline_filter button,
+div.light .dpSocialTimeline_layout button{
+	color: #788188 !important;
+	background: #fff;
+	border-color: #dbe2e7;
+	border-bottom-color: #d5dde3;
+	-webkit-box-shadow: 0 1px 1px rgba(90,90,90,0.1);
+	box-shadow: 0 1px 1px rgba(90,90,90,0.1);
+}
+
+div.light .dpSocialTimeline_filter button:hover,
+div.light .dpSocialTimeline_layout button:hover{
+	color: #788188 !important;
+	background-color: #f2f2f2;
+	border-color: #c2ced6;
+}
+
+div.light .dpSocialTimeline_filter button:active, 
+div.light .dpSocialTimeline_filter button.active,
+div.light .dpSocialTimeline_layout button:active, 
+div.light .dpSocialTimeline_layout button.active {
+	border-color: #888 #AAA #CCC;
+	-moz-box-shadow: inset 0 1px 5px rgba(0,0,0,0.25),0 1px 0 #fff;
+	-ms-box-shadow: inset 0 1px 5px rgba(0,0,0,0.25),0 1px 0 #fff;
+	-webkit-box-shadow: inset 0 1px 5px rgba(0,0,0,0.25),0 1px 0 #fff;
+	box-shadow: inset 0 1px 5px rgba(0,0,0,0.25),0 1px 0 #fff;
+	filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0,StartColorStr=#ffc8c8c8,EndColorStr=#ffe6e6e6);
+	background-image: -moz-linear-gradient(top,#C8C8C8 0,#E6E6E6 100%);
+	background-image: -ms-linear-gradient(top,#C8C8C8 0,#E6E6E6 100%);
+	background-image: -o-linear-gradient(top,#C8C8C8 0,#E6E6E6 100%);
+	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0,#C8C8C8),color-stop(100%,#E6E6E6));
+	background-image: -webkit-linear-gradient(top,#C8C8C8 0,#E6E6E6 100%);
+	background-image: linear-gradient(to bottom,#C8C8C8 0,#E6E6E6 100%);
+}
+
+div.light .dpSocialTimeline_divider {
+	border-top: 1px dashed #e6e6e6;
+}
+
+div.light .dpSocialTimeline .dpSocialTimeline_item div.dpSocialTimelineContent .dpSocialTimelineTwitterActions a {
+	color: #555;
+}
+
+div.light .dpSocialTimeline .dpSocialTimeline_item div.dpSocialTimelineContent .dpSocialTimelineTwitterActions a.tw_reply {
+	background: url(../images/light/reply.png) no-repeat 0 50% !important;
+}
+
+div.light .dpSocialTimeline .dpSocialTimeline_item div.dpSocialTimelineContent .dpSocialTimelineTwitterActions a.tw_retweet {
+	background: url(../images/light/retweet.png) no-repeat 0 50% !important;
+}
+
+div.light .dpSocialTimeline .dpSocialTimeline_item div.dpSocialTimelineContent .dpSocialTimelineTwitterActions a.tw_favorite {
+	background: url(../images/light/favorite.png) no-repeat 0 50% !important;
+}
+
+/* Skins - Modern */
+div.modern.dpSocialTimelineLoading {
+	background: url(../images/light/ajax-loader.gif) no-repeat 50% 50%;
+}
+
+div.modern div.dpSocialTimeline .dpSocialTimeline_line {
+	background: url(../images/light/timeline.png) repeat-y 0 0;
+}
+
+div.modern div.dpSocialTimeline .dpSocialTimeline_line span {
+	background: url(../images/light/pointer.png) no-repeat 0 0;
+}
+
+div.modern div.dpSocialTimeline .dpSocialTimeline_item div.dpSocialTimelineContent div.video_icon {
+	background: url(../images/light/video.png) no-repeat 50% 50%;
+}
+
+div.modern div.dpSocialTimeline .dpSocialTimeline_item a.permalink{
+	background: url(../images/modern/link.png) 0 0 no-repeat;
+}
+
+div.modern div.dpSocialTimeline .dpSocialTimeline_item div.dpSocialTimelineContent .dpSocialTimelineTwitterActions {
+	padding: 0 10px;
+}
+
+div.modern div.dpSocialTimeline .dpSocialTimeline_item a.share_twitter{
+	background: url(../images/modern/twitter.png) 0 0 no-repeat !important;
+	width: 20px;
+	height: 20px;
+}
+
+div.modern div.dpSocialTimeline .dpSocialTimeline_item a.share_facebook{
+	background: url(../images/modern/facebook.png) 0 0 no-repeat !important;
+	width: 24px;
+	height: 24px;
+}
+
+div.modern .dpSocialTimeline_layout button.spineAlign span {
+	background: url(../images/light/spine.png) 0 0 no-repeat;
+}
+
+div.modern .dpSocialTimeline_layout button.masonry span {
+	background: url(../images/light/columns.png) 0 0 no-repeat;
+}
+
+div.modern .dpSocialTimeline_layout button.straightDown span {
+	background: url(../images/light/one_column.png) 0 0 no-repeat;
+}
+
+div.modern div.dpSocialTimeline .dpSocialTimeline_item div.dpSocialTimelineContent {
+	padding: 0;
+}
+
+div.dpSocialTimeline .dpSocialTimeline_item div.dpSocialTimelineContent.dpSocialTimeline_noImage {
+	padding-top: 30px !important;
+}
+
+div.modern div.dpSocialTimeline .dpSocialTimeline_item div.dpSocialTimelineContent iframe{
+	margin-top: 10px;
+}
+
+div.modern div.dpSocialTimeline .dpSocialTimeline_item div.dpSocialTimelineText {
+	margin:0;
+	margin-top: 10px;
+	padding: 0 10px 20px;
+	font-size: 14px;
+}
+
+div.modern div.dpSocialTimeline .dpSocialTimeline_item {
+	background: white 0px 20px no-repeat;
+	border: 0;
+	-webkit-box-shadow: 2px 2px 7px 0 rgba(0, 0, 0, 0.35);
+	-moz-box-shadow: 2px 2px 7px 0 rgba(0, 0, 0, 0.35);
+	box-shadow: 2px 2px 7px 0 rgba(0, 0, 0, 0.35);
+	color: #666;
+	padding: 0;
+}
+
+div.modern div.dpSocialTimeline .dpSocialTimeline_item div.dpSocialTimelineContentHead {
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	z-index: 999;
+	border: 0;
+	background: #000;
+	text-shadow: none;
+	color: #fff;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+
+div.modern div.dpSocialTimeline .dpSocialTimeline_item div.dpSocialTimelineContentFoot {
+	border-top: 1px solid #e8e8e8;
+	margin: 0 10px;
+	background-color: #fff;
+	padding: 5px 0;
+
+}
+
+div.modern div.dpSocialTimeline .dpSocialTimeline_item div.dpSocialTimelineContent img {
+	background: none; 
+	-moz-box-shadow: none; 
+	-webkit-box-shadow: none; 
+	box-shadow: none;
+	padding: 0;
+	margin: 0;
+	width: 100% !important;
+}
+
+div.modern div.dpSocialTimeline .dpSocialTimeline_item a{
+	color: #6D84B4;
+}
+
+div.modern div.dpSocialTimeline .dpSocialTimeline_item a:hover{
+	color: #6D84B4;
+}
+
+div.modern div.dpSocialTimeline .dpSocialTimeline_item span.time{
+	color: #999;
+	font-weight: bold;
+	font-size: 12px;
+	line-height: 2;
+	text-shadow: none;
+	margin: 0;
+}
+
+div.modern div.dpSocialTimeline .dpSocialTimeline_item .user{
+	color: #fff;
+	text-shadow: none;
+	line-height: 100%;
+	padding: 3px 0 2px;
+	margin-top: 0;
+}
+
+div.modern .dpSocialTimeline_filter button,
+div.modern .dpSocialTimeline_layout button{
+	color: #788188 !important;
+	background: #fff;
+	border-color: #dbe2e7;
+	border-bottom-color: #d5dde3;
+	-webkit-box-shadow: 0 1px 1px rgba(90,90,90,0.1);
+	box-shadow: 0 1px 1px rgba(90,90,90,0.1);
+}
+
+div.modern .dpSocialTimeline_filter button:hover,
+div.modern .dpSocialTimeline_layout button:hover{
+	color: #788188 !important;
+	background-color: #f2f2f2;
+	border-color: #c2ced6;
+}
+
+div.modern .dpSocialTimeline_filter button:active, 
+div.modern .dpSocialTimeline_filter button.active,
+div.modern .dpSocialTimeline_layout button:active, 
+div.modern .dpSocialTimeline_layout button.active {
+	border-color: #888 #AAA #CCC;
+	-moz-box-shadow: inset 0 1px 5px rgba(0,0,0,0.25),0 1px 0 #fff;
+	-ms-box-shadow: inset 0 1px 5px rgba(0,0,0,0.25),0 1px 0 #fff;
+	-webkit-box-shadow: inset 0 1px 5px rgba(0,0,0,0.25),0 1px 0 #fff;
+	box-shadow: inset 0 1px 5px rgba(0,0,0,0.25),0 1px 0 #fff;
+	filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0,StartColorStr=#ffc8c8c8,EndColorStr=#ffe6e6e6);
+	background-image: -moz-linear-gradient(top,#C8C8C8 0,#E6E6E6 100%);
+	background-image: -ms-linear-gradient(top,#C8C8C8 0,#E6E6E6 100%);
+	background-image: -o-linear-gradient(top,#C8C8C8 0,#E6E6E6 100%);
+	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0,#C8C8C8),color-stop(100%,#E6E6E6));
+	background-image: -webkit-linear-gradient(top,#C8C8C8 0,#E6E6E6 100%);
+	background-image: linear-gradient(to bottom,#C8C8C8 0,#E6E6E6 100%);
+}
+
+div.modern .dpSocialTimeline_divider {
+	border-top: 1px dashed #e6e6e6;
+}
+
+div.modern .dpSocialTimeline .dpSocialTimeline_item div.dpSocialTimelineContent .dpSocialTimelineTwitterActions a {
+	color: #555;
+	word-wrap: normal;
+	display: inline-block;
+}
+
+div.modern .dpSocialTimeline .dpSocialTimeline_item div.dpSocialTimelineContent .dpSocialTimelineTwitterActions a.tw_reply {
+	background: url(../images/light/reply.png) no-repeat 0 50% !important;
+}
+
+div.modern .dpSocialTimeline .dpSocialTimeline_item div.dpSocialTimelineContent .dpSocialTimelineTwitterActions a.tw_retweet {
+	background: url(../images/light/retweet.png) no-repeat 0 50% !important;
+}
+
+div.modern .dpSocialTimeline .dpSocialTimeline_item div.dpSocialTimelineContent .dpSocialTimelineTwitterActions a.tw_favorite {
+	background: url(../images/light/favorite.png) no-repeat 0 50% !important;
+}
+
+
+/* Skins - Dark */
+
+div.dark.dpSocialTimelineLoading {
+	background: url(../images/dark/ajax-loader.gif) no-repeat 50% 50%;
+}
+
+div.dark div.dpSocialTimeline .dpSocialTimeline_line {
+	background: url(../images/dark/timeline.png) repeat-y 0 0;
+}
+
+div.dark div.dpSocialTimeline .dpSocialTimeline_line span {
+	background: url(../images/dark/pointer.png) no-repeat 0 0;
+}
+
+div.dark div.dpSocialTimeline .dpSocialTimeline_item div.dpSocialTimelineContent div.video_icon {
+	background: url(../images/dark/video.png) no-repeat 50% 50%;
+}
+
+div.dark div.dpSocialTimeline .dpSocialTimeline_item a.permalink{
+	background: url(../images/dark/link.png) 0 0 no-repeat;
+}
+
+div.dark div.dpSocialTimeline .dpSocialTimeline_item a.share_twitter{
+	background: url(../images/dark/twitter.png) 0 0 no-repeat !important;
+}
+
+div.dark div.dpSocialTimeline .dpSocialTimeline_item a.share_facebook{
+	background: url(../images/dark/facebook.png) 0 0 no-repeat !important;
+}
+
+div.dark .dpSocialTimeline_layout button.spineAlign span {
+	background: url(../images/dark/spine.png) 0 0 no-repeat;
+}
+
+div.dark .dpSocialTimeline_layout button.masonry span {
+	background: url(../images/dark/columns.png) 0 0 no-repeat;
+}
+
+div.dark .dpSocialTimeline_layout button.straightDown span {
+	background: url(../images/dark/one_column.png) 0 0 no-repeat;
+}
+
+div.dark div.dpSocialTimeline .dpSocialTimeline_item {
+	background: #272727 0px 20px no-repeat;
+	border: 1px solid #333;
+	color: #999;
+}
+
+div.dark div.dpSocialTimeline .dpSocialTimeline_item div.dpSocialTimelineContentHead {
+	background: #1C1C1C;
+	border-bottom: 1px dashed #333;
+}
+
+div.dark div.dpSocialTimeline .dpSocialTimeline_item div.dpSocialTimelineContentFoot {
+	background: #1C1C1C url(../images/dark/clock.png) 5px 5px no-repeat;
+	border-top: 1px dashed #333;
+
+}
+
+div.dark div.dpSocialTimeline .dpSocialTimeline_item div.dpSocialTimelineContent img {
+	background: #1C1C1C; 
+}
+
+div.dark div.dpSocialTimeline .dpSocialTimeline_item a{
+	color: #999;
+}
+
+div.dark div.dpSocialTimeline .dpSocialTimeline_item a:hover{
+	color: #999;
+}
+
+div.dark div.dpSocialTimeline .dpSocialTimeline_item span.time{
+	color: #999;
+}
+
+div.dark div.dpSocialTimeline .dpSocialTimeline_item .user{
+	color: #999;
+}
+
+div.dark .dpSocialTimeline_filter button,
+div.dark .dpSocialTimeline_layout button{
+	color: #788188 !important;
+	background: #272727;
+	border-color: #323232;
+	border-bottom-color: #323232;
+	-webkit-box-shadow: 0 1px 1px rgba(90,90,90,0.1);
+	box-shadow: 0 1px 1px rgba(90,90,90,0.1);
+}
+
+div.dark .dpSocialTimeline_filter button:active, 
+div.dark .dpSocialTimeline_filter button.active,
+div.dark .dpSocialTimeline_layout button:active, 
+div.dark .dpSocialTimeline_layout button.active {
+	/*border: 0; */
+	border-color: #323232;
+	/* border-top: 1px; */
+	background: #111;
+}
+
+div.dark .dpSocialTimeline_divider {
+	border-top: 1px dashed #333;
+}
+
+div.dark .dpSocialTimeline .dpSocialTimeline_item div.dpSocialTimelineContent .dpSocialTimelineTwitterActions a {
+	color: #999;
+}
+
+div.dark .dpSocialTimeline .dpSocialTimeline_item div.dpSocialTimelineContent .dpSocialTimelineTwitterActions a.tw_reply {
+	background: url(../images/dark/reply.png) no-repeat 0 50% !important;
+}
+
+div.dark .dpSocialTimeline .dpSocialTimeline_item div.dpSocialTimelineContent .dpSocialTimelineTwitterActions a.tw_retweet {
+	background: url(../images/dark/retweet.png) no-repeat 0 50% !important;
+}
+
+div.dark .dpSocialTimeline .dpSocialTimeline_item div.dpSocialTimelineContent .dpSocialTimelineTwitterActions a.tw_favorite {
+	background: url(../images/dark/favorite.png) no-repeat 0 50% !important;
+}
+
+/**** Isotope Filtering ****/
+
+.isotope-item {
+  z-index: 2;
+}
+
+.isotope-hidden.isotope-item {
+  pointer-events: none;
+  z-index: 1;
+}
+
+/**** Isotope CSS3 transitions ****/
+
+.isotope,
+.isotope .isotope-item {
+  -webkit-transition-duration: 0.8s;
+     -moz-transition-duration: 0.8s;
+      -ms-transition-duration: 0.8s;
+       -o-transition-duration: 0.8s;
+          transition-duration: 0.8s;
+}
+
+.isotope {
+  -webkit-transition-property: height, width;
+     -moz-transition-property: height, width;
+      -ms-transition-property: height, width;
+       -o-transition-property: height, width;
+          transition-property: height, width;
+}
+
+.isotope .isotope-item {
+  -webkit-transition-property: -webkit-transform, opacity;
+     -moz-transition-property:    -moz-transform, opacity;
+      -ms-transition-property:     -ms-transform, opacity;
+       -o-transition-property:         top, left, opacity;
+          transition-property:         transform, opacity;
+}
+
+/**** disabling Isotope CSS3 transitions ****/
+
+.isotope.no-transition,
+.isotope.no-transition .isotope-item,
+.isotope .isotope-item.no-transition {
+  -webkit-transition-duration: 0s;
+     -moz-transition-duration: 0s;
+      -ms-transition-duration: 0s;
+       -o-transition-duration: 0s;
+          transition-duration: 0s;
+}
