@@ -11,7 +11,6 @@
 	<title><?php wp_title( '|', true, 'right' ); ?></title>
     <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
     <?php wp_head(); ?>
-<link href="https://plus.google.com/117749345886270695783" rel="publisher"/>
 </head>
 
 <body <?php body_class(); ?>>
