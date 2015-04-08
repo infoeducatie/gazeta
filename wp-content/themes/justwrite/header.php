@@ -10,6 +10,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<title><?php wp_title( '|', true, 'right' ); ?></title>
     <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+    <a href="https://plus.google.com/117749345886270695783" rel="publisher">Google+</a>
     <?php wp_head(); ?>
 </head>
 
