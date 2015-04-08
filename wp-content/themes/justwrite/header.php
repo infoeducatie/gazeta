@@ -45,7 +45,7 @@
         	<?php if ( $ad728_code != '' ) { echo $ad728_code; } ?>
         </div><!-- END .advertising728 -->
         <?php endif; ?>
-        
+        <a href="https://plus.google.com/117749345886270695783" rel="publisher">Google+</a>
     </div><!-- END .top -->
     
     <nav class="menu-wrap<?php ac_mini_disabled(); if ( get_theme_mod( 'ac_disable_stickymenu' ) ) { echo ' sticky-disabled'; } ?>" role="navigation">
