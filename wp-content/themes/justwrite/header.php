@@ -23,7 +23,6 @@
 <header id="main-header" class="header-wrap">
 
 <div class="wrap">
-    <a href="https://plus.google.com/117749345886270695783" rel="publisher">Google+</a>
 
 	<div class="top<?php ac_mini_disabled() ?>">
     
