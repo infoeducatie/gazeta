@@ -1,0 +1,509 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WPFrontScrollTop-ru_RU\n"
+"POT-Creation-Date: 2014-08-11 09:33-0700\n"
+"PO-Revision-Date: 2014-08-14 16:26+0400\n"
+"Last-Translator: Flector <rlector@gmail.com>\n"
+"Language-Team: WordpressPlugins.ru <rlector@gmail.com>\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.7\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../classes/base/class-wpfront-base-menu.php:52
+msgid "Name"
+msgstr "Имя"
+
+#: ../classes/base/class-wpfront-base-menu.php:53
+msgid "Version"
+msgstr "Версия"
+
+#: ../classes/base/class-wpfront-base-menu.php:54
+msgid "Rating"
+msgstr "Рейтинг"
+
+#: ../classes/base/class-wpfront-base-menu.php:55
+msgid "Description"
+msgstr "Описание"
+
+#: ../classes/base/class-wpfront-base-menu.php:69
+#, php-format
+msgid "based on %s rating(s)"
+msgstr "на основе %s голосов"
+
+#: ../classes/base/class-wpfront-base-menu.php:105
+msgid "Unable to communicate with WordPress.org"
+msgstr "Невозможно соединиться с WordPress.org"
+
+#: ../classes/base/class-wpfront-base-menu.php:123
+#: ../classes/base/class-wpfront-base-menu.php:217
+msgid "WPFront Plugins"
+msgstr "Плагины от WPFront "
+
+#: ../classes/base/class-wpfront-base-menu.php:147
+#, php-format
+msgid "By %s"
+msgstr "Автор: %s"
+
+#: ../classes/base/class-wpfront-base-menu.php:154
+#, php-format
+msgid "More information about %s"
+msgstr "Больше информации о плагине %s"
+
+#: ../classes/base/class-wpfront-base-menu.php:154
+msgid "Details"
+msgstr "Детали"
+
+#: ../classes/base/class-wpfront-base-menu.php:163
+#, php-format
+msgid "Install %s"
+msgstr "Установить %s"
+
+#: ../classes/base/class-wpfront-base-menu.php:163
+msgid "Install Now"
+msgstr "Установить сейчас"
+
+#: ../classes/base/class-wpfront-base-menu.php:168
+#, php-format
+msgid "Update to version %s"
+msgstr "Обновить до версии %s"
+
+#: ../classes/base/class-wpfront-base-menu.php:168
+msgid "Update Now"
+msgstr "Обновить сейчас"
+
+#: ../classes/base/class-wpfront-base-menu.php:173
+msgid "This plugin is already installed and is up to date"
+msgstr "Этот плагин уже установлен и не нуждается в обновлении"
+
+#: ../classes/base/class-wpfront-base-menu.php:173
+msgid "Installed"
+msgstr "Установлен"
+
+#: ../classes/base/class-wpfront-base-menu.php:175
+#: ../classes/base/class-wpfront-base.php:105
+msgid "Settings"
+msgstr "Настройки"
+
+#: ../classes/base/class-wpfront-base-menu.php:177
+msgid "Activate"
+msgstr "Активировать"
+
+#: ../classes/base/class-wpfront-base-menu.php:199
+msgid "Feedback"
+msgstr "Связаться с автором"
+
+#: ../classes/base/class-wpfront-base-menu.php:216
+msgid "WPFront"
+msgstr "WPFront"
+
+#: ../classes/base/class-wpfront-base-menu.php:217
+msgid "All Plugins"
+msgstr "Все плагины"
+
+#: ../classes/base/class-wpfront-base.php:130
+msgid "You do not have sufficient permissions to access this page."
+msgstr "У вас нет необходимых прав для доступа к этой странице."
+
+#: ../classes/base/class-wpfront-base.php:150
+msgid ""
+"If you have a caching plugin, clear the cache for the new settings to take "
+"effect."
+msgstr ""
+"Если вы используете плагины кэширования, то вам необходимо скинуть файлы "
+"кэша."
+
+#: ../classes/base/class-wpfront-base.php:168
+msgid "Settings Description"
+msgstr "Описание настроек"
+
+#: ../classes/base/class-wpfront-base.php:170
+msgid "Plugin FAQ"
+msgstr "FAQ плагина"
+
+#: ../classes/base/class-wpfront-base.php:172
+msgid "Feature Request"
+msgstr "Запрос функций"
+
+#: ../classes/base/class-wpfront-base.php:174
+msgid "Report Bug"
+msgstr "Сообщить об ошибке"
+
+#: ../classes/base/class-wpfront-base.php:176
+msgid "Write Review"
+msgstr "Написать ревью"
+
+#: ../classes/base/class-wpfront-base.php:178
+msgid "Contact Me"
+msgstr "Связаться с автором"
+
+#: ../classes/base/class-wpfront-base.php:180
+msgid "Buy me a Beer or Coffee"
+msgstr "Купить автору пиво"
+
+#: ../classes/base/class-wpfront-base.php:197
+msgid "Save Changes"
+msgstr "Сохранить изменения"
+
+#: ../classes/class-wpfront-scroll-top-options.php:41
+msgid "Enabled"
+msgstr "Включить"
+
+#: ../classes/class-wpfront-scroll-top-options.php:42
+msgid "Scroll Offset"
+msgstr "Скроллирование"
+
+#: ../classes/class-wpfront-scroll-top-options.php:45
+msgid "Button Opacity"
+msgstr "Прозрачность кнопки"
+
+#: ../classes/class-wpfront-scroll-top-options.php:46
+msgid "Button Fade Duration"
+msgstr "Исчезновение кнопки"
+
+#: ../classes/class-wpfront-scroll-top-options.php:47
+msgid "Scroll Duration"
+msgstr "Скорость скролла"
+
+#: ../classes/class-wpfront-scroll-top-options.php:48
+msgid "Auto Hide"
+msgstr "Скрывать"
+
+#: ../classes/class-wpfront-scroll-top-options.php:49
+msgid "Auto Hide After"
+msgstr "Скрывать после"
+
+#: ../classes/class-wpfront-scroll-top-options.php:50
+msgid "Hide on Small Devices"
+msgstr "Скрывать на маленьких устройствах"
+
+#: ../classes/class-wpfront-scroll-top-options.php:51
+msgid "Small Device Max Width"
+msgstr "Ширина маленьких устройств"
+
+#: ../classes/class-wpfront-scroll-top-options.php:52
+msgid "Hide on Small Window"
+msgstr "Скрывать при маленьком окне браузера"
+
+#: ../classes/class-wpfront-scroll-top-options.php:53
+msgid "Small Window Max Width"
+msgstr "Ширина окна браузера"
+
+#: ../classes/class-wpfront-scroll-top-options.php:54
+msgid "Button Style"
+msgstr "Стиль кнопки"
+
+#: ../classes/class-wpfront-scroll-top-options.php:55
+msgid "Image ALT"
+msgstr "Атрибут Alt у картинки"
+
+#: ../classes/class-wpfront-scroll-top-options.php:56
+msgid "Hide on WP-ADMIN"
+msgstr "Скрывать в админке"
+
+#: ../classes/class-wpfront-scroll-top-options.php:57
+msgid "Hide on iframes"
+msgstr "Скрывать во фреймах"
+
+#: ../classes/class-wpfront-scroll-top-options.php:59
+#: ../templates/options-template.php:226
+msgid "Location"
+msgstr "Расположение"
+
+#: ../classes/class-wpfront-scroll-top-options.php:60
+msgid "Margin X"
+msgstr "Отступ по горизонтали"
+
+#: ../classes/class-wpfront-scroll-top-options.php:61
+msgid "Margin Y"
+msgstr "Отступ по вертикали"
+
+#: ../classes/class-wpfront-scroll-top-options.php:63
+#: ../templates/options-template.php:170
+msgid "Text"
+msgstr "Текст"
+
+#: ../classes/class-wpfront-scroll-top-options.php:64
+msgid "Text Color"
+msgstr "Цвет текста"
+
+#: ../classes/class-wpfront-scroll-top-options.php:65
+msgid "Background Color"
+msgstr "Цвет фона"
+
+#: ../classes/class-wpfront-scroll-top-options.php:66
+msgid "Custom CSS"
+msgstr "Свои CSS стили"
+
+#: ../classes/class-wpfront-scroll-top-options.php:68
+msgid "Display on Pages"
+msgstr "Выводить на страницах"
+
+#: ../classes/class-wpfront-scroll-top.php:63
+msgid "WPFront Scroll Top"
+msgstr "WPFront Scroll Top"
+
+#: ../classes/class-wpfront-scroll-top.php:63
+msgid "Scroll Top"
+msgstr "Scroll Top"
+
+#: ../classes/class-wpfront-scroll-top.php:226
+#: ../classes/class-wpfront-scroll-top.php:230
+msgid "[Page]"
+msgstr "[Страница]"
+
+#: ../classes/class-wpfront-scroll-top.php:226
+msgid "Home"
+msgstr "Главная"
+
+#: ../classes/class-wpfront-scroll-top.php:235
+msgid "[Post]"
+msgstr "[Запись]"
+
+#: ../templates/options-template.php:32
+msgid "WPFront Scroll Top Settings"
+msgstr "Настройки плагина WPFront Scroll Top:"
+
+#: ../templates/options-template.php:34
+msgid "Display"
+msgstr "Отображение"
+
+#: ../templates/options-template.php:50
+msgid "[Number of pixels to be scrolled before the button appears.]"
+msgstr ""
+"[число пикселей, на которое надо скроллировать страницу для появления кнопки]"
+
+#: ../templates/options-template.php:55
+msgid "Button Size"
+msgstr "Размер кнопки"
+
+#: ../templates/options-template.php:61
+msgid "[Set 0px to auto fit.]"
+msgstr "[установите 0px для автоматического определения размеров]"
+
+#: ../templates/options-template.php:79
+msgid "[Button fade duration in milliseconds.]"
+msgstr "[скорость исчезновения кнопки в миллисекундах после скролла]"
+
+#: ../templates/options-template.php:88
+msgid "[Window scroll duration in milliseconds.]"
+msgstr "[скорость скролла в миллисекундах при нажатии на кнопку]"
+
+#: ../templates/options-template.php:105
+msgid ""
+"[Button will be auto hidden after this duration in seconds, if enabled.]"
+msgstr ""
+"[время в секундах, после которого будет скрыта кнопка (если скрытие "
+"включено)]"
+
+#: ../templates/options-template.php:114
+msgid "[Button will be hidden on small devices when the width matches.]"
+msgstr "[кнопка будет скрыта на маленьких устройствах (проверяется ширина)]"
+
+#: ../templates/options-template.php:123
+msgid "[Button will be hidden on devices with lesser or equal width.]"
+msgstr "[кнопка будет скрыта на устройствах с указанной или меньшей шириной]"
+
+#: ../templates/options-template.php:132
+msgid "[Button will be hidden on broswer window when the width matches.]"
+msgstr "[кнопка будет скрыта при маленьком окне браузера (проверяется ширина)]"
+
+#: ../templates/options-template.php:141
+msgid "[Button will be hidden on browser window with lesser or equal width.]"
+msgstr ""
+"[кнопка будет скрыта, если окно браузера будет с указанной или меньшей "
+"шириной]"
+
+#: ../templates/options-template.php:150
+msgid "[Button will be hidden on 'wp-admin'.]"
+msgstr ""
+"[кнопка будет скрываться на страницах админки (страницы внутри 'wp-admin')]"
+
+#: ../templates/options-template.php:159
+msgid "[Button will be hidden on iframes, usually inside popups.]"
+msgstr "[кнопка будет скрыта во фреймах (обычно фреймы это всплывающие окна)]"
+
+#: ../templates/options-template.php:168 ../templates/options-template.php:317
+msgid "Image"
+msgstr "Картинка"
+
+#: ../templates/options-template.php:184
+msgid "Text Button"
+msgstr "Текстовая кнопка"
+
+#: ../templates/options-template.php:234
+msgid "Bottom Right"
+msgstr "Снизу справа"
+
+#: ../templates/options-template.php:235
+msgid "Bottom Left"
+msgstr "Снизу слева"
+
+#: ../templates/options-template.php:236
+msgid "Top Right"
+msgstr "Вверху справа"
+
+#: ../templates/options-template.php:237
+msgid "Top Left"
+msgstr "Вверху слева"
+
+#: ../templates/options-template.php:247 ../templates/options-template.php:256
+msgid "[Negative value allowed.]"
+msgstr "[Можно использовать отрицательные значения]"
+
+#: ../templates/options-template.php:261
+msgid "Filter"
+msgstr "Фильтр"
+
+#: ../templates/options-template.php:270
+msgid "All pages."
+msgstr "Все страницы."
+
+#: ../templates/options-template.php:275
+msgid "Include in following pages"
+msgstr "Включить на следующих страницах"
+
+#: ../templates/options-template.php:295
+msgid "Exclude in following pages"
+msgstr "Исключить на следующих страницах"
+
+#: ../templates/options-template.php:333
+msgid "Custom URL"
+msgstr "URL своей картинки"
+
+#~ msgid "Contact Me (syam@wpfront.com)"
+#~ msgstr "Contact Me (syam@wpfront.com)"
+
+#~ msgid "Bar Height"
+#~ msgstr "Bar Height"
+
+#~ msgid "Message Text"
+#~ msgstr "Message Text"
+
+#~ msgid "Display After"
+#~ msgstr "Display After"
+
+#~ msgid "Display Close Button"
+#~ msgstr "Display Close Button"
+
+#~ msgid "Display Button"
+#~ msgstr "Display Button"
+
+#~ msgid "Open URL:"
+#~ msgstr "Open URL:"
+
+#~ msgid "Open URL in new tab/window"
+#~ msgstr "Open URL in new tab/window"
+
+#~ msgid "Execute JavaScript"
+#~ msgstr "Execute JavaScript"
+
+#~ msgid "Close Bar on Button Click"
+#~ msgstr "Close Bar on Button Click"
+
+#~ msgid "Display Shadow"
+#~ msgstr "Display Shadow"
+
+#~ msgid "Fixed at Position"
+#~ msgstr "Fixed at Position"
+
+#~ msgid "Message Text Color"
+#~ msgstr "Message Text Color"
+
+#~ msgid "From Color"
+#~ msgstr "From Color"
+
+#~ msgid "Button Text Color"
+#~ msgstr "Button Text Color"
+
+#~ msgid "Display Reopen Button"
+#~ msgstr "Display Reopen Button"
+
+#~ msgid "Reopen Button Color"
+#~ msgstr "Reopen Button Color"
+
+#~ msgid "Keep Closed"
+#~ msgstr "Keep Closed"
+
+#~ msgid "Position Offset"
+#~ msgstr "Position Offset"
+
+#~ msgid "WPFront Notification Bar"
+#~ msgstr "WPFront Notification Bar"
+
+#~ msgid "Notification Bar"
+#~ msgstr "Notification Bar"
+
+#~ msgid "Top"
+#~ msgstr "Top"
+
+#~ msgid "[Sticky Bar, bar will stay at position regardless of scrolling.]"
+#~ msgstr "[Sticky Bar, bar will stay at position regardless of scrolling.]"
+
+#~ msgid "px"
+#~ msgstr "px"
+
+#~ msgid ""
+#~ "(Top bar only) If you find the bar overlapping, try increasing this "
+#~ "value. (eg. WordPress 3.8 Twenty Fourteen theme, set 48px)"
+#~ msgstr ""
+#~ "(Top bar only) If you find the bar overlapping, try increasing this "
+#~ "value. (eg. WordPress 3.8 Twenty Fourteen theme, set 48px)"
+
+#~ msgid "second(s)"
+#~ msgstr "second(s)"
+
+#~ msgid "Set 0 second(s) to display immediately."
+#~ msgstr "Set 0 second(s) to display immediately."
+
+#~ msgid "Set 0 second(s) for no animation."
+#~ msgstr "Set 0 second(s) for no animation."
+
+#~ msgid "[Displays a close button at the top right corner of the bar.]"
+#~ msgstr "[Displays a close button at the top right corner of the bar.]"
+
+#~ msgid "Set 0 second(s) to disable auto close."
+#~ msgstr "Set 0 second(s) to disable auto close."
+
+#~ msgid "A reopen button will be displayed after the bar is closed."
+#~ msgstr "A reopen button will be displayed after the bar is closed."
+
+#~ msgid "Once closed, bar will display closed on other pages."
+#~ msgstr "Once closed, bar will display closed on other pages."
+
+#~ msgid "Content"
+#~ msgstr "Content"
+
+#~ msgid "[HTML tags are allowed. e.g. Add <br /> for break.]"
+#~ msgstr "[HTML tags are allowed. e.g. Add <br /> for break.]"
+
+#~ msgid "[Displays a button next to the message.]"
+#~ msgstr "[Displays a button next to the message.]"
+
+#~ msgid "Only in landing page."
+#~ msgstr "Only in landing page."
+
+#~ msgid "[The first page they visit on your website.]"
+#~ msgstr "[The first page they visit on your website.]"
+
+#~ msgid "Color"
+#~ msgstr "Color"
+
+#~ msgid "[Select two different colors to create a gradient.]"
+#~ msgstr "[Select two different colors to create a gradient.]"
+
+#~ msgid "Button Color"
+#~ msgstr "Button Color"
+
+#~ msgid "Animate Display"
+#~ msgstr "Animate Display"
+
+#~ msgid "Animate Display Delay"
+#~ msgstr "Animate Display Delay"

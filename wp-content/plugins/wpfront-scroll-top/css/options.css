@@ -1,0 +1,76 @@
+#icon-wpfront-scroll-top {
+    background: url("../images/settings32x32.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+}
+
+#wpfront-scroll-top-options input.pixels {
+    width: 40px;
+}
+
+#wpfront-scroll-top-options input.seconds {
+    width: 40px;
+}
+
+#wpfront-scroll-top-options div.icons-container {
+    display: inline-block;
+    width: 80%;
+}
+
+#wpfront-scroll-top-options div.icons-container div {
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    min-width: 100px;
+    min-height: 70px;
+}
+
+#wpfront-scroll-top-options div.icons-container div.selected {
+    background-color: silver;
+}
+
+#wpfront-scroll-top-options div.icons-container div:hover {
+    background-color: silver;
+}
+
+#wpfront-scroll-top-options div.icons-container div input {
+    vertical-align: top;
+}
+
+#wpfront-scroll-top-options div input.customImage {
+    width: 50%;
+}
+
+#wpfront-scroll-top-options table.form-table .color-selector-div
+{
+    display: inline-block;
+    width: 100px;
+}
+
+#wpfront-scroll-top-options table.form-table .color-selector 
+{
+    vertical-align: middle;
+}
+
+#wpfront-scroll-top-options table.form-table div.pages-selection
+{
+    width: 70%;
+    height: 150px;
+    background-color: #fff;
+    overflow: auto;
+    
+    border: 1px solid #dfdfdf;
+    -moz-border-radius: 4px;
+    -khtml-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+}
+
+#wpfront-scroll-top-options table.form-table div.page-div
+{
+    float: left;
+    width: 250px;
+    padding: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+

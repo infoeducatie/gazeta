@@ -1,0 +1,503 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WPFront Notification Bar\n"
+"POT-Creation-Date: 2014-08-11 09:33-0700\n"
+"PO-Revision-Date: 2014-08-11 09:33-0700\n"
+"Last-Translator: \n"
+"Language-Team: WPFront <contact@wpfront.com>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.4\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../classes/base/class-wpfront-base-menu.php:52
+msgid "Name"
+msgstr "Name"
+
+#: ../classes/base/class-wpfront-base-menu.php:53
+msgid "Version"
+msgstr "Version"
+
+#: ../classes/base/class-wpfront-base-menu.php:54
+msgid "Rating"
+msgstr "Rating"
+
+#: ../classes/base/class-wpfront-base-menu.php:55
+msgid "Description"
+msgstr "Description"
+
+#: ../classes/base/class-wpfront-base-menu.php:69
+#, php-format
+msgid "based on %s rating(s)"
+msgstr "based on %s rating(s)"
+
+#: ../classes/base/class-wpfront-base-menu.php:105
+msgid "Unable to communicate with WordPress.org"
+msgstr "Unable to communicate with WordPress.org"
+
+#: ../classes/base/class-wpfront-base-menu.php:123
+#: ../classes/base/class-wpfront-base-menu.php:217
+msgid "WPFront Plugins"
+msgstr "WPFront Plugins"
+
+#: ../classes/base/class-wpfront-base-menu.php:147
+#, php-format
+msgid "By %s"
+msgstr "By %s"
+
+#: ../classes/base/class-wpfront-base-menu.php:154
+#, php-format
+msgid "More information about %s"
+msgstr "More information about %s"
+
+#: ../classes/base/class-wpfront-base-menu.php:154
+msgid "Details"
+msgstr "Details"
+
+#: ../classes/base/class-wpfront-base-menu.php:163
+#, php-format
+msgid "Install %s"
+msgstr "Install %s"
+
+#: ../classes/base/class-wpfront-base-menu.php:163
+msgid "Install Now"
+msgstr "Install Now"
+
+#: ../classes/base/class-wpfront-base-menu.php:168
+#, php-format
+msgid "Update to version %s"
+msgstr "Update to version %s"
+
+#: ../classes/base/class-wpfront-base-menu.php:168
+msgid "Update Now"
+msgstr "Update Now"
+
+#: ../classes/base/class-wpfront-base-menu.php:173
+msgid "This plugin is already installed and is up to date"
+msgstr "This plugin is already installed and is up to date"
+
+#: ../classes/base/class-wpfront-base-menu.php:173
+msgid "Installed"
+msgstr "Installed"
+
+#: ../classes/base/class-wpfront-base-menu.php:175
+#: ../classes/base/class-wpfront-base.php:105
+msgid "Settings"
+msgstr "Settings"
+
+#: ../classes/base/class-wpfront-base-menu.php:177
+msgid "Activate"
+msgstr "Activate"
+
+#: ../classes/base/class-wpfront-base-menu.php:199
+msgid "Feedback"
+msgstr "Feedback"
+
+#: ../classes/base/class-wpfront-base-menu.php:216
+msgid "WPFront"
+msgstr "WPFront"
+
+#: ../classes/base/class-wpfront-base-menu.php:217
+msgid "All Plugins"
+msgstr "All Plugins"
+
+#: ../classes/base/class-wpfront-base.php:130
+msgid "You do not have sufficient permissions to access this page."
+msgstr "You do not have sufficient permissions to access this page."
+
+#: ../classes/base/class-wpfront-base.php:150
+msgid ""
+"If you have a caching plugin, clear the cache for the new settings to take "
+"effect."
+msgstr ""
+"If you have a caching plugin, clear the cache for the new settings to take "
+"effect."
+
+#: ../classes/base/class-wpfront-base.php:168
+msgid "Settings Description"
+msgstr "Settings Description"
+
+#: ../classes/base/class-wpfront-base.php:170
+msgid "Plugin FAQ"
+msgstr "Plugin FAQ"
+
+#: ../classes/base/class-wpfront-base.php:172
+msgid "Feature Request"
+msgstr "Feature Request"
+
+#: ../classes/base/class-wpfront-base.php:174
+msgid "Report Bug"
+msgstr "Report Bug"
+
+#: ../classes/base/class-wpfront-base.php:176
+msgid "Write Review"
+msgstr "Write Review"
+
+#: ../classes/base/class-wpfront-base.php:178
+msgid "Contact Me"
+msgstr "Contact Me"
+
+#: ../classes/base/class-wpfront-base.php:180
+msgid "Buy me a Beer or Coffee"
+msgstr "Buy me a Beer or Coffee"
+
+#: ../classes/base/class-wpfront-base.php:197
+msgid "Save Changes"
+msgstr "Save Changes"
+
+#: ../classes/class-wpfront-scroll-top-options.php:41
+msgid "Enabled"
+msgstr "Enabled"
+
+#: ../classes/class-wpfront-scroll-top-options.php:42
+msgid "Scroll Offset"
+msgstr "Scroll Offset"
+
+#: ../classes/class-wpfront-scroll-top-options.php:45
+msgid "Button Opacity"
+msgstr "Button Opacity"
+
+#: ../classes/class-wpfront-scroll-top-options.php:46
+msgid "Button Fade Duration"
+msgstr "Button Fade Duration"
+
+#: ../classes/class-wpfront-scroll-top-options.php:47
+msgid "Scroll Duration"
+msgstr "Scroll Duration"
+
+#: ../classes/class-wpfront-scroll-top-options.php:48
+msgid "Auto Hide"
+msgstr "Auto Hide"
+
+#: ../classes/class-wpfront-scroll-top-options.php:49
+msgid "Auto Hide After"
+msgstr "Auto Hide After"
+
+#: ../classes/class-wpfront-scroll-top-options.php:50
+msgid "Hide on Small Devices"
+msgstr "Hide on Small Devices"
+
+#: ../classes/class-wpfront-scroll-top-options.php:51
+msgid "Small Device Max Width"
+msgstr "Small Device Max Width"
+
+#: ../classes/class-wpfront-scroll-top-options.php:52
+msgid "Hide on Small Window"
+msgstr "Hide on Small Window"
+
+#: ../classes/class-wpfront-scroll-top-options.php:53
+msgid "Small Window Max Width"
+msgstr "Small Window Max Width"
+
+#: ../classes/class-wpfront-scroll-top-options.php:54
+msgid "Button Style"
+msgstr "Button Style"
+
+#: ../classes/class-wpfront-scroll-top-options.php:55
+msgid "Image ALT"
+msgstr "Image ALT"
+
+#: ../classes/class-wpfront-scroll-top-options.php:56
+msgid "Hide on WP-ADMIN"
+msgstr "Hide on WP-ADMIN"
+
+#: ../classes/class-wpfront-scroll-top-options.php:57
+msgid "Hide on iframes"
+msgstr "Hide on iframes"
+
+#: ../classes/class-wpfront-scroll-top-options.php:59
+#: ../templates/options-template.php:226
+msgid "Location"
+msgstr "Location"
+
+#: ../classes/class-wpfront-scroll-top-options.php:60
+msgid "Margin X"
+msgstr "Margin X"
+
+#: ../classes/class-wpfront-scroll-top-options.php:61
+msgid "Margin Y"
+msgstr "Margin Y"
+
+#: ../classes/class-wpfront-scroll-top-options.php:63
+#: ../templates/options-template.php:170
+msgid "Text"
+msgstr "Text"
+
+#: ../classes/class-wpfront-scroll-top-options.php:64
+msgid "Text Color"
+msgstr "Text Color"
+
+#: ../classes/class-wpfront-scroll-top-options.php:65
+msgid "Background Color"
+msgstr "Background Color"
+
+#: ../classes/class-wpfront-scroll-top-options.php:66
+msgid "Custom CSS"
+msgstr "Custom CSS"
+
+#: ../classes/class-wpfront-scroll-top-options.php:68
+msgid "Display on Pages"
+msgstr "Display on Pages"
+
+#: ../classes/class-wpfront-scroll-top.php:63
+msgid "WPFront Scroll Top"
+msgstr "WPFront Scroll Top"
+
+#: ../classes/class-wpfront-scroll-top.php:63
+msgid "Scroll Top"
+msgstr "Scroll Top"
+
+#: ../classes/class-wpfront-scroll-top.php:226
+#: ../classes/class-wpfront-scroll-top.php:230
+msgid "[Page]"
+msgstr "[Page]"
+
+#: ../classes/class-wpfront-scroll-top.php:226
+msgid "Home"
+msgstr "Home"
+
+#: ../classes/class-wpfront-scroll-top.php:235
+msgid "[Post]"
+msgstr "[Post]"
+
+#: ../templates/options-template.php:32
+msgid "WPFront Scroll Top Settings"
+msgstr "WPFront Scroll Top Settings"
+
+#: ../templates/options-template.php:34
+msgid "Display"
+msgstr "Display"
+
+#: ../templates/options-template.php:50
+msgid "[Number of pixels to be scrolled before the button appears.]"
+msgstr "[Number of pixels to be scrolled before the button appears.]"
+
+#: ../templates/options-template.php:55
+msgid "Button Size"
+msgstr "Button Size"
+
+#: ../templates/options-template.php:61
+msgid "[Set 0px to auto fit.]"
+msgstr "[Set 0px to auto fit.]"
+
+#: ../templates/options-template.php:79
+msgid "[Button fade duration in milliseconds.]"
+msgstr "[Button fade duration in milliseconds.]"
+
+#: ../templates/options-template.php:88
+msgid "[Window scroll duration in milliseconds.]"
+msgstr "[Window scroll duration in milliseconds.]"
+
+#: ../templates/options-template.php:105
+msgid ""
+"[Button will be auto hidden after this duration in seconds, if enabled.]"
+msgstr ""
+"[Button will be auto hidden after this duration in seconds, if enabled.]"
+
+#: ../templates/options-template.php:114
+msgid "[Button will be hidden on small devices when the width matches.]"
+msgstr "[Button will be hidden on small devices when the width matches.]"
+
+#: ../templates/options-template.php:123
+msgid "[Button will be hidden on devices with lesser or equal width.]"
+msgstr "[Button will be hidden on devices with lesser or equal width.]"
+
+#: ../templates/options-template.php:132
+msgid "[Button will be hidden on broswer window when the width matches.]"
+msgstr "[Button will be hidden on broswer window when the width matches.]"
+
+#: ../templates/options-template.php:141
+msgid "[Button will be hidden on browser window with lesser or equal width.]"
+msgstr "[Button will be hidden on browser window with lesser or equal width.]"
+
+#: ../templates/options-template.php:150
+msgid "[Button will be hidden on 'wp-admin'.]"
+msgstr "[Button will be hidden on 'wp-admin'.]"
+
+#: ../templates/options-template.php:159
+msgid "[Button will be hidden on iframes, usually inside popups.]"
+msgstr "[Button will be hidden on iframes, usually inside popups.]"
+
+#: ../templates/options-template.php:168 ../templates/options-template.php:317
+msgid "Image"
+msgstr "Image"
+
+#: ../templates/options-template.php:184
+msgid "Text Button"
+msgstr "Text Button"
+
+#: ../templates/options-template.php:234
+msgid "Bottom Right"
+msgstr "Bottom Right"
+
+#: ../templates/options-template.php:235
+msgid "Bottom Left"
+msgstr "Bottom Left"
+
+#: ../templates/options-template.php:236
+msgid "Top Right"
+msgstr "Top Right"
+
+#: ../templates/options-template.php:237
+msgid "Top Left"
+msgstr "Top Left"
+
+#: ../templates/options-template.php:247 ../templates/options-template.php:256
+msgid "[Negative value allowed.]"
+msgstr "[Negative value allowed.]"
+
+#: ../templates/options-template.php:261
+msgid "Filter"
+msgstr "Filter"
+
+#: ../templates/options-template.php:270
+msgid "All pages."
+msgstr "All pages."
+
+#: ../templates/options-template.php:275
+msgid "Include in following pages"
+msgstr "Include in following pages"
+
+#: ../templates/options-template.php:295
+msgid "Exclude in following pages"
+msgstr "Exclude in following pages"
+
+#: ../templates/options-template.php:333
+msgid "Custom URL"
+msgstr "Custom URL"
+
+#~ msgid "Contact Me (syam@wpfront.com)"
+#~ msgstr "Contact Me (syam@wpfront.com)"
+
+#~ msgid "Bar Height"
+#~ msgstr "Bar Height"
+
+#~ msgid "Message Text"
+#~ msgstr "Message Text"
+
+#~ msgid "Display After"
+#~ msgstr "Display After"
+
+#~ msgid "Display Close Button"
+#~ msgstr "Display Close Button"
+
+#~ msgid "Display Button"
+#~ msgstr "Display Button"
+
+#~ msgid "Open URL:"
+#~ msgstr "Open URL:"
+
+#~ msgid "Open URL in new tab/window"
+#~ msgstr "Open URL in new tab/window"
+
+#~ msgid "Execute JavaScript"
+#~ msgstr "Execute JavaScript"
+
+#~ msgid "Close Bar on Button Click"
+#~ msgstr "Close Bar on Button Click"
+
+#~ msgid "Display Shadow"
+#~ msgstr "Display Shadow"
+
+#~ msgid "Fixed at Position"
+#~ msgstr "Fixed at Position"
+
+#~ msgid "Message Text Color"
+#~ msgstr "Message Text Color"
+
+#~ msgid "From Color"
+#~ msgstr "From Color"
+
+#~ msgid "Button Text Color"
+#~ msgstr "Button Text Color"
+
+#~ msgid "Display Reopen Button"
+#~ msgstr "Display Reopen Button"
+
+#~ msgid "Reopen Button Color"
+#~ msgstr "Reopen Button Color"
+
+#~ msgid "Keep Closed"
+#~ msgstr "Keep Closed"
+
+#~ msgid "Position Offset"
+#~ msgstr "Position Offset"
+
+#~ msgid "WPFront Notification Bar"
+#~ msgstr "WPFront Notification Bar"
+
+#~ msgid "Notification Bar"
+#~ msgstr "Notification Bar"
+
+#~ msgid "Top"
+#~ msgstr "Top"
+
+#~ msgid "[Sticky Bar, bar will stay at position regardless of scrolling.]"
+#~ msgstr "[Sticky Bar, bar will stay at position regardless of scrolling.]"
+
+#~ msgid "px"
+#~ msgstr "px"
+
+#~ msgid ""
+#~ "(Top bar only) If you find the bar overlapping, try increasing this "
+#~ "value. (eg. WordPress 3.8 Twenty Fourteen theme, set 48px)"
+#~ msgstr ""
+#~ "(Top bar only) If you find the bar overlapping, try increasing this "
+#~ "value. (eg. WordPress 3.8 Twenty Fourteen theme, set 48px)"
+
+#~ msgid "second(s)"
+#~ msgstr "second(s)"
+
+#~ msgid "Set 0 second(s) to display immediately."
+#~ msgstr "Set 0 second(s) to display immediately."
+
+#~ msgid "Set 0 second(s) for no animation."
+#~ msgstr "Set 0 second(s) for no animation."
+
+#~ msgid "[Displays a close button at the top right corner of the bar.]"
+#~ msgstr "[Displays a close button at the top right corner of the bar.]"
+
+#~ msgid "Set 0 second(s) to disable auto close."
+#~ msgstr "Set 0 second(s) to disable auto close."
+
+#~ msgid "A reopen button will be displayed after the bar is closed."
+#~ msgstr "A reopen button will be displayed after the bar is closed."
+
+#~ msgid "Once closed, bar will display closed on other pages."
+#~ msgstr "Once closed, bar will display closed on other pages."
+
+#~ msgid "Content"
+#~ msgstr "Content"
+
+#~ msgid "[HTML tags are allowed. e.g. Add <br /> for break.]"
+#~ msgstr "[HTML tags are allowed. e.g. Add <br /> for break.]"
+
+#~ msgid "[Displays a button next to the message.]"
+#~ msgstr "[Displays a button next to the message.]"
+
+#~ msgid "Only in landing page."
+#~ msgstr "Only in landing page."
+
+#~ msgid "[The first page they visit on your website.]"
+#~ msgstr "[The first page they visit on your website.]"
+
+#~ msgid "Color"
+#~ msgstr "Color"
+
+#~ msgid "[Select two different colors to create a gradient.]"
+#~ msgstr "[Select two different colors to create a gradient.]"
+
+#~ msgid "Button Color"
+#~ msgstr "Button Color"
+
+#~ msgid "Animate Display"
+#~ msgstr "Animate Display"
+
+#~ msgid "Animate Display Delay"
+#~ msgstr "Animate Display Delay"
