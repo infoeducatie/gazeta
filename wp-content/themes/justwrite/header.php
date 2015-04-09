@@ -24,11 +24,9 @@
 <link rel="icon" type="image/png" href="http://cdn.gazeta.info.ro/wp-content/uploads/2015/04/android-chrome-192x192.png" sizes="192x192">
 <link rel="icon" type="image/png" href="http://cdn.gazeta.info.ro/wp-content/uploads/2015/04/favicon-96x96.png" sizes="96x96">
 <link rel="icon" type="image/png" href="http://cdn.gazeta.info.ro/wp-content/uploads/2015/04/favicon-16x16.png" sizes="16x16">
-<link rel="manifest" href="http://cdn.gazeta.info.ro/wp-content/uploads/2015/04/manifest.json">
 <link rel="shortcut icon" href="http://cdn.gazeta.info.ro/wp-content/uploads/2015/04/favicon.ico">
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="msapplication-TileImage" content="http://cdn.gazeta.info.ro/wp-content/uploads/2015/04/mstile-144x144.png">
-<meta name="msapplication-config" content="http://cdn.gazeta.info.ro/wp-content/uploads/2015/04/browserconfig.xml">
 <meta name="theme-color" content="#ffffff">
 </head>
 
