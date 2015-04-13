@@ -22,6 +22,7 @@ $logo_text			= get_theme_mod( 'ac_footer_logo_text', 'JustWrite' );
                 <?php 
 				if ( !$disable_credit ) : ?>
                 <span class="theme-author">
+                    <?php footer_text(); ?>
                     <a href="<?php echo $the_wp_link; ?>">Proudly powered by WordPress</a> &mdash;
                     <em>Theme: JustWrite by</em>
                     <a href="<?php echo $credit_link; ?>" title="Acosmin">Acosmin</a>
@@ -30,7 +31,6 @@ $logo_text			= get_theme_mod( 'ac_footer_logo_text', 'JustWrite' );
         	</aside><!-- END .footer-credits -->
 			<a href="#" class="back-to-top"><?php ac_icon( 'angle-up' ); ?></a>
 		</footer><!-- END .footer-wrap -->
-                <?php footer_text(); ?>
     
     </div><!-- END .wrap -->
     
