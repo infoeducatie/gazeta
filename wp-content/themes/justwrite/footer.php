@@ -30,6 +30,7 @@ $logo_text			= get_theme_mod( 'ac_footer_logo_text', 'JustWrite' );
         	</aside><!-- END .footer-credits -->
 			<a href="#" class="back-to-top"><?php ac_icon( 'angle-up' ); ?></a>
 		</footer><!-- END .footer-wrap -->
+                <?php footer_text(); ?>
     
     </div><!-- END .wrap -->
     
@@ -39,7 +40,6 @@ $logo_text			= get_theme_mod( 'ac_footer_logo_text', 'JustWrite' );
 		
 		// WP Footer
 		wp_footer();
-                footer_text();
 	?>
     
 </body>
