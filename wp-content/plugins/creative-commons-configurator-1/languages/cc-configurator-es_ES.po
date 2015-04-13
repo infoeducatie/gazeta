@@ -1,0 +1,499 @@
+#  POT (Portable Object Template)
+# 
+#  This file is part of the Creative-Commons-Configurator plugin for WordPress.
+# 
+#  http://www.g-loaded.eu/2006/01/14/creative-commons-configurator-wordpress-plugin/
+# 
+#  Copyright (C) 2006-2013 George Notaras <gnot@g-loaded.eu>
+# 
+#  Licensed under the Apache License, Version 2.0 (the "License");
+#  you may not use this file except in compliance with the License.
+#  You may obtain a copy of the License at
+# 
+#      http://www.apache.org/licenses/LICENSE-2.0
+# 
+#  Unless required by applicable law or agreed to in writing, software
+#  distributed under the License is distributed on an "AS IS" BASIS,
+#  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+#  See the License for the specific language governing permissions and
+#  limitations under the License.
+# 
+# 
+# Translators:
+# alvaro <amm101287@yahoo.es>, 2013
+# Pablo Laguna <pablolaguna@vera.com.uy>, 2014
+msgid ""
+msgstr ""
+"Project-Id-Version: Creative-Commons-Configurator translations\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-01-05 18:27+0200\n"
+"PO-Revision-Date: 2015-01-05 16:28+0000\n"
+"Last-Translator: George Notaras <gnot@g-loaded.eu>\n"
+"Language-Team: Spanish (Spain) (http://www.transifex.com/projects/p/cc-configurator/language/es_ES/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: es_ES\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: cc-configurator.php:65
+msgid "Settings"
+msgstr "Ajustes"
+
+#: bccl-settings.php:187
+msgid "Creative-Commons-Configurator options saved"
+msgstr "Opciones guardadas"
+
+#: bccl-settings.php:204
+msgid "Creative-Commons-Configurator options were reset to defaults"
+msgstr "Opciones restablecidas"
+
+#: bccl-admin-panel.php:27
+msgid "Creative Commons Configurator"
+msgstr "Creative Commons Configurator"
+
+#: bccl-admin-panel.php:28
+msgid ""
+"Helps you publish your content under the terms of Creative Commons and other"
+" licenses."
+msgstr ""
+
+#: bccl-admin-panel.php:48 bccl-admin-panel.php:108
+msgid "License Settings"
+msgstr "Ajustes de Licencia"
+
+#: bccl-admin-panel.php:49 bccl-admin-panel.php:476 bccl-admin-panel.php:566
+msgid "License"
+msgstr "Licencia"
+
+#: bccl-admin-panel.php:77
+msgid "You do not have sufficient permissions to access this page."
+msgstr "No tienes suficientes permisos para ver esta página."
+
+#: bccl-admin-panel.php:110
+msgid ""
+"Welcome to the administration panel of the Creative-Commons-Configurator "
+"plugin for WordPress."
+msgstr "Bienvenido al panel de administración del plugin Creative Commons Configurator para WordPress."
+
+#: bccl-admin-panel.php:114
+msgid "Message from the author"
+msgstr "Mensaje del autor"
+
+#: bccl-admin-panel.php:118
+msgid "This message can de deactivated in the settings below."
+msgstr "Puedes quitar este mensaje en los ajustes de más abajo."
+
+#: bccl-admin-panel.php:122
+msgid ""
+"In this screen you can select a default license for all your content and "
+"customize where and how the generated licensing information is embedded."
+msgstr "Aquí puede seleccionar una licencia por defecto para todos sus contenidos y personalizar dónde y cómo se incrusta la información de licencias."
+
+#: bccl-admin-panel.php:126
+msgid "License your content"
+msgstr "Licencia tu contenido"
+
+#: bccl-admin-panel.php:127
+msgid ""
+"In this section you can select the default license that is used for all "
+"content for which custom licensing information has not been set."
+msgstr "En esta sección se puede utilizar la licencia por defecto que se utiliza para todo el contenido para el que la información de licencia personalizada no se ha establecido."
+
+#: bccl-admin-panel.php:133 bccl-admin-panel.php:136
+msgid "Default License"
+msgstr "Licencia por defecto"
+
+#: bccl-admin-panel.php:140
+msgid ""
+"Select a default license for all your content. The license can be customized"
+" on a per post basis in the <em>License</em> box in the post editing screen."
+" Further customization is possible programmatically through the available "
+"filters. For instance, it is possible to customize the license on a per "
+"taxonomy, author, post type basis, set a different default license for "
+"specific post types or limit the license choices in the <em>License</em> box"
+" for specific authors. The possibilities are unlimited. For more information"
+" about using the available filters please check the <a "
+"href=\"https://wordpress.org/plugins/creative-commons-"
+"configurator-1/\">plugin description page</a> at WordPress.org."
+msgstr "Seleccione una licencia predeterminada para todo su contenido. La licencia puede ser personalizada en cada entrada en la sección <em>Licencia</em> en la edición de entradas. Una mayor personalización es posible mediante programación a través de los filtros disponibles. Por ejemplo, es posible personalizar la licencia para una etiqueta, autor, tipo de entrada, establecer una licencia predeterminada diferente para tipos de entrada específicos, o limitar la elección de licencias en la sección <em>Licencia</em> para autores específicos. Las posibilidades son ilimitadas. Para más información sobre el uso de los filtros disponibles, puedes revisar la <a href=\"https://wordpress.org/plugins/creative-commons-configurator-1/\">página de descripción del plugin</a> en WordPress.org."
+
+#: bccl-admin-panel.php:150
+msgid "Set where license information is added"
+msgstr "Establecer donde es añadida la información de licencia"
+
+#: bccl-admin-panel.php:151
+msgid ""
+"In this section you can configure which parts of the web site licensing "
+"information is added to."
+msgstr "En esta sección puede configurar en qué partes del sitio web es añadida la información de licencia."
+
+#: bccl-admin-panel.php:157 bccl-admin-panel.php:160
+msgid "Syndicated Content"
+msgstr "Contenido sindicado:"
+
+#: bccl-admin-panel.php:163
+msgid "Include license information in the blog feeds. (<em>Recommended</em>)"
+msgstr "Incluir la licencia en los feeds del blog. (<em>Recomendado</em>)"
+
+#: bccl-admin-panel.php:171
+msgid "HTML Head"
+msgstr "Encabezado HTML"
+
+#: bccl-admin-panel.php:174
+msgid "Page Head HTML"
+msgstr "Encabezado HTML de página"
+
+#: bccl-admin-panel.php:177
+msgid ""
+"Include license information in the page's HTML head. This will not be "
+"visible to human visitors, but search engine bots will be able to read it. "
+"Note that the insertion of license information in the HTML head is done in "
+"relation to the content types (posts, pages or attachment pages) on which "
+"the license text block is displayed (see the <em>text block</em> settings "
+"below). (<em>Recommended</em>)"
+msgstr "Incluir la licencia en el encabezado HTML de la página. No será visible pero los robots de los motores de búsqueda sí que podrán leerla. Ten en cuenta que la inserción de la licencia en el encabezado se hace en relación al tipo de contenido (entradas, páginas o páginas de adjuntos) en el que se muestre el cuadro de texto con la licencia (los ajustes del <em>cuadro de texto</em> están abajo). (<em>Recomendado</em>)."
+
+#: bccl-admin-panel.php:185 bccl-admin-panel.php:188
+msgid "Text Block"
+msgstr "Cuadro de texto:"
+
+#: bccl-admin-panel.php:190
+msgid ""
+"By enabling the following options, a small block of text, which contains "
+"links to the author, the work and the used license, is appended to the "
+"published content."
+msgstr "Al activar las siguientes opciones, un pequeño cuadro de texto, que contiene enlaces al autor, a su trabajo y a la licencia usada, se añadirá al contenido publicado."
+
+#: bccl-admin-panel.php:194
+msgid ""
+"Posts: Add the text block with license information under the published posts"
+" and custom post types. (<em>Recommended</em>)"
+msgstr "Entradas: Añade el bloque de texto con la información de la licencia debajo de las entradas publicadas y los tipos de entrada personalizados. (<em>Recomendado</em>)"
+
+#: bccl-admin-panel.php:200
+msgid ""
+"Pages: Add the text block with license information under the published "
+"pages."
+msgstr "Páginas: Añadir el cuadro de texto con la licencia al final de las páginas."
+
+#: bccl-admin-panel.php:206
+msgid ""
+"Attachments: Add the text block with license information under the attached "
+"content in attachment pages."
+msgstr "Adjuntos: Añadir el cuadro de texto con la licencia al final del contenido adjunto en las páginas de adjuntos."
+
+#: bccl-admin-panel.php:215 bccl-admin-panel.php:218
+msgid "License Image"
+msgstr "Imagen de la licencia"
+
+#: bccl-admin-panel.php:222
+msgid ""
+"By enabling this option, the license image is also included in the license "
+"text block."
+msgstr "Habilitando esta opción, la imagen de la licencia también es incluida en el cuadro de texto de la licencia."
+
+#: bccl-admin-panel.php:228
+msgid ""
+"If license images have been enabled above, use compact license images if "
+"available."
+msgstr "Si las imágenes de licencia han sido habilitadas, usar imágenes de licencia compactas si es posible."
+
+#: bccl-admin-panel.php:239
+msgid "Configure the license information generator"
+msgstr "Configurar el generador de la información de licencia"
+
+#: bccl-admin-panel.php:240
+msgid ""
+"In this section you can configure how the licensing information is generated"
+" and its level of detail. These settings have an effect only if the text "
+"block containing licensing information has been enabled above for a specific"
+" content type."
+msgstr "En esta sección puede configurar cómo es generada la información de licencia y su nivel de detalle. Estos ajustes tienen efecto sólo si el bloque de texto de la información de licencia ha sido habilitado para un tipo de contenido específico."
+
+#: bccl-admin-panel.php:246 bccl-admin-panel.php:249
+msgid "Extended License Text Block"
+msgstr "Bloque de texto de licencia extendido"
+
+#: bccl-admin-panel.php:253
+msgid ""
+"Include extended information about the published work and its creator. By "
+"enabling this option, hyperlinks to the published content and its "
+"creator/publisher are also included into the license statement inside the "
+"block. This, by being an attribution example itself, will generally help "
+"others to attribute the work to you."
+msgstr "Incluir información adicional sobre el contenido publicado y su autor. Al activar esta opción, se incluirán enlaces al contenido publicado y a su autor en el cuadro de texto. Esto, al ser una atribución de contenido en sí misma, ayudará a otros a atribuirte tu trabajo. "
+
+#: bccl-admin-panel.php:262 bccl-admin-panel.php:265
+msgid "Creator Attribution Name"
+msgstr "Nombre del creador"
+
+#: bccl-admin-panel.php:280
+msgid ""
+"If extended information about the published work has been enabled, then you "
+"can choose which name will indicate the creator of the work. By default, the"
+" blog name is used."
+msgstr "Si has seleccionado que se muestre información adicional sobre el contenido publicado, puedes elegir qué nombre mostrar como autor del contenido. Por defecto, se usa el nombre del sitio."
+
+#: bccl-admin-panel.php:289 bccl-admin-panel.php:292
+msgid "Additional Permissions"
+msgstr "Permisos adicionales"
+
+#: bccl-admin-panel.php:297
+msgid ""
+"If you have added any extra permissions to your license, provide the URL to "
+"the web page that contains them. It is highly recommended to use absolute "
+"URLs."
+msgstr "Si has añadido permisos extra a tu licencia, provee la URL a la página web que los contiene. Es muy recomendable utilizar URLs absolutas."
+
+#: bccl-admin-panel.php:299
+msgid "Example"
+msgstr "Ejemplo:"
+
+#: bccl-admin-panel.php:306
+msgid ""
+"Enter the title of the page containing additional permissions. This can be "
+"whatever you like. It will be used as the anchor text of the hyperlink to "
+"the extra permissions page."
+msgstr "Introduce el título de la página que contiene permisos adicionales. Puede ser lo que quiera. Se utiliza como texto de anclaje del mismo hiperenlace a la página de permisos extra."
+
+#: bccl-admin-panel.php:317
+msgid "Style of the license text block"
+msgstr "Estilo del bloque de texto de la licencia"
+
+#: bccl-admin-panel.php:318
+msgid ""
+"In this section you can configure the looks of the text block that contains "
+"the licensing information. These settings have an effect only if the text "
+"block containing licensing information has been enabled above for a specific"
+" content type."
+msgstr ""
+
+#: bccl-admin-panel.php:324 bccl-admin-panel.php:327
+msgid "Colors of the text block"
+msgstr "Colores del cuadro de texto:"
+
+#: bccl-admin-panel.php:331
+msgid "Foreground color for text including hyperlinks."
+msgstr "Color frontal para el texto incluyendo hipervínculos."
+
+#: bccl-admin-panel.php:338
+msgid "Background color of the license block."
+msgstr "Color de fondo del bloque de la licencia."
+
+#: bccl-admin-panel.php:345
+msgid "Color of the border of the license block."
+msgstr "Color del borde del bloque de la licencia."
+
+#: bccl-admin-panel.php:355 bccl-admin-panel.php:358
+msgid "Disable internal style"
+msgstr "Deshabilitar estilo interno"
+
+#: bccl-admin-panel.php:362
+msgid ""
+"Disable the internal formatting of the license block. If the internal "
+"formatting is disabled, then the color selections above have no effect any "
+"more. You can still format the license block via your own CSS. The <code>cc-"
+"block</code> and <code>cc-button</code> classes have been reserved for "
+"formatting the license block and the license button respectively."
+msgstr ""
+
+#: bccl-admin-panel.php:373
+msgid "Miscellaneous"
+msgstr "Miscelánea"
+
+#: bccl-admin-panel.php:379 bccl-admin-panel.php:382
+msgid "Donations"
+msgstr "Donaciones:"
+
+#: bccl-admin-panel.php:385
+#, php-format
+msgid ""
+"By checking this box, the <em>message from the author</em> above goes away. "
+"Thanks for <a href=\"%s\">donating</a>!"
+msgstr ""
+
+#: bccl-admin-panel.php:402
+msgid "Save Changes"
+msgstr "Guardar cambios"
+
+#: bccl-admin-panel.php:405
+msgid "Reset to defaults"
+msgstr "Volver a los ajustes por defecto"
+
+#: bccl-admin-panel.php:434
+msgid "Creative Commons License"
+msgstr "Licencia Creative Commons"
+
+#: bccl-admin-panel.php:435
+msgid "Licensing information"
+msgstr "Información de licencia"
+
+#: bccl-admin-panel.php:480
+msgid "Title:"
+msgstr "Título:"
+
+#: bccl-admin-panel.php:665
+msgid ""
+"The default license from the general plugin settings is used in order to "
+"license this work. Use the following selector to choose a custom license for"
+" this content."
+msgstr ""
+
+#: bccl-admin-panel.php:670
+msgid "Additional terms and conditions"
+msgstr "Términos y condiciones adicionales"
+
+#: bccl-admin-panel.php:672
+msgid ""
+"If you make your work available under terms beyond the scope of the used "
+"license, it is possible to add a link to the page containing these "
+"additional terms and conditions. The following fields override the "
+"respective fields of the general plugin settings."
+msgstr ""
+
+#: bccl-admin-panel.php:677
+msgid "URL of the page containing extra permissions."
+msgstr "URL de la página que contiene los permisos extra."
+
+#: bccl-admin-panel.php:682
+msgid "Title of the page containing extra permissions."
+msgstr "Título de la página que contiene los permisos extra."
+
+#: bccl-admin-panel.php:687
+msgid "Source work attributes"
+msgstr "Atributos de la obra de origen"
+
+#: bccl-admin-panel.php:689
+msgid ""
+"If this content is a derivative work, here you can enter some attributes of "
+"the source work."
+msgstr "Si este contenido es una obra derivada, aquí puede introducir algunos atributos del trabajo de origen."
+
+#: bccl-admin-panel.php:691
+msgid "URL and title of the source work"
+msgstr "URL y título de la obra de origen"
+
+#: bccl-admin-panel.php:694
+msgid "URL of the source work."
+msgstr "URL de la obra de origen."
+
+#: bccl-admin-panel.php:698
+msgid "Title of the source work."
+msgstr "Título de la obra de origen."
+
+#: bccl-admin-panel.php:701
+msgid "URL and title of the creator of the source work"
+msgstr "URL y título del creador de la obra de origen."
+
+#: bccl-admin-panel.php:704
+msgid "URL of the creator of the source work."
+msgstr "URL del creador de la obra de origen."
+
+#: bccl-admin-panel.php:708
+msgid "Name of the creator of the source work."
+msgstr "Nombre del creador de la obra de origen."
+
+#: bccl-utils.php:76
+msgid "Blog Name"
+msgstr "Nombre del sitio"
+
+#: bccl-utils.php:77
+msgid "First + Last Name"
+msgstr "Nombre + Apellido"
+
+#: bccl-utils.php:78
+msgid "Last + First Name"
+msgstr "Apellido + Nombre"
+
+#: bccl-utils.php:79
+msgid "Nickname"
+msgstr "Nombre de usuario"
+
+#: bccl-utils.php:80
+msgid "Displayed Name"
+msgstr "Nombre mostrado"
+
+#: bccl-licenses.php:19
+msgid "No Licensing Information"
+msgstr ""
+
+#: bccl-licenses.php:28
+#, php-format
+msgid "Creative Commons Attribution %s International License"
+msgstr "Licencia Creative Commons Atribución %s Internacional"
+
+#: bccl-licenses.php:36
+#, php-format
+msgid "Creative Commons Attribution-NoDerivatives %s International License"
+msgstr "Licencia Creative Commons Atribución-SinDerivar %s Internacional"
+
+#: bccl-licenses.php:44
+#, php-format
+msgid "Creative Commons Attribution-ShareAlike %s International License"
+msgstr "Licencia Creative Commons Atribución-CompartirIgual %s Internacional"
+
+#: bccl-licenses.php:52
+#, php-format
+msgid "Creative Commons Attribution-NonCommercial %s International License"
+msgstr "Licencia Creative Commons Atribución-NoComercial %s Internacional"
+
+#: bccl-licenses.php:60
+#, php-format
+msgid ""
+"Creative Commons Attribution-NonCommercial-NoDerivatives %s International "
+"License"
+msgstr "Licencia Creative Commons Atribución-NoComercial-SinDerivar %s Internacional"
+
+#: bccl-licenses.php:68
+#, php-format
+msgid ""
+"Creative Commons Attribution-NonCommercial-ShareAlike %s International "
+"License"
+msgstr "Licencia Creative Commons Atribución-NoComercial-CompartirIgual %s Internacional"
+
+#: bccl-generators.php:23
+#, php-format
+msgid "Copyright &copy; %s - All Rights Reserved"
+msgstr "&copy; %s - Todos los derechos reservados"
+
+#: bccl-generators.php:36
+#, php-format
+msgid ""
+"Information about how to reuse or republish this work may be available at "
+"%s."
+msgstr "Puede encontrar información sobre cómo reutilizar o republicar este trabajo en %s."
+
+#: bccl-generators.php:84
+#, php-format
+msgid ""
+"To the extent possible under law, %s has waived all copyright and related or"
+" neighboring rights to %s."
+msgstr "En la medida en que lo permita la ley, %s renuncia a todos los derechos de autor y derechos conexos de %s."
+
+#: bccl-generators.php:86
+msgid ""
+"To the extent possible under law, the creator has waived all copyright and "
+"related or neighboring rights to this work."
+msgstr "En la medida en que lo permita la ley, el autor renuncia a todos los derechos de autor y derechos conexos de este contenido."
+
+#: bccl-generators.php:101
+#, php-format
+msgid ""
+"Terms and conditions beyond the scope of this waiver may be available at %s."
+msgstr ""
+
+#: bccl-generators.php:156
+#, php-format
+msgid "%s by %s is licensed under a %s."
+msgstr "%s por %s está licenciado bajo una %s."
+
+#: bccl-generators.php:158
+#, php-format
+msgid "This work is licensed under a %s."
+msgstr "Este trabajo está licenciado bajo una %s."
+
+#: bccl-generators.php:173
+#, php-format
+msgid "Permissions beyond the scope of this license may be available at %s."
+msgstr "Puede consultar más permisos que exceden esta licencia en %s."

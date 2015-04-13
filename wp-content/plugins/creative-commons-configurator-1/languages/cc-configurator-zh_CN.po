@@ -1,0 +1,388 @@
+#  POT (Portable Object Template)
+# 
+#  This file is part of the Creative-Commons-Configurator plugin for WordPress.
+# 
+#  http://www.g-loaded.eu/2006/01/14/creative-commons-configurator-wordpress-plugin/
+# 
+#  Copyright (C) 2006-2013 George Notaras <gnot@g-loaded.eu>
+# 
+#  Licensed under the Apache License, Version 2.0 (the "License");
+#  you may not use this file except in compliance with the License.
+#  You may obtain a copy of the License at
+# 
+#      http://www.apache.org/licenses/LICENSE-2.0
+# 
+#  Unless required by applicable law or agreed to in writing, software
+#  distributed under the License is distributed on an "AS IS" BASIS,
+#  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+#  See the License for the specific language governing permissions and
+#  limitations under the License.
+# 
+# 
+# Translators:
+# 卢达 <i@luda.me>, 2013-2014
+msgid ""
+msgstr ""
+"Project-Id-Version: Creative-Commons-Configurator translations\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-11-07 20:39+0200\n"
+"PO-Revision-Date: 2014-11-26 08:41+0000\n"
+"Last-Translator: 卢达 <i@luda.me>\n"
+"Language-Team: Chinese (China) (http://www.transifex.com/projects/p/cc-configurator/language/zh_CN/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: cc-configurator.php:65
+msgid "Settings"
+msgstr "设置"
+
+#: cc-configurator.php:91
+msgid "Creative Commons"
+msgstr "知识共享"
+
+#: cc-configurator.php:91 bccl-admin-panel.php:42 bccl-admin-panel.php:493
+#: bccl-admin-panel.php:569
+msgid "License"
+msgstr "许可协议"
+
+#: cc-configurator.php:144 bccl-admin-panel.php:431
+msgid "Creative Commons License"
+msgstr "知识共享许可协议"
+
+#: cc-configurator.php:313
+msgid "by"
+msgstr "由"
+
+#: cc-configurator.php:315
+msgid "This work"
+msgstr "本作品"
+
+#: cc-configurator.php:318
+msgid "unless otherwise expressly stated"
+msgstr "除非另有明文规定"
+
+#: cc-configurator.php:318
+msgid "is licensed under a"
+msgstr "使用如下许可："
+
+#: cc-configurator.php:322
+msgid ""
+"Terms and conditions beyond the scope of this license may be available at"
+msgstr "本许可的范围之外的条款和条件，可在这里找到："
+
+#: bccl-settings.php:202
+msgid "CC-Configurator options saved"
+msgstr "选项已保存"
+
+#: bccl-settings.php:222
+msgid "Creative Commons license saved."
+msgstr "知识共享许可协议已经保存。"
+
+#: bccl-settings.php:245
+msgid "CC-Configurator options were reset to defaults"
+msgstr "选项被重置"
+
+#: bccl-settings.php:268
+msgid "CC-Configurator license has been removed."
+msgstr "配置工具许可协议已被移除"
+
+#: bccl-admin-panel.php:21
+msgid "Creative Commons Configurator"
+msgstr "知识共享配置工具"
+
+#: bccl-admin-panel.php:22
+msgid ""
+"Helps you publish your content under the terms of a Creative Commons "
+"license."
+msgstr "帮助你在知识共享许可协议下发布自己的内容。"
+
+#: bccl-admin-panel.php:41 bccl-admin-panel.php:161 bccl-admin-panel.php:198
+msgid "License Settings"
+msgstr "许可协议配置"
+
+#: bccl-admin-panel.php:72
+msgid "You do not have sufficient permissions to access this page."
+msgstr "您没有足够的权限访问此页面。"
+
+#: bccl-admin-panel.php:162
+msgid ""
+"Welcome to the administration panel of the Creative-Commons-Configurator "
+"plugin for WordPress."
+msgstr "欢迎使用知识共享许可协议 WordPress 配置工具的管理面板。"
+
+#: bccl-admin-panel.php:164
+msgid "Select License"
+msgstr "选择许可协议"
+
+#: bccl-admin-panel.php:165
+msgid ""
+"A license has not been set for your content. By pressing the following link "
+"you will be taken to the license selection wizard, hosted by the Creative "
+"Commons organization. Once you have completed the license selection process,"
+" you will be redirected back to this page."
+msgstr "尚未配置许可协议。点击下面的链接，跳转到由知识共享许可协议组织运行的选择向导页面。完成协议选择过程之后会再次回到本页面。"
+
+#: bccl-admin-panel.php:175
+msgid "New License"
+msgstr "新建许可协议"
+
+#: bccl-admin-panel.php:203
+msgid "Current License"
+msgstr "当前许可协议"
+
+#: bccl-admin-panel.php:204
+msgid "A license has been set and will be used to license your work."
+msgstr "已经设置了一个许可协议，用于授权你的作品。"
+
+#: bccl-admin-panel.php:205
+msgid ""
+"If you need to set a different license, press the <em>Reset License</em> "
+"button below."
+msgstr "如果你需要设置一个不同的许可协议，请点击下方的 <em>重置许可协议</em> 按钮。重置许可协议后,，已保存的插件选项将从 WordPress 数据库中移除。"
+
+#: bccl-admin-panel.php:208
+msgid "Reset License"
+msgstr "重置许可协议"
+
+#: bccl-admin-panel.php:214
+msgid "Message from the author"
+msgstr "作者寄语"
+
+#: bccl-admin-panel.php:218
+msgid "This message can de deactivated in the settings below."
+msgstr "此消息可以在下面的设置中取消。"
+
+#: bccl-admin-panel.php:222
+msgid "Configuration"
+msgstr "配置"
+
+#: bccl-admin-panel.php:223
+msgid ""
+"Here you can choose where and how license information should be added to "
+"your blog."
+msgstr "此处可选择许可协议信息添加到博客的位置和方式。"
+
+#: bccl-admin-panel.php:231 bccl-admin-panel.php:234
+msgid "Syndicated Content"
+msgstr "整合内容"
+
+#: bccl-admin-panel.php:237
+msgid "Include license information in the blog feeds. (<em>Recommended</em>)"
+msgstr "在订阅源中包含许可协议。（<em>推荐 </em>）"
+
+#: bccl-admin-panel.php:245 bccl-admin-panel.php:248
+msgid "Page Head HTML"
+msgstr "页面 HTML 头部"
+
+#: bccl-admin-panel.php:251
+msgid ""
+"Include license information in the page's HTML head. This will not be "
+"visible to human visitors, but search engine bots will be able to read it. "
+"Note that the insertion of license information in the HTML head is done in "
+"relation to the content types (posts, pages or attachment pages) on which "
+"the license text block is displayed (see the <em>text block</em> settings "
+"below). (<em>Recommended</em>)"
+msgstr "在页面的 HTML 头中包含许可证信息。这些信息对访客是不可见的，但搜索引擎机器人将能够读取。请注意，在HTML头插入许可证信息是在有关的内容类型（文章，页面或附件页）显示该许可协议的文本块（见下面的<em>文本块</em>设置）。（<em>推荐</em>）"
+
+#: bccl-admin-panel.php:259 bccl-admin-panel.php:262
+msgid "Text Block"
+msgstr "文本块"
+
+#: bccl-admin-panel.php:264
+msgid ""
+"By enabling the following options, a small block of text, which contains "
+"links to the author, the work and the used license, is appended to the "
+"published content."
+msgstr "启用下面的选项，在已发布的内容下方，追加一个包含作者、作品和使用的许可协议的链接的文字块。"
+
+#: bccl-admin-panel.php:268
+msgid ""
+"Posts: Add the text block with license information under the published "
+"posts. (<em>Recommended</em>)"
+msgstr "文章：在已发布的文章下方，添加包含许可协议信息的文本块。（<em>建议</em>）"
+
+#: bccl-admin-panel.php:274
+msgid ""
+"Pages: Add the text block with license information under the published "
+"pages."
+msgstr "页面：在已发布页面下方，添加包含许可协议信息的文本块。"
+
+#: bccl-admin-panel.php:280
+msgid ""
+"Attachments: Add the text block with license information under the attached "
+"content in attachment pages."
+msgstr "附件：在附件页面的附件内容下方，添加包含许可协议信息的文本块。"
+
+#: bccl-admin-panel.php:284
+msgid ""
+"By enabling the following option, the license image is also included in the "
+"license text block."
+msgstr "启用本选项后，许可协议的图片也会被包含在许可协议的文本块中。"
+
+#: bccl-admin-panel.php:288
+msgid "Include the license image in the text block."
+msgstr "在许可协议的文字块中包含图片。"
+
+#: bccl-admin-panel.php:296 bccl-admin-panel.php:300
+msgid "Extra Text Block Customization"
+msgstr "额外的文本块自定义"
+
+#: bccl-admin-panel.php:298 bccl-admin-panel.php:344
+msgid ""
+"The following settings have an effect only if the text block containing "
+"licensing information has been enabled above."
+msgstr "下面的设置仅在包含许可信息的文本块已启用时有效果。"
+
+#: bccl-admin-panel.php:304
+msgid ""
+"Include extended information about the published work and its creator. By "
+"enabling this option, hyperlinks to the published content and its "
+"creator/publisher are also included into the license statement inside the "
+"block. This, by being an attribution example itself, will generally help "
+"others to attribute the work to you."
+msgstr "包含已发布内容和创作者的扩展信息。启用本选项，链接到已发布内容和它的创作者或发布者的文本，也会被包含在显示许可协议信息的文字块中。这会帮助其他人识别作品来源于你。"
+
+#: bccl-admin-panel.php:322
+msgid ""
+"If extended information about the published work has been enabled, then you "
+"can choose which name will indicate the creator of the work. By default, the"
+" blog name is used."
+msgstr "如果启用了关于已发布内容的扩展信息，你就可以选择一个名字来标识内容的创作者。默认会使用博客的名字。"
+
+#: bccl-admin-panel.php:330
+msgid ""
+"If you have added any extra permissions to your license, provide the URL to "
+"the webpage that contains them. It is highly recommended to use absolute "
+"URLs."
+msgstr "如果您已为许可证添加任何额外的权限，请提供包含网页的URL。我们强烈建议使用绝对路径。"
+
+#: bccl-admin-panel.php:332
+msgid "Example"
+msgstr "例如"
+
+#: bccl-admin-panel.php:342 bccl-admin-panel.php:346
+msgid "Colors of the text block"
+msgstr "文本块颜色"
+
+#: bccl-admin-panel.php:350
+msgid ""
+"Set a color for the text that appears within the block (does not affect "
+"hyperlinks)."
+msgstr "设置文本块内文字颜色（不影响超链接）。"
+
+#: bccl-admin-panel.php:352 bccl-admin-panel.php:361 bccl-admin-panel.php:370
+msgid "Default"
+msgstr "默认"
+
+#: bccl-admin-panel.php:359
+msgid "Set a background color for the block."
+msgstr "设置文本块的背景颜色。"
+
+#: bccl-admin-panel.php:368
+msgid "Set a color for the border of the block."
+msgstr "设置文本块的边框颜色。"
+
+#: bccl-admin-panel.php:377
+msgid ""
+"Disable the internal formatting of the license block. If the internal "
+"formatting is disabled, then the color selections above have no effect any "
+"more. You can still format the license block via your own CSS. The <em>cc-"
+"block</em> and <em>cc-button</em> classes have been reserved for formatting "
+"the license block and the license button respectively."
+msgstr "禁用许可证信息的内联样式。如果内联样式被禁用，则上面的颜色选择就没有任何影响了。您仍然可以通过自己的CSS格式化许可证块。 可以针对类<em>cc-block</ em>和<em>cc-buton</ em>写样式来定义许可协议文字块和按钮的效果。"
+
+#: bccl-admin-panel.php:386 bccl-admin-panel.php:389
+msgid "Donations"
+msgstr "捐赠"
+
+#: bccl-admin-panel.php:392
+#, php-format
+msgid ""
+"By checking this, the <em>message from the author</em> above goes away. "
+"Thanks for <a href=\"%s\">donating</a>!"
+msgstr "选中后，上方的 <em>作者寄语</em> 将会消失。感谢您对 <a href=\"%s\">作者</a> 和 <a href=\"https://dallaslu.com/donate/\">翻译者</a> 的捐赠！"
+
+#: bccl-admin-panel.php:405
+msgid "Save Changes"
+msgstr "保存更改"
+
+#: bccl-admin-panel.php:406
+msgid "Reset to defaults"
+msgstr "重置"
+
+#: bccl-admin-panel.php:432
+msgid "Licensing information"
+msgstr "许可协议信息"
+
+#: bccl-admin-panel.php:497
+msgid "Title:"
+msgstr "标题："
+
+#: bccl-admin-panel.php:659
+msgid ""
+"Default Creative Commons license &ndash; Use the license that has been set "
+"in the general license settings."
+msgstr "默认知识共享许可协议 &ndash;  使用已在 “一般许可设置”中指定的许可协议。"
+
+#: bccl-admin-panel.php:663
+msgid ""
+"No Rights Reserved &ndash; Release this work to the <a "
+"href=\"http://wiki.creativecommons.org/Public_domain\">Public Domain</a> "
+"using the <a href=\"http://creativecommons.org/about/cc0\">Creative Commons "
+"CC0</a>, a form of copyright and related rights waiver."
+msgstr "不保留任何版权 - 本作品为<a href=\"http://wiki.creativecommons.org/Public_domain\">公共领域</ a> 使用<a href=\"http://creativecommons.org/about/ CC0\">知识共享CC0</ A>发表，版权及相关权利放弃。"
+
+#: bccl-admin-panel.php:667
+msgid ""
+"All Rights Reserved &ndash; Reserve all rights provided by copyright law."
+msgstr "保留所有权利 &ndash; 保留版权法规定的所有权利。"
+
+#: bccl-admin-panel.php:671
+msgid ""
+"No automatic license &ndash; Let me add licensing information manually."
+msgstr "没有自动的许可协议 &ndash; 让我手动添加许可协议信息。"
+
+#: bccl-utils.php:70
+msgid "Blog Name"
+msgstr "博客名称"
+
+#: bccl-utils.php:71
+msgid "First + Last Name"
+msgstr "名 + 姓"
+
+#: bccl-utils.php:72
+msgid "Last + First Name"
+msgstr "姓 + 名"
+
+#: bccl-utils.php:73
+msgid "Nickname"
+msgstr "昵称"
+
+#: bccl-utils.php:74
+msgid "Displayed Name"
+msgstr "公开显示为"
+
+#: bccl-licenses.php:28
+#, php-format
+msgid "Copyright &copy; %s - All Rights Reserved"
+msgstr "版权所有 &copy; %s - 保留所有权利"
+
+#: bccl-licenses.php:30
+msgid "Information about licensing this work may be available at"
+msgstr "本作品的许可协议可以在这里找到："
+
+#: bccl-licenses.php:38
+msgid ""
+"To the extent possible under law, the creator has waived all copyright and "
+"related or neighboring rights to this work."
+msgstr "在法律允许的范围内，创作者放弃本作品的所有版权及相关或相近权利。"
+
+#: bccl-licenses.php:39
+#, php-format
+msgid ""
+"To the extent possible under law, %s has waived all copyright and related or"
+" neighboring rights to %s."
+msgstr "在法律允许的范围内，%s 放弃 %s 的所有版权及相关或相近权利。"

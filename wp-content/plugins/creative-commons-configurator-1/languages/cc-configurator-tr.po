@@ -1,0 +1,388 @@
+#  POT (Portable Object Template)
+# 
+#  This file is part of the Creative-Commons-Configurator plugin for WordPress.
+# 
+#  http://www.g-loaded.eu/2006/01/14/creative-commons-configurator-wordpress-plugin/
+# 
+#  Copyright (C) 2006-2013 George Notaras <gnot@g-loaded.eu>
+# 
+#  Licensed under the Apache License, Version 2.0 (the "License");
+#  you may not use this file except in compliance with the License.
+#  You may obtain a copy of the License at
+# 
+#      http://www.apache.org/licenses/LICENSE-2.0
+# 
+#  Unless required by applicable law or agreed to in writing, software
+#  distributed under the License is distributed on an "AS IS" BASIS,
+#  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+#  See the License for the specific language governing permissions and
+#  limitations under the License.
+# 
+# 
+# Translators:
+# Sezgin İbiş <incelemeelemani@gmail.com>, 2014
+msgid ""
+msgstr ""
+"Project-Id-Version: Creative-Commons-Configurator translations\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-11-07 20:39+0200\n"
+"PO-Revision-Date: 2014-02-09 20:02+0000\n"
+"Last-Translator: Sezgin İbiş <incelemeelemani@gmail.com>\n"
+"Language-Team: Turkish (http://www.transifex.com/projects/p/cc-configurator/language/tr/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: tr\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: cc-configurator.php:65
+msgid "Settings"
+msgstr "Ayarlar"
+
+#: cc-configurator.php:91
+msgid "Creative Commons"
+msgstr "Creative Commons"
+
+#: cc-configurator.php:91 bccl-admin-panel.php:42 bccl-admin-panel.php:493
+#: bccl-admin-panel.php:569
+msgid "License"
+msgstr "Lisans"
+
+#: cc-configurator.php:144 bccl-admin-panel.php:431
+msgid "Creative Commons License"
+msgstr "Creative Commons Lisansı"
+
+#: cc-configurator.php:313
+msgid "by"
+msgstr "tarafından"
+
+#: cc-configurator.php:315
+msgid "This work"
+msgstr "Bu çalışma"
+
+#: cc-configurator.php:318
+msgid "unless otherwise expressly stated"
+msgstr "aksi açıkça belirtilmediği sürece"
+
+#: cc-configurator.php:318
+msgid "is licensed under a"
+msgstr "lisansı altında lisanslanmıştır"
+
+#: cc-configurator.php:322
+msgid ""
+"Terms and conditions beyond the scope of this license may be available at"
+msgstr "Bu lisansın kapsamı dışında şartlar ve koşullar mevcut olabilir"
+
+#: bccl-settings.php:202
+msgid "CC-Configurator options saved"
+msgstr "CC-Yapılandırıcı tercihleri kaydedildi"
+
+#: bccl-settings.php:222
+msgid "Creative Commons license saved."
+msgstr "Creative Commons lisansı kaydedildi."
+
+#: bccl-settings.php:245
+msgid "CC-Configurator options were reset to defaults"
+msgstr "CC-Yapılandırıcı seçenekleri varsayılana sıfırlandı"
+
+#: bccl-settings.php:268
+msgid "CC-Configurator license has been removed."
+msgstr "CC-Yapılandırıcı lisansı kaldırıldı."
+
+#: bccl-admin-panel.php:21
+msgid "Creative Commons Configurator"
+msgstr "Creative Commons Yapılandırıcı"
+
+#: bccl-admin-panel.php:22
+msgid ""
+"Helps you publish your content under the terms of a Creative Commons "
+"license."
+msgstr "İçeriğinizi nasıl Creative Commons lisansı altında yayınlayabileceğiniz konusunda yardımcı olur."
+
+#: bccl-admin-panel.php:41 bccl-admin-panel.php:161 bccl-admin-panel.php:198
+msgid "License Settings"
+msgstr "Lisans ayarları"
+
+#: bccl-admin-panel.php:72
+msgid "You do not have sufficient permissions to access this page."
+msgstr "Bu sayfaya erişmek için yeterli izinlere sahip değilsiniz."
+
+#: bccl-admin-panel.php:162
+msgid ""
+"Welcome to the administration panel of the Creative-Commons-Configurator "
+"plugin for WordPress."
+msgstr "WordPress için Creative Commons-Yapılandırma eklentisi yönetim paneline hoş geldiniz ."
+
+#: bccl-admin-panel.php:164
+msgid "Select License"
+msgstr "Lisans Seç"
+
+#: bccl-admin-panel.php:165
+msgid ""
+"A license has not been set for your content. By pressing the following link "
+"you will be taken to the license selection wizard, hosted by the Creative "
+"Commons organization. Once you have completed the license selection process,"
+" you will be redirected back to this page."
+msgstr "Henüz içeriğiniz için bir lisans belirlemediniz. Aşağıdaki butona tıkladığınızda Creative Commons tarafından yayınlanmış olan lisanslarından istediğinizi sihirbaz yardımıyla seçebileceksiniz. Lisans işlemleri tamamlandıktan sonra ise tekrar bu sayfaya yönlendirileceksiniz."
+
+#: bccl-admin-panel.php:175
+msgid "New License"
+msgstr "Yeni Lisans"
+
+#: bccl-admin-panel.php:203
+msgid "Current License"
+msgstr "Geçerli Lisans"
+
+#: bccl-admin-panel.php:204
+msgid "A license has been set and will be used to license your work."
+msgstr "Çalışmanızda kullanılmak üzere bu lisans ayarlanmıştır."
+
+#: bccl-admin-panel.php:205
+msgid ""
+"If you need to set a different license, press the <em>Reset License</em> "
+"button below."
+msgstr "Eğer farklı bir lisans ayarlamanız gerekiyorsa, aşağıdaki <em>Lisansı Sıfırla</em> butonuna tıklayın."
+
+#: bccl-admin-panel.php:208
+msgid "Reset License"
+msgstr "Lisansı Sıfırla"
+
+#: bccl-admin-panel.php:214
+msgid "Message from the author"
+msgstr "Yazardan mesaj"
+
+#: bccl-admin-panel.php:218
+msgid "This message can de deactivated in the settings below."
+msgstr "Bu mesaj aşağıdaki ayarları devre dışı bırakılabilir."
+
+#: bccl-admin-panel.php:222
+msgid "Configuration"
+msgstr "Yapılandırma"
+
+#: bccl-admin-panel.php:223
+msgid ""
+"Here you can choose where and how license information should be added to "
+"your blog."
+msgstr "Burada bloğunuza lisans bilgilerini nasıl ekleyeceğinizi seçebilirsiniz."
+
+#: bccl-admin-panel.php:231 bccl-admin-panel.php:234
+msgid "Syndicated Content"
+msgstr "Sendikasyon İçerik"
+
+#: bccl-admin-panel.php:237
+msgid "Include license information in the blog feeds. (<em>Recommended</em>)"
+msgstr "Blog beslemesine de lisans bilgilerini ekle. (<em>Önerilen</em>)"
+
+#: bccl-admin-panel.php:245 bccl-admin-panel.php:248
+msgid "Page Head HTML"
+msgstr "HTML Sayfa Başı"
+
+#: bccl-admin-panel.php:251
+msgid ""
+"Include license information in the page's HTML head. This will not be "
+"visible to human visitors, but search engine bots will be able to read it. "
+"Note that the insertion of license information in the HTML head is done in "
+"relation to the content types (posts, pages or attachment pages) on which "
+"the license text block is displayed (see the <em>text block</em> settings "
+"below). (<em>Recommended</em>)"
+msgstr "Sayfanın HTML başlığı lisans bilgilerini içermektedir. Bunu okuyucularınızın görmesi mümkün olmayacak ancak arama motorlarının görmesi mümkün olacaktır. HTML başındaki lisans bilgilerinin, metin bloğunda görüntülenen içerik türlerine (mesajlar, sayfalar ve ek sayfalar) göre yapıldığını unutmayın. (ayarları görmek için aşağıdaki <em>metin bloğu</em> bölümüne bakınız). (<em>Önerilen</em>)"
+
+#: bccl-admin-panel.php:259 bccl-admin-panel.php:262
+msgid "Text Block"
+msgstr "Metin Bloğu"
+
+#: bccl-admin-panel.php:264
+msgid ""
+"By enabling the following options, a small block of text, which contains "
+"links to the author, the work and the used license, is appended to the "
+"published content."
+msgstr "Aşağıdaki seçenekleri etkinleştirdiğinizde, çalışmada kullanılan lisans ve yazara bağlantılar içeren küçük bir metin bloğu yayınlanan içeriğe eklenir."
+
+#: bccl-admin-panel.php:268
+msgid ""
+"Posts: Add the text block with license information under the published "
+"posts. (<em>Recommended</em>)"
+msgstr "Mesajlar: Yayınlanan mesajların altında lisans bilgilerinizi metin bloğuna ekleyin.  (<em>Önerilen</em>)"
+
+#: bccl-admin-panel.php:274
+msgid ""
+"Pages: Add the text block with license information under the published "
+"pages."
+msgstr "Sayfalar: Yayınlanan sayfaların altında lisans bilgilerinizi metin bloğuna ekleyin."
+
+#: bccl-admin-panel.php:280
+msgid ""
+"Attachments: Add the text block with license information under the attached "
+"content in attachment pages."
+msgstr "Eklentiler: Eklenti sayfalarında ekli içeriğin altına, lisans bilgilerinizi metin bloğu olarak ekleyin."
+
+#: bccl-admin-panel.php:284
+msgid ""
+"By enabling the following option, the license image is also included in the "
+"license text block."
+msgstr "Aşağıdaki seçeneği etkinleştirdiğinizde, lisans metni bloğuna lisans görüntüsü de dahil edilir."
+
+#: bccl-admin-panel.php:288
+msgid "Include the license image in the text block."
+msgstr "Metin bloğunda lisans görüntüsünü göster."
+
+#: bccl-admin-panel.php:296 bccl-admin-panel.php:300
+msgid "Extra Text Block Customization"
+msgstr "Ekstra Metin Bloğu Uyarlama"
+
+#: bccl-admin-panel.php:298 bccl-admin-panel.php:344
+msgid ""
+"The following settings have an effect only if the text block containing "
+"licensing information has been enabled above."
+msgstr "Aşağıdaki ayarlar lisans bilgilerini içeren metin bloğu üzerinde ancak etkinleştirilmiş olması durumunda bir etkiye sahiptir."
+
+#: bccl-admin-panel.php:304
+msgid ""
+"Include extended information about the published work and its creator. By "
+"enabling this option, hyperlinks to the published content and its "
+"creator/publisher are also included into the license statement inside the "
+"block. This, by being an attribution example itself, will generally help "
+"others to attribute the work to you."
+msgstr "Yayınlanan çalışma ve onu oluşturan hakkında genişletilmiş bilgi içerir. Bu seçeneği etkinleştirdiğinizde, yayınlanan içerikteki lisans tablosuna çalışmayı oluşturan ile birlikte bu çalışmaya bağlantılar da yer alacaktır. Böylece, genellikle çalışmanızı kullanmak isteyenlerin, çalışmanıza atıfta bulunmasına yardımcı olacaksınız."
+
+#: bccl-admin-panel.php:322
+msgid ""
+"If extended information about the published work has been enabled, then you "
+"can choose which name will indicate the creator of the work. By default, the"
+" blog name is used."
+msgstr "Yayınlanmış çalışmaların bilgilerinin uzatılması etkin durumdaysa, bu durumda çalışmayı oluşturanı seçebileceğiniz bir alan görebilirsiniz. Varsayılan durumda ise blog adı kullanılır."
+
+#: bccl-admin-panel.php:330
+msgid ""
+"If you have added any extra permissions to your license, provide the URL to "
+"the webpage that contains them. It is highly recommended to use absolute "
+"URLs."
+msgstr "Eğer lisans için fazladan izin eklediyseniz, bunları içeren web sayfalarının URL bağlantılarını sağlayabilirsiniz. Bu durumda kesin URL adreslerini kullanmanız tavsiye edilir. "
+
+#: bccl-admin-panel.php:332
+msgid "Example"
+msgstr "Örnek"
+
+#: bccl-admin-panel.php:342 bccl-admin-panel.php:346
+msgid "Colors of the text block"
+msgstr "Metin bloğunun renkleri"
+
+#: bccl-admin-panel.php:350
+msgid ""
+"Set a color for the text that appears within the block (does not affect "
+"hyperlinks)."
+msgstr "Blok içerisinde görünen metin için bir renk belirleyin (köprü bağlantıların renkleri etkilenmez)."
+
+#: bccl-admin-panel.php:352 bccl-admin-panel.php:361 bccl-admin-panel.php:370
+msgid "Default"
+msgstr "Varsayılan"
+
+#: bccl-admin-panel.php:359
+msgid "Set a background color for the block."
+msgstr "Blok için bir arka plan rengi ayarlayın."
+
+#: bccl-admin-panel.php:368
+msgid "Set a color for the border of the block."
+msgstr "Bloğun kenarları için bir renk ayarlayın."
+
+#: bccl-admin-panel.php:377
+msgid ""
+"Disable the internal formatting of the license block. If the internal "
+"formatting is disabled, then the color selections above have no effect any "
+"more. You can still format the license block via your own CSS. The <em>cc-"
+"block</em> and <em>cc-button</em> classes have been reserved for formatting "
+"the license block and the license button respectively."
+msgstr "Lisans bloğu iç biçimlendirmesini devre dışı bırakın. Eğer iç biçimlendirme devre dışı ise, yukarıdaki renk seçimlerinin lisans bloğuna etkisi olmayacaktır. Yine de kendi CSS dosyanız yoluyla Lisans Bloğunu biçimlendirebilirsiniz. The <em>cc-block</em> ve <em>cc-button</em> sınıfları Lisans Bloğu ve Lisans butonunu biçimlendirmek üzere ayrılmıştır."
+
+#: bccl-admin-panel.php:386 bccl-admin-panel.php:389
+msgid "Donations"
+msgstr "Bağışlar"
+
+#: bccl-admin-panel.php:392
+#, php-format
+msgid ""
+"By checking this, the <em>message from the author</em> above goes away. "
+"Thanks for <a href=\"%s\">donating</a>!"
+msgstr "Burayı işaretlediğinizde, <em>yazarın yukarıdaki mesajı</em> kaybolacaktır. <a href=\"%s\">Bağış</a> için teşekkürler!"
+
+#: bccl-admin-panel.php:405
+msgid "Save Changes"
+msgstr "Değişiklikleri Kaydet"
+
+#: bccl-admin-panel.php:406
+msgid "Reset to defaults"
+msgstr "Varsayılana sıfırla"
+
+#: bccl-admin-panel.php:432
+msgid "Licensing information"
+msgstr "Lisanslama bilgisi"
+
+#: bccl-admin-panel.php:497
+msgid "Title:"
+msgstr "Başlık:"
+
+#: bccl-admin-panel.php:659
+msgid ""
+"Default Creative Commons license &ndash; Use the license that has been set "
+"in the general license settings."
+msgstr "Varsayılan Creative Commons lisansı &ndash; Genel lisans tercihlerinde ayarlanmış olan lisansı kullanabilirsiniz."
+
+#: bccl-admin-panel.php:663
+msgid ""
+"No Rights Reserved &ndash; Release this work to the <a "
+"href=\"http://wiki.creativecommons.org/Public_domain\">Public Domain</a> "
+"using the <a href=\"http://creativecommons.org/about/cc0\">Creative Commons "
+"CC0</a>, a form of copyright and related rights waiver."
+msgstr "Hiçbir Hakkı Saklı Değildir &ndash; Bir telif hakkı formatı olan ve ilgili tüm haklardan feragat etmenizi sağlayan <a href=\"http://creativecommons.org/about/cc0\">Creative Commons CC0</a> lisansı kullanarak içeriğin kullanımını  <a href=\"http://wiki.creativecommons.org/Public_domain\">Kamu Malı olarak özgür bırakın."
+
+#: bccl-admin-panel.php:667
+msgid ""
+"All Rights Reserved &ndash; Reserve all rights provided by copyright law."
+msgstr "Tüm Hakları Saklıdır &ndash; Telif hakkının sağladığı tüm hakları saklıdır."
+
+#: bccl-admin-panel.php:671
+msgid ""
+"No automatic license &ndash; Let me add licensing information manually."
+msgstr "Otomatik lisans yok &ndash; Lisans bilgilerini manuel olarak ekleyebilirsiniz."
+
+#: bccl-utils.php:70
+msgid "Blog Name"
+msgstr "Blog Adı"
+
+#: bccl-utils.php:71
+msgid "First + Last Name"
+msgstr "İsim + Soyisim"
+
+#: bccl-utils.php:72
+msgid "Last + First Name"
+msgstr "Soyisim + İsim"
+
+#: bccl-utils.php:73
+msgid "Nickname"
+msgstr "Kullanıcı adı"
+
+#: bccl-utils.php:74
+msgid "Displayed Name"
+msgstr "Gösterilecek İsim"
+
+#: bccl-licenses.php:28
+#, php-format
+msgid "Copyright &copy; %s - All Rights Reserved"
+msgstr "Telif hakkı &copy; %s - Tüm Hakları Saklıdır"
+
+#: bccl-licenses.php:30
+msgid "Information about licensing this work may be available at"
+msgstr "Bu çalışmanın lisanslarıyla ilgili bilgiler de mevcut olabilir"
+
+#: bccl-licenses.php:38
+msgid ""
+"To the extent possible under law, the creator has waived all copyright and "
+"related or neighboring rights to this work."
+msgstr "Hukuk çerçevesinde mümkün olduğu ölçüde, bu çalışmayı oluşturan tüm telif haklarından veya buna bitişik ilgili haklardan feragat etmiştir."
+
+#: bccl-licenses.php:39
+#, php-format
+msgid ""
+"To the extent possible under law, %s has waived all copyright and related or"
+" neighboring rights to %s."
+msgstr "Hukuk çerçevesinde mümkün olduğu ölçüde, %s %s tüm telif haklarından veya buna bitişik ilgili haklardan feragat etmiştir."

@@ -1,0 +1,498 @@
+#  POT (Portable Object Template)
+# 
+#  This file is part of the Creative-Commons-Configurator plugin for WordPress.
+# 
+#  http://www.g-loaded.eu/2006/01/14/creative-commons-configurator-wordpress-plugin/
+# 
+#  Copyright (C) 2006-2013 George Notaras <gnot@g-loaded.eu>
+# 
+#  Licensed under the Apache License, Version 2.0 (the "License");
+#  you may not use this file except in compliance with the License.
+#  You may obtain a copy of the License at
+# 
+#      http://www.apache.org/licenses/LICENSE-2.0
+# 
+#  Unless required by applicable law or agreed to in writing, software
+#  distributed under the License is distributed on an "AS IS" BASIS,
+#  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+#  See the License for the specific language governing permissions and
+#  limitations under the License.
+# 
+# 
+# Translators:
+# Jani Uusitalo <jani@mummila.net>, 2013-2014
+msgid ""
+msgstr ""
+"Project-Id-Version: Creative-Commons-Configurator translations\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-01-05 18:27+0200\n"
+"PO-Revision-Date: 2015-01-05 16:28+0000\n"
+"Last-Translator: George Notaras <gnot@g-loaded.eu>\n"
+"Language-Team: Finnish (http://www.transifex.com/projects/p/cc-configurator/language/fi/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fi\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: cc-configurator.php:65
+msgid "Settings"
+msgstr "Asetukset"
+
+#: bccl-settings.php:187
+msgid "Creative-Commons-Configurator options saved"
+msgstr "Creative Commons -konfigurointiasetukset tallennettiin"
+
+#: bccl-settings.php:204
+msgid "Creative-Commons-Configurator options were reset to defaults"
+msgstr "Creative Commons -konfiguroinnin oletusasetukset palautettiin"
+
+#: bccl-admin-panel.php:27
+msgid "Creative Commons Configurator"
+msgstr "Creative Commons -konfigurointi"
+
+#: bccl-admin-panel.php:28
+msgid ""
+"Helps you publish your content under the terms of Creative Commons and other"
+" licenses."
+msgstr ""
+
+#: bccl-admin-panel.php:48 bccl-admin-panel.php:108
+msgid "License Settings"
+msgstr "Lisenssiasetukset"
+
+#: bccl-admin-panel.php:49 bccl-admin-panel.php:476 bccl-admin-panel.php:566
+msgid "License"
+msgstr "Lisenssi"
+
+#: bccl-admin-panel.php:77
+msgid "You do not have sufficient permissions to access this page."
+msgstr "Sinulla ei ole tämän sivun näyttämiseen vaadittuja käyttöoikeuksia."
+
+#: bccl-admin-panel.php:110
+msgid ""
+"Welcome to the administration panel of the Creative-Commons-Configurator "
+"plugin for WordPress."
+msgstr "Tervetuloa WordPressin Creative Commons -konfigurointilisäosan hallintanäkymään."
+
+#: bccl-admin-panel.php:114
+msgid "Message from the author"
+msgstr "Viesti tekijältä"
+
+#: bccl-admin-panel.php:118
+msgid "This message can de deactivated in the settings below."
+msgstr "Tämä viesti voidaan ottaa pois käytöstä asetuksissa alempana."
+
+#: bccl-admin-panel.php:122
+msgid ""
+"In this screen you can select a default license for all your content and "
+"customize where and how the generated licensing information is embedded."
+msgstr "Tässä näkymässä voit valita oletusarvoisen lisenssin kaikelle sisällöllesi, ja lisäksi räätälöidä lisenssitietojen esitystavan ja sijainnin."
+
+#: bccl-admin-panel.php:126
+msgid "License your content"
+msgstr "Lisenssi sisällöllesi"
+
+#: bccl-admin-panel.php:127
+msgid ""
+"In this section you can select the default license that is used for all "
+"content for which custom licensing information has not been set."
+msgstr "Tässä osiossa voit valita oletusarvoisen lisenssin, jota käytetään, kun et ole määritellyt sisällölle mitään muuta lisenssiä."
+
+#: bccl-admin-panel.php:133 bccl-admin-panel.php:136
+msgid "Default License"
+msgstr "Oletuslisenssi"
+
+#: bccl-admin-panel.php:140
+msgid ""
+"Select a default license for all your content. The license can be customized"
+" on a per post basis in the <em>License</em> box in the post editing screen."
+" Further customization is possible programmatically through the available "
+"filters. For instance, it is possible to customize the license on a per "
+"taxonomy, author, post type basis, set a different default license for "
+"specific post types or limit the license choices in the <em>License</em> box"
+" for specific authors. The possibilities are unlimited. For more information"
+" about using the available filters please check the <a "
+"href=\"https://wordpress.org/plugins/creative-commons-"
+"configurator-1/\">plugin description page</a> at WordPress.org."
+msgstr "Valitse oletusarvoinen lisenssi sisällöllesi. Oletuslisenssistä voi poiketa yksittäisten artikkeleiden kohdalla käyttämällä artikkelin muokkausnäkymässä olevaa <em>Lisenssi</em>-laatikkoa. Räätälöintiä voi myös laajentaa käyttämällä ohjelmoitavia suodattimia. Tällöin lisenssin voi räätälöidä esimerkiksi artikkelin luokittelun, tekijän tai tyypin perusteella, tai vaihtaa oletusarvoisen lisenssin sekä Lisenssi-laatikossa tarjottavat lisenssit tietyille tekijöille. Mahdollisuudet ovat rajattomat. Lisätietoja löydät <a href=\"https://wordpress.org/plugins/creative-commons-configurator-1/\">lisäosan sivulta</a> WordPress.org-sivustolla."
+
+#: bccl-admin-panel.php:150
+msgid "Set where license information is added"
+msgstr "Aseta lisenssitietojen sijoituspaikat"
+
+#: bccl-admin-panel.php:151
+msgid ""
+"In this section you can configure which parts of the web site licensing "
+"information is added to."
+msgstr "Tässä osiossa voit määritellä mihin sivuston osiin lisenssitiedot sisällytetään."
+
+#: bccl-admin-panel.php:157 bccl-admin-panel.php:160
+msgid "Syndicated Content"
+msgstr "Verkkosyötteet"
+
+#: bccl-admin-panel.php:163
+msgid "Include license information in the blog feeds. (<em>Recommended</em>)"
+msgstr "Sisällytä lisenssitiedot blogin verkkosyötteisiin. (<em>Suositeltavaa</em>)"
+
+#: bccl-admin-panel.php:171
+msgid "HTML Head"
+msgstr "HTML-otsikkotiedot"
+
+#: bccl-admin-panel.php:174
+msgid "Page Head HTML"
+msgstr "Sivun HTML-otsikkotiedot"
+
+#: bccl-admin-panel.php:177
+msgid ""
+"Include license information in the page's HTML head. This will not be "
+"visible to human visitors, but search engine bots will be able to read it. "
+"Note that the insertion of license information in the HTML head is done in "
+"relation to the content types (posts, pages or attachment pages) on which "
+"the license text block is displayed (see the <em>text block</em> settings "
+"below). (<em>Recommended</em>)"
+msgstr "Sisällytä lisenssitiedot sivun HTML-otsikkotietoihin. Otsikkotiedot eivät näy käyttäjille, mutta hakukoneiden botit osaavat lukea ne. Huomioithan, että lisenssitietojen sisällytys HTML-otsikkotietoihin tehdään sisältötyyppikohtaisesti (artikkeleille, sivuille tai tiedostosivuille) niille sisällöille, joilla myös lisenssitekstikappale näytetään (katso <em>tekstikappaleen</em> asetukset alempana). (<em>Suositeltavaa</em>)"
+
+#: bccl-admin-panel.php:185 bccl-admin-panel.php:188
+msgid "Text Block"
+msgstr "Tekstikappale"
+
+#: bccl-admin-panel.php:190
+msgid ""
+"By enabling the following options, a small block of text, which contains "
+"links to the author, the work and the used license, is appended to the "
+"published content."
+msgstr "Seuraavia valintoja käyttäen voit liittää julkaistavaan sisältöösi pienen tekstikappaleen, jossa on tekijään, teokseen ja lisenssiin viittaavat linkit."
+
+#: bccl-admin-panel.php:194
+msgid ""
+"Posts: Add the text block with license information under the published posts"
+" and custom post types. (<em>Recommended</em>)"
+msgstr "Artikkelit: Lisää tekstikappale lisenssin tiedoista julkaistujen artikkeleiden sekä räätälöityjen artikkelityyppien alle. (<em>Suositeltavaa</em>)"
+
+#: bccl-admin-panel.php:200
+msgid ""
+"Pages: Add the text block with license information under the published "
+"pages."
+msgstr "Sivut: Lisää tekstikappale lisenssin tiedoista julkaistujen sivujen alle."
+
+#: bccl-admin-panel.php:206
+msgid ""
+"Attachments: Add the text block with license information under the attached "
+"content in attachment pages."
+msgstr "Liitteet: Lisää tekstikappale lisenssin tiedoista julkaistujen liitesivujen alle."
+
+#: bccl-admin-panel.php:215 bccl-admin-panel.php:218
+msgid "License Image"
+msgstr "Lisenssikuvake"
+
+#: bccl-admin-panel.php:222
+msgid ""
+"By enabling this option, the license image is also included in the license "
+"text block."
+msgstr "Tämän valinnalla lisenssitekstin yhteyteen sisällytetään myös lisenssin kuvake."
+
+#: bccl-admin-panel.php:228
+msgid ""
+"If license images have been enabled above, use compact license images if "
+"available."
+msgstr "Mikäli lisenssikuvakkeet on edellä otettu käyttöön, käytetään tiiviimpiä kuvakkeita mikäli saatavilla."
+
+#: bccl-admin-panel.php:239
+msgid "Configure the license information generator"
+msgstr "Määrittele lisenssitietojen tuottajan asetukset"
+
+#: bccl-admin-panel.php:240
+msgid ""
+"In this section you can configure how the licensing information is generated"
+" and its level of detail. These settings have an effect only if the text "
+"block containing licensing information has been enabled above for a specific"
+" content type."
+msgstr "Tässä osiossa voit määritellä miten ja kuinka yksityiskohtaisina lisenssin tiedot tuotetaan. Näillä asetuksilla on väliä vain silloin, kun lisensointitiedot sisältävä tekstikappale on edellä otettu käyttöön."
+
+#: bccl-admin-panel.php:246 bccl-admin-panel.php:249
+msgid "Extended License Text Block"
+msgstr "Laajennettu lisenssitekstikappale"
+
+#: bccl-admin-panel.php:253
+msgid ""
+"Include extended information about the published work and its creator. By "
+"enabling this option, hyperlinks to the published content and its "
+"creator/publisher are also included into the license statement inside the "
+"block. This, by being an attribution example itself, will generally help "
+"others to attribute the work to you."
+msgstr "Sisällytä mukaan laajempi selvitys teoksesta ja sen tekijästä. Tämän valitsemalla voit sisällyttää lisenssikappaleeseen linkit, joilla viitataan julkaistuun sisältöön ja sen tekijään/julkaisijaan. Se on samalla esimerkki tekijän nimeämisestä, johon muut voivat turvautua halutessaan nimetä sinut teoksen luojaksi."
+
+#: bccl-admin-panel.php:262 bccl-admin-panel.php:265
+msgid "Creator Attribution Name"
+msgstr "Tekijän nimeävä nimi"
+
+#: bccl-admin-panel.php:280
+msgid ""
+"If extended information about the published work has been enabled, then you "
+"can choose which name will indicate the creator of the work. By default, the"
+" blog name is used."
+msgstr "Jos laajempi selvitys on käytössä, voit valita millä nimellä teoksen tekijään viitataan. Oletusarvoisesti tähän käytetään blogin nimeä."
+
+#: bccl-admin-panel.php:289 bccl-admin-panel.php:292
+msgid "Additional Permissions"
+msgstr "Ylimääräiset luvat"
+
+#: bccl-admin-panel.php:297
+msgid ""
+"If you have added any extra permissions to your license, provide the URL to "
+"the web page that contains them. It is highly recommended to use absolute "
+"URLs."
+msgstr "Mikäli sallit lisenssissä annetun lisäksi muita käyttötapoja, syötä tähän verkko-osoite, jolla lisäehtosi on määritelty. Varminta on käyttää absoluuttisia osoitteita."
+
+#: bccl-admin-panel.php:299
+msgid "Example"
+msgstr "Esimerkki"
+
+#: bccl-admin-panel.php:306
+msgid ""
+"Enter the title of the page containing additional permissions. This can be "
+"whatever you like. It will be used as the anchor text of the hyperlink to "
+"the extra permissions page."
+msgstr "Syötä lisäehtosi määrittelevän sivun otsikko. Voit valita otsikon vapaasti. Sitä käytetään linkin ankkuritekstinä."
+
+#: bccl-admin-panel.php:317
+msgid "Style of the license text block"
+msgstr "Lisenssitekstikappaleen tyyli"
+
+#: bccl-admin-panel.php:318
+msgid ""
+"In this section you can configure the looks of the text block that contains "
+"the licensing information. These settings have an effect only if the text "
+"block containing licensing information has been enabled above for a specific"
+" content type."
+msgstr "Tässä osiossa voit määritellä lisenssin tiedot sisältävän tekstikappaleen ulkonäön. Näillä asetuksilla on väliä vain silloin, kun lisensointitiedot sisältävä tekstikappale on edellä otettu käyttöön. "
+
+#: bccl-admin-panel.php:324 bccl-admin-panel.php:327
+msgid "Colors of the text block"
+msgstr "Tekstikappaleen värit"
+
+#: bccl-admin-panel.php:331
+msgid "Foreground color for text including hyperlinks."
+msgstr "Tekstin ja linkkien pääväri."
+
+#: bccl-admin-panel.php:338
+msgid "Background color of the license block."
+msgstr "Lisenssikappaleen taustaväri."
+
+#: bccl-admin-panel.php:345
+msgid "Color of the border of the license block."
+msgstr "Lisenssikappaleen ääriviivan väri."
+
+#: bccl-admin-panel.php:355 bccl-admin-panel.php:358
+msgid "Disable internal style"
+msgstr "Ota sisäinen tyyli pois käytöstä"
+
+#: bccl-admin-panel.php:362
+msgid ""
+"Disable the internal formatting of the license block. If the internal "
+"formatting is disabled, then the color selections above have no effect any "
+"more. You can still format the license block via your own CSS. The <code>cc-"
+"block</code> and <code>cc-button</code> classes have been reserved for "
+"formatting the license block and the license button respectively."
+msgstr "Tämä ottaa lisenssikappaleen sisäisen muotoilun pois käytöstä, jolloin yllä olevilla värivalinnoilla ei ole vaikutusta. Voit silti yhä muokata lisenssikappaleen tyyliä käyttämällä CSS-tyylitiedostoa. Lisenssikappaletta varten on <code>cc-block</code>-luokka ja lisenssinappia varten <code>cc-button</code>-luokka."
+
+#: bccl-admin-panel.php:373
+msgid "Miscellaneous"
+msgstr "Sekalaista"
+
+#: bccl-admin-panel.php:379 bccl-admin-panel.php:382
+msgid "Donations"
+msgstr "Lahjoitukset"
+
+#: bccl-admin-panel.php:385
+#, php-format
+msgid ""
+"By checking this box, the <em>message from the author</em> above goes away. "
+"Thanks for <a href=\"%s\">donating</a>!"
+msgstr "Tällä valinnalla voit piilottaa yllä näkyvän <em>viestin tekijältä</em>. Kiitos kun <a href=\"%s\">lahjoitat</a>!"
+
+#: bccl-admin-panel.php:402
+msgid "Save Changes"
+msgstr "Tallenna muutokset"
+
+#: bccl-admin-panel.php:405
+msgid "Reset to defaults"
+msgstr "Palauta oletusasetukset"
+
+#: bccl-admin-panel.php:434
+msgid "Creative Commons License"
+msgstr "Creative Commons -lisenssi"
+
+#: bccl-admin-panel.php:435
+msgid "Licensing information"
+msgstr "Lisenssitiedot"
+
+#: bccl-admin-panel.php:480
+msgid "Title:"
+msgstr "Nimi:"
+
+#: bccl-admin-panel.php:665
+msgid ""
+"The default license from the general plugin settings is used in order to "
+"license this work. Use the following selector to choose a custom license for"
+" this content."
+msgstr "Tälle teokselle on asetettu lisäosan yleisasetuksissa määritelty oletuslisenssi. Voit asettaa sisällölle eri lisenssin seuraavalla valitsimella."
+
+#: bccl-admin-panel.php:670
+msgid "Additional terms and conditions"
+msgstr "Lisäehdot"
+
+#: bccl-admin-panel.php:672
+msgid ""
+"If you make your work available under terms beyond the scope of the used "
+"license, it is possible to add a link to the page containing these "
+"additional terms and conditions. The following fields override the "
+"respective fields of the general plugin settings."
+msgstr "Jos haluat sallia teoksesi käytön myös muilla kuin lisenssin kattamilla ehdoilla, voit lisätä linkin näihin ehtoihin. Seuraavassa tehdyt asetukset menevät lisäosan yleisasetuksissa määriteltyjen asetusten edelle."
+
+#: bccl-admin-panel.php:677
+msgid "URL of the page containing extra permissions."
+msgstr "Lisäehdoista kertovan sivun verkko-osoite."
+
+#: bccl-admin-panel.php:682
+msgid "Title of the page containing extra permissions."
+msgstr "Lisäehdoista kertovan sivun otsikko."
+
+#: bccl-admin-panel.php:687
+msgid "Source work attributes"
+msgstr "Lähdeteoksen määrittely"
+
+#: bccl-admin-panel.php:689
+msgid ""
+"If this content is a derivative work, here you can enter some attributes of "
+"the source work."
+msgstr "Mikäli teoksesi on johdannaisteos, voit kirjata tähän käyttämäsi lähdeteoksen ominaisuuksia."
+
+#: bccl-admin-panel.php:691
+msgid "URL and title of the source work"
+msgstr "Lähdeteoksen verkko-osoite ja otsikko"
+
+#: bccl-admin-panel.php:694
+msgid "URL of the source work."
+msgstr "Lähdeteoksen verkko-osoite."
+
+#: bccl-admin-panel.php:698
+msgid "Title of the source work."
+msgstr "Lähdeteoksen otsikko."
+
+#: bccl-admin-panel.php:701
+msgid "URL and title of the creator of the source work"
+msgstr "Lähdeteoksen tekijän verkko-osoite ja nimi"
+
+#: bccl-admin-panel.php:704
+msgid "URL of the creator of the source work."
+msgstr "Lähdeteoksen tekijän verkko-osoite."
+
+#: bccl-admin-panel.php:708
+msgid "Name of the creator of the source work."
+msgstr "Lähdeteoksen tekijän nimi."
+
+#: bccl-utils.php:76
+msgid "Blog Name"
+msgstr "Blogin nimi"
+
+#: bccl-utils.php:77
+msgid "First + Last Name"
+msgstr "Etu- ja sukunimi"
+
+#: bccl-utils.php:78
+msgid "Last + First Name"
+msgstr "Suku- ja etunimi"
+
+#: bccl-utils.php:79
+msgid "Nickname"
+msgstr "Lempinimi"
+
+#: bccl-utils.php:80
+msgid "Displayed Name"
+msgstr "Näytettävä nimi"
+
+#: bccl-licenses.php:19
+msgid "No Licensing Information"
+msgstr ""
+
+#: bccl-licenses.php:28
+#, php-format
+msgid "Creative Commons Attribution %s International License"
+msgstr "Creative Commons Nimeä %s Kansainvälinen Lisenssi"
+
+#: bccl-licenses.php:36
+#, php-format
+msgid "Creative Commons Attribution-NoDerivatives %s International License"
+msgstr "Creative Commons Nimeä-EiMuutoksia %s Kansainvälinen Lisenssi"
+
+#: bccl-licenses.php:44
+#, php-format
+msgid "Creative Commons Attribution-ShareAlike %s International License"
+msgstr "Creative Commons Nimeä-JaaSamoin %s Kansainvälinen Lisenssi"
+
+#: bccl-licenses.php:52
+#, php-format
+msgid "Creative Commons Attribution-NonCommercial %s International License"
+msgstr "Creative Commons Nimeä-EiKaupallinen %s Kansainvälinen Lisenssi"
+
+#: bccl-licenses.php:60
+#, php-format
+msgid ""
+"Creative Commons Attribution-NonCommercial-NoDerivatives %s International "
+"License"
+msgstr "Creative Commons Nimeä-EiKaupallinen-EiMuutoksia %s Kansainvälinen Lisenssi"
+
+#: bccl-licenses.php:68
+#, php-format
+msgid ""
+"Creative Commons Attribution-NonCommercial-ShareAlike %s International "
+"License"
+msgstr "Creative Commons Nimeä-EiKaupallinen-JaaSamoin %s Kansainvälinen Lisenssi"
+
+#: bccl-generators.php:23
+#, php-format
+msgid "Copyright &copy; %s - All Rights Reserved"
+msgstr "Tekijänoikeudet &copy; %s - Kaikki oikeudet pidätetään"
+
+#: bccl-generators.php:36
+#, php-format
+msgid ""
+"Information about how to reuse or republish this work may be available at "
+"%s."
+msgstr "Tietoa tämän teoksen käytöstä ja uudelleenjulkaisusta voi olla saatavilla osoitteessa %s."
+
+#: bccl-generators.php:84
+#, php-format
+msgid ""
+"To the extent possible under law, %s has waived all copyright and related or"
+" neighboring rights to %s."
+msgstr "Lainsäädännön sallimassa enimmäislaajuudessa %s on luopunut kaikista tekijän- ja lähioikeuksistaan teokseen %s."
+
+#: bccl-generators.php:86
+msgid ""
+"To the extent possible under law, the creator has waived all copyright and "
+"related or neighboring rights to this work."
+msgstr "Lainsäädännön sallimassa enimmäislaajuudessa tekijä on luopunut kaikista tekijän- ja lähioikeuksistaan tähän teokseen."
+
+#: bccl-generators.php:101
+#, php-format
+msgid ""
+"Terms and conditions beyond the scope of this waiver may be available at %s."
+msgstr ""
+
+#: bccl-generators.php:156
+#, php-format
+msgid "%s by %s is licensed under a %s."
+msgstr "%s, jonka tekijä on %s, annetaan käyttöön lisenssillä %s."
+
+#: bccl-generators.php:158
+#, php-format
+msgid "This work is licensed under a %s."
+msgstr "Tämän teoksen lisenssi on %s."
+
+#: bccl-generators.php:173
+#, php-format
+msgid "Permissions beyond the scope of this license may be available at %s."
+msgstr "Aineiston käyttöä tämän lisenssin lisäksi koskevia ehtoja voi olla saatavilla osoitteessa %s."
