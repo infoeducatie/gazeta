@@ -32,11 +32,6 @@ License: Distributed under the terms of the WTFPL license
 Copyright: Chris Coyier - css-tricks.com + Dave Rupert - daverupert.com
 ____________
 
-idTabs v3.0 jQuery script - ​http://www.sunsean.com/idTabs/
-License: Distributed under the terms of the MIT and GPL licenses
-Copyright: Sean Catchpole, www.sunsean.com
-____________
-
 HTML5 Shiv v3.7 script - https://github.com/aFarkas/html5shiv
 License: Distributed under the terms of the MIT and GPL2 licenses
 Copyright: @afarkas @jdalton @jon_neal @rem

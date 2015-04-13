@@ -34,18 +34,18 @@ class AC_Tabs_Widget extends WP_Widget {
 		$hide_recent_thumbs		= isset( $instance['hide_recent_thumbs'] ) ? $instance['hide_recent_thumbs'] : false;
 		
 		// Widget Front End Output
-		echo '<aside class="side-box widget" id="ac-tabs-widget">';
+		echo '<aside class="side-box ac-tabs-init-wrap widget" id="ac-tabs-widget-' . $this->id . '">';
 		
 		if( $show_popular_posts || $show_featured_posts || $show_recent_posts || $show_recent_comments || $show_tags ) {
 			
 			// Navigation
 			echo '<nav class="tabs-widget-navigation clearfix">';
-        	echo '<ul>';
-        	if( $show_popular_posts )		{ echo '<li><a href="#tab-1" title="' . __('Popular Posts', 'acosmin') . '"><i class="fa fa-list-ol"></i></a></li>'; }
-        	if( $show_featured_posts )		{ echo '<li><a href="#tab-2" title="' . __('Featured Posts', 'acosmin') . '"><i class="fa fa-star"></i></a></li>'; }
-        	if( $show_recent_posts )		{ echo '<li><a href="#tab-3" title="' . __('Latest Posts', 'acosmin') . '"><i class="fa fa-bell"></i></a></li>'; }
-        	if( $show_recent_comments )		{ echo '<li><a href="#tab-4" title="' . __('Recent Comments', 'acosmin') . '"><i class="fa fa-comments"></i></a></li>'; }
-        	if( $show_tags )				{ echo '<li><a href="#tab-5" title="' . __('Tag Cloud', 'acosmin') . '"><i class="fa fa-tags"></i></a></li>'; }
+        	echo '<ul class="ac-tabs-init">';
+        	if( $show_popular_posts )		{ echo '<li class="current"><a href="#' . $this->id .'_tab-1" title="' . __('Popular Posts', 'acosmin') . '"><i class="fa fa-list-ol"></i></a></li>'; }
+        	if( $show_featured_posts )		{ echo '<li><a href="#' . $this->id .'_tab-2" title="' . __('Featured Posts', 'acosmin') . '"><i class="fa fa-star"></i></a></li>'; }
+        	if( $show_recent_posts )		{ echo '<li><a href="#' . $this->id .'_tab-3" title="' . __('Latest Posts', 'acosmin') . '"><i class="fa fa-bell"></i></a></li>'; }
+        	if( $show_recent_comments )		{ echo '<li><a href="#' . $this->id .'_tab-4" title="' . __('Recent Comments', 'acosmin') . '"><i class="fa fa-comments"></i></a></li>'; }
+        	if( $show_tags )				{ echo '<li><a href="#' . $this->id .'_tab-5" title="' . __('Tag Cloud', 'acosmin') . '"><i class="fa fa-tags"></i></a></li>'; }
         	echo '</ul>';
         	echo '</nav>';
 			
@@ -53,7 +53,7 @@ class AC_Tabs_Widget extends WP_Widget {
 			// -- Popular Posts
 			if( $show_popular_posts ) {
 				?>
-                	<div class="sb-content clearfix" id="tab-1">
+                	<div class="sb-content tabs-widget-tab clearfix" id="<?php echo $this->id; ?>_tab-1">
                     	<?php 
 						$args = array( 
 							'orderby' => 'comment_count', 
@@ -95,7 +95,7 @@ class AC_Tabs_Widget extends WP_Widget {
 			// -- Featured Posts
 			if( $show_featured_posts ) {
 				?>
-                	<div class="sb-content clearfix" id="tab-2">
+                	<div class="sb-content tabs-widget-tab clearfix" id="<?php echo $this->id; ?>_tab-2">
                     	<?php 
 						$args = array( 
 							'posts_per_page'		=> $featured_posts_number,
@@ -134,7 +134,7 @@ class AC_Tabs_Widget extends WP_Widget {
 			// -- Recent Posts
 			if( $show_recent_posts ) {
 				?>
-                	<div class="sb-content clearfix" id="tab-3">
+                	<div class="sb-content tabs-widget-tab clearfix" id="<?php echo $this->id; ?>_tab-3">
                     	<?php 
 						$args = array(
 							'posts_per_page' => $recent_posts_number,
@@ -177,7 +177,7 @@ class AC_Tabs_Widget extends WP_Widget {
 			// -- Recent Comments
 			if( $show_recent_comments ) {
 				?>
-                	<div class="sb-content clearfix" id="tab-4">
+                	<div class="sb-content tabs-widget-tab clearfix" id="<?php echo $this->id; ?>_tab-4">
                     	<?php
 							$args = array( 
 										'before_widget'		=> '',
@@ -198,7 +198,7 @@ class AC_Tabs_Widget extends WP_Widget {
 			// -- Tag Cloud
 			if( $show_tags ) {
 				?>
-                	<div class="sb-content clearfix" id="tab-5">
+                	<div class="sb-content tabs-widget-tab clearfix" id="<?php echo $this->id; ?>_tab-5">
                     	<?php
 							$args = array( 
 										'before_widget'		=> '',

@@ -12,7 +12,7 @@
     
     	<header class="not-found-header">
         	<h1><?php _e( '404', 'acosmin' ) ?></h1>
-            <h2><?php _e( 'Se pare ca nu a fost găsit nimic la această locaţie :(.', 'acosmin' ); ?><br /><a href="#" class="try-a-search"><?php ac_icon( 'search' ). ' ' . _e( 'Doreşti să cauţi ceva?', 'acosmin' ) ?></a></h2>
+            <h2><?php _e( 'It looks like nothing was found at this location.', 'acosmin' ); ?><br /><a href="#" class="try-a-search"><?php ac_icon( 'search' ). ' ' . _e( 'Maybe try a search?', 'acosmin' ) ?></a></h2>
 		</header>
         
     </div><!-- END .page-404 -->

@@ -48,31 +48,6 @@ jQuery.noConflict();
 		$('.mobile-menu').find('i').removeAttr('class').addClass('fa fa-angle-right');
 	}
 	// -------------
-
-	
-	// Logo Position
-	function logo_position() {
-	
-		var logo_w = $('.logo').width();
-		
-		if( $(window).width() < 1140 ) {
-			$('.logo').css({
-				'margin-left': -logo_w / 2,
-			});
-		} else {
-			$('.logo').removeAttr( 'style' );
-		}
-		
-		return;
-		
-	}
-	logo_position();
-	// -------------
-	
-	
-	// Description Position
-	$('.description').css('line-height', $('.logo').height() + 'px');
-	// -------------
 	
 	
 	// Slider
@@ -159,8 +134,32 @@ jQuery.noConflict();
 	
 	
 	// Tabs Widget
-	$('#ac-tabs-widget').idTabs(function(id){
-		$(id).fadeIn(400); 
+	function initTabsFirst() {
+		$('.ac-tabs-init-wrap').each( function() {
+			$(this).find('.ac-tabs-init a').parent('li').first().addClass('selected');
+			$(this).find('.tabs-widget-tab').first().css('display', 'block');
+		});
+	}
+	initTabsFirst();
+	
+	$('.ac-tabs-init a').click(function(event) {
+		event.preventDefault();
+		var thisClick 	= $(this);
+		var acTabsID 	= $(this).parent('li')
+						.parent('.ac-tabs-init')
+						.parent('.tabs-widget-navigation')
+						.parent().attr('id');
+						
+		$('#' + acTabsID + ' .ac-tabs-init a').parent().addClass('selected');
+		
+		thisClick.parent().siblings().removeClass('selected');
+		
+		var getTabID = thisClick.attr('href');
+		
+		$('#' + acTabsID + ' .tabs-widget-tab').not(getTabID).css('display', 'none');
+		
+		$(getTabID).fadeIn();
+  
 	});
 	// -------------
 	
@@ -306,9 +305,7 @@ jQuery.noConflict();
 			$('.mini-sidebar').removeAttr('style');
 		}
 
-		sticky_menu();	
-
-		logo_position();
+		sticky_menu();
 		
 	});
 	// -------------

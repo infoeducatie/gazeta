@@ -6,7 +6,7 @@ Theme URI: http://www.acosmin.com/theme/justwrite/
 Author: Alexandru Cosmin
 Author URI: http://www.acosmin.com/
 Description: JustWrite is a theme with clean lines and an open-spaced design, that can be used to show off your latest articles.
-Version: 1.0.7
+Version: 1.0.8
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: black, white, light, dark, two-columns, three-columns, left-sidebar, right-sidebar, fixed-layout, custom-colors, custom-header, custom-menu, editor-style, featured-images, fluid-layout, full-width-template, theme-options, translation-ready, responsive-layout
@@ -503,7 +503,7 @@ img.size-large,
 }
 
 /* -- Repeating Styles */
-.top, .menu-wrap, .container, .footer-wrap {
+.top, .top.logo-image, .menu-wrap, .container, .footer-wrap {
 	/* Same Style */
 	position: relative; 
 	width: 100%; 
@@ -535,7 +535,7 @@ a.social-btn, .sidebar-social a.social-btn, .post-small-button a.social-btn, .lo
 	/* Same Color - #be5656 */
 	color: #be5656
 }
-.menu-main > li > a:hover, .mobile-drop-down > a, .mobile-drop-down > a:visited, .menu-wrap a.mobile-menu-button:hover, .menu-wrap a.search-button:hover, .menu-main > li.sfHover > a, .menu-main .sub-menu li.sfHover > a, .menu-wrap a.browse-more, .menu-wrap .search-button.activated, .mobile-menu-button.activated, .menu-wrap a.browse-more:hover, .sidebar-heading, .ac-popular-posts .position, .posts-pagination a.selected, .page-links-wrap a.selected, .comments-pagination a.selected, a.back-to-top, .footer-credits .blog-title, .post-template-1 .details .p-share .contents .close-this-temp1, .tabs-widget-navigation ul li a.selected, .browse-by-title, a.close-browse-by, .menu-main > li.current_page_item > a, .menu-main > li.current_page_ancestor > a, .menu-main > li.current-menu-item > a, .menu-main > li.current-menu-ancestor > a, .menu-main .sub-menu .sf-sub-indicator i, .comment-main .vcard .fn a, .comment-main .vcard .fn a:visited, .comment-main .vcard a.comment-edit-link, .comment-main a.comment-reply-link, .menu-wrap .search-submit:hover, .menu-wrap .search-submit:focus {
+.menu-main > li > a:hover, .mobile-drop-down > a, .mobile-drop-down > a:visited, .menu-wrap a.mobile-menu-button:hover, .menu-wrap a.search-button:hover, .menu-main > li.sfHover > a, .menu-main .sub-menu li.sfHover > a, .menu-wrap a.browse-more, .menu-wrap .search-button.activated, .mobile-menu-button.activated, .menu-wrap a.browse-more:hover, .sidebar-heading, .ac-popular-posts .position, .posts-pagination a.selected, .page-links-wrap a.selected, .comments-pagination a.selected, a.back-to-top, .footer-credits .blog-title, .post-template-1 .details .p-share .contents .close-this-temp1, .tabs-widget-navigation ul li.selected a, .browse-by-title, a.close-browse-by, .menu-main > li.current_page_item > a, .menu-main > li.current_page_ancestor > a, .menu-main > li.current-menu-item > a, .menu-main > li.current-menu-ancestor > a, .menu-main .sub-menu .sf-sub-indicator i, .comment-main .vcard .fn a, .comment-main .vcard .fn a:visited, .comment-main .vcard a.comment-edit-link, .comment-main a.comment-reply-link, .menu-wrap .search-submit:hover, .menu-wrap .search-submit:focus {
 	/* Same Color - #000 */
 	color: #000
 }
@@ -575,7 +575,7 @@ body, .post-content, .content-wrap, .menu-main,  .menu-main ul, .mobile-menu .su
 	/* Same Background Color - #e1e1e1 */
 	background-color: #e1e1e1;
 }
-ins, .slider-controls, .posts-pagination span.current, .page-links-wrap span, .posts-pagination span.current:hover, .page-links-wrap span:hover, .tabs-widget-navigation ul li a.selected, .menu-wrap .browse-more.activated, .tagcloud a:hover, .slide-btn:hover, .about-share .title, .post-navigation a, .post-navigation span, .comment-reply-title small, .menu-wrap .search-submit, .ac-popular-posts .position, pre, .comments-area #cwp-slider-comment .comment-form-meta-option .comment_meta_slider, .comments-area .user-comments-grades .comment-meta-grade-bar, #review-statistics .review-wu-bars ul li {
+ins, .slider-controls, .posts-pagination span.current, .page-links-wrap span, .posts-pagination span.current:hover, .page-links-wrap span:hover, .tabs-widget-navigation ul li.selected a, .menu-wrap .browse-more.activated, .tagcloud a:hover, .slide-btn:hover, .about-share .title, .post-navigation a, .post-navigation span, .comment-reply-title small, .menu-wrap .search-submit, .ac-popular-posts .position, pre, .comments-area #cwp-slider-comment .comment-form-meta-option .comment_meta_slider, .comments-area .user-comments-grades .comment-meta-grade-bar, #review-statistics .review-wu-bars ul li {
 	/* Same Background Color - #f7f7f7 */
 	background-color: #f7f7f7;
 }
@@ -641,7 +641,6 @@ textarea:hover, input:hover, select:hover {
 /* - 3.0 Header */
 .header-wrap {
 	width: 100%;
-	height: 220px;
 	background-color: #111;
 	background-repeat:no-repeat;
 	background-size:cover;
@@ -650,8 +649,9 @@ textarea:hover, input:hover, select:hover {
 	border-bottom-style: solid;
 	position: relative;	
 }
-.top {
-	height: 150px;
+.top.logo-text {
+	height: auto;
+	min-height: 150px;
 }
 .logo {
 	display: inline-block !important;
@@ -681,11 +681,40 @@ textarea:hover, input:hover, select:hover {
 	line-height: 36px;
 	margin-left: 20px;
 }
+.logo.logo-image .description {
+	min-width: 300px;
+	letter-spacing: 0;
+	font-size: 14px;
+	font-weight: 700;
+	text-transform: none;
+	font-style: italic;
+	line-height: 1.2;
+	margin-left: 20px;
+	position: absolute;
+	top: 50%;
+	right: 0;
+	transform: translate(105%, -50%);
+}
 .logo-image {
 	display: inline-block;
-	max-width: 180px;	
+	max-width: 450px;	
 }
-.logo-image img {
+.top.logo-image {
+	display: block;
+	padding: 30px 0;	
+}
+.logo.logo-image {
+	position: relative;
+	max-width: none;
+	top: auto;
+	left: auto;
+	margin-left: 35px;
+	-webkit-transform: 	none;
+	-ms-transform: 		none;
+	-o-transform: 		none;
+	transform: 			none;
+}
+a.logo-image img {
 	display: block;
 	width: 100%;
 	height: auto;	
@@ -696,6 +725,9 @@ textarea:hover, input:hover, select:hover {
 	float: right;
 	margin-top: 40px;	
 }
+.top.logo-image .advertising728 {
+	margin-top: 0;	
+}
 
 /* -- 3.1 Main Menu */
 .menu-wrap {
@@ -704,6 +736,7 @@ textarea:hover, input:hover, select:hover {
 	border-width: 1px;
 	border-style: solid;
 	position: relative;
+	margin-bottom: -1px;
 	z-index: 9999 !important;
 	
 }
@@ -1006,7 +1039,8 @@ textarea:hover, input:hover, select:hover {
 .mini-disabled .container .slider-wrap {
 	padding-left: 0;	
 }
-.top.mini-disabled, 
+.top.mini-disabled,
+.top.mini-disabled.logo-image, 
 .menu-wrap.mini-disabled, 
 .container.mini-disabled, 
 .footer-wrap.mini-disabled {
@@ -2355,7 +2389,7 @@ li .comment-reply-title small {
 	border-left-style: solid;
 	border-right-style: solid;
 }
-.tabs-widget-navigation ul li a.selected:after {
+.tabs-widget-navigation ul li.selected a:after {
 	content: "";
 	display: block;
 	position: absolute;
@@ -2369,6 +2403,9 @@ li .comment-reply-title small {
 	border-top: none;
 	border-color: inherit;
 	background-color: inherit;	
+}
+.ac-tabs-init-wrap .tabs-widget-tab {
+	display: none;	
 }
 
 /* --- Same styles in some widgets */
@@ -3408,6 +3445,7 @@ input[type="submit"]:active {
 	}
 	
 	/* ------ */
+	.logo-image { max-width: 380px; }
 	.content-wrap { width: 66%; }
 	.sidebar { width: 34%; }
 	.slider .title, .slider .info { width: 90%; }
@@ -3420,12 +3458,21 @@ input[type="submit"]:active {
 
 @media screen and (max-width: 1280px) {
 	/* ------ */
+	.logo-image { max-width: 330px; }
 	.slider .title, .slider .info { width: 100%; }
 	.slider .details { margin-top: -30px; }
 	.share-pagination, .about-the-author { width: 100%; clear: both; }
 	.share-pagination { border-right: none; border-bottom-width: 1px; border-bottom-style: solid; }
 	.post-navigation a, .post-navigation span { line-height:80px; font-size: 30px; }
 }
+
+
+@media screen and (max-width: 1220px) {
+	.advertising728 {
+		/* Elements with Display None */
+		display: none;	
+	}
+	.logo.logo-text { left: 50%; -webkit-transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); -o-transform: translate(-50%, -50%); transform: translate(-50%, -50%); }
 
 
 @media screen and (max-width: 1140px) {
@@ -3447,7 +3494,10 @@ input[type="submit"]:active {
 	}
 	
 	/* ------ */
-	.logo { left: 50%; }
+	.logo { }
+	.logo-image { max-width: 300px; }
+	.logo.logo-image { margin-left: 0; }
+	.top.logo-image { text-align: center; }
 	.header-social-icons { padding: 0; margin-right: 30px; }
 	.content-wrap { width: 100%; border-right: none; }
 	.browse-window-opened .side-box.larger { width: 100%; padding-top: 0; }
@@ -3618,7 +3668,9 @@ input[type="submit"]:active {
 	.ac-social-buttons-widget ul li { width: 48%; }
 	.ac-social-buttons-widget .alignleft, .ac-social-buttons-widget .alignright { margin-left: auto; }
 	.ac-social-buttons-widget .alignleft { float: left; } .ac-social-buttons-widget .alignright { float: right; }
-	.header-wrap { height: 200px; }
+	.header-wrap { height: auto; }
+	.header-wrap .logo { font-size: 24px; }
+	.logo-image { max-width: 250px; }
 	.menu-wrap { height: 50px; }
 	.mobile-menu{top:49px;} .search-visible { top: 48px }
 	.search-button, .browse-more, .mobile-menu-button { width: 60px; line-height: 50px; } .browse-more { width: auto; } .browse-more i { font-size: 14px; }
@@ -3653,9 +3705,9 @@ input[type="submit"]:active {
 	/* ------ */
 	p, .single-template-1 .single-content p, .single-template-1 .single-content ul, .single-template-1 .single-content ol, .single-template-1 .single-content blockquote { margin-bottom: 15px;; }
 	.wrap { padding: 0 10px; }
-	.header-wrap { height: 160px; }
-	.header-wrap .top { height: 110px; }
-	.header-wrap .logo { font-size: 24px; }
+	.header-wrap { height: auto; }
+	.header-wrap .top { height: auto; }
+	.logo-image { max-width: 200px; }
 	.content-wrap, .mini-sidebar, .sidebar, .mini-sidebar-bg { padding-top: 10px; }
 	.main-page-title { padding: 15px 0; margin-bottom: 15px; } .main-page-title .page-title { font-size: 14px; letter-spacing: -1px; } .main-page-title .page-title i { margin-left: 5px; }
 	.side-box { margin-bottom: 10px; }
@@ -3694,7 +3746,7 @@ input[type="submit"]:active {
 	.sidebar .sidebar-heading { margin-bottom: 10px; }
 	.sidebar .tabs-widget-navigation { margin-bottom: 20px; }
 	.tabs-widget-navigation ul li a { width: 50px; }
-	.tabs-widget-navigation ul li a.selected:after { padding: 0 24px; }
+	.tabs-widget-navigation ul li.selected a:after { padding: 0 24px; }
 	.sidebar .sidebar-heading:before, .sidebar .sidebar-heading:after { width: 10px; left: -10px; }
 	.sidebar .sidebar-heading:after { left: auto; right: -10px; }
 	.ac-social-buttons-widget ul li { width: 100%; }

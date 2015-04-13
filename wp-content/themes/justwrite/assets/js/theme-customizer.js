@@ -5,17 +5,33 @@
 	// - Logo Settings
 	wp.customize('ac_logo_image',function( value ) {
         value.bind(function(to) {
-            $('.logo-contents').empty().addClass('logo-image').prepend('<img src="' + to + '" alt="Logo" />');
+			
+			var logoGetTitle = $('.logo-contents').attr('title');
+			
+			if( to ) {
+				$('.top').removeClass('logo-text').addClass('logo-image');
+				$('.top .logo').removeClass('logo-text').addClass('logo-image');
+            	$('.logo-contents').empty().removeClass('logo-text').addClass('logo-image').prepend('<img src="' + to + '" alt="Logo" />');
+			} else {
+				$('.top').removeClass('logo-image').addClass('logo-text');
+				$('.top .logo').removeClass('logo-image').addClass('logo-text');
+				$('.logo-contents').empty().removeClass('logo-image').addClass('logo-text').prepend( logoGetTitle );
+			}
         });
     });
+	
 	wp.customize( 'blogname', function( value ) {
-		value.bind( function( to ) {
-			$( '.logo-contents' ).removeClass('logo-image').html( to );
+		value.bind( function(to) {
+			if( $('.logo').hasClass('logo-image') ) { 
+				$('.logo-contents').attr('title',to);
+			} else {
+				$('.logo-contents').html(to).attr('title',to);
+			}
 		} );
 	} );
 	wp.customize( 'blogdescription', function( value ) {
-		value.bind( function( to ) {
-			$( '.description' ).html( to );
+		value.bind( function(to) {
+			$('.description').html(to);
 		} );
 	} );
 	wp.customize('ac_color_logo', function( value ) {

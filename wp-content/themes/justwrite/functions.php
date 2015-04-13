@@ -64,6 +64,9 @@ if ( ! function_exists( 'ac_setup' ) ) {
 			'mini-second'		=> __( 'Right Sidebar - Second Menu', 'acosmin' ),
 		) );
 		
+		// This feature adds theme support for themes to display titles.
+		add_theme_support( 'title-tag' );
+		
 		// This feature enables post and comment RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
 		
@@ -88,6 +91,19 @@ add_action( 'after_setup_theme', 'ac_setup' );
 
 
 
+/*  Title - Backwards compatibility
+/* ------------------------------------ */
+if ( ! function_exists( '_wp_render_title_tag' ) ) {
+    function ac_render_title() {
+		?>
+		<title><?php wp_title( '|', true, 'right' ); ?></title>
+		<?php
+	}
+    add_action( 'wp_head', 'ac_render_title' );
+}
+
+
+
 /*  Load CSS files
 /* ------------------------------------ */
 if ( ! function_exists( 'ac_css_files' ) ) {  
@@ -98,7 +114,7 @@ if ( ! function_exists( 'ac_css_files' ) ) {
 		wp_register_style( 'ac_webfonts_' . ac_get_selected_ff(), ac_font_url( ac_get_selected_ff() ), array(), null);
 			
 		// Enqueue
-		wp_enqueue_style( 'ac_style', get_stylesheet_uri(), array(), '1.0.7', 'all' );
+		wp_enqueue_style( 'ac_style', get_stylesheet_uri(), array(), '1.0.8', 'all' );
 		wp_enqueue_style( 'ac_icons', get_template_directory_uri() . '/assets/icons/css/font-awesome.min.css', array(), '4.3.0', 'all' );
 		wp_enqueue_style( 'ac_webfonts_' . ac_get_selected_ff() );
 			
@@ -117,10 +133,9 @@ if ( ! function_exists( 'ac_js_files' ) ) {
 		
 		// Enqueue
 		wp_enqueue_script( 'ac_js_fitvids', get_template_directory_uri() . '/assets/js/jquery.fitvids.js', array('jquery'), '1.1', true );
-		wp_enqueue_script( 'ac_js_idtabs', get_template_directory_uri() . '/assets/js/idtabs.js', array('jquery'), '3.0', true );
 		wp_enqueue_script( 'ac_js_menudropdown', get_template_directory_uri() . '/assets/js/menu-dropdown.js', array('jquery'), '1.4.8', true );
 		wp_enqueue_script( 'ac_js_slider', get_template_directory_uri() . '/assets/js/slider.js', array('jquery'), '0.3.0', true );
-		wp_enqueue_script( 'ac_js_myscripts', get_template_directory_uri() . '/assets/js/myscripts.js', array('jquery'), '1.0.5', true );
+		wp_enqueue_script( 'ac_js_myscripts', get_template_directory_uri() . '/assets/js/myscripts.js', array('jquery'), '1.0.6', true );
 		wp_enqueue_script( 'ac_js_html5', get_template_directory_uri() . '/assets/js/html5.js', array('jquery'), '3.7.0', false );
 		
 		// Comments Script
@@ -411,6 +426,8 @@ if ( ! function_exists( 'ac_get_logo' ) ) {
 	function ac_logo_class() {
 		if ( get_theme_mod( 'ac_logo_image' ) ) {
 			echo ' logo-image'; 	
+		} else {
+			echo ' logo-text'; 
 		}
 		
 	}
