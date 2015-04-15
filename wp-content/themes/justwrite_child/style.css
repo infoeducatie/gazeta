@@ -9,3 +9,7 @@ Version: 1.0
 */
 
 @import "../justwrite/style.css";
+
+#footer-widget-2 {
+	clear: both;
+}

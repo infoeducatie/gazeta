@@ -27,7 +27,13 @@ $logo_text			= get_theme_mod( 'ac_footer_logo_text', 'JustWrite' );
                     <a href="<?php echo $credit_link; ?>" title="Acosmin">Acosmin</a>
 				</span>
                 <?php endif; ?>
+                <br/>
         	</aside><!-- END .footer-credits -->
+            <?php
+				if(is_active_sidebar('footer-widget-2')){
+					dynamic_sidebar('footer-widget-2');
+				}
+			?>
 			<a href="#" class="back-to-top"><?php ac_icon( 'angle-up' ); ?></a>
 		</footer><!-- END .footer-wrap -->
     
