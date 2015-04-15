@@ -1,0 +1,11 @@
+/*
+Theme Name: JustWrite Child
+Theme URI: http://www.acosmin.com/
+Description: Child theme for the JustWrite theme
+Author: Alexandru Cosmin
+Author URI: http://wp.zacgordon.com/
+Template: justwrite
+Version: 1.0
+*/
+
+@import "../justwrite/style.css";
