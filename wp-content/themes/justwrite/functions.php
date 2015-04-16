@@ -96,7 +96,7 @@ add_action( 'after_setup_theme', 'ac_setup' );
 if ( ! function_exists( '_wp_render_title_tag' ) ) {
     function ac_render_title() {
 		?>
-		<title><?php wp_title( '|', false, 'right' ); ?></title>
+		<title><?php wp_title( '|', true, 'right' ); ?></title>
 		<?php
 	}
     add_action( 'wp_head', 'ac_render_title' );
