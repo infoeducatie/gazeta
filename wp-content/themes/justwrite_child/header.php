@@ -8,7 +8,6 @@
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<title><?php wp_title( '|', true, 'right' ); ?></title>
     <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
     <?php wp_head(); ?>
 </head>
@@ -24,16 +23,16 @@
 
 <div class="wrap">
 
-	<div class="top<?php ac_mini_disabled() ?>">
+	<div class="top<?php ac_mini_disabled(); ac_logo_class(); ?> clearfix">
     
-    	<div class="logo">
-        	<a href="<?php echo esc_url( home_url() ); ?>" title="<?php bloginfo( 'title' ); ?>" class="logo-contents<?php ac_logo_class(); ?>"><?php ac_get_logo(); ?></a>
+    	<div class="logo<?php ac_logo_class(); ?>">
+        	<a href="<?php echo esc_url( home_url() ); ?>" title="<?php bloginfo( 'name' ); ?>" class="logo-contents<?php ac_logo_class(); ?>"><?php ac_get_logo(); ?></a>
             <?php
 				// Ads variables - Options Panel
 				$ad728_show = of_get_option( 'ac_ad728_show' );
 				$ad728_code =  of_get_option( 'ac_ad728_code' );
 				
-				if ( $ad728_code == '' ) :
+				if ( $ad728_show == '' ) :
 			?>
             <h2 class="description"><?php bloginfo( 'description' ); ?></h2>
             <?php endif; ?>
