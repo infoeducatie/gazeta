@@ -9,3 +9,5 @@ Version: 1.0
 */
 
 @import "../justwrite/style.css";
+
+.footer-wrap { padding: 0; }
