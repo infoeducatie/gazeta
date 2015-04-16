@@ -10,4 +10,7 @@ Version: 1.0
 
 @import "../justwrite/style.css";
 
-.footer-wrap { padding: 0; }
+.footer-wrap {
+	padding-top: 0;
+	padding-bottom: 10px;
+}
