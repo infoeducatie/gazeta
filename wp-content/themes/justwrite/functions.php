@@ -114,7 +114,7 @@ if ( ! function_exists( 'ac_css_files' ) ) {
 		wp_register_style( 'ac_webfonts_' . ac_get_selected_ff(), ac_font_url( ac_get_selected_ff() ), array(), null);
 			
 		// Enqueue
-		wp_enqueue_style( 'ac_style', get_stylesheet_uri(), array(), '1.0.8', 'all' );
+		wp_enqueue_style( 'ac_style', get_stylesheet_uri(), array(), '1.0.9', 'all' );
 		wp_enqueue_style( 'ac_icons', get_template_directory_uri() . '/assets/icons/css/font-awesome.min.css', array(), '4.3.0', 'all' );
 		wp_enqueue_style( 'ac_webfonts_' . ac_get_selected_ff() );
 			
@@ -278,40 +278,6 @@ if ( ! function_exists( 'ac_sidebars_widgets' ) ) {
 	
 }
 add_action( 'widgets_init', 'ac_sidebars_widgets' );
-
-
-
-/*  Title formatting
-/* ------------------------------------ */
-if ( ! function_exists( 'ac_wp_title' ) ) {
-	
-	function ac_wp_title( $title, $sep ) {
-		global $paged, $page;
-	
-		if ( is_feed() ) {
-			return $title;
-		}
-	
-		// Add the site name.
-		$title .= get_bloginfo( 'name' );
-	
-		// Add the site description for the home/front page.
-		$site_description = get_bloginfo( 'description', 'display' );
-		if ( $site_description && ( is_home() || is_front_page() ) ) {
-			$title = "$title $sep $site_description";
-		}
-	
-		// Add a page number if necessary.
-		if ( $paged >= 2 || $page >= 2 ) {
-			$title = "$title $sep " . sprintf( __( 'Page %s', 'acosmin' ), max( $paged, $page ) );
-		}
-	
-		return $title;
-		
-	}
-	
-}
-add_filter( 'wp_title', 'ac_wp_title', 10, 2 );
 
 
 

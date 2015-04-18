@@ -28,7 +28,6 @@ $logo_text			= get_theme_mod( 'ac_footer_logo_text', 'JustWrite' );
 				</span>
                 <?php endif; ?>
         	</aside><!-- END .footer-credits -->
-                <?php footer_text(); ?>
 			<a href="#" class="back-to-top"><?php ac_icon( 'angle-up' ); ?></a>
 		</footer><!-- END .footer-wrap -->
     
