@@ -11,8 +11,10 @@ License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
 
-#footer-widget-2 {
-	clear: both;
+/* Header */
+
+.header-social-icons {
+  display: none !important;
 }
 
 /* Post */
@@ -27,4 +29,10 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 .social-post-plugin {
   display: block;
+}
+
+/* Footer */
+
+#footer-widget-2 {
+  clear: both;
 }
