@@ -11,6 +11,28 @@ License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
 
+/* Header */
+
+.header-social-icons {
+  display: none !important;
+}
+
+/* Post */
+
+.post-template-1, .single-template-1 {
+  margin-bottom: 0px;
+}
+
+.fb-like {
+  margin-bottom: 45px;
+}
+
+.social-post-plugin {
+  display: block;
+}
+
+/* Footer */
+
 #footer-widget-2 {
-	clear: both;
+  clear: both;
 }
