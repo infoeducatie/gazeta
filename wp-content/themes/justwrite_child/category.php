@@ -15,7 +15,7 @@
     <section class="content-wrap with-title" role="main">
     
     	<header class="main-page-title">
-        	<h1 class="page-title"><?php printf( __( 'Category Archives: <span>%s</span>', 'acosmin' ), single_cat_title( '', false ) ) . ac_icon( 'angle-down' ) ?></h1>
+        	<h1 class="page-title"><?php printf( __( 'Categoria <span>%s</span>', 'acosmin' ), single_cat_title( '', false ) ) . ac_icon( 'angle-down' ) ?></h1>
         </header>
     
     	<div class="posts-wrap clearfix">
