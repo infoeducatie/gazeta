@@ -77,3 +77,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 .content-wrap {
     width: 75%;
 }
+
+.posts-wrap {
+    padding: 0 15px 0 0;
+}
