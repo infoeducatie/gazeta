@@ -81,3 +81,11 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 .posts-wrap {
     padding: 0 15px 0 0;
 }
+
+.single-template-1 .single-content {
+    border-top-width: 3px;
+}
+
+.post-content {
+    padding-left: 0px;
+}
