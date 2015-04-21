@@ -34,7 +34,7 @@
 				
 				if ( $ad728_show == '' ) :
 			?>
-            <h2 class="description"><?php bloginfo( 'description' ); ?></h2>
+            <h1 class="description"><?php bloginfo( 'description' ); ?></h1>
             <?php endif; ?>
         </div><!-- END .logo -->
         
