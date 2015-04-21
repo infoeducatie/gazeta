@@ -59,3 +59,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
     font-size: 80px;
     color: #fff;
 }
+
+.logo-text {
+    min-height: 200px;
+}
