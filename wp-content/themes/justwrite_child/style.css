@@ -36,3 +36,8 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 #footer-widget-2 {
   clear: both;
 }
+
+.footer-wrap {
+	padding-top: 0;
+	padding-bottom: 10px;
+}

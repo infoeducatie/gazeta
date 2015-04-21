@@ -6,7 +6,7 @@ Theme URI: http://www.acosmin.com/theme/justwrite/
 Author: Alexandru Cosmin
 Author URI: http://www.acosmin.com/
 Description: JustWrite is a theme with clean lines and an open-spaced design, that can be used to show off your latest articles.
-Version: 1.0.8
+Version: 1.0.9
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: black, white, light, dark, two-columns, three-columns, left-sidebar, right-sidebar, fixed-layout, custom-colors, custom-header, custom-menu, editor-style, featured-images, fluid-layout, full-width-template, theme-options, translation-ready, responsive-layout
@@ -693,7 +693,10 @@ textarea:hover, input:hover, select:hover {
 	position: absolute;
 	top: 50%;
 	right: 0;
-	transform: translate(105%, -50%);
+	-webkit-transform:	translate(105%, -50%);
+	-ms-transform: 		translate(105%, -50%);
+	-o-transform: 		translate(105%, -50%);
+	transform: 			translate(105%, -50%);
 }
 .logo-image {
 	display: inline-block;
@@ -704,6 +707,7 @@ textarea:hover, input:hover, select:hover {
 	padding: 30px 0;	
 }
 .logo.logo-image {
+	float: left;
 	position: relative;
 	max-width: none;
 	top: auto;
@@ -3496,7 +3500,7 @@ input[type="submit"]:active {
 	/* ------ */
 	.logo { }
 	.logo-image { max-width: 300px; }
-	.logo.logo-image { margin-left: 0; }
+	.logo.logo-image { float: none; margin-left: 0; }
 	.top.logo-image { text-align: center; }
 	.header-social-icons { padding: 0; margin-right: 30px; }
 	.content-wrap { width: 100%; border-right: none; }
