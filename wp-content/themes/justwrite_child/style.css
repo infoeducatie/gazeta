@@ -41,6 +41,12 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 }
 
 .footer-wrap {
-	padding-top: 0;
-	padding-bottom: 10px;
+    padding-top: 0;
+    padding-bottom: 10px;
+}
+
+/* Posts */
+
+.post-thumbnail {
+    background-color: #fff;
 }
