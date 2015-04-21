@@ -26,7 +26,7 @@
 	<div class="top<?php ac_mini_disabled(); ac_logo_class(); ?> clearfix">
     
     	<div class="logo<?php ac_logo_class(); ?>">
-        	<a href="<?php echo esc_url( home_url() ); ?>" title="<?php bloginfo( 'name' ); ?>" class="logo-contents<?php ac_logo_class(); ?>"><?php ac_get_logo(); ?></a>
+        	<h1><a href="<?php echo esc_url( home_url() ); ?>" title="<?php bloginfo( 'name' ); ?>" class="logo-contents<?php ac_logo_class(); ?>"><?php ac_get_logo(); ?></a></h1>
             <?php
 				// Ads variables - Options Panel
 				$ad728_show = of_get_option( 'ac_ad728_show' );
@@ -34,7 +34,6 @@
 				
 				if ( $ad728_show == '' ) :
 			?>
-            <h1 class="description"><?php bloginfo( 'description' ); ?></h1>
             <?php endif; ?>
         </div><!-- END .logo -->
         
