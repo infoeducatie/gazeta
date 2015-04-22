@@ -100,3 +100,16 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 .post-content {
     padding-left: 0px;
 }
+
+li#menu-item-140 { 
+    background: #9F2122;
+    border: solid 10px #fff;
+}
+
+li#menu-item-140 a {
+    color: #fff;
+}
+
+li#menu-item-140 a:hover {
+    color: #eee;
+}
