@@ -27,7 +27,7 @@
     
     	<div class="logo<?php ac_logo_class(); ?>">
         	<h1><a href="<?php echo esc_url( home_url() ); ?>" title="<?php bloginfo( 'name' ); ?>" class="logo-contents<?php ac_logo_class(); ?>"><?php ac_get_logo(); ?></a></h1>
-		<h2 class="moto">Moto interesant aici</h2>
+		<h2 class="moto"><?php bloginfo('description'); ?></h2>
             <?php
 				// Ads variables - Options Panel
 				$ad728_show = of_get_option( 'ac_ad728_show' );
