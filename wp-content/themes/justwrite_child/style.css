@@ -70,7 +70,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 .logo.logo-text {
     font-family: 'Open Sans', 'Questrial', sans-serif;
-    font-size: 39px; 
+    font-size: 39px;
     letter-spacing: 7px;
     font-weight: bold;
     text-transform: none;
@@ -79,14 +79,6 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 .logo.logo-text h2 {
    font-size: 20px;
    color: #FFF;
-}
-
-.sidebar {
-    width: 25%;
-}
-
-.content-wrap {
-    width: 75%;
 }
 
 .posts-wrap {
@@ -101,7 +93,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
     padding-left: 0px;
 }
 
-li#menu-item-140 { 
+li#menu-item-140 {
     background: #9F2122;
     border: solid 10px #fff;
 }
