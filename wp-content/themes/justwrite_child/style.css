@@ -49,19 +49,32 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 /* Menu Item Implica-te */
 
 #menu-item-140 {
-  background: #9F2122;
-  border-top: solid 13px #fff;
-  border-bottom: solid 13px #fff;
-  border-left: 0;
+  /* XXX @palcu: because we use display: inline */
+  padding-left: 10px;
 }
 
 #menu-item-140 a {
+  display: inline;
+  margin: 0 10px;
+  padding: 10px 0;
+
+  background-color: #9F2122;
   color: #fff;
-  margin-top: -13px;
 }
 
 #menu-item-140 a:hover {
   color: #eee;
+}
+
+@media screen and (max-width: 768px) {
+  #menu-item-140 {
+    padding-left: 0;
+  }
+  /* XXX @palcu: looks ugly unaligned, but it's consistent */
+  #menu-item-140 a {
+    margin: 0;
+    padding: 10px;
+  }
 }
 
 /* Post */
