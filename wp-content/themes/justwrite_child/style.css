@@ -16,52 +16,8 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 /* Header */
 
-.moto {
-  clear: both;
-}
-
 .header-social-icons {
   display: none !important;
-}
-
-.logo.logo-image .description {
-  font-size: 80px;
-  color: #fff;
-}
-
-.top.logo-text {
-  min-height: 200px;
-}
-
-.logo.logo-text {
-  font-family: 'Open Sans', 'Questrial', sans-serif;
-  font-size: 39px;
-  letter-spacing: 7px;
-  font-weight: bold;
-  text-transform: none;
-}
-
-.logo.logo-text h2 {
- font-size: 20px;
- color: #FFF;
-}
-
-/* Menu Item Implica-te */
-
-#menu-item-140 {
-  background: #9F2122;
-  border-top: solid 13px #fff;
-  border-bottom: solid 13px #fff;
-  border-left: 0;
-}
-
-#menu-item-140 a {
-  color: #fff;
-  margin-top: -13px;
-}
-
-#menu-item-140 a:hover {
-  color: #eee;
 }
 
 /* Post */
@@ -89,28 +45,77 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 }
 
 .footer-wrap {
-  padding-top: 0;
-  padding-bottom: 10px;
+    padding-top: 0;
+    padding-bottom: 10px;
 }
 
 /* Posts */
 
 .post-thumbnail {
-  background-color: #fff;
+    background-color: #fff;
 }
 
 .post-thumbnail img {
-  width: 85%;
+    width: 85%;
+}
+
+.logo.logo-image .description {
+    font-size: 80px;
+    color: #fff;
+}
+
+.top.logo-text {
+    min-height: 200px;
+}
+
+.logo.logo-text {
+    font-family: 'Open Sans', 'Questrial', sans-serif;
+    font-size: 39px; 
+    letter-spacing: 7px;
+    font-weight: bold;
+    text-transform: none;
+}
+
+.logo.logo-text h2 {
+   font-size: 20px;
+   color: #FFF;
+    letter-spacing: 3px;
+}
+
+.sidebar {
+    width: 25%;
+}
+
+.content-wrap {
+    width: 75%;
 }
 
 .posts-wrap {
-  padding: 0 15px 0 0;
+    padding: 0 15px 0 0;
 }
 
 .single-template-1 .single-content {
-  border-top-width: 3px;
+    border-top-width: 3px;
 }
 
 .post-content {
-  padding-left: 0px;
+    padding-left: 0px;
 }
+
+li#menu-item-140 { 
+    background: #9F2122;
+    border-top: solid 13px #fff;
+    border-bottom: solid 13px #fff;
+    border-left: 0;
+}
+
+li#menu-item-140 a {
+    color: #fff;
+    margin-top: -13px;
+}
+
+li#menu-item-140 a:hover {
+    color: #eee;
+}
+
+.moto { clear: both; }
