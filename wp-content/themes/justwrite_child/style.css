@@ -20,6 +20,43 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
   display: none !important;
 }
 
+.logo.logo-image .description {
+    font-size: 80px;
+    color: #fff;
+}
+
+.top.logo-text {
+    min-height: 200px;
+}
+
+.logo.logo-text {
+    font-family: 'Open Sans', 'Questrial', sans-serif;
+    font-size: 39px;
+    letter-spacing: 7px;
+    font-weight: bold;
+    text-transform: none;
+}
+
+.logo.logo-text h2 {
+   font-size: 20px;
+   color: #FFF;
+}
+
+/* Menu Item Implica-te */
+
+#menu-item-140 {
+    background: #9F2122;
+    border: solid 10px #fff;
+}
+
+#menu-item-140 a {
+    color: #fff;
+}
+
+#menu-item-140 a:hover {
+    color: #eee;
+}
+
 /* Post */
 
 .post-template-1, .single-template-1 {
@@ -59,28 +96,6 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
     width: 85%;
 }
 
-.logo.logo-image .description {
-    font-size: 80px;
-    color: #fff;
-}
-
-.top.logo-text {
-    min-height: 200px;
-}
-
-.logo.logo-text {
-    font-family: 'Open Sans', 'Questrial', sans-serif;
-    font-size: 39px;
-    letter-spacing: 7px;
-    font-weight: bold;
-    text-transform: none;
-}
-
-.logo.logo-text h2 {
-   font-size: 20px;
-   color: #FFF;
-}
-
 .posts-wrap {
     padding: 0 15px 0 0;
 }
@@ -91,17 +106,4 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 .post-content {
     padding-left: 0px;
-}
-
-li#menu-item-140 {
-    background: #9F2122;
-    border: solid 10px #fff;
-}
-
-li#menu-item-140 a {
-    color: #fff;
-}
-
-li#menu-item-140 a:hover {
-    color: #eee;
 }
