@@ -1129,6 +1129,8 @@ function display_cff($atts) {
                 }
 
                 //EVENT
+$photo = $news->picture;
+$content .= "<img src='{$photo}'/>"; 
                 $cff_event = '';
                 if ($cff_show_event_title || $cff_show_event_details) {
                     //Check for media
