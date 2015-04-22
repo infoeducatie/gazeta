@@ -14,10 +14,18 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 /* TODO @palcu: check why w/out the import it doesn't work in Presslabs  */
 @import "../justwrite/style.css";
 
+@import url(http://fonts.googleapis.com/css?family=Open+Sans&subset=latin,latin-ext);
+
 /* Header */
 
 .moto {
   clear: both;
+}
+
+@media screen and (max-width: 1026px) {
+  .moto {
+    display: none;
+  }
 }
 
 .header-social-icons {
@@ -34,7 +42,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 }
 
 .logo.logo-text {
-  font-family: 'Open Sans', 'Questrial', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 39px;
   letter-spacing: 7px;
   font-weight: bold;
