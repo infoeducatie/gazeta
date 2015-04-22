@@ -955,7 +955,13 @@ function display_cff($atts) {
 
                 $cff_author .= '</a></div>'; //End .cff-author
 
-
+// IMAGE
+if (!empty($news->picture) && !empty($news->object_id)) {
+$object_id = $news->object_id;
+$picture = 'https://graph.facebook.com/'.$object_id.'/picture?type=normal&width=9999&height=9999';
+$cff_post_item .= '<img src="'.$picture.'" alt="" class="img-responsive" />
+';
+}
                 //POST TEXT
                 $cff_translate_photos_text = $atts['photostext'];
                 if (!isset($cff_translate_photos_text) || empty($cff_translate_photos_text)) $cff_translate_photos_text = 'photos';
