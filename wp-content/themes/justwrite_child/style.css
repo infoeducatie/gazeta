@@ -11,6 +11,9 @@ License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
 
+/* TODO @palcu: check why w/out the import it doesn't work in Presslabs  */
+@import "../justwrite/style.css";
+
 @import url(http://fonts.googleapis.com/css?family=Open+Sans&subset=latin,latin-ext);
 
 /* Menu Item Implica-te */
@@ -26,6 +29,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
   padding: 10px 10px;
   background-color: #9F2122;
   color: #fff;
+  white-space: nowrap;
 }
 
 #menu-item-140 a:hover {
@@ -42,9 +46,6 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
     padding: 10px;
   }
 }
-
-/* TODO @palcu: check why w/out the import it doesn't work in Presslabs  */
-@import "../justwrite/style.css";
 
 /* Header */
 
