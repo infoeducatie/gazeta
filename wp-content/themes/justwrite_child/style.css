@@ -11,10 +11,40 @@ License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
 
+@import url(http://fonts.googleapis.com/css?family=Open+Sans&subset=latin,latin-ext);
+
+/* Menu Item Implica-te */
+
+#menu-item-140 {
+  /* XXX @palcu: because we use display: inline */
+  padding-left: 10px;
+}
+
+#menu-item-140 a {
+  display: inline;
+  margin: 0 10px;
+  padding: 10px 10px;
+  background-color: #9F2122;
+  color: #fff;
+}
+
+#menu-item-140 a:hover {
+  color: #eee;
+}
+
+@media screen and (max-width: 768px) {
+  #menu-item-140 {
+    padding-left: 0;
+  }
+  /* XXX @palcu: looks ugly unaligned, but it's consistent */
+  #menu-item-140 a {
+    margin: 0;
+    padding: 10px;
+  }
+}
+
 /* TODO @palcu: check why w/out the import it doesn't work in Presslabs  */
 @import "../justwrite/style.css";
-
-@import url(http://fonts.googleapis.com/css?family=Open+Sans&subset=latin,latin-ext);
 
 /* Header */
 
@@ -55,37 +85,6 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
   text-shadow: 1px 1px 2px black;
   font-size: 20px;
   color: #FFF;
-}
-
-/* Menu Item Implica-te */
-
-#menu-item-140 {
-  /* XXX @palcu: because we use display: inline */
-  padding-left: 10px;
-}
-
-#menu-item-140 a {
-  display: inline;
-  margin: 0 10px;
-  padding: 10px 10px;
-
-  background-color: #9F2122;
-  color: #fff;
-}
-
-#menu-item-140 a:hover {
-  color: #eee;
-}
-
-@media screen and (max-width: 768px) {
-  #menu-item-140 {
-    padding-left: 0;
-  }
-  /* XXX @palcu: looks ugly unaligned, but it's consistent */
-  #menu-item-140 a {
-    margin: 0;
-    padding: 10px;
-  }
 }
 
 /* Post */
