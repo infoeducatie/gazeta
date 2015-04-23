@@ -1,0 +1,13 @@
+	<ol> 
+	<li>You can use WordPress image galleries and have them grouped and auto-lightboxed: <a href="http://codex.wordpress.org/Gallery_Shortcode"><code>[gallery link="file"]</code></a></li> 	
+	<li>You can also add a <code>rel="lightbox"</code> attribute to any link tag to activate the lightbox. For example:
+	<pre><code>	&lt;a href=&quot;images/image-1.jpg&quot; rel=&quot;lightbox&quot; title=&quot;my caption&quot;&gt;image #1&lt;/a&gt;</code></pre> 
+	<em>Optional:</em> Use the <code>title</code> attribute if you want to show a caption.
+	</li> 
+	<li>If you have a set of related images that you would like to group, simply include a group name in the rel attribute. For example:
+	<pre><code>	&lt;a href=&quot;images/image-1.jpg&quot; rel=&quot;lightbox[roadtrip]&quot;&gt;image #1&lt;/a&gt;
+	&lt;a href=&quot;images/image-2.jpg&quot; rel=&quot;lightbox[roadtrip]&quot;&gt;image #2&lt;/a&gt;
+	&lt;a href=&quot;images/image-3.jpg&quot; rel=&quot;lightbox[roadtrip]&quot;&gt;image #3&lt;/a&gt;</code></pre> 
+	No limits to the number of image sets per page or how many images are allowed in each set. Go nuts!</li> 
+	<li>To <strong>disable</strong> lightboxing of an image link, just set any other rel-attribute: <code>rel="nobox"</code></li>
+	</ol>	
