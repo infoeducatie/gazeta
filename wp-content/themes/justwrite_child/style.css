@@ -44,14 +44,15 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 .logo.logo-text {
   font-family: 'Open Sans', sans-serif;
   font-size: 39px;
-  letter-spacing: 7px;
+  letter-spacing: 5px;
   font-weight: bold;
   text-transform: none;
 }
 
 .logo.logo-text h2 {
- font-size: 20px;
- color: #FFF;
+  letter-spacing: 3px;
+  font-size: 20px;
+  color: #FFF;
 }
 
 /* Menu Item Implica-te */
