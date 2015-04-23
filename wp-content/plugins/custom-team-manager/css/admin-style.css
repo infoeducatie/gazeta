@@ -1,0 +1,30 @@
+.successModal {
+    display: block;
+    position: fixed;
+    top: 45%;
+    left: 25%;
+    width: 300px;
+    height: auto;
+    padding: 5px 20px;
+    border: 3px solid green;
+    background-color: #EFE;
+    z-index:1002;
+    overflow: auto;
+    -moz-border-radius: 15px; 
+    -webkit-border-radius: 15px;
+    -moz-box-shadow: 5px 5px 10px #cfcfcf;
+    -webkit-box-shadow: 5px 5px 10px #cfcfcf;
+}
+
+.italic{ 
+	font-style: italic;
+}
+#img{ margin-left: 20px; }
+#cmtOptionsForm .form-table td{ vertical-align: top; }
+.cmt-middle {
+    display: block;
+    margin-top: 8px;
+}
+.cmt-links {
+    text-align: right;
+}
