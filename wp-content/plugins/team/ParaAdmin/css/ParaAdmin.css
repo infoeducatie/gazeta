@@ -10,10 +10,9 @@
 
 .para-settings .option-box {
   border-left: 3px solid rgb(255, 255, 255);
-  margin: 10px;
+  margin: 10px 0;
   padding: 10px;
 }
-
 
 
 .para-settings .option-box:hover {
@@ -297,14 +296,6 @@
   padding: 30px 10px 10px;
   text-align: center;
 }
-
-.para-dashboard .dash-box .unique-visitor {
-  color: rgb(255, 255, 255);
-  font-size: 40px;
-  padding: 30px 10px 10px;
-  text-align: center;
-}
-
 
 
 

@@ -1,10 +1,10 @@
-=== Team - Meet The Team Grid ===
+=== Team ===
 	Contributors: paratheme
 	Donate link: http://paratheme.com
 	Tags: team, members profiles, our teams, team members, team plugin wordpress, meet the team
 	Requires at least: 3.8
-	Tested up to: 4.1
-	Stable tag: 1.4
+	Tested up to: 4.2
+	Stable tag: 1.5
 	License: GPLv2 or later
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -18,7 +18,7 @@ Display team member profiles with descriptions and links to social media using o
 
 ### Team by http://paratheme.com
 
-* [Upgrade to Premium! &raquo;](http://paratheme.com/items/team-responsive-meet-the-team-grid-for-wordpress/)
+* [Buy Premium! &raquo;](http://paratheme.com/items/team-responsive-meet-the-team-grid-for-wordpress/)
 * [Watch Video Tutorial! &raquo;](https://www.youtube.com/watch?v=8OiNCDavSQg)
 * [Live Demo! &raquo;](http://paratheme.com/demo/team/)
 
@@ -31,7 +31,6 @@ Display team member profiles with descriptions and links to social media using o
 * Custom number of member query.
 * Team member thumbnail images size selection.
 * Team grid thumbnail custom width.
-* Team grid thumbnail custom height.
 * Team grid items text align.
 * Background image for team area.
 * Team member name font color.
@@ -39,18 +38,23 @@ Display team member profiles with descriptions and links to social media using o
 
 <strong>Premium Features</strong><br />
 
-* Total four themes.
-* Query Team meamber from team group(categories), team member id's.
-* Grid thumbnail custom width.
+
+* Total eight different themes.
+* Enable Masonry grid for any themes.
 * Grid items text align.
-* Member bio font size.
-* Member position font color.
-* Member position font size.
-* Custom icons for custom profile field.
+* Display from member categories(group).
+* Display by member id’s.
+* Member position font size & color.
+* Team member bio font size & color.
+* Custom icons for custom social links.
 * Click-able link to custom post team members.
 * Click-able link to custom link to team members.
 * Popup profile box on click member thumbnail.
-* and more on updating.
+* Custom height & width for social icons.
+* Drag & Drop sorting for custom social icons.
+* Social link for mobile/telephone numbers.
+* 4 different ready style for social icons.
+* Pagination support.
 
 <strong>Video Tutorial Here.</strong>
 https://www.youtube.com/watch?v=8OiNCDavSQg
@@ -95,9 +99,19 @@ then paste this shortcode anywhere in your page to display Team gird.<br />
 == Changelog ==
 
 
+
+	= 1.5=
+	
+    * 25/02/2015 add Improve social icons.
+    * 25/02/2015 add new social fields added.
+    * 25/02/2015 add remove button added on setting page for social profile fields.
+    * 25/02/2015 add Custom CSS box.
+    * 25/02/2015 add member bio content selection "full" or "excerpt".
+    * 25/02/2015 add member excerpt custom Length & Read More Text.
+	
 	= 1.4=
 	
-    * 110/02/2015 add display team under text widget.
+    * 10/02/2015 add display team under text widget.
 
 
 	= 1.3=
