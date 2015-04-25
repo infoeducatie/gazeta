@@ -28,7 +28,7 @@ $logo_text			= get_theme_mod( 'ac_footer_logo_text', 'JustWrite' );
 				</span>
                 <?php endif; ?>
         	</aside><!-- END .footer-credits -->
-                <?php footer_text(); ?>
+                <?php // footer_text(); ?>
 		</footer><!-- END .footer-wrap -->
     
     </div><!-- END .wrap -->
