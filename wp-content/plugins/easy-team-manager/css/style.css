@@ -31,7 +31,7 @@ h1,h2,h3,h4,a,a:hover,li,li:hover,
 .team_member_wrap{width:23%; float:left; margin-left:1.6%; margin-top:20px; margin-bottom:30px;}
 .team_profile_wrap{border-radius:3px; background:#fff; border-bottom:2px solid #FF6C60; height:260px !important; overflow:hidden; position:relative;}
 
-.team_profile_pic{height:220px; border-radius:3px 3px 0 0; overflow:hidden; position:relative; text-align:center !important; background-size:auto 100% !important;}
+.team_profile_pic{height:200px; border-radius:3px 3px 0 0; overflow:hidden; position:relative; text-align:center !important; background-size:auto 100% !important;}
 
 .team_profile_desc{display:block; background:rgba(50,58,69,.8); opacity:0; position:absolute; bottom:0; left:0; height:0%; width:100%;}
 .team_profile_wrap:hover .team_profile_desc{opacity:1; height:250px !important}
