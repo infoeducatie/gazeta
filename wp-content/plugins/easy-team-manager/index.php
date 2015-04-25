@@ -195,65 +195,65 @@ $setting_list=unserialize($get_result->setting);?>
                         <div class="team_social_links">
                             <ul>   
                                 <?php if(isset($social_media['ind_facebook_link']) AND $social_media['ind_facebook_link']!=''){?>
-                                <li><a href="http://www.facebook.com/<?php echo $social_media['ind_facebook_link'];?>"> 
+                                <li><a target="_blank" href="http://www.facebook.com/<?php echo $social_media['ind_facebook_link'];?>"> 
                                 <i class="fa fa-facebook"></i></a></li><?php }?>
                                 <?php if(isset($social_media['ind_twitter_link']) AND $social_media['ind_twitter_link']!=''){?>
-                                <li><a href="http://www.twitter.com/<?php echo $social_media['ind_twitter_link'];?>"> 
+                                <li><a target="_blank" href="http://www.twitter.com/<?php echo $social_media['ind_twitter_link'];?>"> 
                                 <i class="fa fa-twitter"></i></a></li><?php }?>
                                 
                                  <?php if(isset($social_media['ind_skype_link']) AND $social_media['ind_skype_link']!=''){?>
 
-                                <li><a href="http://www.skype.com/<?php echo $social_media['ind_skype_link'];?>"> 
+                                <li><a target="_blank" href="http://www.skype.com/<?php echo $social_media['ind_skype_link'];?>"> 
                                 <i class="fa fa-skype"></i></a></li><?php }?>
                                 <?php if(isset($social_media['ind_google_link']) AND $social_media['ind_google_link']!=''){?>
-                                <li><a href="http://www.googleplus.com/<?php echo $social_media['ind_google_link'];?>"> 
+                                <li><a target="_blank" href="http://www.googleplus.com/<?php echo $social_media['ind_google_link'];?>"> 
                                 <i class="fa fa-google"></i></a></li><?php }?>
                                 
                                 <?php if(isset($social_media['linkdin']) AND $social_media['linkdin']!=''){?>
                                 
-                                <li><a href="http://www.linkedin.com/<?php echo $social_media['linkdin'];?>"> 
+                                <li><a target="_blank" href="http://www.linkedin.com/<?php echo $social_media['linkdin'];?>"> 
                                 <i class="fa fa-linkedin"></i></a></li><?php }?>
                                 
                                 <?php if(isset($social_media['instagram']) AND $social_media['instagram']!=''){?>
-                                 <li><a href="http://www.instagram.com/<?php echo $social_media['instagram'];?>"> 
+                                 <li><a target="_blank" href="http://www.instagram.com/<?php echo $social_media['instagram'];?>"> 
                                 <i class="fa fa-instagram"></i></a></li><?php }?>
                                 
                                 <?php if(isset($social_media['youtube']) AND $social_media['youtube']!=''){?>
-                                 <li><a href="http://www.youtube.com/<?php echo $social_media['youtube'];?>"> 
+                                 <li><a target="_blank" href="http://www.youtube.com/<?php echo $social_media['youtube'];?>"> 
                                 <i class="fa fa-youtube"></i></a></li><?php }?>
                                 
                                 <?php if(isset($social_media['vimeo']) AND $social_media['vimeo']!=''){?>
-                                <li><a href="http://www.vimeo.com/<?php echo $social_media['vimeo'];?>"> 
+                                <li><a target="_blank" href="http://www.vimeo.com/<?php echo $social_media['vimeo'];?>"> 
                                 <i class="fa fa-vimeo-square"></i></a></li><?php }?>
                                 
                                 <?php if(isset($social_media['stumbleupon']) AND $social_media['stumbleupon']!=''){?>
-                                <li><a href="http://www.stumbleupon.com/<?php echo $social_media['stumbleupon'];?>"> 
+                                <li><a target="_blank" href="http://www.stumbleupon.com/<?php echo $social_media['stumbleupon'];?>"> 
                                 <i class="fa fa-stumbleupon"></i></a></li><?php }?>
                                 
                                 <?php if(isset($social_media['timblr']) AND $social_media['timblr']!=''){?>
-                                <li><a href="http://www.tumblr.com/<?php echo $social_media['timblr'];?>"> 
+                                <li><a target="_blank" href="http://www.tumblr.com/<?php echo $social_media['timblr'];?>"> 
                                 <i class="fa fa-tumblr"></i></a></li><?php }?>
                                 
                                 <?php if(isset($social_media['digg']) AND $social_media['digg']!=''){?>
-                                <li><a href="http://www.digg.com/<?php echo $social_media['digg'];?>"> 
+                                <li><a target="_blank" href="http://www.digg.com/<?php echo $social_media['digg'];?>"> 
                                 <i class="fa fa-digg"></i></a></li><?php }?>
                                 
                                 <?php if(isset($social_media['behance']) AND $social_media['behance']!=''){?>
-                                <li><a href="http://www.behance.com/<?php echo $social_media['behance'];?>"> 
+                                <li><a target="_blank" href="http://www.behance.com/<?php echo $social_media['behance'];?>"> 
                                 <i class="fa fa-behance"></i></a></li><?php }?>
                                 
                                 <?php if(isset($social_media['foursquare']) AND $social_media['foursquare']!=''){?>
-                                <li><a href="http://www.foursquare.com/<?php echo $social_media['foursquare'];?>"> 
+                                <li><a target="_blank" href="http://www.foursquare.com/<?php echo $social_media['foursquare'];?>"> 
                                 <i class="fa fa-foursquare"></i></a></li><?php }?>
                                 
                                 <?php if(isset($social_media['delicious']) AND $social_media['delicious']!=''){?>
                                 <li><a href="http://www.delicious.com/<?php echo $social_media['delicious'];?>"> 
                                 <i class="fa fa-delicious"></i></a></li><?php }?>
                                 <?php if(isset($social_media['reddit']) AND $social_media['reddit']!=''){?>
-                                <li><a href="http://www.reddit.com/<?php echo $social_media['reddit'];?>"> 
+                                <li><a target="_blank" href="http://www.reddit.com/<?php echo $social_media['reddit'];?>"> 
                                 <i class="fa fa-reddit"></i></a></li><?php }?>
                                 <?php if(isset($social_media['wordpress']) AND $social_media['wordpress']!=''){?>
-                                <li><a href="http://www.wordpress.com/<?php echo $social_media['wordpress'];?>"> 
+                                <li><a target="_blank" href="http://www.wordpress.com/<?php echo $social_media['wordpress'];?>"> 
                                 <i class="fa fa-wordpress"></i></a></li><?php }?>
                             </ul>  
                         </div>
