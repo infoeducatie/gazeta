@@ -147,3 +147,18 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 .team_social_links a {
   display: inline;
 }
+
+section#footer_trademarks-2 .widget-wrap {
+  text-align: center;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.widget_footer_trademarks a {
+  display: inline-block;
+}
+
+section#footer_copyright-2 {
+  clear: left;
+}
