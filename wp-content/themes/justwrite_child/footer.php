@@ -19,9 +19,9 @@ $logo_text      = get_theme_mod( 'ac_footer_logo_text', 'JustWrite' );
       <aside class="footer-credits footer-partners">
         <p>Parteneri</p>
         <ul>
-          <li><a href="http://presslabs.com"><img src="http://cdn.gazeta.info.ro/wp-content/uploads/2015/04/pl.png" alt="PressLabs" title="PressLabs"></a></li>
-          <li><a href="http://upir.ro"><img src="http://cdn.gazeta.info.ro/wp-content/uploads/2015/04/upir.png" alt="UPIR" title="Uniunea Profesorilor de Informatică din România"></a></li>
-          <li><a href="http://agora.ro"><img src="http://cdn.gazeta.info.ro/wp-content/uploads/2015/04/11050659_426510460862550_3037354345692282831_n-e1430007927965.jpg" alt="Agora" title="Agora"></a></li>
+          <li><a href="http://presslabs.com" target="_blank"><img src="http://cdn.gazeta.info.ro/wp-content/uploads/2015/04/pl.png" alt="PressLabs" title="PressLabs"></a></li>
+          <li><a href="http://upir.ro" target="_blank"><img src="http://cdn.gazeta.info.ro/wp-content/uploads/2015/04/upir.png" alt="UPIR" title="Uniunea Profesorilor de Informatică din România"></a></li>
+          <li><a href="http://agora.ro" target="_blank"><img src="http://cdn.gazeta.info.ro/wp-content/uploads/2015/04/11050659_426510460862550_3037354345692282831_n-e1430007927965.jpg" alt="Agora" title="Agora"></a></li>
         </ul>
       </aside><!-- END .footer-credits -->
     </footer><!-- END .footer-wrap -->
