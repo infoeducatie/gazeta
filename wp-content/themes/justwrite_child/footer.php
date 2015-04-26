@@ -20,7 +20,7 @@ $logo_text			= get_theme_mod( 'ac_footer_logo_text', 'JustWrite' );
         		<a href="<?php echo esc_url( home_url() ); ?>" title="<?php bloginfo( 'title' ); ?>" rel="nofollow" class="blog-title"><?php echo esc_html( $logo_text ); ?></a>
             	<strong class="copyright"><?php echo esc_html( $copyright_text ); ?></strong>
                 <?php 
-				if ( !$disable_credit ) : ?>
+		if ( !$disable_credit ) : ?>
                 <span class="theme-author">
                     <a href="<?php echo $the_wp_link; ?>">Proudly powered by WordPress</a> &mdash;
                     <em>Theme: JustWrite by</em>
@@ -32,14 +32,15 @@ $logo_text			= get_theme_mod( 'ac_footer_logo_text', 'JustWrite' );
     
     </div><!-- END .wrap -->
     
-    <?php 
+		<?php 
 		// Before the <body> tag closes hook 
 		ac_before_body_closed();
-		
-		// WP Footer
+		?>
+
+		<?php
 		wp_footer();
 		footer_text();
-	?>
+		?>
     
 </body>
 </html>
