@@ -162,3 +162,7 @@ section#footer_trademarks-2 .widget-wrap {
 section#footer_copyright-2 {
   clear: left;
 }
+
+footer.custom-footer {
+  margin-top: -40px;
+}
