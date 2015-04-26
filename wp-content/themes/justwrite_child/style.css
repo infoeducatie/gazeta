@@ -180,12 +180,3 @@ section#footer_copyright-2 {
 footer.custom-footer {
   margin-top: -40px;
 }
-
-#menu-item-130::after {
-content:'';
-  width: 0px;
-  height: 0px;
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
-  border-top: 5px solid black;
-}
