@@ -126,6 +126,7 @@ function autover_version_filter($src) {
 	//
 	// Get the filetype of the file (JS or CSS)
 	//
+	$filetype = null;
 	( strtolower( substr( $src_with_no_query, -2 ) ) == 'js' ) ? $filetype = 'js' : null ;
 	( strtolower( substr( $src_with_no_query, -3 ) ) == 'css' ) ? $filetype = 'css' : null ;
 
