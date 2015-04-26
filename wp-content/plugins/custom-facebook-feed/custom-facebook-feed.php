@@ -33,6 +33,7 @@ function display_cff($atts) {
     
     //Style options
     $options = get_option('cff_style_settings');
+    $content = "";
     //Create the types string to set as shortcode default
     $include_string = '';
     if($options[ 'cff_show_author' ]) $include_string .= 'author,';
