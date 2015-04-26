@@ -1,6 +1,6 @@
 <?php
 /* ------------------------------------------------------------------------- *
- *	Footer template					
+ *	Footer template
 /* ------------------------------------------------------------------------- */
 
 //  Variables
@@ -11,7 +11,7 @@ $the_wp_link		= 'http://wordpress.org/';
 $copyright_text 	= get_theme_mod( 'ac_footer_copyright_text', 'Copyright 2013 JUSTWRITE. All rights reserved.' );
 $logo_text			= get_theme_mod( 'ac_footer_logo_text', 'JustWrite' );
 ?>
-		<?php 
+		<?php
 			// Before the main <header> tag
 			ac_before_footer();
 		?>
@@ -19,7 +19,7 @@ $logo_text			= get_theme_mod( 'ac_footer_logo_text', 'JustWrite' );
     		<aside class="footer-credits">
         		<a href="<?php echo esc_url( home_url() ); ?>" title="<?php bloginfo( 'title' ); ?>" rel="nofollow" class="blog-title"><?php echo esc_html( $logo_text ); ?></a>
             	<strong class="copyright"><?php echo esc_html( $copyright_text ); ?></strong>
-                <?php 
+                <?php
 		if ( !$disable_credit ) : ?>
                 <span class="theme-author">
                     <a href="<?php echo $the_wp_link; ?>">Proudly powered by WordPress</a> &mdash;
@@ -29,18 +29,17 @@ $logo_text			= get_theme_mod( 'ac_footer_logo_text', 'JustWrite' );
                 <?php endif; ?>
         	</aside><!-- END .footer-credits -->
 		</footer><!-- END .footer-wrap -->
-    
+
     </div><!-- END .wrap -->
-    
-		<?php 
-		// Before the <body> tag closes hook 
+
+		<?php
+		// Before the <body> tag closes hook
 		ac_before_body_closed();
 		?>
 
 		<?php
 		wp_footer();
-		footer_text();
 		?>
-    
+
 </body>
 </html>
