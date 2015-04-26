@@ -167,7 +167,7 @@ footer.custom-footer {
   margin-top: -40px;
 }
 
-#maenu-item-130 {
+#menu-item-130:after {
   width: 0px;
   height: 0px;
   border-left: 5px solid transparent;
