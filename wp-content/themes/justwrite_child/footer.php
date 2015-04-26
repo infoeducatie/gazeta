@@ -28,15 +28,9 @@ $logo_text      = get_theme_mod( 'ac_footer_logo_text', 'JustWrite' );
 
     </div><!-- END .wrap -->
 
-    <?php
-    // Before the <body> tag closes hook
-    ac_before_body_closed();
-    ?>
-
-
-    <?php
-    wp_footer();
-    ?>
-
+		<?php
+		// Before the <body> tag closes hook
+		ac_before_body_closed();
+		?>
 </body>
 </html>
