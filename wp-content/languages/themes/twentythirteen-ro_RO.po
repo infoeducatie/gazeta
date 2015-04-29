@@ -1,0 +1,320 @@
+# Translation of Twenty Thirteen in Romanian
+# This file is distributed under the same license as the Twenty Thirteen package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2015-04-19 16:53:07+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < 20)) ? 1 : 2);\n"
+"X-Generator: GlotPress/1.0-alpha-1000\n"
+"Project-Id-Version: Twenty Thirteen\n"
+
+#. Theme URI of the plugin/theme
+msgid "https://wordpress.org/themes/twentythirteen/"
+msgstr "https://wordpress.org/themes/twentythirteen/"
+
+#. Author URI of the plugin/theme
+msgid "https://wordpress.org/"
+msgstr "https://wordpress.org/"
+
+#. translators: %s: Name of current post
+#: content-aside.php:16 content-audio.php:27 content-chat.php:26
+#: content-gallery.php:27 content-image.php:26 content-link.php:27
+#: content-quote.php:16 content-status.php:16 content-video.php:26
+#: content.php:44 functions.php:478
+msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Continuarea %s <span class=\"meta-nav\">&rarr;</span>"
+
+#: 404.php:16
+msgid "Not Found"
+msgstr "Nu a fost găsit"
+
+#. Description of the plugin/theme
+msgid "The 2013 theme for WordPress takes us back to the blog, featuring a full range of post formats, each displayed beautifully in their own unique way. Design details abound, starting with a vibrant color scheme and matching header images, beautiful typography and icons, and a flexible layout that looks great on any device, big or small."
+msgstr "Tema 2013 WordPress ne duce înapoi la blog, oferind o gamă completă de formate de articole, fiecare afișate frumos în felul lor unic. Detaliile de design abundă, începând cu o schemă vibrantă de culori și imagini care se potrivesc cu antetul, tipografia frumosă și iconițele au un aspect flexibil care arată foarte bine pe orice dispozitiv, mare sau mic."
+
+#: functions.php:233
+msgid "Appears in the footer section of the site."
+msgstr "Apare în secțiunea de subsol a sitului."
+
+#: functions.php:243
+msgid "Appears on posts and pages in the sidebar."
+msgstr "Apare în bara laterală pentru articole și pagini."
+
+#: image.php:39
+msgid "Full resolution"
+msgstr "Rezoluție originală"
+
+#: inc/back-compat.php:37 inc/back-compat.php:47 inc/back-compat.php:60
+msgid "Twenty Thirteen requires at least WordPress version 3.6. You are running version %s. Please upgrade and try again."
+msgstr "Twenty Thirteen necesită versiunea 3.6 de WordPress. Momentan ai versiunea %s. Actualizează și încearcă din nou."
+
+#: image.php:38
+msgid "Link to full-size image"
+msgstr "Legătură spre imagea întreagă"
+
+#: functions.php:241
+msgid "Secondary Widget Area"
+msgstr "Zona asamblabilă secundară"
+
+#: functions.php:231
+msgid "Main Widget Area"
+msgstr "Zona asamblabilă principală"
+
+#: functions.php:218
+msgid "Page %s"
+msgstr "Pagina %s"
+
+#: content-none.php:27
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr "Nu s-a putut găsi conținutul căutat. Probabil o căutare sau una dintre legăturile de mai jos pot ajuta."
+
+#: header.php:43
+msgid "Menu"
+msgstr "Meniu"
+
+#: header.php:44
+msgid "Skip to content"
+msgstr "Sari la conținut"
+
+#: search.php:18
+msgid "Search Results for: %s"
+msgstr "Rezultatele căutării pentru: %s"
+
+#: archive.php:35
+msgid "Archives"
+msgstr "Arhive"
+
+#. Author of the plugin/theme
+msgid "the WordPress team"
+msgstr "echipa WordPress"
+
+#: functions.php:369
+msgid "Permalink to %s"
+msgstr "Legătură permanentă la %s"
+
+#: functions.php:300
+msgid "Post navigation"
+msgstr "Navigare articole"
+
+#: functions.php:274
+msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Articole mai noi <span class=\"meta-nav\">&rarr;</span>"
+
+#: footer.php:19
+msgid "Proudly powered by %s"
+msgstr "Propulsat de %s"
+
+#: comments.php:47
+msgid "Newer Comments &rarr;"
+msgstr "Comentarii mai noi &rarr;"
+
+#: author-bio.php:26
+msgid "About %s"
+msgstr "Despre %s"
+
+#: archive.php:31
+msgctxt "monthly archives date format"
+msgid "F Y"
+msgstr "F Y"
+
+#: archive.php:33
+msgid "Yearly Archives: %s"
+msgstr "Arhiva anului %s"
+
+#: archive.php:33
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr "Y"
+
+#: tag.php:21
+msgid "Tag Archives: %s"
+msgstr "Arhiva etichetelor: %s"
+
+#: category.php:19
+msgid "Category Archives: %s"
+msgstr "Arhiva categoriei: %s"
+
+#: archive.php:29
+msgid "Daily Archives: %s"
+msgstr "Arhiva zilei de %s"
+
+#: archive.php:31
+msgid "Monthly Archives: %s"
+msgstr "Arhiva lunii %s"
+
+#: footer.php:19
+msgid "http://wordpress.org/"
+msgstr "http://wordpress.org/"
+
+#: footer.php:19
+msgid "Semantic Personal Publishing Platform"
+msgstr "Platformă semantică pentru publicări personale"
+
+#: content-none.php:12
+msgid "Nothing Found"
+msgstr "Nimic nu a fost găsit"
+
+#: comments.php:45
+msgid "Comment navigation"
+msgstr "Navigare comentarii"
+
+#: comments.php:46
+msgid "&larr; Older Comments"
+msgstr "&larr; comentarii mai vechi"
+
+#. Translators: used between list items, there is a space after the comma.
+#: functions.php:328 functions.php:334
+msgid ", "
+msgstr ", "
+
+#: content-aside.php:20 content-audio.php:31 content-chat.php:30
+#: content-gallery.php:31 content-image.php:30 content-link.php:31
+#: content-quote.php:20 content-status.php:20 content-video.php:30
+#: content.php:48 image.php:70 page.php:35
+msgid "Pages:"
+msgstr "Pagini:"
+
+#: author-bio.php:30
+msgid "View all posts by %s <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Toate articolele  lui %s <span class=\"meta-nav\">&rarr;</span>"
+
+#: 404.php:21
+msgid "This is somewhat embarrassing, isn&rsquo;t it?"
+msgstr "Nu e bine, nu-i așa?"
+
+#: image.php:52
+msgid "Next <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Următorul <span class=\"meta-nav\">&rarr;</span>"
+
+#: image.php:51
+msgid "<span class=\"meta-nav\">&larr;</span> Previous"
+msgstr "<span class=\"meta-nav\">&larr;</span> precedentul"
+
+#: comments.php:52
+msgid "Comments are closed."
+msgstr "Comentariile sunt închise."
+
+#: functions.php:343
+msgid "View all posts by %s"
+msgstr "Vezi toate articolele scrise de %s"
+
+#: content-aside.php:27 content-aside.php:35 content-audio.php:38
+#: content-chat.php:36 content-gallery.php:46 content-image.php:42
+#: content-link.php:19 content-quote.php:32 content-status.php:26
+#: content-video.php:42 content.php:31 image.php:44 page.php:39
+msgid "Edit"
+msgstr "Editează"
+
+#: functions.php:270
+msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+msgstr "<span class=\"meta-nav\">&larr;</span> Articole mai vechi"
+
+#: author.php:31
+msgid "All posts by %s"
+msgstr "Toate articolele scrise de %s"
+
+#: content-gallery.php:43 content-image.php:39 content-quote.php:29
+#: content-video.php:39 content.php:56
+msgid "Leave a comment"
+msgstr "Lasă un comentariu"
+
+#: content-gallery.php:43 content-image.php:39 content-quote.php:29
+#: content-video.php:39 content.php:56
+msgid "One comment so far"
+msgstr "Un comentariu"
+
+#: 404.php:22
+msgid "It looks like nothing was found at this location. Maybe try a search?"
+msgstr "Se pare că nu există nimic aici. Încearcă o căutare"
+
+#: content-gallery.php:43 content-image.php:39 content-quote.php:29
+#: content-video.php:39 content.php:56
+msgid "View all % comments"
+msgstr "Vezi toate comentariile: %"
+
+#: inc/custom-header.php:49
+msgctxt "header image description"
+msgid "Circle"
+msgstr "Cerc"
+
+#: image.php:22
+msgid "<span class=\"attachment-meta\">Published on <time class=\"entry-date\" datetime=\"%1$s\">%2$s</time> in <a href=\"%3$s\" title=\"Return to %4$s\" rel=\"gallery\">%5$s</a></span>"
+msgstr "<span class=\"attachment-meta\">Publicat în <time class=\"entry-date\" datetime=\"%1$s\">%2$s</time> din <a href=\"%3$s\" title=\"Înapoi la %4$s\" rel=\"gallery\">%5$s</a></span>"
+
+#: functions.php:322
+msgid "Sticky"
+msgstr "Evidențiat"
+
+#: functions.php:363
+msgctxt "1: post format name. 2: date"
+msgid "%1$s on %2$s"
+msgstr "%1$s din %2$s"
+
+#: functions.php:304
+msgctxt "Next post link"
+msgid "%title <span class=\"meta-nav\">&rarr;</span>"
+msgstr "%title <span class=\"meta-nav\">&rarr;</span>"
+
+#: functions.php:303
+msgctxt "Previous post link"
+msgid "<span class=\"meta-nav\">&larr;</span> %title"
+msgstr "<span class=\"meta-nav\">&larr;</span> %title"
+
+#: functions.php:266
+msgid "Posts navigation"
+msgstr "Navigare articole"
+
+#: functions.php:97
+msgid "Navigation Menu"
+msgstr "Meniu navigare"
+
+#: taxonomy-post_format.php:23
+msgid "%s Archives"
+msgstr "Arhive %s"
+
+#. Theme Name of the plugin/theme
+msgid "Twenty Thirteen"
+msgstr "Twenty Thirteen"
+
+#: inc/custom-header.php:59
+msgctxt "header image description"
+msgid "Star"
+msgstr "Stea"
+
+#: inc/custom-header.php:54
+msgctxt "header image description"
+msgid "Diamond"
+msgstr "Diamant"
+
+#: content-none.php:22
+msgid "Sorry, but nothing matched your search terms. Please try again with different keywords."
+msgstr "Nu s-a găsit nimic care să se potrivească căutării. Încearcă alți termeni."
+
+#: content-none.php:18
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr "Gata pentru primul articol? <a href=\"%1$s\">Începe de aici</a>."
+
+#: comments.php:25
+msgctxt "comments title"
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] "Un comentariu la &ldquo;%2$s&rdquo;"
+msgstr[1] "%1$s comentarii la &ldquo;%2$s&rdquo;"
+msgstr[2] "%1$s de comentarii la &ldquo;%2$s&rdquo;"
+
+#. Translators: If there are characters in your language that are not supported
+#. by Source Sans Pro, translate this to 'off'. Do not translate into your own
+#. language.
+#: functions.php:128
+msgctxt "Source Sans Pro font: on or off"
+msgid "on"
+msgstr "pornit"
+
+#. Translators: If there are characters in your language that are not supported
+#. by Bitter, translate this to 'off'. Do not translate into your own language.
+#: functions.php:134
+msgctxt "Bitter font: on or off"
+msgid "on"
+msgstr "pornit"
