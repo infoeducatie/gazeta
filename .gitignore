@@ -14,6 +14,7 @@ sitemap.xml.gz
 log/*
 .vagrant
 wp-config.php
+wp-config-production.php
 *.bak
 *~
 error_log
