@@ -1,1 +1,0 @@
-Contributor: Flector <wordpressplugins.ru>
