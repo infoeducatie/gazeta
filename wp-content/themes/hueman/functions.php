@@ -829,3 +829,8 @@ function alx_deregister_styles() {
 	wp_deregister_style( 'wp-pagenavi' );
 }
 add_action( 'wp_print_styles', 'alx_deregister_styles', 100 );
+
+add_filter( 'get_comments_link', function( $link, $post_id )
+{
+    return get_permalink( $post_id ) . '#disqus_thread';
+}, 10, 2 );
