@@ -1,0 +1,68 @@
+/*-------------------------------------------------------------------------
+
+   Plugin Name: Easy Team Manager
+   Description: Easy Team Manager helps you to create team members with their short descriptions, social profiles link with smooth hover effects. You can add and manage their image, social profile's links, short description along with their name and position in your company.  Embed in any post/page using short-code <code>[easy-team-manager team_name="Team Name"]</code>
+   Version: 1.2.0
+   Plugin URI: http://www.jwthemes.com
+   Author: JW Themes
+   Author URI: http://www.jwthemes.com
+   License: Under GPL2
+
+--------------------------------------------------------------------------*/
+a,a:focus,input,input:focus{outline:0}
+a:hover{text-decoration:none}
+a:visited,a:focus{text-decoration:none !important}
+h1,h2,h3,h4,a,a:hover,li,li:hover,
+.team_profile_pic,
+.team_profile_desc,
+.team_profile_ttl,
+.team_profile_wrap:hover .team_profile_ttl,
+.team_profile_wrap:hover .team_profile_desc{transition:all 0.3s; -moz-transition:all 0.3s; -webkit-transition:all 0.3s; -o-transition:all 0.3s}
+
+
+/*---------------------------------------------------
+		The Team
+----------------------------------------------------*/
+.the_team{border-top:1px solid #e8e8e8; border-bottom:1px solid #e8e8e8; margin-top:100px; width:100% !important;}
+
+.easy_team_member_top h1{text-align:center; font-weight:400 !important}
+.easy_team_member_top p{text-align:center; font-size:26px; font-weight:300; padding:0 15px;}
+
+.team_member_wrap{width:23%; float:left; margin-left:1.6%; margin-top:20px; margin-bottom:30px;}
+.team_profile_wrap{border-radius:3px; background:#fff; border-bottom:2px solid #FF6C60; height:260px !important; overflow:hidden; position:relative;}
+
+.team_profile_pic{height:170px; border-radius:3px 3px 0 0; overflow:hidden; position:relative; text-align:center !important; background-size:auto 100% !important;}
+
+.team_profile_desc{display:block; background:rgba(50,58,69,.8); opacity:0; position:absolute; bottom:0; left:0; height:0%; width:100%;}
+.team_profile_wrap:hover .team_profile_desc{opacity:1; height:170px !important}
+.team_profile_desc p{font-size:13px; line-height:18px; padding:15px; color:#fff; height:125px; overflow:hidden;}
+
+.team_profile_ttl{height:132px !important; text-align:center; overflow:hidden;}
+.team_profile_wrap:hover .team_profile_ttl{background:#fff; margin-top:-40px; position:absolute; height:130px; width:100%;}
+
+.team_profile_ttl h3{font-size:25px; font-weight:400; color:#f26e71 !important; line-height:normal; margin-top:10px; margin-bottom:0;}
+.team_profile_ttl h4{font-size:20px !important; font-weight:300 !important; margin-top:10px; margin-bottom:0;}
+
+.team_social_links{text-align:center; margin-top:12px; height:40px;}
+.team_social_links ul{text-align:center; list-style:none; padding:0; margin:0;}
+.team_social_links li{display:inline-block; padding:0;}
+.team_social_links li a{color:#acafb8; font-size:18px; display:block; margin:0; padding:0;}
+.team_social_links li .fa{width:26px; height:26px; border-radius:3px; border:1px solid #ddd; padding-top:3px;}
+
+@media (min-width:768px) and (max-width:980px){	
+	.team_member_wrap{width:31.2%; margin-left:1.6%}
+}
+
+@media (min-width:480px) and (max-width:767px){	
+	.team_profile_wrap{height:290px !important;}	
+	.team_member_wrap{width:47%; margin-left:2%}	
+	.team_profile_pic{height:200px; background-size:auto 100% !important;}	
+	.team_profile_wrap:hover .team_profile_desc{height:200px !important}
+}
+
+@media (max-width:479px){		
+	.team_profile_wrap{height:310px !important;}
+	.team_member_wrap{width:92%; margin-left:4%}	
+	.team_profile_pic{height:220px; background-size:auto 100% !important;}	
+	.team_profile_wrap:hover .team_profile_desc{height:220px !important; padding-top:25px !important}
+}
