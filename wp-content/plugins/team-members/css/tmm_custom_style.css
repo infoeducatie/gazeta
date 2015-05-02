@@ -13,7 +13,7 @@
     box-shadow: 1px 0px 5px 0px rgba(0,0,0,0.05);
     border-top:5px solid lightgrey;
     border-bottom:8px solid whitesmoke;
-    background:white;
+    background:#f0f0f0;
 }
 
 .tmm_three_entries {clear:both;}
