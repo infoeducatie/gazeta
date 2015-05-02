@@ -22,7 +22,7 @@
 					<th style='width:15%;'>Socail Media</th>
 					<th style='width:15%;'>Action</th>
 				</tr>";
-				foreach ($rows as $row ){if($row->team_id==$_GET['team_id']){$social_media=unserialize($row->social_media);
+				foreach ($rows as $row ){if($row->team_id==$_GET['team_id']){$socia_media=unserialize($row->social_media);
 				$ind_name_detail=unserialize($row->name);$ind_email_detail=unserialize($row->email);$ind_phone_detail=unserialize($row->phone);?>
 				<tr class="easy_team_manager_list">
                		<td><?php echo esc_attr($row->p_num);?></td>
@@ -38,67 +38,67 @@
                     <td><?php echo esc_attr($ind_phone_detail['phone'])?></td>
                     <td><?php echo stripcslashes($row->ind_description); ?></td>
             		<td>  
-            			<?php if($social_media['ind_facebook_link']!=''){?>
+            			<?php if($socia_media['ind_facebook_link']!=''){?>
                       	<a href="http://www.facebook.com/<?php echo $social_media['ind_facebook_link'];?>"> 
                        	<i class="fa fa-facebook"></i></a><?php }?>
                         
-                        <?php if($social_media['ind_twitter_link']!=''){?>
+                        <?php if($socia_media['ind_twitter_link']!=''){?>
                        	<a href="http://www.twitter.com/<?php echo $social_media['ind_twitter_link'];?>"> 
                        	<i class="fa fa-twitter"></i></a><?php }?>
                         
-                       	<?php if($social_media['ind_google_link']!=''){?>
+                       	<?php if($socia_media['ind_google_link']!=''){?>
                         <a href="http://www.google.com/<?php echo $social_media['ind_google_link'];?>"> 
                        	<i class="fa fa-google"></i></a><?php }?>
                         
-                       	<?php if($social_media['ind_skype_link']!=''){?>
+                       	<?php if($socia_media['ind_skype_link']!=''){?>
                        	<a href="http://www.skype.com/<?php echo $social_media['ind_skype_link'];?>"> 
                        	<i class="fa fa-skype"></i></a><?php }?>
                         
-                       	<?php if($social_media['instagram']!=''){?>
+                       	<?php if($socia_media['instagram']!=''){?>
                        	<a href="http://www.skype.com/<?php echo $social_media['instagram'];?>"> 
                        	<i class="fa fa-instagram"></i></a><?php }?>
                         
-                        <?php if($social_media['youtube']!=''){?>
+                        <?php if($socia_media['youtube']!=''){?>
                        	<a href="http://www.skype.com/<?php echo $social_media['youtube'];?>"> 
                        	<i class="fa fa-youtube"></i></a><?php }?>
                         
-                        <?php if($social_media['linkdin']!=''){?>
+                        <?php if($socia_media['linkdin']!=''){?>
                        	<a href="http://www.skype.com/<?php echo $social_media['linkdin'];?>"> 
                        	<i class="fa fa-linkedin"></i></a><?php }?>
                         
-                        <?php if($social_media['vimeo']!=''){?>
+                        <?php if($socia_media['vimeo']!=''){?>
                        	<a href="http://www.skype.com/<?php echo $social_media['vimeo'];?>"> 
                        	<i class="fa fa-vimeo-square"></i></a><?php }?>
                         
-                       	<?php if($social_media['stumbleupon']!=''){?>
+                       	<?php if($socia_media['stumbleupon']!=''){?>
                        	<a href="http://www.skype.com/<?php echo $social_media['stumbleupon'];?>"> 
                        	<i class="fa fa-stumbleupon"></i></a><?php }?>
                         
-                        <?php if($social_media['timblr']!=''){?>
+                        <?php if($socia_media['timblr']!=''){?>
                        	<a href="http://www.skype.com/<?php echo $social_media['timblr'];?>"> 
                        	<i class="fa fa-tumblr-square"></i></a><?php }?>
                         
-                        <?php if($social_media['digg']!=''){?>
+                        <?php if($socia_media['digg']!=''){?>
                        	<a href="http://www.skype.com/<?php echo $social_media['digg'];?>"> 
                        	<i class="fa fa-digg"></i></a><?php }?>
                         
-                        <?php if($social_media['behance']!=''){?>
+                        <?php if($socia_media['behance']!=''){?>
                        	<a href="http://www.behance.com/<?php echo $social_media['behance'];?>"> 
                        	<i class="fa fa-behance"></i></a><?php }?>
                         
-                        <?php if($social_media['foursquare']!=''){?>
+                        <?php if($socia_media['foursquare']!=''){?>
                        	<a href="http://www.skype.com/<?php echo $social_media['foursquare'];?>"> 
                        	<i class="fa fa-foursquare"></i></a><?php }?>
                        
-                        <?php if($social_media['delicious']!=''){?>
+                        <?php if($socia_media['delicious']!=''){?>
                        	<a href="http://www.skype.com/<?php echo $social_media['delicious'];?>"> 
                        	<i class="fa fa-delicious"></i></a><?php }?>
                         
-                        <?php if($social_media['reddit']!=''){?>
+                        <?php if($socia_media['reddit']!=''){?>
                        	<a href="http://www.skype.com/<?php echo $social_media['reddit'];?>"> 
                        	<i class="fa fa-reddit"></i></a><?php }?>
                         
-                        <?php if($social_media['wordpress']!=''){?>
+                        <?php if($socia_media['wordpress']!=''){?>
                        	<a href="http://www.skype.com/<?php echo $social_media['wordpress'];?>"> 
                        	<i class="fa fa-wordpress"></i></a><?php }?>
              		</td>
