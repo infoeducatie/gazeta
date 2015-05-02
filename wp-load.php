@@ -1,0 +1,1 @@
+wordpress/wp-load.php
