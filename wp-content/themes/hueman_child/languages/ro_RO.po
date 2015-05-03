@@ -1,0 +1,175 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Hueman\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-02-06 14:15+0100\n"
+"PO-Revision-Date: Sun May 03 2015 14:59:00 GMT+0300 (EEST)\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: Română\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 :(((n%100>19)||(( n%100==0)&&(n!"
+"=0)))? 2 : 1))\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Loco-Source-Locale: ro_RO\n"
+"X-Generator: Loco - https://localise.biz/\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: ..\n"
+"X-Loco-Parser: loco_parse_po\n"
+"X-Loco-Target-Locale: ro_RO"
+
+#: ../404.php:14
+msgid ""
+"The page you are trying to reach does not exist, or has been moved. Please "
+"use the menus or the search box to find what you are looking for."
+msgstr ""
+"Pagina pe care încercați să o accesați nu există sau a fost mutat . Vă rugăm "
+"să folosiți meniurile sau formularul de căutare pentru a găsi ceea ce "
+"căutați."
+
+#: ../comments.php:7
+msgid "No Responses"
+msgstr "Nici un răspuns"
+
+#: ../comments.php:7
+msgid "1 Response"
+msgstr "Un răspuns"
+
+#: ../comments.php:7
+msgid "% Responses"
+msgstr "% răspunsuri"
+
+#: ../comments.php:10
+msgid "Comments"
+msgstr "comentarii"
+
+#: ../comments.php:11
+msgid "Pingbacks"
+msgstr "Pingbacks"
+
+#: ../footer.php:76
+msgid "All Rights Reserved."
+msgstr "Toate drepturile rezervate."
+
+#: ../footer.php:82
+msgid "Powered by"
+msgstr "Cu sprijinul"
+
+#: ../footer.php:82
+msgid "Theme by"
+msgstr "Temă creeată de către"
+
+#: ../search.php:10
+msgid "For the term"
+msgstr "Pentru termenul"
+
+#: ../search.php:12
+msgid "Please try another search:"
+msgstr "Te rugăm încearcă o nouă căutare"
+
+#: ../searchform.php:3
+msgid "To search type and hit enter"
+msgstr "Pentru a căuta, scrie ce dorești să cauți și apasă Enter"
+
+#: ../sidebar-2.php:5 ../sidebar.php:9
+msgid "Expand Sidebar"
+msgstr "Mărește bara alăturată"
+
+#: ../sidebar-2.php:11
+msgid "More"
+msgstr "Mai multe"
+
+#: ../sidebar.php:15
+msgid "Follow:"
+msgstr "Urmărește-ne"
+
+#: ../single.php:14
+msgid "by"
+msgstr "de"
+
+#: ../single.php:23
+msgid "Pages:"
+msgstr "Pagini: "
+
+#: ../single.php:35
+msgid "Tags:"
+msgstr "Etichete:"
+
+#: ../functions/widgets/alx-tabs.php:27
+msgid "Recent Posts"
+msgstr "Articole recente"
+
+#: ../functions/widgets/alx-tabs.php:28
+msgid "Popular Posts"
+msgstr "Articole populare"
+
+#: ../functions/widgets/alx-tabs.php:29
+msgid "Recent Comments"
+msgstr "Comentarii recente"
+
+#: ../functions/widgets/alx-tabs.php:30
+msgid "Tags"
+msgstr "Etichete:"
+
+#: ../functions/widgets/alx-tabs.php:187
+msgid "says:"
+msgstr "spune: "
+
+#: ../inc/page-title.php:23
+msgid "Search result"
+msgstr "Rezultate-le căutarii"
+
+#: ../inc/page-title.php:25
+msgid "Search results"
+msgstr "Rezultate-le căutarii"
+
+#: ../inc/page-title.php:31
+msgid "Error 404."
+msgstr "Eroare 404."
+
+#: ../inc/page-title.php:31
+msgid "Page not found!"
+msgstr "Pagina nu a fost găsită"
+
+#: ../inc/page-title.php:35
+msgid "Author:"
+msgstr "Autor:"
+
+#: ../inc/page-title.php:38
+msgid "Category:"
+msgstr "Categorie:"
+
+#: ../inc/page-title.php:41
+msgid "Tagged:"
+msgstr "Etichetat"
+
+#: ../inc/page-title.php:44
+msgid "Daily Archive:"
+msgstr "Arhiva zilnică:"
+
+#: ../inc/page-title.php:47
+msgid "Monthly Archive:"
+msgstr "Arhiva lunară:"
+
+#: ../inc/page-title.php:50
+msgid "Yearly Archive:"
+msgstr "Arhiva anuală:"
+
+#: ../inc/post-nav.php:3
+msgid "Next story"
+msgstr "Următorul articol"
+
+#: ../inc/post-nav.php:4
+msgid "Previous story"
+msgstr "Articolul anterior"
+
+#: ../inc/related-posts.php:6
+msgid "You may also like..."
+msgstr "Te-ar putea interesa și:"
+
+#: ../inc/sharrre.php:2
+msgid "Share"
+msgstr "Răspândește"
