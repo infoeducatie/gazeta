@@ -1,4 +1,6 @@
 <?php
+
+// load theme styles from parent and from child
 add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
 function theme_enqueue_styles() {
     wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
@@ -7,4 +9,7 @@ function theme_enqueue_styles() {
         array('parent-style')
     );
 }
+
+// load languages from child theme
+load_theme_textdomain( 'hueman', get_stylesheet_directory() . '/languages' );
 ?>
