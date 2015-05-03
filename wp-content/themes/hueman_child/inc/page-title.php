@@ -33,14 +33,14 @@
 		<?php $author = get_userdata( get_query_var('author') );?>
 		<h1><i class="fa fa-user"></i><?php _e('Author:','hueman'); ?> <span><?php echo $author->display_name;?></span></h1>
 		
-<?php elseif ( is_category() ) :
-    $category_slug  = get_category(get_query_var('cat'))->slug;
+    <?php elseif ( is_category() ) :
+        $category_slug  = get_category(get_query_var('cat'))->slug;
 
-    if ( $category_slug == 'stiri' || $category_slug == 'concursuri' ){
-        printf( single_cat_title('', false) );
-    } else {
-        printf( '<h1><i class="fa fa-folder-open"></i>'._e('Category:','hueman').'<span>' . single_cat_title('', false) . '</span></h1>' );
-    }
+        if ( $category_slug == 'stiri' || $category_slug == 'concursuri' ){
+            printf( single_cat_title('', false) );
+        } else {
+            printf( '<h1><i class="fa fa-folder-open"></i>'._e('Category:','hueman').'<span>' . single_cat_title('', false) . '</span></h1>' );
+        }
     ?>
 	<?php elseif ( is_tag() ): ?>
 		<h1><i class="fa fa-tags"></i><?php _e('Tagged:','hueman'); ?> <span><?php echo single_tag_title('', false); ?></span></h1>
