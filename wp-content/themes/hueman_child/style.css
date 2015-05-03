@@ -32,7 +32,10 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.html
   font-size: 58px;
   color: #fff;
   float: left;
-  margin-left: 10px;
   line-height: 60px;
   padding-top: 30px;
+}
+
+#nav-header.nav-container {
+  background-color: #666;
 }
