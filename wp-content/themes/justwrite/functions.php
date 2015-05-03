@@ -114,7 +114,7 @@ if ( ! function_exists( 'ac_css_files' ) ) {
 		wp_register_style( 'ac_webfonts_' . ac_get_selected_ff(), ac_font_url( ac_get_selected_ff() ), array(), null);
 			
 		// Enqueue
-		wp_enqueue_style( 'ac_style', get_stylesheet_uri(), array(), '1.0.9', 'all' );
+		wp_enqueue_style( 'ac_style', get_stylesheet_uri(), array(), '1.0.9.1', 'all' );
 		wp_enqueue_style( 'ac_icons', get_template_directory_uri() . '/assets/icons/css/font-awesome.min.css', array(), '4.3.0', 'all' );
 		wp_enqueue_style( 'ac_webfonts_' . ac_get_selected_ff() );
 			
