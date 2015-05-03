@@ -16,8 +16,7 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 
 #header {
-    background: url("http://gazeta.info.ro/wp-content/uploads/2015/04/v5.png") 0 48px;
-    height: 207px;
+    background: url("http://gazeta.info.ro/wp-content/uploads/2015/04/v5.png");
 }
 
 .post-thumbnail .post-comments {
