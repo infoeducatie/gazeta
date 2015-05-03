@@ -13,3 +13,26 @@ Copyright: (c) 2013 Alexander "Alx" Agnarson
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 */
+
+
+#header {
+    background-image: url("http://gazeta.info.ro/wp-content/uploads/2015/04/v5.png");
+}
+
+.post-thumbnail .post-comments {
+    background-color: #e64946;
+}
+.post-thumbnail .post-comments span:before {
+    border-right-color: #e64946;
+}
+
+.site-description {
+padding-left: 15px;
+  font-weight: bold;
+  font-size: 58px;
+  color: #fff;
+  float: left;
+  margin-left: 20px;
+  line-height: 60px;
+  padding-top: 50px;
+}
