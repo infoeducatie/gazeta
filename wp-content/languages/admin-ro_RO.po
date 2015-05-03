@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Administration package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2015-04-23 15:23:09+0000\n"
+"PO-Revision-Date: 2015-05-01 09:18:04+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -316,7 +316,7 @@ msgstr "Poți actualiza automat la <a href=\"https://codex.wordpress.org/Version
 
 #: wp-admin/update-core.php:166
 msgid "<strong>Important:</strong> before updating, please <a href=\"https://codex.wordpress.org/WordPress_Backups\">back up your database and files</a>. For help with updates, visit the <a href=\"https://codex.wordpress.org/Updating_WordPress\">Updating WordPress</a> Codex page."
-msgstr "<strong>Important:</strong> înainte de a actualiza, te rog <a href=\"https://codex.wordpress.org/WordPress_Backups\">să faci cópii de siguranță ale fișierelor și bazei de date</a> (instrucțiuni în engleză). Pentru ajutor cu actualizările, vizitează pagina de Codex <a href=\"https://codex.wordpress.org/Updating_WordPress\">Actualizare WordPress</a> (în engleză)."
+msgstr "<strong>Important:</strong> înainte de a actualiza, te rog <a href=\"https://codex.wordpress.org/WordPress_Backups\">să faci copii de siguranță ale fișierelor și bazei de date</a> (instrucțiuni în engleză). Pentru ajutor cu actualizările, vizitează pagina de Codex <a href=\"https://codex.wordpress.org/Updating_WordPress\">Actualizare WordPress</a> (în engleză)."
 
 #: wp-admin/theme-install.php:97
 msgid "<a href=\"https://codex.wordpress.org/Using_Themes#Adding_New_Themes\" target=\"_blank\">Documentation on Adding New Themes</a>"
