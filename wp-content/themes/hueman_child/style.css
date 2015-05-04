@@ -39,3 +39,7 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.html
 #nav-header.nav-container {
   background-color: #666;
 }
+
+.entry.excerpt { 
+  color: #666;
+}
