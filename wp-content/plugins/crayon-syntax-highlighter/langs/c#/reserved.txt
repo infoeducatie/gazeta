@@ -1,0 +1,13 @@
+stackalloc
+unchecked
+delegate
+explicit
+checked
+params
+typeof
+sizeof
+await
+event
+this
+base
+new
