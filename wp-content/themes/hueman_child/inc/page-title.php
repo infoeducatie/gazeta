@@ -1,6 +1,5 @@
 <div class="page-title pad group">
 	<?php if ( is_home() ) : ?>
-		<h2><?php echo alx_blog_title(); ?></h2>
 
 	<?php elseif ( is_single() ): ?>
 		<ul class="meta-single group">
