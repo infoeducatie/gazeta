@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Administration package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2015-05-01 09:18:04+0000\n"
+"PO-Revision-Date: 2015-05-07 07:47:41+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -11,83 +11,83 @@ msgstr ""
 "Project-Id-Version: Administration\n"
 
 #. translators: 1: Term splitting guide link
-#: wp-admin/about.php:123
+#: wp-admin/about.php:127
 msgid "Terms shared across multiple taxonomies will be split when one of them is updated. Find out more in the <a href=\"%1$s\">Plugin Developer Handbook</a>."
 msgstr "Termenii partajați de-a lungul mai multor clasificări vor fi despărțiți atunci când unul este actualizat. Află mai multe din <a href=\"%1$s\">Manualul dezvoltatorului de module</a>."
 
-#: wp-admin/about.php:111
+#: wp-admin/about.php:115
 msgid "Database character encoding has changed from utf8 to utf8mb4, which adds support for a whole range of new 4-byte characters."
 msgstr "Codificarea caracterelor din baza de date a fost modificată de la utf8 la utf8mb4, ceea ce adaugă suport pentru un întreg interval de noi caractere pe 4 octeți."
 
-#: wp-admin/about.php:90
+#: wp-admin/about.php:94
 msgid "Switch themes in the Customizer"
 msgstr "Comută teme în Personalizator"
 
-#: wp-admin/about.php:60
+#: wp-admin/about.php:64
 msgid "Clip it, edit it, publish it. Get familiar with the new and improved Press This. From the <a href=\"%s\">Tools</a> menu, add Press This to your browser bookmark bar or your mobile device home screen. Once installed you can share your content with lightning speed. Sharing your favorite videos, images, and content has never been this fast or this easy."
 msgstr "Taie-l, editează-l și publică-l. Familiarizează-te cu noul și îmbunătățitul Publică-asta. Din meniul de <a href=\"%s\">Unelte</a> adaugă Publică-asta barei tale de semne de carte/marcaje sau ecranului de intrare al dispozitivului tău mobil. Odată instalat poți partaja conținut cu viteza luminii. Partajarea videourilor tale favorite, imaginilor și conținutului n-a fost niciodată atât de ușoară și rapidă."
 
-#: wp-admin/about.php:59
+#: wp-admin/about.php:63
 msgid "An easier way to share content"
 msgstr "O cale mai simplă de a partaja conținut"
 
-#: wp-admin/about.php:78
+#: wp-admin/about.php:82
 msgid "Extended character support"
 msgstr "Suport extins de caractere"
 
-#: wp-admin/about.php:79
+#: wp-admin/about.php:83
 msgid "Writing in WordPress, whatever your language, just got better. WordPress 4.2 supports a host of new characters out-of-the-box, including native Chinese, Japanese, and Korean characters, musical and mathematical symbols, and hieroglyphs."
 msgstr "Scrisul în WordPress, oricare ar fi limba ta maternă, tocmai a devenit mai ușor. WordPress 4.2 are acum de la instalare suport pentru o mulțime de noi caractere, inclusiv cele native pentru chineză, japoneză și coreeană, simboluri muzicale și matematice ori hieroglife."
 
 #. translators: 1: heart emoji, 2: frog face emoji, 3, monkey emoji, 4: pizza
 #. emoji, 5: Emoji Codex link
-#: wp-admin/about.php:82
+#: wp-admin/about.php:86
 msgid "Don&#8217;t use any of those characters? You can still have fun &mdash; emoji are now available in WordPress! Get creative and decorate your content with %1$s, %2$s, %3$s, %4$s, and all the many other <a href=\"%5$s\">emoji</a>."
 msgstr "Nu folosești niciunul dintre aceste caractere? Poți totuși să te distrezi &mdash; emoticoanele (emoji) sunt acum disponibile în WorPress! Fii creativ și decorează-ți conținutul cu %1$s, %2$s, %3$s, %4$s și încă o mulțime de alte <a href=\"%5$s\">emoji</a>."
 
-#: wp-admin/about.php:91
+#: wp-admin/about.php:95
 msgid "Browse and preview your installed themes from the Customizer. Make sure the theme looks great with <em>your</em> content, before it debuts on your site. "
 msgstr "Răsfoiește și previzualizează temele tale instalate din Personalizator. Asigură-te că temele arată grozav cu conținutul <em>tău</em>, înainte de a le face debutul pe situl tău."
 
-#: wp-admin/about.php:96
+#: wp-admin/about.php:100
 msgid "Paste links from Tumblr.com and Kickstarter and watch them magically appear right in the editor. With every release, your publishing and editing experience get closer together."
 msgstr "Transferă legături din Tumblr.com ori Kickstarter și privește-le cum apar ca prin magie chiar în editor. Cu fiecare nouă versiune, experiența ta de editare și cea de publicare sunt mai apropiate."
 
-#: wp-admin/about.php:95
+#: wp-admin/about.php:99
 msgid "Even more embeds"
 msgstr "Și mai multe înglobări"
 
-#: wp-admin/about.php:101
+#: wp-admin/about.php:105
 msgid "Goodbye boring loading screen, hello smooth and simple plugin updates. Click <em>Update&nbsp;Now</em> and watch the magic happen."
 msgstr "Drum bun - ecranului plicticos de încărcare, bine ai venit - actualizării simple și cursive a modulelor. Dă clic pe <em>Actualizează&nbsp;acum</em> și privește magia în desfășurare."
 
-#: wp-admin/about.php:100
+#: wp-admin/about.php:104
 msgid "Streamlined plugin updates"
 msgstr "Actualizare optimizată a modulelor"
 
-#: wp-admin/about.php:110
+#: wp-admin/about.php:114
 msgid "utf8mb4 support"
 msgstr "suport utf8mb4"
 
 #. translators: %s wp.a11y.speak()
-#: wp-admin/about.php:116
+#: wp-admin/about.php:120
 msgid "You can now send audible notifications to screen readers in JavaScript with %s. Pass it a string, and an update will be sent to a dedicated ARIA live notifications area."
 msgstr "Acum poți trimite notificări sonore cititoarelor de ecran în javascript cu %s. Transferă-i un șir și o actualizare va fi trimisă unei zone ARIA live dedicată notificărilor."
 
-#: wp-admin/about.php:120
+#: wp-admin/about.php:124
 msgid "Shared term splitting"
 msgstr "Despărțire termen partajat"
 
-#: wp-admin/about.php:113
+#: wp-admin/about.php:117
 msgid "JavaScript accessibility"
 msgstr "Accesibilitate javascript"
 
 #. translators: 1: WP_Query, 2: WP_Comment_Query, 3: WP_User_Query
-#: wp-admin/about.php:129
+#: wp-admin/about.php:133
 msgid "%1$s, %2$s, and %3$s now support complex ordering with named meta query clauses."
 msgstr "%1$s, %2$s și %3$s au acum suport pentru ordonare complexă cu nume de clauze de meta interogare."
 
-#: wp-admin/about.php:126
+#: wp-admin/about.php:130
 msgid "Complex query ordering"
 msgstr "Ordonare complexă la interogare"
 
@@ -95,7 +95,7 @@ msgstr "Ordonare complexă la interogare"
 msgid "Thank you for updating! WordPress %s helps you communicate and share, globally."
 msgstr "Îți mulțumim pentru actualizare! WordPress %s te ajută să comunici și să partajezi la nivel global."
 
-#: wp-admin/about.php:82
+#: wp-admin/about.php:86
 msgid "https://codex.wordpress.org/Emoji"
 msgstr "https://codex.wordpress.org/Emoji"
 
@@ -612,7 +612,7 @@ msgstr ""
 "Administrator\n"
 "###SITE_NAME###"
 
-#: wp-admin/about.php:61 wp-admin/tools.php:48
+#: wp-admin/about.php:65 wp-admin/tools.php:48
 msgid "Drag the bookmarklet below to your bookmarks bar. Then, when you&#8217;re on a page you want to share, simply &#8220;press&#8221; it."
 msgstr "Trage mini-aplicația de mai jos în bara de semne de carte/marcaje. Apoi, când ești pe o pagină de pe care vrei să preiei ceva, trebuie doar s-o &#8222;apeși&#8221;."
 
@@ -3113,7 +3113,7 @@ msgstr "Dacă știi ceea ce cauți, opțiunea de Căutare este cea mai potrivit�
 msgid "We&#8217;ve assembled some links to get you started:"
 msgstr "Ți-am pregătit câteva legături pentru ca să poți începe:"
 
-#: wp-admin/includes/update-core.php:1177 wp-admin/update-core.php:433
+#: wp-admin/includes/update-core.php:1180 wp-admin/update-core.php:433
 msgid "Welcome to WordPress %1$s. You will be redirected to the About WordPress screen. If not, click <a href=\"%2$s\">here</a>."
 msgstr "Bun venit în WordPress %1$s. Vei fi redirectat la ecranul Despre WordPress. Dacă nu, apasă <a href=\"%2$s\">aici</a>."
 
@@ -4175,35 +4175,35 @@ msgstr "Afișează bara de unelte când vizualizez situl"
 msgid "Contributing Developers"
 msgstr "Contributori"
 
+#: wp-admin/about.php:47 wp-admin/about.php:51 wp-admin/about.php:178
+msgid "For more information, see <a href=\"%s\">the release notes</a>."
+msgstr "Pentru mai multe informații citește <a href=\"%s\">notițele de lansare</a>."
+
 #. translators: 1: WordPress version number, 2: plural number of bugs.
-#: wp-admin/about.php:163
+#: wp-admin/about.php:167
 msgid "<strong>Version %1$s</strong> addressed %2$s bug."
 msgid_plural "<strong>Version %1$s</strong> addressed %2$s bugs."
-msgstr[0] "<strong>Versiunea %1$s</strong> a rezolvat %2$s hibă."
-msgstr[1] "<strong>Versiunea %1$s</strong> a rezolvat %2$s hibe."
-msgstr[2] "<strong>Versiunea %1$s</strong> a rezolvat %2$s de hibe."
-
-#. translators: 1: WordPress version number, 2: plural number of bugs. Singular
-#. security issue.
-#: wp-admin/about.php:167
-msgid "<strong>Version %1$s</strong> addressed a security issue and fixed %2$s bug."
-msgid_plural "<strong>Version %1$s</strong> addressed a security issue and fixed %2$s bugs."
-msgstr[0] "<strong>Versiunea %1$s</strong> a rezolvat o problemă de securitate și %2$s hibă."
-msgstr[1] "<strong>Versiunea %1$s</strong> a rezolvat o problemă de securitate și %2$s hibe."
-msgstr[2] "<strong>Versiunea %1$s</strong> a rezolvat o problemă de securitate și %2$s de hibe."
+msgstr[0] "<strong>Versiunea %1$s</strong> a rezolvat %2$s eroare."
+msgstr[1] "<strong>Versiunea %1$s</strong> a rezolvat %2$s erori."
+msgstr[2] "<strong>Versiunea %1$s</strong> a rezolvat %2$s de erori."
 
 #. translators: 1: WordPress version number, 2: plural number of bugs. More
 #. than one security issue.
-#: wp-admin/about.php:171
+#: wp-admin/about.php:45 wp-admin/about.php:175
 msgid "<strong>Version %1$s</strong> addressed some security issues and fixed %2$s bug."
 msgid_plural "<strong>Version %1$s</strong> addressed some security issues and fixed %2$s bugs."
-msgstr[0] "<strong>Versiunea %1$s</strong> a rezolvat câteva probleme de securitate și %2$s hibă."
-msgstr[1] "<strong>Versiunea %1$s</strong> a rezolvat câteva probleme de securitate și %2$s hibe."
-msgstr[2] "<strong>Versiunea %1$s</strong> a rezolvat câteva probleme de securitate și %2$s de hibe."
+msgstr[0] "<strong>Versiunea %1$s</strong> a rezolvat câteva probleme de securitate și %2$s eroare."
+msgstr[1] "<strong>Versiunea %1$s</strong> a rezolvat câteva probleme de securitate și %2$s erori."
+msgstr[2] "<strong>Versiunea %1$s</strong> a rezolvat câteva probleme de securitate și %2$s de erori."
 
-#: wp-admin/about.php:47 wp-admin/about.php:174
-msgid "For more information, see <a href=\"%s\">the release notes</a>."
-msgstr "Pentru mai multe informații citește <a href=\"%s\">notițele de lansare</a>."
+#. translators: 1: WordPress version number, 2: plural number of bugs. Singular
+#. security issue.
+#: wp-admin/about.php:171
+msgid "<strong>Version %1$s</strong> addressed a security issue and fixed %2$s bug."
+msgid_plural "<strong>Version %1$s</strong> addressed a security issue and fixed %2$s bugs."
+msgstr[0] "<strong>Versiunea %1$s</strong> a rezolvat o problemă de securitate și %2$s eroare."
+msgstr[1] "<strong>Versiunea %1$s</strong> a rezolvat o problemă de securitate și %2$s erori."
+msgstr[2] "<strong>Versiunea %1$s</strong> a rezolvat o problemă de securitate și %2$s de erori."
 
 #: wp-admin/index.php:32
 msgid "Welcome to your WordPress Dashboard! This is the screen you will see when you log in to your site, and gives you access to all the site management features of WordPress. You can get help for any screen by clicking the Help tab in the upper corner."
@@ -4214,28 +4214,28 @@ msgid "What&#8217;s New"
 msgstr "Noutăți"
 
 #. translators: 1: WordPress version number.
-#: wp-admin/about.php:45 wp-admin/about.php:159
+#: wp-admin/about.php:49 wp-admin/about.php:163
 msgid "<strong>Version %1$s</strong> addressed a security issue."
 msgid_plural "<strong>Version %1$s</strong> addressed some security issues."
 msgstr[0] "<strong>Versiunea %1$s</strong> a rezolvat o problemă de securitate."
 msgstr[1] "<strong>Versiunea %1$s</strong> a rezolvat câteva probleme de securitate."
 msgstr[2] "<strong>Versiunea %1$s</strong> a rezolvat câteva probleme de securitate."
 
-#: wp-admin/about.php:44 wp-admin/about.php:155
+#: wp-admin/about.php:159
 msgid "Security Release"
 msgid_plural "Security Releases"
 msgstr[0] "Actualizare de securitate"
 msgstr[1] "Actualizări de securitate"
 msgstr[2] "Actualizări de securitate"
 
-#: wp-admin/about.php:154
+#: wp-admin/about.php:158
 msgid "Maintenance Release"
 msgid_plural "Maintenance Releases"
 msgstr[0] "Actualizare de mentenanță"
 msgstr[1] "Actualizări de mentenanță"
 msgstr[2] "Actualizări de mentenanță"
 
-#: wp-admin/about.php:156
+#: wp-admin/about.php:44 wp-admin/about.php:160
 msgid "Maintenance and Security Release"
 msgid_plural "Maintenance and Security Releases"
 msgstr[0] "Actualizare de mentenanță și securitate"
@@ -4246,11 +4246,11 @@ msgstr[2] "Actualizări de mentenanță și securitate"
 msgid "This screen allows you to choose your default permalink structure. You can choose from common settings or create custom URL structures."
 msgstr "Aceast ecran oferă posibilitatea setării unei structuri implicite a legăturilor permanente. Se poate opta pentru o structură comună sau crea una personalizată."
 
-#: wp-admin/includes/update-core.php:1178 wp-admin/update-core.php:434
+#: wp-admin/includes/update-core.php:1181 wp-admin/update-core.php:434
 msgid "Welcome to WordPress %1$s. <a href=\"%2$s\">Learn more</a>."
 msgstr "Bun venit pe WordPress %1$s. <a href=\"%2$s\">Află mai multe</a>."
 
-#: wp-admin/about.php:138
+#: wp-admin/about.php:142
 msgid "Return to Updates"
 msgstr "Înapoi la actualizări"
 
@@ -4546,11 +4546,11 @@ msgstr "Cel mai probabil e inclus fișierul wp-admin/includes/template.php pentr
 msgid "Welcome to WordPress %s"
 msgstr "Bun venit pe WordPress %s"
 
-#: wp-admin/about.php:138
+#: wp-admin/about.php:142
 msgid "Return to Dashboard &rarr; Updates"
 msgstr "Înapoi la Panoul de control &rarr; Actualizări"
 
-#: wp-admin/about.php:142
+#: wp-admin/about.php:146
 msgid "Go to Dashboard &rarr; Home"
 msgstr "Mergi la ecranul de start al Panoului de control"
 
@@ -4562,7 +4562,7 @@ msgstr "WordPress este creat de o echipă globală de persoane pasionate."
 msgid "Core Developers"
 msgstr "Programatori de bază"
 
-#: wp-admin/about.php:106
+#: wp-admin/about.php:110
 msgid "Under the Hood"
 msgstr "Sub capotă"
 
@@ -6829,7 +6829,7 @@ msgid "User already exists. Password inherited."
 msgstr "Utilizatorul există deja. Parola a fost preluată."
 
 #: wp-admin/includes/class-wp-upgrader.php:2672
-#: wp-admin/includes/update-core.php:1174 wp-admin/update-core.php:432
+#: wp-admin/includes/update-core.php:1177 wp-admin/update-core.php:432
 msgid "WordPress updated successfully"
 msgstr "WordPress a fost actualizat cu succes"
 
@@ -6851,7 +6851,7 @@ msgstr "Actualizări WordPress"
 msgid "Edit Menu Item"
 msgstr "Editează element meniu"
 
-#: wp-admin/about.php:142
+#: wp-admin/about.php:146
 msgid "Go to Dashboard"
 msgstr "Mergi la panoul de control"
 
@@ -8211,7 +8211,7 @@ msgstr[2] "Inactive <span class=\"count\">(%s)</span>"
 msgid "Verifying the unpacked files&#8230;"
 msgstr "Verific fișierele despachetate&#8230;"
 
-#: wp-admin/includes/update-core.php:1055
+#: wp-admin/includes/update-core.php:1058
 msgid "Upgrading database&#8230;"
 msgstr "Îmbunătățesc baza de date&#8230;"
 
@@ -10147,7 +10147,7 @@ msgstr "Nu s-a putut recupera fișier din arhivă."
 
 #: wp-admin/includes/class-wp-upgrader.php:133 wp-admin/includes/file.php:644
 #: wp-admin/includes/file.php:748 wp-admin/includes/file.php:799
-#: wp-admin/includes/update-core.php:1128
+#: wp-admin/includes/update-core.php:1131
 msgid "Could not create directory."
 msgstr "Nu s-a putut crea directorul."
 
@@ -10157,7 +10157,7 @@ msgstr "Nu s-a putut extrage fișier din arhivă."
 
 #: wp-admin/includes/file.php:664 wp-admin/includes/file.php:761
 #: wp-admin/includes/file.php:794 wp-admin/includes/update-core.php:1020
-#: wp-admin/includes/update-core.php:1123
+#: wp-admin/includes/update-core.php:1126
 msgid "Could not copy file."
 msgstr "Nu s-a putut copia fișierul."
 
@@ -10420,7 +10420,7 @@ msgstr "Evidențiat"
 msgid "Welcome to <a href=\"SITE_URL\">SITE_NAME</a>. This is your first post. Edit or delete it, then start blogging!"
 msgstr "Bun venit la <a href=\"SITE_URL\">SITE_NAME</a>. Acesta este primul tău articol. Îl poți edita sau șterge, și-ai pornit blogul!"
 
-#: wp-admin/about.php:64 wp-admin/tools.php:16 wp-admin/tools.php:40
+#: wp-admin/about.php:68 wp-admin/tools.php:16 wp-admin/tools.php:40
 #: wp-admin/tools.php:51
 msgid "Press This"
 msgstr "Publică-asta"
