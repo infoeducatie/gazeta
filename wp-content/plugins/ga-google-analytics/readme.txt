@@ -1,20 +1,20 @@
 === GA Google Analytics ===
 
 Plugin Name: GA Google Analytics
-Plugin URI: http://perishablepress.com/google-analytics-plugin/
+Plugin URI: https://perishablepress.com/google-analytics-plugin/
 Description: Adds your Google Analytics Tracking Code to your WordPress site.
 Tags: analytics, ga, google, google analytics, tracking, statistics, stats
 Author: Jeff Starr
 Author URI: http://monzilla.biz/
 Donate link: http://m0n.co/donate
 Contributors: specialk
-Requires at least: 3.8
-Tested up to: 4.1
+Requires at least: 3.9
+Tested up to: 4.2
 Stable tag: trunk
-Version: 20150314
+Version: 20150507
 Text Domain: gap
 Domain Path: /languages/
-License: GPL v2
+License: GPL v2 or later
 
 GA Google Analytics adds your Google Analytics Tracking Code to your WordPress site.
 
@@ -51,6 +51,8 @@ Learn more about [Google Analytics](http://www.google.com/analytics/)!
 2. Visit the "Google Analytics" options page, enter your GA ID, and done.
 3. Optionally configure other settings for advanced functionality.
 
+[More info on installing WP plugins](http://codex.wordpress.org/Managing_Plugins#Installing_Plugins)
+
 **Upgrade Notice**
 
 To upgrade: 
@@ -59,13 +61,19 @@ To upgrade:
 2. Visit the GA Plugin Options panel and choose where to include the code (via the header or footer).
 3. Save changes and view the source code of your page(s) to verify that the code is included properly.
 
-For more information, visit the [GA Plugin Homepage](http://perishablepress.com/google-analytics-plugin/).
+For more information, visit the [GA Plugin Homepage](https://perishablepress.com/google-analytics-plugin/).
 
 == Screenshots ==
 
-Screenshots available at the [GA Plugin Homepage](http://perishablepress.com/google-analytics-plugin/).
+Screenshots available at the [GA Plugin Homepage](https://perishablepress.com/google-analytics-plugin/).
 
 == Changelog ==
+
+**20150507**
+
+* Tested with WP 4.2 + 4.3 (alpha)
+* Changed a few "http" links to "https"
+* Added isset() to eliminate some PHP warnings
 
 **20150314**
 
@@ -136,17 +144,17 @@ Screenshots available at the [GA Plugin Homepage](http://perishablepress.com/goo
 
 == Frequently Asked Questions ==
 
-To ask a question, visit the [GA Plugin Homepage](http://perishablepress.com/google-analytics-plugin/) or [contact me](http://perishablepress.com/contact/).
+To ask a question, visit the [GA Plugin Homepage](https://perishablepress.com/google-analytics-plugin/) or [contact me](https://perishablepress.com/contact/).
 
-Learn more about [Google Analytics](http://www.google.com/analytics/) and [GA tracking methods](http://perishablepress.com/3-ways-track-google-analytics/).
+Learn more about [Google Analytics](http://www.google.com/analytics/) and [GA tracking methods](https://perishablepress.com/3-ways-track-google-analytics/).
 
 == Donations ==
 
 I created this plugin with love for the WP community. To show support, you can [make a donation](http://m0n.co/donate) or purchase one of my books: 
 
-* [The Tao of WordPress](http://wp-tao.com/)
-* [Digging into WordPress](http://digwp.com/)
-* [.htaccess made easy](http://htaccessbook.com/)
-* [WordPress Themes In Depth](http://wp-tao.com/wordpress-themes-book/)
+* [The Tao of WordPress](https://wp-tao.com/)
+* [Digging into WordPress](https://digwp.com/)
+* [.htaccess made easy](https://htaccessbook.com/)
+* [WordPress Themes In Depth](https://wp-tao.com/wordpress-themes-book/)
 
 Links, tweets and likes also appreciated. Thanks! :)

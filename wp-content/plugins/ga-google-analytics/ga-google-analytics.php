@@ -1,30 +1,30 @@
 <?php 
 /*
 	Plugin Name: GA Google Analytics
-	Plugin URI: http://perishablepress.com/google-analytics-plugin/
+	Plugin URI: https://perishablepress.com/google-analytics-plugin/
 	Description: Adds your Google Analytics Tracking Code to your WordPress site.
 	Tags: analytics, ga, google, google analytics, tracking, statistics, stats
 	Author: Jeff Starr
 	Author URI: http://monzilla.biz/
 	Donate link: http://m0n.co/donate
 	Contributors: specialk
-	Requires at least: 3.8
-	Tested up to: 4.1
+	Requires at least: 3.9
+	Tested up to: 4.2
 	Stable tag: trunk
-	Version: 20150314
+	Version: 20150507
 	Text Domain: gap
 	Domain Path: /languages/
-	License: GPL v2
+	License: GPL v2 or later
 */
 
 if (!defined('ABSPATH')) die();
 
-$gap_wp_vers = '3.8';
-$gap_version = '20150314';
+$gap_wp_vers = '3.9';
+$gap_version = '20150507';
 $gap_plugin  = __('GA Google Analytics', 'gap');
 $gap_options = get_option('gap_options');
 $gap_path    = plugin_basename(__FILE__); // 'ga-google-analytics/ga-google-analytics.php';
-$gap_homeurl = 'http://perishablepress.com/ga-google-analytics/';
+$gap_homeurl = 'https://perishablepress.com/ga-google-analytics/';
 
 // i18n
 function gap_i18n_init() {
@@ -103,13 +103,13 @@ function google_analytics_tracking_code() {
 }
 
 // include tracking code in header or footer
-if ($gap_options['gap_location'] == 'header') {
-	if ($gap_options['admin_area']) {
+if (isset($gap_options['gap_location']) && $gap_options['gap_location'] == 'header') {
+	if (isset($gap_options['admin_area']) && $gap_options['admin_area']) {
 		add_action('admin_head', 'google_analytics_tracking_code');
 	}
 	add_action('wp_head', 'google_analytics_tracking_code');
 } else {
-	if ($gap_options['admin_area']) {
+	if (isset($gap_options['admin_area']) && $gap_options['admin_area']) {
 		add_action('admin_footer', 'google_analytics_tracking_code');
 	}
 	add_action('wp_footer', 'google_analytics_tracking_code');
@@ -471,9 +471,9 @@ function gap_render_form() {
 					</div>
 					<div id="mm-panel-current" class="postbox">
 						<h3><?php _e('Updates &amp; Info', 'gap'); ?></h3>
-						<div class="toggle<?php if (!isset($_GET["settings-updated"])) { echo ' default-hidden'; } ?>">
+						<div class="toggle">
 							<div id="mm-iframe-wrap">
-								<iframe src="http://perishablepress.com/current/index-gap.html"></iframe>
+								<iframe src="https://perishablepress.com/current/index-gap.html"></iframe>
 							</div>
 						</div>
 					</div>
