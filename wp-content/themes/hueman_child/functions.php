@@ -12,4 +12,7 @@ function theme_enqueue_styles() {
 
 // load languages from child theme
 load_theme_textdomain( 'hueman', get_stylesheet_directory() . '/languages' );
+
+wp_enqueue_script('twitter', get_stylesheet_directory_uri() . '/js/twitter.js');
+wp_enqueue_script('facebook', get_stylesheet_directory_uri() . '/js/facebook.js');
 ?>
