@@ -36,19 +36,21 @@
     <div class="clear"></div>
 
     <!-- Social Media Buttons -->
-    <div class="social-post-plugin fb-like"
-         data-href="<?php echo get_permalink(); ?>"
-         data-layout="standard"
-         data-action="like"
-         data-show-faces="true"
-         data-share="true"></div> <br />
-    <a class="social-post-plugin twitter-share-button"
-       href="https://twitter.com/share"
-       data-via="ginforo"
-       data-lang="ro"
-       data-text="<?php echo get_the_title(); ?>"
-       data-url="<?php echo get_permalink(); ?>"
-       data-related="infoeducatie,acadnet,upirro">Tweet</a>
+    <div class="social-post-plugins">
+      <div class="fb-like"
+           data-href="<?php echo get_permalink(); ?>"
+           data-layout="standard"
+           data-action="like"
+           data-show-faces="true"
+           data-share="true"></div> <br />
+      <a class="social-post-plugin twitter-share-button"
+         href="https://twitter.com/share"
+         data-via="ginforo"
+         data-lang="ro"
+         data-text="<?php echo get_the_title(); ?>"
+         data-url="<?php echo get_permalink(); ?>"
+         data-related="infoeducatie,acadnet,upirro">Tweet</a>
+    </div>
     <!-- /Social Media Buttons -->
 
     <div class="clear"></div>
