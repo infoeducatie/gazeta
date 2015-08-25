@@ -2,8 +2,8 @@
 /*
 Plugin Name: Custom Facebook Feed
 Plugin URI: http://smashballoon.com/custom-facebook-feed
-Description: Add a completely customizable Facebook feed to your WordPress site
-Version: 2.3.4
+Description: Add completely customizable Facebook feeds to your WordPress site
+Version: 2.3.6
 Author: Smash Balloon
 Author URI: http://smashballoon.com/
 License: GPLv2 or later
@@ -25,7 +25,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 //Include admin
 include dirname( __FILE__ ) .'/custom-facebook-feed-admin.php';
 
-define('CFFVER', '2.3.4');
+define('CFFVER', '2.3.6');
 
 // Add shortcodes
 add_shortcode('custom-facebook-feed', 'display_cff');
@@ -33,7 +33,6 @@ function display_cff($atts) {
     
     //Style options
     $options = get_option('cff_style_settings');
-    $content = "";
     //Create the types string to set as shortcode default
     $include_string = '';
     if($options[ 'cff_show_author' ]) $include_string .= 'author,';
@@ -152,6 +151,10 @@ function display_cff($atts) {
         'likeboxheight' => isset($options[ 'cff_likebox_height' ]) ? $options[ 'cff_likebox_height' ] : '',
         'likeboxfaces' => isset($options[ 'cff_like_box_faces' ]) ? $options[ 'cff_like_box_faces' ] : '',
         'likeboxborder' => isset($options[ 'cff_like_box_border' ]) ? $options[ 'cff_like_box_border' ] : '',
+        'likeboxcover' => isset($options[ 'cff_like_box_cover' ]) ? $options[ 'cff_like_box_cover' ] : '',
+        'likeboxsmallheader' => isset($options[ 'cff_like_box_small_header' ]) ? $options[ 'cff_like_box_small_header' ] : '',
+        'likeboxhidebtn' => isset($options[ 'cff_like_box_hide_cta' ]) ? $options[ 'cff_like_box_hide_cta' ] : '',
+
         'credit' => isset($options[ 'cff_show_credit' ]) ? $options[ 'cff_show_credit' ] : '',
         'nofollow' => 'true',
 
@@ -215,12 +218,13 @@ function display_cff($atts) {
 
     $cff_class = $atts['class'];
     //Compile feed styles
-    $cff_feed_styles = 'style="';
+    $cff_feed_styles = '';
+    if( !empty($cff_feed_width) || !empty($cff_feed_height) || !empty($cff_feed_padding) || (!empty($cff_bg_color) && $cff_bg_color !== '#') ) $cff_feed_styles = 'style="';
     if ( !empty($cff_feed_width) ) $cff_feed_styles .= 'width:' . $cff_feed_width . '; ';
     if ( !empty($cff_feed_height) ) $cff_feed_styles .= 'height:' . $cff_feed_height . '; ';
     if ( !empty($cff_feed_padding) ) $cff_feed_styles .= 'padding:' . $cff_feed_padding . '; ';
-    if ( !empty($cff_bg_color) ) $cff_feed_styles .= 'background-color:#' . str_replace('#', '', $cff_bg_color) . '; ';
-    $cff_feed_styles .= '"';
+    if ( !empty($cff_bg_color) && $cff_bg_color !== '#' ) $cff_feed_styles .= 'background-color:#' . str_replace('#', '', $cff_bg_color) . '; ';
+    if( !empty($cff_feed_width) || !empty($cff_feed_height) || !empty($cff_feed_padding) || (!empty($cff_bg_color) && $cff_bg_color !== '#') ) $cff_feed_styles .= '"';
     //Like box
     $cff_like_box_position = $atts[ 'likeboxpos' ];
     $cff_like_box_outside = $atts[ 'likeboxoutside' ];
@@ -291,10 +295,11 @@ function display_cff($atts) {
     $cff_icon_style = $atts[ 'iconstyle' ];
     $cff_meta_text_color = $atts[ 'socialtextcolor' ];
     $cff_meta_bg_color = $atts[ 'socialbgcolor' ];
-    $cff_meta_styles = 'style="';
+    $cff_meta_styles = '';
+    if ( !empty($cff_meta_text_color) || ( !empty($cff_meta_bg_color) && $cff_meta_bg_color !== '#' ) ) $cff_meta_styles = 'style="';
     if ( !empty($cff_meta_text_color) ) $cff_meta_styles .= 'color:#' . str_replace('#', '', $cff_meta_text_color) . ';';
-    if ( !empty($cff_meta_bg_color) ) $cff_meta_styles .= 'background-color:#' . str_replace('#', '', $cff_meta_bg_color) . ';';
-    $cff_meta_styles .= '"';
+    if ( !empty($cff_meta_bg_color) && $cff_meta_bg_color !== '#' ) $cff_meta_styles .= 'background-color:#' . str_replace('#', '', $cff_meta_bg_color) . ';';
+    if ( !empty($cff_meta_text_color) || ( !empty($cff_meta_bg_color) && $cff_meta_bg_color !== '#' ) ) $cff_meta_styles .= '"';
     $cff_nocomments_text = isset($options[ 'cff_nocomments_text' ]) ? $options[ 'cff_nocomments_text' ] : '';
     $cff_hide_comments = isset($options[ 'cff_hide_comments' ]) ? $options[ 'cff_hide_comments' ] : '';
     if (!isset($cff_nocomments_text) || empty($cff_nocomments_text)) $cff_hide_comments = true;
@@ -309,11 +314,14 @@ function display_cff($atts) {
     $cff_title_size = $atts[ 'textsize' ];
     $cff_title_weight = $atts[ 'textweight' ];
     $cff_title_color = $atts[ 'textcolor' ];
-    $cff_title_styles = 'style="';
-    if ( !empty($cff_title_size) && $cff_title_size != 'inherit' ) $cff_title_styles .=  'font-size:' . $cff_title_size . 'px; ';
-    if ( !empty($cff_title_weight) && $cff_title_weight != 'inherit' ) $cff_title_styles .= 'font-weight:' . $cff_title_weight . '; ';
-    if ( !empty($cff_title_color) ) $cff_title_styles .= 'color:#' . str_replace('#', '', $cff_title_color) . ';';
-    $cff_title_styles .= '"';
+
+    $cff_title_styles = '';
+    if( ( !empty($cff_title_size) && $cff_title_size != 'inherit' ) || ( !empty($cff_title_weight) && $cff_title_weight != 'inherit' ) || ( !empty($cff_title_color) && $cff_title_color !== '#' ) ) $cff_title_styles = 'style="';
+        if ( !empty($cff_title_size) && $cff_title_size != 'inherit' ) $cff_title_styles .=  'font-size:' . $cff_title_size . 'px; ';
+        if ( !empty($cff_title_weight) && $cff_title_weight != 'inherit' ) $cff_title_styles .= 'font-weight:' . $cff_title_weight . '; ';
+        if ( !empty($cff_title_color) && $cff_title_color !== '#' ) $cff_title_styles .= 'color:#' . str_replace('#', '', $cff_title_color) . ';';
+    if( ( !empty($cff_title_size) && $cff_title_size != 'inherit' ) || ( !empty($cff_title_weight) && $cff_title_weight != 'inherit' ) || ( !empty($cff_title_color) && $cff_title_color !== '#' ) ) $cff_title_styles .= '"';
+
     $cff_title_link = $atts[ 'textlink' ];
 
     $cff_posttext_link_color = str_replace('#', '', $atts['textlinkcolor']);
@@ -324,20 +332,24 @@ function display_cff($atts) {
     //Author
     $cff_author_size = $atts[ 'authorsize' ];
     $cff_author_color = $atts[ 'authorcolor' ];
-    $cff_author_styles = 'style="';
-    if ( !empty($cff_author_size) && $cff_author_size != 'inherit' ) $cff_author_styles .=  'font-size:' . $cff_author_size . 'px; ';
-    if ( !empty($cff_author_color) ) $cff_author_styles .= 'color:#' . str_replace('#', '', $cff_author_color) . ';';
-    $cff_author_styles .= '"';
+
+    $cff_author_styles = '';
+    if( ( !empty($cff_author_size) && $cff_author_size != 'inherit' ) || ( !empty($cff_author_color) && $cff_author_color !== '#' ) ) $cff_author_styles = 'style="';
+        if ( !empty($cff_author_size) && $cff_author_size != 'inherit' ) $cff_author_styles .=  'font-size:' . $cff_author_size . 'px; ';
+        if ( !empty($cff_author_color) && $cff_author_color !== '#' ) $cff_author_styles .= 'color:#' . str_replace('#', '', $cff_author_color) . ';';
+    if( ( !empty($cff_author_size) && $cff_author_size != 'inherit' ) || ( !empty($cff_author_color) && $cff_author_color !== '#' ) ) $cff_author_styles .= '"';
 
     //Description
     $cff_body_size = $atts[ 'descsize' ];
     $cff_body_weight = $atts[ 'descweight' ];
     $cff_body_color = $atts[ 'desccolor' ];
-    $cff_body_styles = 'style="';
-    if ( !empty($cff_body_size) && $cff_body_size != 'inherit' ) $cff_body_styles .=  'font-size:' . $cff_body_size . 'px; ';
-    if ( !empty($cff_body_weight) && $cff_body_weight != 'inherit' ) $cff_body_styles .= 'font-weight:' . $cff_body_weight . '; ';
-    if ( !empty($cff_body_color) ) $cff_body_styles .= 'color:#' . str_replace('#', '', $cff_body_color) . ';';
-    $cff_body_styles .= '"';
+
+    $cff_body_styles = '';
+    if( ( !empty($cff_body_size) && $cff_body_size != 'inherit' ) || ( !empty($cff_body_weight) && $cff_body_weight != 'inherit' ) || ( !empty($cff_body_color) && $cff_body_color !== '#' ) ) $cff_body_styles = 'style="';
+        if ( !empty($cff_body_size) && $cff_body_size != 'inherit' ) $cff_body_styles .=  'font-size:' . $cff_body_size . 'px; ';
+        if ( !empty($cff_body_weight) && $cff_body_weight != 'inherit' ) $cff_body_styles .= 'font-weight:' . $cff_body_weight . '; ';
+        if ( !empty($cff_body_color) && $cff_body_color !== '#' ) $cff_body_styles .= 'color:#' . str_replace('#', '', $cff_body_color) . ';';
+    if( ( !empty($cff_body_size) && $cff_body_size != 'inherit' ) || ( !empty($cff_body_weight) && $cff_body_weight != 'inherit' ) || ( !empty($cff_body_color) && $cff_body_color !== '#' ) ) $cff_body_styles .= '"';
 
     //Shared link title
     $cff_link_title_format = $atts[ 'linktitleformat' ];
@@ -346,9 +358,8 @@ function display_cff($atts) {
     $cff_link_title_color = str_replace('#', '', $atts[ 'linktitlecolor' ]);
     $cff_link_url_color = $atts[ 'linkurlcolor' ];
 
-    $cff_link_title_styles = 'style="';
-    if ( !empty($cff_link_title_size) && $cff_link_title_size != 'inherit' ) $cff_link_title_styles .=  'font-size:' . $cff_link_title_size . 'px;';
-    $cff_link_title_styles .= '"';
+    $cff_link_title_styles = '';
+    if ( !empty($cff_link_title_size) && $cff_link_title_size != 'inherit' ) $cff_link_title_styles =  'style="font-size:' . $cff_link_title_size . 'px;"';
 
     //Shared link box
     $cff_link_bg_color = $atts[ 'linkbgcolor' ];
@@ -356,10 +367,11 @@ function display_cff($atts) {
     $cff_disable_link_box = $atts['disablelinkbox'];
     ($cff_disable_link_box == 'true' || $cff_disable_link_box == 'on') ? $cff_disable_link_box = true : $cff_disable_link_box = false;
 
-    $cff_link_box_styles = 'style="';
-    if ( !empty($cff_link_border_color) ) $cff_link_box_styles .=  'border: 1px solid #' . str_replace('#', '', $cff_link_border_color) . '; ';
-    if ( !empty($cff_link_bg_color) ) $cff_link_box_styles .= 'background-color: #' . str_replace('#', '', $cff_link_bg_color) . ';';
-    $cff_link_box_styles .= '"';
+    $cff_link_box_styles = '';
+    if( !empty($cff_link_border_color) || (!empty($cff_link_bg_color) && $cff_link_bg_color !== '#') ) $cff_link_box_styles = 'style="';
+        if ( !empty($cff_link_border_color) ) $cff_link_box_styles .=  'border: 1px solid #' . str_replace('#', '', $cff_link_border_color) . '; ';
+        if ( !empty($cff_link_bg_color) && $cff_link_bg_color !== '#' ) $cff_link_box_styles .= 'background-color: #' . str_replace('#', '', $cff_link_bg_color) . ';';
+    if( !empty($cff_link_border_color) || (!empty($cff_link_bg_color) && $cff_link_bg_color !== '#') ) $cff_link_box_styles .= '"';
 
     //Event Title
     $cff_event_title_format = $atts[ 'eventtitleformat' ];
@@ -367,11 +379,13 @@ function display_cff($atts) {
     $cff_event_title_size = $atts[ 'eventtitlesize' ];
     $cff_event_title_weight = $atts[ 'eventtitleweight' ];
     $cff_event_title_color = $atts[ 'eventtitlecolor' ];
-    $cff_event_title_styles = 'style="';
-    if ( !empty($cff_event_title_size) && $cff_event_title_size != 'inherit' ) $cff_event_title_styles .=  'font-size:' . $cff_event_title_size . 'px; ';
-    if ( !empty($cff_event_title_weight) && $cff_event_title_weight != 'inherit' ) $cff_event_title_styles .= 'font-weight:' . $cff_event_title_weight . '; ';
-    if ( !empty($cff_event_title_color) ) $cff_event_title_styles .= 'color:#' . str_replace('#', '', $cff_event_title_color) . ';';
-    $cff_event_title_styles .= '"';
+
+    $cff_event_title_styles = '';
+    if( ( !empty($cff_event_title_size) && $cff_event_title_size != 'inherit' ) || ( !empty($cff_event_title_weight) && $cff_event_title_weight != 'inherit' ) || ( !empty($cff_event_title_color) && $cff_event_title_color !== '#' ) ) $cff_event_title_styles = 'style="';
+        if ( !empty($cff_event_title_size) && $cff_event_title_size != 'inherit' ) $cff_event_title_styles .=  'font-size:' . $cff_event_title_size . 'px; ';
+        if ( !empty($cff_event_title_weight) && $cff_event_title_weight != 'inherit' ) $cff_event_title_styles .= 'font-weight:' . $cff_event_title_weight . '; ';
+        if ( !empty($cff_event_title_color) && $cff_event_title_color !== '#' ) $cff_event_title_styles .= 'color:#' . str_replace('#', '', $cff_event_title_color) . ';';
+    if( ( !empty($cff_event_title_size) && $cff_event_title_size != 'inherit' ) || ( !empty($cff_event_title_weight) && $cff_event_title_weight != 'inherit' ) || ( !empty($cff_event_title_color) && $cff_event_title_color !== '#' ) ) $cff_event_title_styles .= '"';
     
     $cff_event_title_link = $atts[ 'eventtitlelink' ];
     ( $cff_event_title_link == 'on' || $cff_event_title_link == 'true' || $cff_event_title_link == true ) ? $cff_event_title_link = true : $cff_event_title_link = false;
@@ -384,32 +398,41 @@ function display_cff($atts) {
     $cff_event_date_position = $atts[ 'eventdatepos' ];
     $cff_event_date_formatting = $atts[ 'eventdateformat' ];
     $cff_event_date_custom = $atts[ 'eventdatecustom' ];
-    $cff_event_date_styles = 'style="';
-    if ( !empty($cff_event_date_size) && $cff_event_date_size != 'inherit' ) $cff_event_date_styles .=  'font-size:' . $cff_event_date_size . 'px; ';
-    if ( !empty($cff_event_date_weight) && $cff_event_date_weight != 'inherit' ) $cff_event_date_styles .= 'font-weight:' . $cff_event_date_weight . '; ';
-    if ( !empty($cff_event_date_color) ) $cff_event_date_styles .= 'color:#' . str_replace('#', '', $cff_event_date_color) . ';';
-    $cff_event_date_styles .= '"';
+
+    $cff_event_date_styles = '';
+    if( ( !empty($cff_event_date_size) && $cff_event_date_size != 'inherit' ) || ( !empty($cff_event_date_weight) && $cff_event_date_weight != 'inherit' ) || ( !empty($cff_event_date_color) && $cff_event_date_color !== '#' ) ) $cff_event_date_styles = 'style="';
+        if ( !empty($cff_event_date_size) && $cff_event_date_size != 'inherit' ) $cff_event_date_styles .=  'font-size:' . $cff_event_date_size . 'px; ';
+        if ( !empty($cff_event_date_weight) && $cff_event_date_weight != 'inherit' ) $cff_event_date_styles .= 'font-weight:' . $cff_event_date_weight . '; ';
+        if ( !empty($cff_event_date_color) && $cff_event_date_color !== '#' ) $cff_event_date_styles .= 'color:#' . str_replace('#', '', $cff_event_date_color) . ';';
+    if( ( !empty($cff_event_date_size) && $cff_event_date_size != 'inherit' ) || ( !empty($cff_event_date_weight) && $cff_event_date_weight != 'inherit' ) || ( !empty($cff_event_date_color) && $cff_event_date_color !== '#' ) ) $cff_event_date_styles .= '"';
+
     //Event Details
     $cff_event_details_size = $atts[ 'eventdetailssize' ];
     $cff_event_details_weight = $atts[ 'eventdetailsweight' ];
     $cff_event_details_color = $atts[ 'eventdetailscolor' ];
     $cff_event_link_color = $atts[ 'eventlinkcolor' ];
-    $cff_event_details_styles = 'style="';
-    if ( !empty($cff_event_details_size) && $cff_event_details_size != 'inherit' ) $cff_event_details_styles .=  'font-size:' . $cff_event_details_size . 'px; ';
-    if ( !empty($cff_event_details_weight) && $cff_event_details_weight != 'inherit' ) $cff_event_details_styles .= 'font-weight:' . $cff_event_details_weight . '; ';
-    if ( !empty($cff_event_details_color) ) $cff_event_details_styles .= 'color:#' . str_replace('#', '', $cff_event_details_color) . ';';
-    $cff_event_details_styles .= '"';
+
+    $cff_event_details_styles = '';
+    if( ( !empty($cff_event_details_size) && $cff_event_details_size != 'inherit' ) || ( !empty($cff_event_details_weight) && $cff_event_details_weight != 'inherit' ) || ( !empty($cff_event_details_color) && $cff_event_details_color !== '#' ) ) $cff_event_details_styles = 'style="';
+        if ( !empty($cff_event_details_size) && $cff_event_details_size != 'inherit' ) $cff_event_details_styles .=  'font-size:' . $cff_event_details_size . 'px; ';
+        if ( !empty($cff_event_details_weight) && $cff_event_details_weight != 'inherit' ) $cff_event_details_styles .= 'font-weight:' . $cff_event_details_weight . '; ';
+        if ( !empty($cff_event_details_color) && $cff_event_details_color !== '#' ) $cff_event_details_styles .= 'color:#' . str_replace('#', '', $cff_event_details_color) . ';';
+    if( ( !empty($cff_event_details_size) && $cff_event_details_size != 'inherit' ) || ( !empty($cff_event_details_weight) && $cff_event_details_weight != 'inherit' ) || ( !empty($cff_event_details_color) && $cff_event_details_color !== '#' ) ) $cff_event_details_styles .= '"';
+
     //Date
     $cff_date_position = $atts[ 'datepos' ];
     if (!isset($cff_date_position)) $cff_date_position = 'below';
     $cff_date_size = $atts[ 'datesize' ];
     $cff_date_weight = $atts[ 'dateweight' ];
     $cff_date_color = $atts[ 'datecolor' ];
-    $cff_date_styles = 'style="';
-    if ( !empty($cff_date_size) && $cff_date_size != 'inherit' ) $cff_date_styles .=  'font-size:' . $cff_date_size . 'px; ';
-    if ( !empty($cff_date_weight) && $cff_date_weight != 'inherit' ) $cff_date_styles .= 'font-weight:' . $cff_date_weight . '; ';
-    if ( !empty($cff_date_color) ) $cff_date_styles .= 'color:#' . str_replace('#', '', $cff_date_color) . ';';
-    $cff_date_styles .= '"';
+
+    $cff_date_styles = '';
+    if( ( !empty($cff_date_size) && $cff_date_size != 'inherit' ) || ( !empty($cff_date_weight) && $cff_date_weight != 'inherit' ) || ( !empty($cff_date_color) && $cff_date_color !== '#' ) ) $cff_date_styles = 'style="';
+        if ( !empty($cff_date_size) && $cff_date_size != 'inherit' ) $cff_date_styles .=  'font-size:' . $cff_date_size . 'px; ';
+        if ( !empty($cff_date_weight) && $cff_date_weight != 'inherit' ) $cff_date_styles .= 'font-weight:' . $cff_date_weight . '; ';
+        if ( !empty($cff_date_color) && $cff_date_color !== '#' ) $cff_date_styles .= 'color:#' . str_replace('#', '', $cff_date_color) . ';';
+    if( ( !empty($cff_date_size) && $cff_date_size != 'inherit' ) || ( !empty($cff_date_weight) && $cff_date_weight != 'inherit' ) || ( !empty($cff_date_color) && $cff_date_color !== '#' ) ) $cff_date_styles .= '"';
+    
     $cff_date_before = isset($options[ 'cff_date_before' ]) ? $options[ 'cff_date_before' ] : '';
     $cff_date_after = isset($options[ 'cff_date_after' ]) ? $options[ 'cff_date_after' ] : '';
     //Set user's timezone based on setting
@@ -420,11 +443,13 @@ function display_cff($atts) {
     $cff_link_size = $atts[ 'linksize' ];
     $cff_link_weight = $atts[ 'linkweight' ];
     $cff_link_color = $atts[ 'linkcolor' ];
-    $cff_link_styles = 'style="';
-    if ( !empty($cff_link_size) && $cff_link_size != 'inherit' ) $cff_link_styles .=  'font-size:' . $cff_link_size . 'px; ';
-    if ( !empty($cff_link_weight) && $cff_link_weight != 'inherit' ) $cff_link_styles .= 'font-weight:' . $cff_link_weight . '; ';
-    if ( !empty($cff_link_color) ) $cff_link_styles .= 'color:#' . str_replace('#', '', $cff_link_color) . ';';
-    $cff_link_styles .= '"';
+
+    $cff_link_styles = '';
+    if( ( !empty($cff_link_size) && $cff_link_size != 'inherit' ) || ( !empty($cff_link_weight) && $cff_link_weight != 'inherit' ) || ( !empty($cff_link_color) && $cff_link_color !== '#' ) ) $cff_link_styles = 'style="';
+        if ( !empty($cff_link_size) && $cff_link_size != 'inherit' ) $cff_link_styles .=  'font-size:' . $cff_link_size . 'px; ';
+        if ( !empty($cff_link_weight) && $cff_link_weight != 'inherit' ) $cff_link_styles .= 'font-weight:' . $cff_link_weight . '; ';
+        if ( !empty($cff_link_color) && $cff_link_color !== '#' ) $cff_link_styles .= 'color:#' . str_replace('#', '', $cff_link_color) . ';';
+    if( ( !empty($cff_link_size) && $cff_link_size != 'inherit' ) || ( !empty($cff_link_weight) && $cff_link_weight != 'inherit' ) || ( !empty($cff_link_color) && $cff_link_color !== '#' ) ) $cff_link_styles .= '"';
 
     //Link custom text
     $cff_facebook_link_text = $atts[ 'facebooklinktext' ];
@@ -461,12 +486,38 @@ function display_cff($atts) {
 
     if ( !isset($cff_likebox_width) || empty($cff_likebox_width) || $cff_likebox_width == '' ) $cff_likebox_width = '100%';
     $cff_like_box_faces = $atts[ 'likeboxfaces' ];
-    if ( !isset($cff_like_box_faces) || empty($cff_like_box_faces) ) $cff_like_box_faces = 'false';
+    if ( !isset($cff_like_box_faces) || empty($cff_like_box_faces) ){
+        $cff_like_box_faces = 'false';
+    } else {
+        $cff_like_box_faces = 'true';
+    }
+
     $cff_like_box_border = $atts[ 'likeboxborder' ];
     if ($cff_like_box_border) {
         $cff_like_box_border = 'true';
     } else {
         $cff_like_box_border = 'false';
+    }
+
+    $cff_like_box_cover = $atts[ 'likeboxcover' ];
+    if ($cff_like_box_cover) {
+        $cff_like_box_cover = 'false';
+    } else {
+        $cff_like_box_cover = 'true';
+    }
+
+    $cff_like_box_small_header = $atts[ 'likeboxsmallheader' ];
+    if ($cff_like_box_small_header) {
+        $cff_like_box_small_header = 'true';
+    } else {
+        $cff_like_box_small_header = 'false';
+    }
+
+    $cff_like_box_hide_cta = $atts[ 'likeboxhidebtn' ];
+    if ($cff_like_box_hide_cta) {
+        $cff_like_box_hide_cta = 'true';
+    } else {
+        $cff_like_box_hide_cta = 'false';
     }
 
     //Compile Like box styles
@@ -488,13 +539,14 @@ function display_cff($atts) {
     $cff_header_text_color = $atts['headertextcolor'];
 
     //Compile feed header styles
-    $cff_header_styles = 'style="';
-    if ( !empty($cff_header_bg_color) ) $cff_header_styles .= 'background-color: #' . str_replace('#', '', $cff_header_bg_color) . ';';
-    if ( !empty($cff_header_padding) ) $cff_header_styles .= ' padding: ' . $cff_header_padding . ';';
-    if ( !empty($cff_header_text_size) ) $cff_header_styles .= ' font-size: ' . $cff_header_text_size . 'px;';
-    if ( !empty($cff_header_text_weight) ) $cff_header_styles .= ' font-weight: ' . $cff_header_text_weight . ';';
-    if ( !empty($cff_header_text_color) ) $cff_header_styles .= ' color: #' . str_replace('#', '', $cff_header_text_color) . ';';
-    $cff_header_styles .= '"';
+    $cff_header_styles = '';
+    if( ( !empty($cff_header_bg_color) && $cff_header_bg_color !== '#' ) || !empty($cff_header_padding) || ( !empty($cff_header_text_size) && $cff_header_text_size != 'inherit' ) || ( !empty($cff_header_text_weight) && $cff_header_text_weight != 'inherit' ) || (!empty($cff_header_text_color) && $cff_header_text_color !== '#') ) $cff_header_styles = 'style="';
+        if ( !empty($cff_header_bg_color) && $cff_header_bg_color !== '#' ) $cff_header_styles .= 'background-color: #' . str_replace('#', '', $cff_header_bg_color) . '; ';
+        if ( !empty($cff_header_padding) ) $cff_header_styles .= 'padding: ' . $cff_header_padding . '; ';
+        if ( !empty($cff_header_text_size) && $cff_header_text_size != 'inherit' ) $cff_header_styles .= 'font-size: ' . $cff_header_text_size . 'px; ';
+        if ( !empty($cff_header_text_weight) && $cff_header_text_weight != 'inherit' ) $cff_header_styles .= 'font-weight: ' . $cff_header_text_weight . '; ';
+        if ( !empty($cff_header_text_color) && $cff_header_text_color !== '#' ) $cff_header_styles .= 'color: #' . str_replace('#', '', $cff_header_text_color) . '; ';
+    if( ( !empty($cff_header_bg_color) && $cff_header_bg_color !== '#' ) || !empty($cff_header_padding) || ( !empty($cff_header_text_size) && $cff_header_text_size != 'inherit' ) || ( !empty($cff_header_text_weight) && $cff_header_text_weight != 'inherit' ) || (!empty($cff_header_text_color) && $cff_header_text_color !== '#') ) $cff_header_styles .= '"';
 
     //Video
     //Dimensions
@@ -516,6 +568,7 @@ function display_cff($atts) {
 
     $cff_post_bg_color = str_replace('#', '', $atts['postbgcolor']);
     $cff_post_rounded = $atts['postcorners'];
+
     ($cff_post_bg_color !== '#' && $cff_post_bg_color !== '') ? $cff_post_bg_color_check = true : $cff_post_bg_color_check = false;
     ($cff_sep_color !== '#' && $cff_sep_color !== '') ? $cff_sep_color_check = true : $cff_sep_color_check = false;
     
@@ -525,7 +578,7 @@ function display_cff($atts) {
         $cff_item_styles = 'style="';
         if($cff_sep_color_check && !$cff_post_bg_color_check) $cff_item_styles .= 'border-bottom: ' . $cff_sep_size . 'px solid #' . str_replace('#', '', $cff_sep_color) . '; ';
         if($cff_post_bg_color_check) $cff_item_styles .= 'background-color: #' . $cff_post_bg_color . '; ';
-        if(isset($cff_post_rounded)) $cff_item_styles .= '-webkit-border-radius: ' . $cff_post_rounded . 'px; -moz-border-radius: ' . $cff_post_rounded . 'px; border-radius: ' . $cff_post_rounded . 'px; ';
+        if(isset($cff_post_rounded) && $cff_post_rounded !== '0') $cff_item_styles .= '-webkit-border-radius: ' . $cff_post_rounded . 'px; -moz-border-radius: ' . $cff_post_rounded . 'px; border-radius: ' . $cff_post_rounded . 'px; ';
         $cff_item_styles .= '"';
     }
    
@@ -568,9 +621,13 @@ function display_cff($atts) {
         '640861236031365|2rENQzxtWtG12DtlZwqfZ6Vu6BE',
         '334487440086538|hI_NNy1NvxQiQxm-TtXsrmoCVaE',
         '755471677869105|Jxv8xVDad7vUUTauk8K2o71wG2w',
-        '518353204973067|dA7YTe-k8eSvgZ8lqa51xSm16DA'
+        '518353204973067|dA7YTe-k8eSvgZ8lqa51xSm16DA',
+        '444286039063163|5qkYu2qxpERWO3gcs2f3nxeqhpg',
+        '944793728885704|XJ6QqKK8Ldsssr4n5Qrs2tVr7rs',
+        '1444667452511509|wU7tzWiuj6NadfpHfgkIGLGO86o',
+        '1574171666165548|ZL9tXNXxpnCdAvdUjCX5HtRnsR8'
     );
-    if ($access_token == '' || !$cff_show_access_token) $access_token = $access_token_array[rand(0, 7)];
+    if ($access_token == '' || !$cff_show_access_token) $access_token = $access_token_array[rand(0, 11)];
 
 
     //Check whether a Page ID has been defined
@@ -634,19 +691,18 @@ function display_cff($atts) {
     //Get like box vars
     $cff_likebox_width = $atts[ 'likeboxwidth' ];
     if ( !isset($cff_likebox_width) || empty($cff_likebox_width) || $cff_likebox_width == '' ) $cff_likebox_width = 300;
-    $cff_like_box_faces = $atts[ 'likeboxfaces' ];
-    if ( !isset($cff_like_box_faces) || empty($cff_like_box_faces) ) $cff_like_box_faces = 'false';
 
     //Set like box variable
     isset( $options[ 'cff_app_id' ] ) ? $cff_app_id = $options[ 'cff_app_id' ] : $cff_app_id = '';
-    ( isset($cff_app_id) && !empty($cff_app_id) ) ? $cff_like_box_params = '&appId=' .$cff_app_id : $cff_like_box_params = '';
+    ( isset($cff_app_id) && !empty($cff_app_id) ) ? $cff_like_box_params = '&app_id=' .$cff_app_id : $cff_like_box_params = '';
     $like_box = '<div class="cff-likebox';
     if ($cff_like_box_outside) $like_box .= ' cff-outside';
     $like_box .= ($cff_like_box_position == 'top') ? ' cff-top' : ' cff-bottom';
-    $like_box .= '" ' . $cff_likebox_styles . '><script src="https://connect.facebook.net/' . $cff_locale . '/all.js#xfbml=1 '.$cff_like_box_params.'"></script><fb:like-box href="http://www.facebook.com/' . $page_id . '" show_faces="'.$cff_like_box_faces.'" stream="false" header="false" colorscheme="'. $cff_like_box_colorscheme .'" show_border="'. $cff_like_box_border .'" data-height="'.$cff_likebox_height.'"></fb:like-box><div id="fb-root"></div></div>';
+    // $like_box .= '" ' . $cff_likebox_styles . '><script src="https://connect.facebook.net/' . $cff_locale . '/all.js#xfbml=1 '.$cff_like_box_params.'"></script><fb:like-box href="http://www.facebook.com/' . $page_id . '" show_faces="'.$cff_like_box_faces.'" stream="false" header="false" colorscheme="'. $cff_like_box_colorscheme .'" show_border="'. $cff_like_box_border .'" data-height="'.$cff_likebox_height.'"></fb:like-box><div id="fb-root"></div></div>';
 
-    //New like box:
-    // $like_box .= '" ' . $cff_likebox_styles . '><div id="fb-root"></div><script src="https://connect.facebook.net/' . $cff_locale . '/all.js#xfbml=1 '.$cff_like_box_params.'"></script><div class="fb-page" data-href="https://www.facebook.com/' . $page_id . '" data-height="'.$cff_likebox_height.'" data-hide-cover="true" data-show-facepile="'.$cff_like_box_faces.'" data-show-posts="false"></div></div>';
+    $like_box_page_id = explode(",", str_replace(' ', '', $page_id) );
+
+    $like_box .= '" ><script src="https://connect.facebook.net/' . $cff_locale . '/all.js#xfbml=1'.$cff_like_box_params.'"></script><div class="fb-page" data-href="https://www.facebook.com/'.$like_box_page_id[0].'" data-width="'.$cff_likebox_width.'" data-hide-cover="'.$cff_like_box_cover.'" data-show-facepile="'.$cff_like_box_faces.'" data-small-header="'.$cff_like_box_small_header.'" data-hide-cta="'.$cff_like_box_hide_cta.'" data-show-posts="false" data-adapt-container-width="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/'.$like_box_page_id[0].'"><a href="https://www.facebook.com/'.$like_box_page_id[0].'">'.$cff_facebook_link_text.'</a></blockquote></div></div><div id="fb-root"></div></div>';
 
     //Don't show like box if it's a group
     if($cff_is_group) $like_box = '';
@@ -699,10 +755,15 @@ function display_cff($atts) {
 
     //Create CFF container HTML
     $cff_content .= '<div class="cff-wrapper">';
-    $cff_content .= '<div id="cff" data-char="'.$title_limit.'" class="';
-    if( !empty($cff_class) ) $cff_content .= $cff_class . ' ';
-    if ( !empty($cff_feed_height) ) $cff_content .= 'cff-fixed-height ';
-    $cff_content .= '" ' . $cff_feed_styles . '>';
+    $cff_content .= '<div id="cff" data-char="'.$title_limit.'"';
+
+    //If there's a class then add it here
+    if( !empty($cff_class) || !empty($cff_feed_height) ) $cff_content .= ' class="';
+        if( !empty($cff_class) ) $cff_content .= $cff_class . ' ';
+        if ( !empty($cff_feed_height) ) $cff_content .= 'cff-fixed-height ';
+    if( !empty($cff_class) || !empty($cff_feed_height) ) $cff_content .= '"';
+
+    $cff_content .= ' ' . $cff_feed_styles . '>';
 
     //Add the page header to the inside of the top of feed
     if ($cff_show_header && !$cff_header_outside) $cff_content .= $cff_header;
@@ -718,12 +779,14 @@ function display_cff($atts) {
     //ALL POSTS
     if (!$cff_events_only){
 
-        $cff_posts_json_url = 'https://graph.facebook.com/' . $page_id . '/' . $graph_query . '?access_token=' . $access_token . '&limit=' . $cff_post_limit . '&locale=' . $cff_locale . $cff_ssl;
+        // $cff_posts_json_url = 'https://graph.facebook.com/' . $page_id . '/' . $graph_query . '?access_token=' . $access_token . '&limit=' . $cff_post_limit . '&locale=' . $cff_locale . $cff_ssl;
+
+        $cff_posts_json_url = 'https://graph.facebook.com/' . $page_id . '/' . $graph_query . '?fields=id,from,message,message_tags,story,story_tags,link,source,name,caption,description,type,status_type,object_id,created_time&access_token=' . $access_token . '&limit=' . $cff_post_limit . '&locale=' . $cff_locale . $cff_ssl;
 
         //Don't use caching if the cache time is set to zero
         if ($cff_cache_time != 0){
             // Get any existing copy of our transient data
-            $transient_name = 'cff_'. $graph_query .'_json_' . $page_id;
+            $transient_name = 'cff_'. $graph_query .'_json_' . $page_id . $cff_post_limit . $show_posts_by;
             if ( false === ( $posts_json = get_transient( $transient_name ) ) || $posts_json === null ) {
                 //Get the contents of the Facebook page
                 $posts_json = cff_fetchUrl($cff_posts_json_url);
@@ -776,7 +839,13 @@ function display_cff($atts) {
         foreach ($FBdata->data as $news )
         {
             //Explode News and Page ID's into 2 values
-            $PostID = explode("_", $news->id);
+            $PostID = '';
+            $cff_post_id = '';
+            if( isset($news->id) ){
+                $cff_post_id = $news->id;
+                $PostID = explode("_", $cff_post_id);
+            }
+
             //Check the post type
             $cff_post_type = $news->type;
             if ($cff_post_type == 'link') {
@@ -786,6 +855,7 @@ function display_cff($atts) {
                 $event_link_check = stripos($news->link, $event_link_check);
                 if ( $event_link_check ) $cff_post_type = 'event';
             }
+
             //Should we show this post or not?
             $cff_show_post = false;
             switch ($cff_post_type) {
@@ -817,7 +887,7 @@ function display_cff($atts) {
             //ONLY show posts by others
             if ( $cff_show_only_others ) {
                 //Get the numeric ID of the page
-                $page_object = cff_fetchUrl('https://graph.facebook.com/' . $page_id);
+                $page_object = cff_fetchUrl('https://graph.facebook.com/' . $page_id . '?access_token=' . $access_token);
                 $page_object = json_decode($page_object);
                 $numeric_page_id = $page_object->id;
 
@@ -891,25 +961,43 @@ function display_cff($atts) {
                 $cff_album = false;
                 $num_photos = 0;
 
-                if( $news->status_type == 'added_photos' ){
-                    //Check 'story' to see whether it contains a number
-                    (isset($news->story)) ? $str = $news->story : $str = '';
-                    
-                    //Only matches number with a space after them
-                    preg_match('!\d+ !', $str, $matches);
+                if( isset($news->status_type) ){
+                    if( $news->status_type == 'added_photos' ){
+                        //Check 'story' to see whether it contains a number
+                        (isset($news->story)) ? $str = $news->story : $str = '';
+                        
+                        //Only matches number with a space after them
+                        preg_match('!\d+ !', $str, $matches);
 
-                    (isset($matches[0])) ? $num_photos = $matches[0] : $num_photos = 0;
 
-                    if ( $num_photos > 1 ) {
-                        $cff_album = true;
-                    
-                        //Link to the album instead of the photo
-                        $album_link = str_replace('photo.php?','media/set/?',$link);
-                        $link = "https://www.facebook.com/" . $page_id . "/posts/" . $PostID[1];
+                        (isset($matches[0])) ? $num_photos = $matches[0] : $num_photos = 0;
 
-                        //If the album link is a new format then link it to the post
-                        $album_link_check = 'media/set/?';
-                        if( stripos($album_link, $album_link_check) !== true ) $album_link = $link;
+                        //If the story contains a number...
+                        if ( $num_photos > 1 ) {
+
+                            //... and the link is to an album then it most likely has photo attachments
+                            $albumLinkArr1 = explode('photos/a.', $link);
+                            $albumLinkArr2 = explode('.', $albumLinkArr1[1]);
+
+                            //If it has an album link then set the post type to be album
+                            if( isset($albumLinkArr1[1]) ){
+
+                                $cff_album = true;
+
+                                //Change the Post ID to be to the post about adding photos to the album
+                                $cff_post_id = $PostID[0] . '_' . $albumLinkArr2[0];
+
+                                //Link to the album instead of the photo
+                                $album_link = str_replace('photo.php?','media/set/?',$link);
+                                $link = "https://www.facebook.com/" . $page_id . "/posts/" . $PostID[1];
+
+                                //If the album link is a new format then link it to the post
+                                $album_link_check = 'media/set/?';
+                                if( stripos($album_link, $album_link_check) !== true ) $album_link = $link;
+
+                            }
+                            
+                        }
                     }
                 }
 
@@ -956,13 +1044,7 @@ function display_cff($atts) {
 
                 $cff_author .= '</a></div>'; //End .cff-author
 
-// IMAGE
-if (!empty($news->picture) && !empty($news->object_id)) {
-$object_id = $news->object_id;
-$picture = 'https://graph.facebook.com/'.$object_id.'/picture?type=normal&width=9999&height=9999';
-$cff_post_item .= '<img src="'.$picture.'" alt="" class="img-responsive" />
-';
-}
+
                 //POST TEXT
                 $cff_translate_photos_text = $atts['photostext'];
                 if (!isset($cff_translate_photos_text) || empty($cff_translate_photos_text)) $cff_translate_photos_text = 'photos';
@@ -989,23 +1071,24 @@ $cff_post_item .= '<img src="'.$picture.'" alt="" class="img-responsive" />
                     $post_text = htmlspecialchars($news->name);
                     $cff_post_text_type = 'name';
                 }
-                if ($cff_album) {
-                    if (!empty($news->name)) {
-                        $post_text = htmlspecialchars($news->name);
-                        $cff_post_text_type = 'name';
-                    }
-                    if (!empty($news->message) && empty($news->name)) {
-                        $post_text = htmlspecialchars($news->message);
-                        $cff_post_text_type = 'message';
-                    }
-                    $post_text .= ' (' . $num_photos . ' '.$cff_translate_photos_text.')';
-                }
+                // if ($cff_album) {
+                //     if (!empty($news->name)) {
+                //         $post_text = htmlspecialchars($news->name);
+                //         $cff_post_text_type = 'name';
+                //     }
+                //     if (!empty($news->message) && empty($news->name)) {
+                //         $post_text = htmlspecialchars($news->message);
+                //         $cff_post_text_type = 'message';
+                //     }
+                //     if ($num_photos > 1)  $post_text .= ' (' . trim($num_photos) . ' '.$cff_translate_photos_text.')';
+                // }
 
 
                 //MESSAGE TAGS
                 $cff_post_tags = $atts[ 'posttags' ];
                 //If the post tags option doesn't exist yet (ie. on plugin update) then set them as true
                 if ( !array_key_exists( 'cff_post_tags', $options ) ) $cff_post_tags = true;
+
                 //Add message and story tags if there are any and the post text is the message or the story
                 if( $cff_post_tags && ( isset($news->message_tags) || isset($news->story_tags) ) && ($cff_post_text_type == 'message' || $cff_post_text_type == 'story')  && !$cff_title_link){
                     //Use message_tags or story_tags?
@@ -1015,7 +1098,7 @@ $cff_post_item .= '<img src="'.$picture.'" alt="" class="img-responsive" />
                     if( ( $cff_post_text_type == 'message' && isset($news->message_tags) ) || ( $cff_post_text_type == 'story' && !isset($news->message_tags) ) ) {
 
                         //Does the Post Text contain any html tags? - the & symbol is the best indicator of this
-                        $cff_html_check_array = array('&lt;', '’', '“', '&quot;', '&amp;');
+                        $cff_html_check_array = array('&lt;', '’', '“', '&quot;', '&amp;', '&gt;&gt;');
 
                         //always use the text replace method
                         if( cff_stripos_arr($post_text, $cff_html_check_array) !== false ) {
@@ -1052,11 +1135,16 @@ $cff_post_item .= '<img src="'.$picture.'" alt="" class="img-responsive" />
                                 //If the name is blank (aka the story tag doesn't work properly) then don't use it
                                 if( $message_tags_arr[$i]['name'] !== '' ) {
                                
-                                    $b = '<a href="http://facebook.com/' . $message_tags_arr[$i]['id'] . '">' . $message_tags_arr[$i]['name'] . '</a>';
-                                    $c = $message_tags_arr[$i]['offset'];
-                                    $d = $message_tags_arr[$i]['length'];
+                                    if( $cff_post_text_type == 'story' && $message_tags_arr[$i]['type'] == 'event' ){
+                                        //Don't use the story tag in this case otherwise it changes '__ created an event' to '__ created an Name Of Event'
+                                    } else {
+                                        $b = '<a href="http://facebook.com/' . $message_tags_arr[$i]['id'] . '">' . $message_tags_arr[$i]['name'] . '</a>';
+                                        $c = $message_tags_arr[$i]['offset'];
+                                        $d = $message_tags_arr[$i]['length'];
 
-                                    $post_text = cff_mb_substr_replace( $post_text, $b, $c, $d);
+                                        $post_text = cff_mb_substr_replace( $post_text, $b, $c, $d);
+                                    }
+
                                 }
 
                             } 
@@ -1136,8 +1224,6 @@ $cff_post_item .= '<img src="'.$picture.'" alt="" class="img-responsive" />
                 }
 
                 //EVENT
-$photo = $news->picture;
-$content .= "<img src='{$photo}'/>"; 
                 $cff_event = '';
                 if ($cff_show_event_title || $cff_show_event_details) {
                     //Check for media
@@ -1274,12 +1360,17 @@ $content .= "<img src='{$photo}'/>";
                 //Link to the Facebook post if it's a link or a video
                 if($cff_post_type == 'link' || $cff_post_type == 'video') $link = "https://www.facebook.com/" . $page_id . "/posts/" . $PostID[1];
 
+                //If it's a shared post then change the link to use the Post ID so that it links to the shared post and not the original post that's being shared
+                if( isset($news->status_type) ){
+                    if( $news->status_type == 'shared_story' ) $link = "https://www.facebook.com/" . $cff_post_id;
+                }
+
                 //Social media sharing URLs
-                $cff_share_facebook = 'https://www.facebook.com/sharer/sharer.php?u=' . $link;
-                $cff_share_twitter = 'https://twitter.com/intent/tweet?text=' . $link;
-                $cff_share_google = 'https://plus.google.com/share?url=' . $link;
-                $cff_share_linkedin = 'https://www.linkedin.com/shareArticle?mini=true&url=' . $link . '&title=' . strip_tags($cff_post_text);
-                $cff_share_email = 'mailto:?subject=Facebook&body=' . $link . ' - ' . strip_tags($cff_post_text);
+                $cff_share_facebook = 'https://www.facebook.com/sharer/sharer.php?u=' . urlencode($link);
+                $cff_share_twitter = 'https://twitter.com/intent/tweet?text=' . urlencode($link);
+                $cff_share_google = 'https://plus.google.com/share?url=' . urlencode($link);
+                $cff_share_linkedin = 'https://www.linkedin.com/shareArticle?mini=true&amp;url=' . urlencode($link) . '&amp;title=' . rawurlencode( strip_tags($cff_post_text) );
+                $cff_share_email = 'mailto:?subject=Facebook&amp;body=' . urlencode($link) . '%20-%20' . rawurlencode( strip_tags($cff_post_text) );
 
 
                 //If it's an offer post then change the text
@@ -1320,7 +1411,7 @@ $content .= "<img src='{$photo}'/>";
                 if ($cff_post_type == 'offer') $cff_post_item .= 'cff-offer-post';
                 if ($cff_album) $cff_post_item .= ' cff-album';
                 if ($cff_post_bg_color_check) $cff_post_item .= ' cff-box';
-                $cff_post_item .=  ' author-'. cff_to_slug($news->from->name) .'" id="cff_'. $news->id .'" ' . $cff_item_styles . '>';
+                $cff_post_item .=  ' author-'. cff_to_slug($news->from->name) .'" id="cff_'. $cff_post_id .'" ' . $cff_item_styles . '>';
                 
                     //POST AUTHOR
                     if($cff_show_author) $cff_post_item .= $cff_author;
@@ -1418,7 +1509,7 @@ function cff_fetchUrl($url){
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($ch, CURLOPT_TIMEOUT, 20);
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-        curl_setopt($ch, CURLOPT_ENCODING, 'gzip,deflate,sdch');
+        curl_setopt($ch, CURLOPT_ENCODING, '');
         $feedData = curl_exec($ch);
         curl_close($ch);
     //If not then use file_get_contents
@@ -1852,6 +1943,7 @@ function cff_activate() {
     $options[ 'cff_show_like_box' ] = true;
     $options[ 'cff_show_facebook_link' ] = true;
     $options[ 'cff_show_facebook_share' ] = true;
+    $options[ 'cff_event_title_link' ] = true;
     update_option( 'cff_style_settings', $options );
 
     get_option('cff_show_access_token');

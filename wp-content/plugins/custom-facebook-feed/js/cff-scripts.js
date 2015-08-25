@@ -48,6 +48,11 @@ jQuery(document).ready(function() {
 				$more.show();
 				$less.hide();
 			}
+			//Add target attr to post text links via JS so aren't included in char count
+			$self.find('.cff-text a').add( $self.find('.cff-post-desc a') ).attr({
+				'target' : '_blank',
+				'rel' : 'nofollow'
+			});
 			cffLinkHashtags();
 		});
 
@@ -61,7 +66,7 @@ jQuery(document).ready(function() {
 			//Link hashtags
 			var cffTextStr = $self.find('.cff-text').html(),
 				cffDescStr = $self.find('.cff-post-desc').html(),
-				regex = /(^|\s)#(\w*[a-zA-Z_]+\w*)/gi,
+				regex = /(^|\s)#(\w*[a-z\u00E0-\u00FC]+\w*)/gi,
 				linkcolor = $self.find('.cff-text').attr('data-color');
 
 			function replacer(hash){
@@ -91,7 +96,7 @@ jQuery(document).ready(function() {
 		cffLinkHashtags();
 
 		//Add target attr to post text links via JS so aren't included in char count
-		$self.find('.cff-text a').attr({
+		$self.find('.cff-text a').add( $self.find('.cff-post-desc a') ).attr({
 			'target' : '_blank',
 			'rel' : 'nofollow'
 		});

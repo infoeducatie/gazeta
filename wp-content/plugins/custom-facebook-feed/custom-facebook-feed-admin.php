@@ -672,6 +672,9 @@ function cff_style_page() {
         'cff_likebox_height'        => '',
         'cff_like_box_faces'        => false,
         'cff_like_box_border'       => false,
+        'cff_like_box_cover'        => true,
+        'cff_like_box_small_header' => false,
+        'cff_like_box_hide_cta'     => false,
 
         'cff_bg_color'              => '',
         'cff_likebox_bg_color'      => '',
@@ -686,7 +689,7 @@ function cff_style_page() {
         'cff_title_link'            => false,
         'cff_post_tags'             => true,
         'cff_link_hashtags'         => true,
-        'cff_event_title_link'      => false,
+        'cff_event_title_link'      => true,
         'cff_video_action'          => 'post',
         'cff_app_id'                => '',
         'cff_show_credit'           => '',
@@ -858,6 +861,10 @@ function cff_style_page() {
     $cff_likebox_height = $options[ 'cff_likebox_height' ];
     $cff_like_box_faces = $options[ 'cff_like_box_faces' ];
     $cff_like_box_border = $options[ 'cff_like_box_border' ];
+    $cff_like_box_cover = $options[ 'cff_like_box_cover' ];
+    $cff_like_box_small_header = $options[ 'cff_like_box_small_header' ];
+    $cff_like_box_hide_cta = $options[ 'cff_like_box_hide_cta' ];
+
 
     $cff_show_media = $options[ 'cff_show_media' ];
     $cff_bg_color = $options[ 'cff_bg_color' ];
@@ -1202,6 +1209,10 @@ function cff_style_page() {
             if (isset($_POST[ 'cff_likebox_height' ])) $cff_likebox_height = $_POST[ 'cff_likebox_height' ];
             (isset($_POST[ 'cff_like_box_faces' ])) ? $cff_like_box_faces = $_POST[ 'cff_like_box_faces' ] : $cff_like_box_faces = '';
             (isset($_POST[ 'cff_like_box_border' ])) ? $cff_like_box_border = $_POST[ 'cff_like_box_border' ] : $cff_like_box_border = '';
+            (isset($_POST[ 'cff_like_box_cover' ])) ? $cff_like_box_cover = $_POST[ 'cff_like_box_cover' ] : $cff_like_box_cover = '';
+            (isset($_POST[ 'cff_like_box_small_header' ])) ? $cff_like_box_small_header = $_POST[ 'cff_like_box_small_header' ] : $cff_like_box_small_header = '';
+            (isset($_POST[ 'cff_like_box_hide_cta' ])) ? $cff_like_box_hide_cta = $_POST[ 'cff_like_box_hide_cta' ] : $cff_like_box_hide_cta = '';
+
 
             if (isset($_POST[ 'cff_video_height' ])) $cff_video_height = $_POST[ 'cff_video_height' ];
             if (isset($_POST[ 'cff_video_action' ])) $cff_video_action = $_POST[ 'cff_video_action' ];
@@ -1233,6 +1244,10 @@ function cff_style_page() {
             $options[ 'cff_likebox_height' ] = $cff_likebox_height;
             $options[ 'cff_like_box_faces' ] = $cff_like_box_faces;
             $options[ 'cff_like_box_border' ] = $cff_like_box_border;
+            $options[ 'cff_like_box_cover' ] = $cff_like_box_cover;
+            $options[ 'cff_like_box_small_header' ] = $cff_like_box_small_header;
+            $options[ 'cff_like_box_hide_cta' ] = $cff_like_box_hide_cta;
+
 
             $options[ 'cff_video_height' ] = $cff_video_height;
             $options[ 'cff_video_action' ] = $cff_video_action;
@@ -2496,23 +2511,21 @@ function cff_style_page() {
             <h3><?php _e('Likes, Shares and Comments'); ?></h3><i style="color: #666; font-size: 11px;"><a href="https://smashballoon.com/custom-facebook-feed/" target="_blank"><?php _e('Upgrade to Pro to enable likes, shares and comments'); ?></a></i>
             
             <hr />
-            <h3><?php _e('Like Box'); ?></h3>
+            <h3><?php _e('Like Box / Page Plugin'); ?></h3>
             <table class="form-table">
                 <tbody>
                     <tr valign="top">
                         <th class="bump-left" scope="row"><label><?php _e('Show the Like Box'); ?></label></th>
                         <td>
                             <input type="checkbox" name="cff_show_like_box" id="cff_show_like_box" <?php if($cff_show_like_box == true) echo 'checked="checked"' ?> />&nbsp;<?php _e('Yes'); ?>
-                            <i style="margin-left: 5px; font-size: 11px;"><a class="cff-tooltip-link" href="JavaScript:void(0);"><?php _e("Why isn't the Like Box showing up?"); ?></a></i>
-                            <p class="cff-tooltip cff-more-info"><?php _e("The most common reason is that you may have an extension installed in your web browser which is blocking the plugin from loading the Like Box from Facebook."); ?></p>
                         </td>
                     </tr>
                     <tr valign="top">
                         <th class="bump-left" scope="row"><label><?php _e('Position'); ?></label></th>
                         <td>
                             <select name="cff_like_box_position">
-                                <option value="bottom" <?php if($cff_like_box_position == "bottom") echo 'selected="selected"' ?> ><?php _e('Below posts'); ?></option>
-                                <option value="top" <?php if($cff_like_box_position == "top") echo 'selected="selected"' ?> ><?php _e('Above posts'); ?></option>
+                                <option value="bottom" <?php if($cff_like_box_position == "bottom") echo 'selected="selected"' ?> ><?php _e('Bottom'); ?></option>
+                                <option value="top" <?php if($cff_like_box_position == "top") echo 'selected="selected"' ?> ><?php _e('Top'); ?></option>
                             </select>
                         </td>
                     </tr>
@@ -2520,40 +2533,10 @@ function cff_style_page() {
                         <th class="bump-left" scope="row"><label><?php _e('Display outside the scrollable area'); ?></label></th>
                         <td>
                             <input type="checkbox" name="cff_like_box_outside" id="cff_like_box_outside" <?php if($cff_like_box_outside == true) echo 'checked="checked"' ?> />&nbsp;<?php _e('Yes'); ?>
-                            <i style="color: #666; font-size: 11px; margin-left: 5px;"><?php _e('(Only applicable if you have set a height on the feed)'); ?></i>
+                            <i style="color: #666; font-size: 11px; margin-left: 5px;"><?php _e('Only applicable if you have set a height on the feed'); ?></i>
                         </td>
                     </tr>
-                    <tr valign="top">
-                        <th class="bump-left" scope="row"><label><?php _e('Background Color'); ?></label></th>
-                        <td>
-                            <input name="cff_likebox_bg_color" value="#<?php esc_attr_e( str_replace('#', '', $cff_likebox_bg_color) ); ?>" class="cff-colorpicker" />
-                        </td>
-                    </tr>
-                    <tr valign="top">
-                        <th class="bump-left" scope="row"><label><?php _e('Color of page name'); ?></label></th>
-                        <td>
-                            <select name="cff_like_box_text_color">
-                                <option value="blue" <?php if($cff_like_box_text_color == "blue") echo 'selected="selected"' ?> ><?php _e('Blue'); ?></option>
-                                <option value="white" <?php if($cff_like_box_text_color == "white") echo 'selected="selected"' ?> ><?php _e('White'); ?></option>
-                            </select>
-                            <i style="margin-left: 5px; font-size: 11px;"><a class="cff-tooltip-link" href="JavaScript:void(0);"><?php _e('Why only these 2 colors?'); ?></a></i>
-                            <p class="cff-tooltip cff-more-info"><?php _e("The styling of the Facebook Like box widget is restricted by Facebook. This means that the only two text colors available are blue and white, intended for either a light of dark color scheme respectively."); ?></p>
-                        </td>
-                    </tr>
-                    <tr valign="top">
-                        <th class="bump-left" scope="row"><label for="cff_likebox_width"><?php _e('Custom Like Box Width'); ?></label></th>
-                        <td>
-                            <input name="cff_likebox_width" type="text" value="<?php esc_attr_e( $cff_likebox_width ); ?>" size="6" />
-                            <span><span>Eg. 50%, 300px</span> <i style="color: #666; font-size: 11px; margin-left: 5px;"><?php _e('Default is 100%'); ?></i></span>
-                        </td>
-                    </tr>
-                    <tr valign="top">
-                        <th class="bump-left" for="cff_likebox_height" scope="row"><label><?php _e('Custom Like Box Height'); ?></label></th>
-                        <td>
-                            <input name="cff_likebox_height" type="text" value="<?php esc_attr_e( $cff_likebox_height ); ?>" size="3" />
-                            <span>px</span>
-                        </td>
-                    </tr>
+                
                     <tr valign="top">
                         <th class="bump-left" scope="row"><label><?php _e('Show faces of fans'); ?></label></th>
                         <td>
@@ -2562,12 +2545,40 @@ function cff_style_page() {
                         </td>
                     </tr>
                     <tr valign="top">
-                        <th class="bump-left" scope="row"><label><?php _e('Show the Like Box border'); ?></label></th>
+                        <th class="bump-left" scope="row"><label><?php _e('Include the Cover Photo'); ?></label></th>
                         <td>
-                            <input type="checkbox" name="cff_like_box_border" id="cff_like_box_outside" <?php if($cff_like_box_border == true) echo 'checked="checked"' ?> />&nbsp;<?php _e('Yes'); ?>
-                            <i style="color: #666; font-size: 11px; margin-left: 5px;"><?php _e('Only applicable if you are showing faces of fans'); ?></i>
+                            <input type="checkbox" name="cff_like_box_cover" id="cff_like_box_cover" <?php if($cff_like_box_cover == true) echo 'checked="checked"' ?> />&nbsp;<?php _e('Yes'); ?>
                         </td>
                     </tr>
+                    <tr valign="top">
+                        <th class="bump-left" scope="row"><label><?php _e('Use a small header'); ?></label></th>
+                        <td>
+                            <input type="checkbox" name="cff_like_box_small_header" id="cff_like_box_small_header" <?php if($cff_like_box_small_header == true) echo 'checked="checked"' ?> />&nbsp;<?php _e('Yes'); ?>
+                        </td>
+                    </tr>
+                    <tr valign="top">
+                        <th class="bump-left" scope="row"><label><?php _e('Hide the call to action button (if available)'); ?></label></th>
+                        <td>
+                            <input type="checkbox" name="cff_like_box_hide_cta" id="cff_like_box_hide_cta" <?php if($cff_like_box_hide_cta == true) echo 'checked="checked"' ?> />&nbsp;<?php _e('Yes'); ?>
+                        </td>
+                    </tr>
+
+
+                    <tr valign="top">
+                        <th class="bump-left" for="cff_likebox_width" scope="row"><label><?php _e('Custom Like Box Width'); ?></label></th>
+                        <td>
+                            <input name="cff_likebox_width" type="text" value="<?php esc_attr_e( $cff_likebox_width ); ?>" size="3" />
+                            <span>px <i style="color: #666; font-size: 11px; margin-left: 5px;"><?php _e('Default: 340, Min: 280, Max: 500'); ?></i></span>
+                        </td>
+                    </tr>
+                    <!-- <tr valign="top">
+                        <th class="bump-left" for="cff_likebox_height" scope="row"><label><?php _e('Custom Like Box Height'); ?></label></th>
+                        <td>
+                            <input name="cff_likebox_height" type="text" value="<?php esc_attr_e( $cff_likebox_height ); ?>" size="3" />
+                            <span>px <i style="color: #666; font-size: 11px; margin-left: 5px;"><?php _e('Default: 500, Min: 130'); ?></i></span>
+                        </td>
+                    </tr> -->
+
                 </tbody>
             </table>
 

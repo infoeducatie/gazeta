@@ -325,7 +325,7 @@
   float: left;
   margin: 0 !important;
   padding: 0 !important;
-  color: #eee;
+  color: #eee !important;
 
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
@@ -346,7 +346,7 @@
   float: left;
   width: 100%;
   position: relative;
-  margin-left: -10px;
+  margin: 20px 0 0 0;
 }
 .cff-likebox .fb_iframe_widget{
   width: 100%;
