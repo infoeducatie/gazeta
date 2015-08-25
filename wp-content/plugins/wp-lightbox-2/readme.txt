@@ -1,11 +1,11 @@
 === WP Lightbox 2 ===
-Contributors: wpdevart
-Plugin Site: http://wpdevart.com
-Donate link: http://wpdevart.com/wordpress-lightbox-plugin
-Tags: lightbox, image, gallery, photo gallery, lightbox popup, responsive lightbox, wordpress lightbox, lightbox gallery, gallery lightbox, wordpress image lightbox, image lightbox, popup lightbox, 
+Contributors: smub, griffinjt
+Plugin Site: http://www.wpbeginner.com/
+Donate link: http://www.wpbeginner.com/
+Tags: lightbox, image, gallery, photo gallery, lightbox popup, responsive lightbox, wordpress lightbox, lightbox gallery, gallery lightbox, wordpress image lightbox, image lightbox, popup lightbox, wordpress slideshow lightbox, lightbox image, popup images, popup image, wordpress video gallery lightbox,  google map lightbox popup, swipe, google map lightbox, popup bar, popup block
 Requires at least: 3.0
-Tested up to: 4.1
-Stable tag: 3.0.3
+Tested up to: 4.3
+Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -14,11 +14,11 @@ WP Lightbox 2 is awesome tool for adding responsive lightbox effect for images a
 == Description ==
 
 WP Lightbox 2 is an WordPress lightbox tool for adding responsive lightbox effect for your website images and also create lightbox effect for album/gallery photos on your WordPress blog.
-Just install and sit back. This plugin enable image overlay Lightbox effect for all the images in your WordPress website. 
+Just install and sit back. This plugin enable image overlay Lightbox effect for all the images in your WordPress website.
 Also our WP Lightbox 2 plugin allow you to configure the lightbox settings.
-There are a lot of useful setting for this lightbox, that will help you to display lightbox effect in different ways. 
+There are a lot of useful setting for this lightbox, that will help you to display lightbox effect in different ways.
 
-This plugin used to add the lightbox (overlay) effect to the current page images on your WordPress blog. 
+This plugin used to add the lightbox (overlay) effect to the current page images on your WordPress blog.
 
 WP Lightbox 2 have a lot of useful features. WP Lightbox 2 features:
 
@@ -30,7 +30,7 @@ WP Lightbox 2 have a lot of useful features. WP Lightbox 2 features:
 *   **WP Lightbox 2 works perfectly with all versions of WordPress**
 *   **Group related images in post and navigate through them with ease**
 *   **Ability to use lightbox in comments**
-*   **Ability to display download link for images(users can download images)**
+*   **Ability to display download link for images**
 *   **Ability to change image info position**
 *   **Ability to reduce large images to fit smaller screens**
 *   **Ability to set Animation duration**
@@ -40,52 +40,18 @@ WP Lightbox 2 have a lot of useful features. WP Lightbox 2 features:
 *   **User friendly back-end for WP Lightbox 2 plugin**
 *   **Tested on popular WordPress themes**
 
-You can upgrade WP Lightbox 2 plugin to [WP Lightbox 2 Pro](http://wpdevart.com/wordpress-lightbox-plugin/) to add more features.
-
-### The features of WP Lightbox 2 Pro
-
-*   **Ability to change Lightbox Overlay color**
-*   **Ability to close lightbox when you click on overlay close(also you can disable this functionality)**
-*   **Ability to change Lightbox image Border width**	
-*   **Ability to change Lightbox image Border color**	
-*   **Ability to change Lightbox image Border radius**	
-*   **Ability to Show/Hide text below image(ex. Image 1 of 3)**
-*   **Ability to change Image info and close button background opacity**
-*   **Ability to change Image info and close button background color**
-*   **Ability to change Image info text color (include download link and other text)**
-*   **Ability to change Image info text font-size (include download link and other text)**
-*   **Ability to change Next image title tag**
-*   **Ability to change Previous image title tag**
-*   **Ability to choose Next/Previous button image**
-*   **Ability to change Lightbox Maximum Width**
-*   **Ability to change Lightbox Maximum Height**
-*   **Ability to Show/Hide close button**
-*   **Ability to change close button max height**
-*   **Ability to change close button image title tag**
-*   **Ability to change image for close button**
-*   **Keyboard navigation for Lightbox**
-*   **Ability to Fix Lightbox position**
-*   **Premium support**
-
-### If you are unable to resolve your problem with the information provided in the FAQ please check support topics on WordPress.org.
-### If you found any bug in our WP Lightbox 2 plugin or have a question contact us at support@wpdevart.com.
-
-We also recommend you to take a look for this useful plugins - [WordPress Maintenance mode](https://wordpress.org/plugins/coming-soon-page/), [WordPress Facebook like box](https://wordpress.org/plugins/like-box/),  [WordPress Poll plugin](https://wordpress.org/plugins/polls-widget), [WordPress YouTube Embed plugin](https://wordpress.org/plugins/youtube-video-player) .
+This plugin was created by <a href="https://syedbalkhi.com" rel="friend" title="Syed Balkhi">Syed Balkhi</a> and <a href="http://thomasgriffin.io" rel="me" title="WordPress Developer - Thomas Griffin">Thomas Griffin</a>. Check out some of our other products, including <a href="http://soliloquywp.com/" rel="friend" title="Soliloquy - the best responsive WordPress slider plugin">Soliloquy - the best responsive WordPress slider plugin</a>, <a href="http://enviragallery.com/" rel="friend" title="Envira Gallery - the best responsive WordPress gallery plugin">Envira Gallery - the best responsive WordPress gallery plugin</a> and <a href="http://optinmonster.com/" rel="friend" title="OptinMonster">OptinMonster</a>.
 
 == Installation ==
 
-### First download the WP Lightbox 2 plugin ZIP file.  
+### First download the WP Lightbox 2 plugin ZIP file.
 For installing the **WP Lightbox 2**, please follow these steps
 
-1. Log in to your WordPress website admin panel.   
-2. Then go to Plugins page Add New > Upload Plugin .    
-3. Click "Choose file" then select the - WP Lightbox 2 zip file. 
-4. Then Install and activate the plugin.     
+1. Log in to your WordPress website admin panel.
+2. Then go to Plugins page Add New > Upload Plugin .
+3. Click "Choose file" then select the - WP Lightbox 2 zip file.
+4. Then Install and activate the plugin.
 5. Then, from the left panel of Dashboard, click on the **WP Lightbox 2** icon to edit WP Lightbox 2 options.
-	  
-That's all, now your all images will show in lightbox. If any problem occurs our WP Lightbox 2, contact us at support@wpdevart.com.
-
-We also recommend you to take a look for this useful plugins - [WordPress Maintenance mode](https://wordpress.org/plugins/coming-soon-page/), [WordPress Facebook like box](https://wordpress.org/plugins/like-box/),  [WordPress Poll plugin](https://wordpress.org/plugins/polls-widget) .
 
 == Frequently Asked Questions ==
 
@@ -94,7 +60,7 @@ Our WP Lightbox 2 is user friendly plugin, but here you can see some frequently 
 = How should I enable WP Lightbox 2 =
 
 By default the option "Use Lightbox for all image links" is enabled, that's means all the images in your website will display in overlay lightbox.
- 
+
 = How can I disable WP Lightbox 2 for certain images =
 
 You just need to add rel="nobox" to your image link.
@@ -114,24 +80,23 @@ Check the following reasons:
 
 = Does WP Lightbox 2 work properly in all Browser(Chrome, Firefox, Explorer, etc) =
 
-Yes, it does. The problem is in your WordPress theme, mangling image display properties. 
+Yes, it does. The problem is in your WordPress theme, mangling image display properties.
 Use another theme, or change your theme Cascading Style Sheets (CSS).
 
-We also recommend you to take a look for this useful plugins - [WordPress Maintenance mode](https://wordpress.org/plugins/coming-soon-page/), [WordPress Facebook like box](https://wordpress.org/plugins/like-box/),  [WordPress Poll plugin](https://wordpress.org/plugins/polls-widget), [WordPress YouTube Embed plugin](https://wordpress.org/plugins/youtube-video-player) .
+This plugin was created by <a href="https://syedbalkhi.com" rel="friend" title="Syed Balkhi">Syed Balkhi</a> and <a href="http://thomasgriffin.io" rel="me" title="WordPress Developer - Thomas Griffin">Thomas Griffin</a>. Check out some of our other products, including <a href="http://soliloquywp.com/" rel="friend" title="Soliloquy - the best responsive WordPress slider plugin">Soliloquy - the best responsive WordPress slider plugin</a>, <a href="http://enviragallery.com/" rel="friend" title="Envira Gallery - the best responsive WordPress gallery plugin">Envira Gallery - the best responsive WordPress gallery plugin</a> and <a href="http://optinmonster.com/" rel="friend" title="OptinMonster">OptinMonster</a>.
 
 == Screenshots ==
 
-1.  **WP Lightbox 2** Front-end    
-2.  **WP Lightbox 2** Back-end    
-3.  **WP Lightbox 2** Back-end     
-4.  **WP Lightbox 2** Front-end     
-5.  [WordPress Lightbox](https://wordpress.org/plugins/wp-lightbox-2) Front-end     
+1.  **WP Lightbox 2** Front-end
+2.  **WP Lightbox 2** Back-end
+3.  **WP Lightbox 2** Back-end
+4.  **WP Lightbox 2** Front-end
+5.  [WordPress Lightbox](https://wordpress.org/plugins/wp-lightbox-2) Front-end
 
 == Changelog ==
 
-= 3.0.3 =
-
-Tags issue fixed
+= 3.0.5 =
+* Fix: WordPress 4.3 compatibility
 
 = 3.0.0 =
 
@@ -187,7 +152,7 @@ Tags issue fixed
 
 = 2.28.8.1 =
 
-* Fixed navigation Issue for Lightbox. 
+* Fixed navigation Issue for Lightbox.
 
 = 2.28.8 =
 
@@ -278,19 +243,19 @@ Fixed PHP 5 comment bug that got reintroduced into plugin.
 ### WP Lightbox 2 General Settings
 
 *  Use Lightbox for all image links - Enable or disable the lightbox.
-*  Enable lightbox in comments - This feature will enable lightbox for your comments. 
+*  Enable lightbox in comments - This feature will enable lightbox for your comments.
 *  Show download link - You can display download link.
 *  Show image info on top - Choose image info position.
 *  Reduce large images to fit smaller screens - We recommend to enable this option, it will reduce large images to fit smaller screens.
 *  Minimum margin from top - You can change image position from top.
 *  Lightbox Animation duration - Type here animation duration for lightbox.
-*  Additional text below image info - Type here text, and it will appear below images. 
+*  Additional text below image info - Type here text, and it will appear below images.
 
 ### WP Lightbox 2 Design Settings
 
 *  Overlay opacity - Set overlay opacity for lightbox.
 *  Overlay color - Choose overlay opacity for lightbox.
-*  Overlay close function - This function will close the lightbox when you click on overlay. 
+*  Overlay close function - This function will close the lightbox when you click on overlay.
 *  Lightbox image Border width - Type here Lightbox image Border width.
 *  Lightbox image Border color - Choose Border color for Lightbox image.
 *  Lightbox image Border radius - Type here Lightbox image Border radius.
@@ -309,6 +274,6 @@ Fixed PHP 5 comment bug that got reintroduced into plugin.
 *  Close button image title tag - Type here close button image title tag for Wp Lightbox 2.
 *  Lightbox close button image - Choose one, or upload your own image for close button for Wp Lightbox 2.
 *  Keyboard navigation - With this feature users also can change images with keyboard.
-*  Fix position for lightbox - That's mean your lightbox shouldn't change position when users scroll up or down. 
+*  Fix position for lightbox - That's mean your lightbox shouldn't change position when users scroll up or down.
 
-We also recommend you to take a look for this useful plugins - [WordPress Maintenance mode](https://wordpress.org/plugins/coming-soon-page/), [WordPress Facebook like box](https://wordpress.org/plugins/like-box/),  [WordPress Poll plugin](https://wordpress.org/plugins/polls-widget), [WordPress YouTube Embed](https://wordpress.org/plugins/youtube-video-player) .
+This plugin was created by <a href="https://syedbalkhi.com" rel="friend" title="Syed Balkhi">Syed Balkhi</a> and <a href="http://thomasgriffin.io" rel="me" title="WordPress Developer - Thomas Griffin">Thomas Griffin</a>. Check out some of our other products, including <a href="http://soliloquywp.com/" rel="friend" title="Soliloquy - the best responsive WordPress slider plugin">Soliloquy - the best responsive WordPress slider plugin</a>, <a href="http://enviragallery.com/" rel="friend" title="Envira Gallery - the best responsive WordPress gallery plugin">Envira Gallery - the best responsive WordPress gallery plugin</a> and <a href="http://optinmonster.com/" rel="friend" title="OptinMonster">OptinMonster</a>.

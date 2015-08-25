@@ -15,6 +15,7 @@ class wp_lightbox2_database_params{
 		else
 			$this->plugin_url=trailingslashit(dirname(plugins_url('',__FILE__)));	
 		$general_settings=array(
+			'jqlb_overlay_opacity'=>'80',
 			'jqlb_help_text'=>'',
 			'jqlb_margin_size'=>0,			
 			'jqlb_automate'=>1,
@@ -49,6 +50,8 @@ class wp_lightbox2_database_params{
 				$folder='he_IL/';
 			break; 
 		}
+
+		// Note: Deprecated 3.0.5+
 		$design_settings=array(
 			'jqlb_overlay_opacity'=>'80',
 			'jqlb_overlay_color'=>'#000000',

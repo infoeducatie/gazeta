@@ -58,7 +58,7 @@ class wp_lightbox_2_general_settings_page{
 	private function display_table_list_answers(){
 		
     $initial_values= $this->databese_settings;
-	foreach($initial_values as $key => $value){
+    foreach($initial_values as $key => $value){
 			$$key=$value;
 	}
 	?>
@@ -76,9 +76,9 @@ class wp_lightbox_2_general_settings_page{
                     <th width="50%">
                    		<span> Lightbox General Settings </span>
                     </th>                  
-                    <th  width="50%">
-                   		<span style="float:right"><a href="http://wpdevart.com/wordpress-lightbox-plugin/" target="_blank" style="color: rgba(10, 154, 62, 1);; font-weight: bold; font-size: 18px; text-decoration: none;">Upgrade to Pro Version</a><br></span>
-                    </th>         
+                    <th width="50%">
+                    	&nbsp;
+                   	</th>         
                 </tr>
             </thead>
             <tbody>
@@ -109,6 +109,14 @@ class wp_lightbox_2_general_settings_page{
                     	<input type="hidden" name="jqlb_show_download" id="jqlb_show_download" value="<?php echo $jqlb_show_download; ?>">
                     </td>
                 </tr>
+                <tr>
+                    <td>     
+                    	Overlay opacity: <span title="Set overlay opacity for lightbox." class="desription_class">?</span>
+                    </td>
+                    <td>     
+						<input type="number" min="0" max="100" step="1" name="jqlb_overlay_opacity" id="jqlb_overlay_opacity" value="<?php echo $jqlb_overlay_opacity; ?>"><span class="befor_input_small_desc">%</span>
+                    </td>
+                </tr>
                 <tr class="parametr_chechbox">
                     <td>     
                   	 	Show image info on top: <span title="Choose image info position." class="desription_class">?</span>
@@ -132,7 +140,7 @@ class wp_lightbox_2_general_settings_page{
                     	Minimum margin from top:  <span title="You can change image position from top." class="desription_class">?</span>
                     </td>
                     <td>     
-                    	<input type="text" name="jqlb_margin_size" id="jqlb_margin_size" value="<?php echo $jqlb_margin_size; ?>"><span class="befor_input_small_desc">(default: 0)</span>
+                    	<input type="number" min="0" max="999" step="1" name="jqlb_margin_size" id="jqlb_margin_size" value="<?php echo $jqlb_margin_size; ?>"><span class="befor_input_small_desc">(default: 0)</span>
                     </td>
                 </tr> 
                 <tr>
@@ -140,7 +148,7 @@ class wp_lightbox_2_general_settings_page{
                    		Lightbox Animation duration: <span title="Type here animation duration for lightbox." class="desription_class">?</span>
                     </td>
                     <td>     
-                    	<input type="text" name="jqlb_resize_speed" id="jqlb_resize_speed" value="<?php echo $jqlb_resize_speed; ?>"><span class="befor_input_small_desc">(milliseconds)</span>
+                    	<input type="number" min="0" max="9999999" step="1" name="jqlb_resize_speed" id="jqlb_resize_speed" value="<?php echo $jqlb_resize_speed; ?>"><span class="befor_input_small_desc">(milliseconds)</span>
                     </td>
                 </tr> 
                 <tr>
@@ -158,6 +166,20 @@ class wp_lightbox_2_general_settings_page{
                 </tr>
             </tfoot>
 		</table>
+		<ol> 
+	<li>You can use WordPress image galleries and have them grouped and auto-lightboxed: <a href="http://codex.wordpress.org/Gallery_Shortcode"><code>[gallery link="file"]</code></a></li> 	
+	<li>You can also add a <code>rel="lightbox"</code> attribute to any link tag to activate the lightbox. For example:
+	<pre><code>	&lt;a href=&quot;images/image-1.jpg&quot; rel=&quot;lightbox&quot; title=&quot;my caption&quot;&gt;image #1&lt;/a&gt;</code></pre> 
+	<em>Optional:</em> Use the <code>title</code> attribute if you want to show a caption.
+	</li> 
+	<li>If you have a set of related images that you would like to group, simply include a group name in the rel attribute. For example:
+	<pre><code>	&lt;a href=&quot;images/image-1.jpg&quot; rel=&quot;lightbox[roadtrip]&quot;&gt;image #1&lt;/a&gt;
+	&lt;a href=&quot;images/image-2.jpg&quot; rel=&quot;lightbox[roadtrip]&quot;&gt;image #2&lt;/a&gt;
+	&lt;a href=&quot;images/image-3.jpg&quot; rel=&quot;lightbox[roadtrip]&quot;&gt;image #3&lt;/a&gt;</code></pre> 
+	No limits to the number of image sets per page or how many images are allowed in each set. Go nuts!</li> 
+	<li>To <strong>disable</strong> lightboxing of an image link, just set any other rel-attribute: <code>rel="nobox"</code></li>
+	</ol>
+	
          <?php wp_nonce_field('wp_lightbox_2_general_settings_page','wp_lightbox_2_general_settings_page'); ?>
 	</div><br /><br /><span class="error_massage"></span>
    

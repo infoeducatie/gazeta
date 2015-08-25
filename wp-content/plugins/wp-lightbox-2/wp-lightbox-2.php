@@ -1,15 +1,15 @@
 <?php
-/**  
+/**
  * Plugin Name: WP Lightbox 2
  * Plugin URI: http://wpdevart.com/wordpress-lightbox-plugin
  * Description: WP Lightbox 2 is awesome tool for adding responsive lightbox (overlay) effect for images and also create lightbox for photo albums/galleries on your WordPress blog. WordPress Lightbox is one of the most useful plugins for your website.
- * Version:       3.0.3
- * Author:        wpdevart
- * Author URI:    http://wpdevart.com
- * License:       GNU General Public License, v2 (or newer)
- * License URI:  http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+ * Version: 3.0.5
+ * Author:Syed Balkhi
+ * Author URI: http://syedbalkhi.com
+ * License: GNU General Public License, v2 (or newer)
+ * License URI: http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
-/*  Copyright 2011 Pankaj Jha, current owner wpdevart.com 
+/*  Copyright 2015 Syed Balkhi 
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -25,38 +25,6 @@
     Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 */
 
-/*2.21 - Image Map, Shrink large images to fit smaller screens*/
-/*2.22 - Fixed one s, that caused a fatal error*/
-/*2.23 - Updated jQuery calls for faster load*/
-/*2.24 - Compatible with wordpress 3.4.2*/
-/*2.25 - Fixed PHP 5 bug*/
-/*2.26 - Compatible with wordpress 3.5*/
-/*2.27 - Compatible with wordpress 3.5.1*/
-/*
-2.28 - wp_print_scripts and wp_print_styles should not be used to enqueue styles or scripts on the front page. Use wp_enqueue_scripts instead.
-*/
-/*2.28.1 - Fixed PHP 5 comment bug that got reintroduced into plugin*/
-/*2.28.2 - Compatible with wordpress HTML5 Themes */
-/*2.28.3 - Fixed HTML5 Themes support issues. */
-/*2.28.4 - Compatible with wordpress 3.6*/
-/*2.28.5 - Compatible with wordpress 3.6.1*/
-/*2.28.6.1 - Fixed navigation issue (minor release)*/
-/*2.28.7 - Compatible with wordpress 3.7.1*/
-/*2.28.8 - Compatible with wordpress 3.8*/
-/*2.28.8.1 - Fixed navigation issue*/
-/*2.28.8.2 - Compatible with wordpress 3.8.1*/
-/*2.28.8.3 - Fixed full screen close*/
-/*2.28.8.4 - Compatible with wordpress 3.9*/
-/*2.28.8.5 - Fixed Responsiveness Issue */
-/*2.28.8.6 - Compatible with wordpress 3.9.1*/
-/*2.28.8.7 - Fixed Image Galary and other HTML issue minor fix*/
-/*2.28.8.8 - Compatible with wordpress 3.9.2*/
-/*2.28.8.9 - Compatible with wordpress 4.0*/
-/*2.28.9.0 - Optimize: content grouping support and exclusion performance */
-/*2.28.9.1 - Compatible with wordpress 4.0.1*/
-/*2.28.9.2 - Compatible with wordpress 4.1*/
-/*2.28.9.2.1 - Fixed: Broken shortcodes with WordPress 4.1*/
-
 add_action( 'plugins_loaded', 'jqlb_init' );
 function jqlb_init() {
 	if(!defined('ULFBEN_DONATE_URL')){
@@ -66,10 +34,10 @@ function jqlb_init() {
 	define('JQLB_SCRIPT', 'wp-lightbox-2.min.js');
 	load_plugin_textdomain('jqlb', false, dirname( plugin_basename( __FILE__ ) ) . '/I18n/');	
 	add_action('admin_init', 'jqlb_register_settings');
-	add_action('admin_menu', 'jqlb_register_menu_item');
+	//add_action('admin_menu', 'jqlb_register_menu_item');
 	add_action('wp_enqueue_scripts', 'jqlb_css');	
 	add_action('wp_enqueue_scripts', 'jqlb_js');
-	add_filter('plugin_row_meta', 	'jqlb_set_plugin_meta', 2, 10);	
+	//add_filter('plugin_row_meta', 	'jqlb_set_plugin_meta', 2, 10);	
 	add_filter('the_content', 'jqlb_autoexpand_rel_wlightbox', 99);
 	if(get_option('jqlb_comments') == 1){
 		remove_filter('pre_comment_content', 'wp_rel_nofollow');

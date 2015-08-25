@@ -1,6 +1,5 @@
 <?php 
 require_once($this->plugin_path.'admin/general_settings.php');
-require_once($this->plugin_path.'admin/design_settings.php');
 
 class wp_lightbox_admin_menu{
 	
@@ -13,18 +12,14 @@ class wp_lightbox_admin_menu{
 	private $plugin_path;
 	
 	private $text_parametrs;
-	
-	public  $wp_lightbox_2_design_settings_page;
-	
+
 	public  $wp_lightbox_2_general_settings_page;
 	
 	function __construct($param){
 		$this->menu_name='WP Lightbox 2';
 		$this->databese_parametrs=$param['databese_parametrs']->get_general_settings;
-		$this->databese_design_parametrs=$param['databese_parametrs']->get_design_settings;	
 			
 		$this->wp_lightbox_2_general_settings_page  =new wp_lightbox_2_general_settings_page( array( 'plugin_url'=> $this->plugin_url, 'plugin_path' => $this->plugin_path,'databese_settings' =>$this->databese_parametrs));
-		$this->wp_lightbox_2_design_settings_page =new wp_lightbox_2_design_settings_page( array( 'plugin_url' => $this->plugin_url, 'plugin_path' => $this->plugin_path,'databese_settings' =>$this->databese_design_parametrs));
 		
 		// set plugin url
 		if(isset($param['plugin_url']))
@@ -57,9 +52,7 @@ class wp_lightbox_admin_menu{
 		
 		$manage_page_main = add_menu_page( $this->menu_name, $this->menu_name, 'manage_options', str_replace( ' ', '-', $this->menu_name), array($this->wp_lightbox_2_general_settings_page, 'controller_page'),$this->plugin_url.'admin/images/icon_lightboxx2.png');
 							add_submenu_page( str_replace( ' ', '-', $this->menu_name), 'General settings', 'General settings', 'manage_options', str_replace( ' ', '-', $this->menu_name), array($this->wp_lightbox_2_general_settings_page, 'controller_page'));
-		$page_widget	  = add_submenu_page( str_replace( ' ', '-', $this->menu_name), 'Design settings', 'Design settings', 'manage_options', 'wplightbox2-design', array($this->wp_lightbox_2_design_settings_page, 'controller_page'));
 		add_action('admin_print_styles-' .$manage_page_main, array($this,'menu_requeried_scripts'));
-		add_action('admin_print_styles-' .$page_widget, array($this,'menu_requeried_scripts'));	
 	}
 	public function menu_requeried_scripts(){
 		wp_enqueue_script('jquery-ui-style');
