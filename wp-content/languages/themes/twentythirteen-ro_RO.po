@@ -7,14 +7,16 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < 20)) ? 1 : 2);\n"
-"X-Generator: GlotPress/1.0-alpha-1000\n"
+"X-Generator: GlotPress/1.0-alpha-1100\n"
 "Project-Id-Version: Twenty Thirteen\n"
 
 #. Theme URI of the plugin/theme
 msgid "https://wordpress.org/themes/twentythirteen/"
 msgstr "https://wordpress.org/themes/twentythirteen/"
 
+#. #-#-#-#-#  twentythirteen.pot (Twenty Thirteen 1.6)  #-#-#-#-#
 #. Author URI of the plugin/theme
+#: footer.php:19
 msgid "https://wordpress.org/"
 msgstr "https://wordpress.org/"
 
@@ -143,10 +145,6 @@ msgstr "Arhiva zilei de %s"
 #: archive.php:31
 msgid "Monthly Archives: %s"
 msgstr "Arhiva lunii %s"
-
-#: footer.php:19
-msgid "http://wordpress.org/"
-msgstr "http://wordpress.org/"
 
 #: footer.php:19
 msgid "Semantic Personal Publishing Platform"
