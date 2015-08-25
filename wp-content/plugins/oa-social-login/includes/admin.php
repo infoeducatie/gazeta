@@ -828,7 +828,7 @@ function oa_display_social_login_setup ()
 											 </label>
 										</td>
 										<td class="cell_provider_label">
-											<input type="checkbox" id="oneall_social_login_provider_<?php echo $key; ?>" name="oa_social_login_settings[providers][<?php echo $key; ?>]" value="1" <?php checked ('1', $settings ['providers'] [$key]); ?> />
+											<input type="checkbox" id="oneall_social_login_provider_<?php echo $key; ?>" name="oa_social_login_settings[providers][<?php echo $key; ?>]" value="1" <?php checked ('1', ((isset ($settings ['providers']) && !empty ($settings ['providers'] [$key])) ? $settings ['providers'] [$key] : 0)); ?> />
 											<label for="oneall_social_login_provider_<?php echo $key; ?>"><?php echo htmlspecialchars ($provider_data ['name']); ?> </label>
 											<?php
 													if (in_array ($key, array ('vkontakte', 'mailru', 'odnoklassniki')))

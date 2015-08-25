@@ -8,6 +8,9 @@ $oa_social_login_providers = array(
   'amazon' => array(
     'name' => 'Amazon',
   ),
+  'battlenet' => array(
+	'name' => 'Battle.net',
+  ),
   'blogger' => array(
     'name' => 'Blogger',
   ),
