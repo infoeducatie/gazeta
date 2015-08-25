@@ -4,7 +4,7 @@ Donate link: http://blog.wonderm00n.com/2011/10/14/wordpress-plugin-simple-faceb
 Tags: facebook, open graph, open graph protocol, seo, share, social, meta, twitter card, twitter, schema, google+, g+, google, google plus, image, like, meta, search engine optimization
 Requires at least: 3.5
 Tested up to: 4.0.1
-Stable tag: 1.5.2
+Stable tag: 1.6.3
 Inserts Facebook Open Graph, Google+/Schema.org, Twitter and other Meta Tags into your WordPress Website for more efficient sharing results.
 
 == Description ==
@@ -35,6 +35,7 @@ It allows the user to choose which tags are, or not, included and also the defau
 * **article:author**: From the user (post author) Faceboook Profile URL.
 * **og:description**: From post/page excerpt if it exist, or from post/page content. From category/tag description on it's pages, if it exist. From tagline, or custom text, on all the others.
 * **og:image**: From a specific custom field of the post/page, or if not set from the post/page featured/thumbnail image, or if it doesn't exist from the first image in the post content, or if it doesn't exist from the first image on the post media gallery, or if it doesn't exist from the default image defined on the options menu. The same image chosen here will be used and enclosure/media:content on the RSS feed.
+* **og:image:width** and **og:image:height**: Image dimensions.
 
 = The (Google+) Schema.org Tags that this plugin inserts are: =
 
@@ -51,7 +52,7 @@ It allows the user to choose which tags are, or not, included and also the defau
 * **twitter:creator**: From the user (post author) Twitter account.
 * **twitter:description**: Same as "og:description".
 * **twitter:image:src**: Same as "og:image".
-* **twitter:card:src**: With value "summary_large_image".
+* **twitter:card:src**: With value "summary_large_image" or "summary".
 
 = Other Tags: =
 
@@ -75,6 +76,30 @@ It allows the user to choose which tags are, or not, included and also the defau
 3. Got to `Options`, `Facebook Open Graph Tags` to set it up
 
 == Changelog ==
+
+= 1.6.3 =
+- Added the fb_og_locale filter so that plugins or themes can override the Open Graph locale tag
+
+= 1.6.2.2 =
+- Bug fix: Google+, Twitter and Facebook profile fields would not be available on the user profile if Yoast SEO was not active
+
+= 1.6.2.1 =
+- Fix: Eliminates php notices introduced on 1.6.2
+
+= 1.6.2 =
+- Fix: Replaces all spaces by %20 on URLs (og:url, og:image, etc...), thanks to "Doc75"
+
+= 1.6.1 =
+* WPML compatibility: If the frontpage is set as "latest posts" and a custom homepage description is used, it can now be translated to other languages in WPML - String translation
+
+= 1.6 =
+* Added og:image:width and og:image:height tags if Facebook is having problems loading the image when the post is shared for the first time
+* Added the possibility to choose the Twitter Card Type
+* It's now possible to hide the author tags on pages
+* Fix: SubHeading plugin was not found on multisite
+* Fix: On the image attachment pages the og:image tag was not correctly set
+* Fix: Several PHP notices fixed
+* Updated FacebookLocales.xml
 
 = 1.5.2 =
 * Fix: Fatal error integrating with WPSEO's last version
