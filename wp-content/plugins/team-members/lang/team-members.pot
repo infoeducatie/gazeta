@@ -1,0 +1,454 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Team Members\n"
+"POT-Creation-Date: 2015-08-11 17:42+0800\n"
+"PO-Revision-Date: 2015-08-11 17:42+0800\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.4\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_x\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: inc/cmb2/includes/CMB2.php:120
+msgid "Metabox configuration is required to have an ID parameter"
+msgstr ""
+
+#: inc/cmb2/includes/CMB2.php:326
+msgid "Click to toggle"
+msgstr ""
+
+#: inc/cmb2/includes/CMB2_Ajax.php:40
+msgid "Please Try Again"
+msgstr ""
+
+#: inc/cmb2/includes/CMB2_Ajax.php:135
+msgid "Remove Embed"
+msgstr ""
+
+#: inc/cmb2/includes/CMB2_Ajax.php:139
+#, php-format
+msgid "No oEmbed Results Found for %s. View more info at"
+msgstr ""
+
+#: inc/cmb2/includes/CMB2_Field.php:910
+msgid "Add Group"
+msgstr ""
+
+#: inc/cmb2/includes/CMB2_Field.php:911
+msgid "Remove Group"
+msgstr ""
+
+#: inc/cmb2/includes/CMB2_Field.php:933 inc/cmb2/includes/CMB2_Field.php:937
+msgid "None"
+msgstr ""
+
+#: inc/cmb2/includes/CMB2_JS.php:86 inc/cmb2/includes/CMB2_JS.php:119
+msgid "Clear"
+msgstr ""
+
+#: inc/cmb2/includes/CMB2_JS.php:87
+msgid "Default"
+msgstr ""
+
+#: inc/cmb2/includes/CMB2_JS.php:88
+msgid "Select Color"
+msgstr ""
+
+#: inc/cmb2/includes/CMB2_JS.php:89
+msgid "Current Color"
+msgstr ""
+
+#: inc/cmb2/includes/CMB2_JS.php:109
+msgid "mm/dd/yy"
+msgstr ""
+
+#: inc/cmb2/includes/CMB2_JS.php:110
+msgid "Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday"
+msgstr ""
+
+#: inc/cmb2/includes/CMB2_JS.php:111
+msgid "Su, Mo, Tu, We, Th, Fr, Sa"
+msgstr ""
+
+#: inc/cmb2/includes/CMB2_JS.php:112
+msgid "Sun, Mon, Tue, Wed, Thu, Fri, Sat"
+msgstr ""
+
+#: inc/cmb2/includes/CMB2_JS.php:113
+msgid ""
+"January, February, March, April, May, June, July, August, September, "
+"October, November, December"
+msgstr ""
+
+#: inc/cmb2/includes/CMB2_JS.php:114
+msgid "Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec"
+msgstr ""
+
+#: inc/cmb2/includes/CMB2_JS.php:115
+msgid "Next"
+msgstr ""
+
+#: inc/cmb2/includes/CMB2_JS.php:116
+msgid "Prev"
+msgstr ""
+
+#: inc/cmb2/includes/CMB2_JS.php:117
+msgid "Today"
+msgstr ""
+
+#: inc/cmb2/includes/CMB2_JS.php:118 inc/cmb2/includes/CMB2_JS.php:128
+msgid "Done"
+msgstr ""
+
+#: inc/cmb2/includes/CMB2_JS.php:122
+msgid "Choose Time"
+msgstr ""
+
+#: inc/cmb2/includes/CMB2_JS.php:123
+msgid "Time"
+msgstr ""
+
+#: inc/cmb2/includes/CMB2_JS.php:124
+msgid "Hour"
+msgstr ""
+
+#: inc/cmb2/includes/CMB2_JS.php:125
+msgid "Minute"
+msgstr ""
+
+#: inc/cmb2/includes/CMB2_JS.php:126
+msgid "Second"
+msgstr ""
+
+#: inc/cmb2/includes/CMB2_JS.php:127
+msgid "Now"
+msgstr ""
+
+#: inc/cmb2/includes/CMB2_JS.php:129
+msgid "hh:mm TT"
+msgstr ""
+
+#: inc/cmb2/includes/CMB2_JS.php:135
+msgid "Use this file"
+msgstr ""
+
+#: inc/cmb2/includes/CMB2_JS.php:136
+msgid "Use these files"
+msgstr ""
+
+#: inc/cmb2/includes/CMB2_JS.php:137 inc/cmb2/includes/CMB2_Types.php:990
+msgid "Remove Image"
+msgstr ""
+
+#: inc/cmb2/includes/CMB2_JS.php:138 inc/cmb2/includes/CMB2_Types.php:357
+#: inc/cmb2/includes/CMB2_Types.php:1009
+msgid "Remove"
+msgstr ""
+
+#: inc/cmb2/includes/CMB2_JS.php:139 inc/cmb2/includes/CMB2_Types.php:1004
+msgid "File:"
+msgstr ""
+
+#: inc/cmb2/includes/CMB2_JS.php:140 inc/cmb2/includes/CMB2_Types.php:1007
+msgid "Download"
+msgstr ""
+
+#: inc/cmb2/includes/CMB2_JS.php:141
+msgid "Select / Deselect All"
+msgstr ""
+
+#: inc/cmb2/includes/CMB2_Types.php:298
+msgid "Add Row"
+msgstr ""
+
+#: inc/cmb2/includes/CMB2_Types.php:735 inc/cmb2/includes/CMB2_Types.php:783
+msgid "No terms"
+msgstr ""
+
+#: inc/cmb2/includes/CMB2_Types.php:850
+msgid "Add or Upload Files"
+msgstr ""
+
+#: inc/cmb2/includes/CMB2_Types.php:912
+msgid "Add or Upload File"
+msgstr ""
+
+#: inc/cmb2/includes/helper-functions.php:249
+msgid "Save"
+msgstr ""
+
+#: inc/tmm-metaboxes.php:15
+msgid "Manage Members"
+msgstr ""
+
+#: inc/tmm-metaboxes.php:15
+msgid "Unlock more features with Team Members PRO!"
+msgstr ""
+
+#: inc/tmm-metaboxes.php:15
+msgid "Free version"
+msgstr ""
+
+#: inc/tmm-metaboxes.php:24
+msgid "Member {#}"
+msgstr ""
+
+#: inc/tmm-metaboxes.php:25
+msgid "Add another member"
+msgstr ""
+
+#: inc/tmm-metaboxes.php:26
+msgid "Remove member"
+msgstr ""
+
+#: inc/tmm-metaboxes.php:33
+msgid "Member details"
+msgstr ""
+
+#: inc/tmm-metaboxes.php:41
+msgid "Firstname"
+msgstr ""
+
+#: inc/tmm-metaboxes.php:49
+msgid "Lastname"
+msgstr ""
+
+#: inc/tmm-metaboxes.php:57
+msgid "Job/role"
+msgstr ""
+
+#: inc/tmm-metaboxes.php:65
+msgid "Description/bio"
+msgstr ""
+
+#: inc/tmm-metaboxes.php:74
+msgid "Member links"
+msgstr ""
+
+#: inc/tmm-metaboxes.php:81
+msgid "Type of link"
+msgstr ""
+
+#: inc/tmm-metaboxes.php:81
+msgid "Choose which icon is going to show in the member box"
+msgstr ""
+
+#: inc/tmm-metaboxes.php:94 inc/tmm-metaboxes.php:129 inc/tmm-metaboxes.php:165
+msgid "Email"
+msgstr ""
+
+#: inc/tmm-metaboxes.php:95 inc/tmm-metaboxes.php:130 inc/tmm-metaboxes.php:166
+msgid "Website"
+msgstr ""
+
+#: inc/tmm-metaboxes.php:96 inc/tmm-metaboxes.php:131 inc/tmm-metaboxes.php:167
+msgid "Other links"
+msgstr ""
+
+#: inc/tmm-metaboxes.php:102
+msgid "Title attribute"
+msgstr ""
+
+#: inc/tmm-metaboxes.php:102
+msgid "eg. Follow us on Twitter!"
+msgstr ""
+
+#: inc/tmm-metaboxes.php:109
+msgid "Start with http://"
+msgstr ""
+
+#: inc/tmm-metaboxes.php:188
+msgid "Member photo"
+msgstr ""
+
+#: inc/tmm-metaboxes.php:195
+msgid "Upload photo"
+msgstr ""
+
+#: inc/tmm-metaboxes.php:195
+msgid "Recommended:"
+msgstr ""
+
+#: inc/tmm-metaboxes.php:198
+msgid "Upload"
+msgstr ""
+
+#: inc/tmm-metaboxes.php:203
+msgid "Photo link URL"
+msgstr ""
+
+#: inc/tmm-metaboxes.php:203
+msgid ""
+"If a URL is added here, the member's photo will be clickable — Start with "
+"http://"
+msgstr ""
+
+#: inc/tmm-metaboxes.php:213
+msgid "Settings"
+msgstr ""
+
+#: inc/tmm-metaboxes.php:220
+msgid "General settings"
+msgstr ""
+
+#: inc/tmm-metaboxes.php:227
+msgid "Main color"
+msgstr ""
+
+#: inc/tmm-metaboxes.php:234
+msgid "Members to show per line"
+msgstr ""
+
+#: inc/tmm-metaboxes.php:238
+msgid "2 members per line"
+msgstr ""
+
+#: inc/tmm-metaboxes.php:239
+msgid "3 members per line"
+msgstr ""
+
+#: inc/tmm-metaboxes.php:240
+msgid "4 members per line"
+msgstr ""
+
+#: inc/tmm-metaboxes.php:247
+msgid "Others"
+msgstr ""
+
+#: inc/tmm-metaboxes.php:254
+msgid "Description/bio alignment"
+msgstr ""
+
+#: inc/tmm-metaboxes.php:258
+msgid "Centre"
+msgstr ""
+
+#: inc/tmm-metaboxes.php:259
+msgid "Left"
+msgstr ""
+
+#: inc/tmm-metaboxes.php:260
+msgid "Right"
+msgstr ""
+
+#: inc/tmm-metaboxes.php:261
+msgid "Justify"
+msgstr ""
+
+#: inc/tmm-metaboxes.php:268
+msgid "Picture link behavior"
+msgstr ""
+
+#: inc/tmm-metaboxes.php:272
+msgid "Open in same window"
+msgstr ""
+
+#: inc/tmm-metaboxes.php:273
+msgid "Open in new window"
+msgstr ""
+
+#: inc/tmm-metaboxes.php:281
+msgid "Force original fonts"
+msgstr ""
+
+#: inc/tmm-metaboxes.php:281
+msgid "Check this to use the plugin's font instead of your theme's"
+msgstr ""
+
+#: inc/tmm-metaboxes.php:282
+msgid "Check to enable"
+msgstr ""
+
+#: inc/tmm-metaboxes.php:310
+msgid "Help & Support"
+msgstr ""
+
+#: inc/tmm-metaboxes.php:319
+msgid "Display you Team"
+msgstr ""
+
+#: inc/tmm-metaboxes.php:319
+msgid ""
+"To display your Team on your site, copy-paste the Team's "
+"<strong>[Shortcode]</strong> in your post/page. You can find this shortcode "
+"by clicking <strong>All Teams</strong> in the menu on the left."
+msgstr ""
+
+#: inc/tmm-metaboxes.php:319
+msgid "Get support"
+msgstr ""
+
+#: inc/tmm-metaboxes.php:319
+msgid "Submit a ticket"
+msgstr ""
+
+#: inc/tmm-metaboxes.php:319
+msgid "View documentation"
+msgstr ""
+
+#: tmm.php:102 tmm.php:104
+msgid "Teams"
+msgstr ""
+
+#: tmm.php:103 tmm.php:105
+msgid "Team"
+msgstr ""
+
+#: tmm.php:106
+msgid "Add New"
+msgstr ""
+
+#: tmm.php:107
+msgid "Add New Team"
+msgstr ""
+
+#: tmm.php:108
+msgid "New Team"
+msgstr ""
+
+#: tmm.php:109
+msgid "Edit Team"
+msgstr ""
+
+#: tmm.php:110
+msgid "View Team"
+msgstr ""
+
+#: tmm.php:111
+msgid "All Teams"
+msgstr ""
+
+#: tmm.php:112
+msgid "Search Teams"
+msgstr ""
+
+#: tmm.php:113
+msgid "No Teams found."
+msgstr ""
+
+#: tmm.php:114
+msgid "No Teams found in Trash."
+msgstr ""
+
+#: tmm.php:140 tmm.php:141
+msgid "Team updated."
+msgstr ""
+
+#: tmm.php:142
+msgid "Team published."
+msgstr ""
+
+#: tmm.php:143
+msgid "Team saved."
+msgstr ""
+
+#: tmm.php:144
+msgid "Team draft updated."
+msgstr ""

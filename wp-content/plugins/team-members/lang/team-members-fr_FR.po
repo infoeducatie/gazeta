@@ -1,0 +1,630 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Team Members\n"
+"POT-Creation-Date: 2015-08-12 01:22+0800\n"
+"PO-Revision-Date: 2015-08-18 16:57+0800\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.4\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_x\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: inc/cmb2/includes/CMB2.php:120
+msgid "Metabox configuration is required to have an ID parameter"
+msgstr ""
+
+#: inc/cmb2/includes/CMB2.php:326
+msgid "Click to toggle"
+msgstr ""
+
+#: inc/cmb2/includes/CMB2_Ajax.php:40
+msgid "Please Try Again"
+msgstr ""
+
+#: inc/cmb2/includes/CMB2_Ajax.php:135
+msgid "Remove Embed"
+msgstr ""
+
+#: inc/cmb2/includes/CMB2_Ajax.php:139
+#, php-format
+msgid "No oEmbed Results Found for %s. View more info at"
+msgstr ""
+
+#: inc/cmb2/includes/CMB2_Field.php:910
+msgid "Add Group"
+msgstr ""
+
+#: inc/cmb2/includes/CMB2_Field.php:911
+msgid "Remove Group"
+msgstr ""
+
+#: inc/cmb2/includes/CMB2_Field.php:933 inc/cmb2/includes/CMB2_Field.php:937
+msgid "None"
+msgstr ""
+
+#: inc/cmb2/includes/CMB2_JS.php:86 inc/cmb2/includes/CMB2_JS.php:119
+msgid "Clear"
+msgstr ""
+
+#: inc/cmb2/includes/CMB2_JS.php:87
+msgid "Default"
+msgstr ""
+
+#: inc/cmb2/includes/CMB2_JS.php:88
+msgid "Select Color"
+msgstr ""
+
+#: inc/cmb2/includes/CMB2_JS.php:89
+msgid "Current Color"
+msgstr ""
+
+#: inc/cmb2/includes/CMB2_JS.php:109
+msgid "mm/dd/yy"
+msgstr ""
+
+#: inc/cmb2/includes/CMB2_JS.php:110
+msgid "Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday"
+msgstr ""
+
+#: inc/cmb2/includes/CMB2_JS.php:111
+msgid "Su, Mo, Tu, We, Th, Fr, Sa"
+msgstr ""
+
+#: inc/cmb2/includes/CMB2_JS.php:112
+msgid "Sun, Mon, Tue, Wed, Thu, Fri, Sat"
+msgstr ""
+
+#: inc/cmb2/includes/CMB2_JS.php:113
+msgid ""
+"January, February, March, April, May, June, July, August, September, "
+"October, November, December"
+msgstr ""
+
+#: inc/cmb2/includes/CMB2_JS.php:114
+msgid "Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec"
+msgstr ""
+
+#: inc/cmb2/includes/CMB2_JS.php:115
+msgid "Next"
+msgstr ""
+
+#: inc/cmb2/includes/CMB2_JS.php:116
+msgid "Prev"
+msgstr ""
+
+#: inc/cmb2/includes/CMB2_JS.php:117
+msgid "Today"
+msgstr ""
+
+#: inc/cmb2/includes/CMB2_JS.php:118 inc/cmb2/includes/CMB2_JS.php:128
+msgid "Done"
+msgstr ""
+
+#: inc/cmb2/includes/CMB2_JS.php:122
+msgid "Choose Time"
+msgstr ""
+
+#: inc/cmb2/includes/CMB2_JS.php:123
+msgid "Time"
+msgstr ""
+
+#: inc/cmb2/includes/CMB2_JS.php:124
+msgid "Hour"
+msgstr ""
+
+#: inc/cmb2/includes/CMB2_JS.php:125
+msgid "Minute"
+msgstr ""
+
+#: inc/cmb2/includes/CMB2_JS.php:126
+msgid "Second"
+msgstr ""
+
+#: inc/cmb2/includes/CMB2_JS.php:127
+msgid "Now"
+msgstr ""
+
+#: inc/cmb2/includes/CMB2_JS.php:129
+msgid "hh:mm TT"
+msgstr ""
+
+#: inc/cmb2/includes/CMB2_JS.php:135
+msgid "Use this file"
+msgstr ""
+
+#: inc/cmb2/includes/CMB2_JS.php:136
+msgid "Use these files"
+msgstr ""
+
+#: inc/cmb2/includes/CMB2_JS.php:137 inc/cmb2/includes/CMB2_Types.php:990
+msgid "Remove Image"
+msgstr ""
+
+#: inc/cmb2/includes/CMB2_JS.php:138 inc/cmb2/includes/CMB2_Types.php:357
+#: inc/cmb2/includes/CMB2_Types.php:1009
+msgid "Remove"
+msgstr ""
+
+#: inc/cmb2/includes/CMB2_JS.php:139 inc/cmb2/includes/CMB2_Types.php:1004
+msgid "File:"
+msgstr ""
+
+#: inc/cmb2/includes/CMB2_JS.php:140 inc/cmb2/includes/CMB2_Types.php:1007
+msgid "Download"
+msgstr ""
+
+#: inc/cmb2/includes/CMB2_JS.php:141
+msgid "Select / Deselect All"
+msgstr ""
+
+#: inc/cmb2/includes/CMB2_Types.php:298
+msgid "Add Row"
+msgstr ""
+
+#: inc/cmb2/includes/CMB2_Types.php:735 inc/cmb2/includes/CMB2_Types.php:783
+msgid "No terms"
+msgstr ""
+
+#: inc/cmb2/includes/CMB2_Types.php:850
+msgid "Add or Upload Files"
+msgstr ""
+
+#: inc/cmb2/includes/CMB2_Types.php:912
+msgid "Add or Upload File"
+msgstr ""
+
+#: inc/cmb2/includes/helper-functions.php:249
+msgid "Save"
+msgstr ""
+
+#: inc/tmm-metaboxes.php:15
+msgid "Manage Members"
+msgstr "Gestion des membres"
+
+#: inc/tmm-metaboxes.php:15
+msgid "Unlock more features with Team Members PRO!"
+msgstr ""
+"Acc&eacute;dez &agrave; de nouvelles fonctionnalit&eacute;s avec Team "
+"Members PRO !"
+
+#: inc/tmm-metaboxes.php:15
+msgid "Free version"
+msgstr "Version gratuite"
+
+#: inc/tmm-metaboxes.php:24
+msgid "Member {#}"
+msgstr "Membre {#}"
+
+#: inc/tmm-metaboxes.php:25
+msgid "Add another member"
+msgstr "Ajouter un membre"
+
+#: inc/tmm-metaboxes.php:26
+msgid "Remove member"
+msgstr "Supprimer membre"
+
+#: inc/tmm-metaboxes.php:33
+msgid "Member details"
+msgstr "Informations du membre"
+
+#: inc/tmm-metaboxes.php:40
+msgid "Firstname"
+msgstr "Prénom"
+
+#: inc/tmm-metaboxes.php:48
+msgid "Lastname"
+msgstr "Nom"
+
+#: inc/tmm-metaboxes.php:56
+msgid "Job/role"
+msgstr "Poste/fonction"
+
+#: inc/tmm-metaboxes.php:64
+msgid "Description/bio"
+msgstr "Description/bio"
+
+#: inc/tmm-metaboxes.php:64
+msgid "Basic HTML allowed"
+msgstr "HTML basique autoris&eacute;"
+
+#: inc/tmm-metaboxes.php:73
+msgid "Member links"
+msgstr "Liens du membre"
+
+#: inc/tmm-metaboxes.php:80
+msgid "Type of link"
+msgstr "Type de lien"
+
+#: inc/tmm-metaboxes.php:80
+msgid "Choose which icon is going to show in the member box"
+msgstr ""
+"Choisir l&#x27;ic&ocirc;ne qui appara&icirc;tra sur le profil du membre"
+
+#: inc/tmm-metaboxes.php:93 inc/tmm-metaboxes.php:128 inc/tmm-metaboxes.php:164
+msgid "Email"
+msgstr "Email"
+
+#: inc/tmm-metaboxes.php:94 inc/tmm-metaboxes.php:129 inc/tmm-metaboxes.php:165
+msgid "Website"
+msgstr "Site Internet"
+
+#: inc/tmm-metaboxes.php:95 inc/tmm-metaboxes.php:130 inc/tmm-metaboxes.php:166
+msgid "Other links"
+msgstr "Autre lien"
+
+#: inc/tmm-metaboxes.php:101
+msgid "Title attribute"
+msgstr "Attribut title"
+
+#: inc/tmm-metaboxes.php:101
+msgid "eg. Follow us on Twitter!"
+msgstr "ex. Suivez-nous sur Twitter !"
+
+#: inc/tmm-metaboxes.php:108
+msgid "Start with http://"
+msgstr "Commencer par http://"
+
+#: inc/tmm-metaboxes.php:187
+msgid "Member photo"
+msgstr "Photo du membre"
+
+#: inc/tmm-metaboxes.php:194
+msgid "Upload photo"
+msgstr "Uploader photo"
+
+#: inc/tmm-metaboxes.php:194
+msgid "Recommended:"
+msgstr "Recommendé :"
+
+#: inc/tmm-metaboxes.php:197
+msgid "Upload"
+msgstr "Uploader"
+
+#: inc/tmm-metaboxes.php:202
+msgid "Photo link URL"
+msgstr "URL du lien de la photo"
+
+#: inc/tmm-metaboxes.php:202
+msgid ""
+"If a URL is added here, the member's photo will be clickable — Start with "
+"http://"
+msgstr ""
+"Si une URL est ajout&eacute;e, la photo du membre sera cliquable — Commencer "
+"par http://"
+
+#: inc/tmm-metaboxes.php:213
+msgid "Settings"
+msgstr "R&eacute;glages"
+
+#: inc/tmm-metaboxes.php:220
+msgid "General settings"
+msgstr "R&eacute;glages g&eacute;n&eacute;raux"
+
+#: inc/tmm-metaboxes.php:227
+msgid "Main color"
+msgstr "Couleur principale"
+
+#: inc/tmm-metaboxes.php:234
+msgid "Members to show per line"
+msgstr "Membres par ligne"
+
+#: inc/tmm-metaboxes.php:238
+msgid "2 members per line"
+msgstr "2 membres par ligne"
+
+#: inc/tmm-metaboxes.php:239
+msgid "3 members per line"
+msgstr "3 membres par ligne"
+
+#: inc/tmm-metaboxes.php:240
+msgid "4 members per line"
+msgstr "4 membres par ligne"
+
+#: inc/tmm-metaboxes.php:247
+msgid "Others"
+msgstr "Autres"
+
+#: inc/tmm-metaboxes.php:254
+msgid "Description/bio alignment"
+msgstr "Alignement de la bio"
+
+#: inc/tmm-metaboxes.php:258
+msgid "Centre"
+msgstr "Centre"
+
+#: inc/tmm-metaboxes.php:259
+msgid "Left"
+msgstr "Gauche"
+
+#: inc/tmm-metaboxes.php:260
+msgid "Right"
+msgstr "Droite"
+
+#: inc/tmm-metaboxes.php:261
+msgid "Justify"
+msgstr "Justifi&eacute;"
+
+#: inc/tmm-metaboxes.php:268
+msgid "Picture link behavior"
+msgstr "Comportement du lien"
+
+#: inc/tmm-metaboxes.php:272
+msgid "Open in same window"
+msgstr "Ouvre dans la m&ecirc;me fen&ecirc;tre"
+
+#: inc/tmm-metaboxes.php:273
+msgid "Open in new window"
+msgstr "Ouvre dans une nouvelle fen&ecirc;tre"
+
+#: inc/tmm-metaboxes.php:281
+msgid "Force original fonts"
+msgstr "Forcer police originale"
+
+#: inc/tmm-metaboxes.php:281
+msgid "Check this to use the plugin's font instead of your theme's"
+msgstr ""
+"Cocher ceci pour utiliser la police de caract&egrave;re du plugin plut&ocirc;"
+"t que celle du th&egrave;me"
+
+#: inc/tmm-metaboxes.php:282 inc/tmm-metaboxes.php:291
+msgid "Check to enable"
+msgstr "Cocher pour activer"
+
+#: inc/tmm-metaboxes.php:290
+msgid "Last row centered"
+msgstr "Derni&egrave;re ligne centr&eacute;e"
+
+#: inc/tmm-metaboxes.php:290
+msgid ""
+"Check this if your last row of members isn't full to center your last "
+"member(s)"
+msgstr ""
+"Cocher si la derni&egrave;re ligne de membres n&#x27;est pas compl&egrave;"
+"te, pour la centrer."
+
+#: inc/tmm-metaboxes.php:319
+msgid "Help & Support"
+msgstr "Documentation & Support"
+
+#: inc/tmm-metaboxes.php:328
+msgid "Display your Team"
+msgstr "Afficher une &Eacute;quipe"
+
+#: inc/tmm-metaboxes.php:328
+msgid ""
+"To display your Team on your site, copy-paste the Team's "
+"<strong>[Shortcode]</strong> in your post/page. You can find this shortcode "
+"by clicking <strong>All Teams</strong> in the menu on the left."
+msgstr ""
+"Pour afficher une &Eacute;quipe, copier-coller son [Shortcode] dans un(e) "
+"article/page. Vous trouverez ce shortcode en cliquant sur <strong>&Eacute;"
+"quipes</strong> dans le menu &agrave; gauche."
+
+#: inc/tmm-metaboxes.php:328
+msgid "Get support"
+msgstr "Trouver de l&#x27;aide"
+
+#: inc/tmm-metaboxes.php:328
+msgid "Submit a ticket"
+msgstr "Demande d&#x27;aide"
+
+#: inc/tmm-metaboxes.php:328
+msgid "View documentation"
+msgstr "Voir documentation"
+
+#: tmm.php:112 tmm.php:114
+msgid "Teams"
+msgstr "&Eacute;quipes"
+
+#: tmm.php:113 tmm.php:115
+msgid "Team"
+msgstr "&Eacute;quipe"
+
+#: tmm.php:116
+msgid "Add New"
+msgstr "Ajouter"
+
+#: tmm.php:117
+msgid "Add New Team"
+msgstr "Ajouter une &Eacute;quipe"
+
+#: tmm.php:118
+msgid "New Team"
+msgstr "Nouvelle &Eacute;quipe"
+
+#: tmm.php:119
+msgid "Edit Team"
+msgstr "Modifier &Eacute;quipe"
+
+#: tmm.php:120
+msgid "View Team"
+msgstr "Voir &Eacute;quipe"
+
+#: tmm.php:121
+msgid "All Teams"
+msgstr "Toutes les &Eacute;quipes"
+
+#: tmm.php:122
+msgid "Search Teams"
+msgstr "Rechercher dans &Eacute;quipes"
+
+#: tmm.php:123
+msgid "No Teams found."
+msgstr "Pas d&#x27;&Eacute;quipe trouv&eacute;e."
+
+#: tmm.php:124
+msgid "No Teams found in Trash."
+msgstr "Pas d&#x27;&Eacute;quipe trouv&eacute;e dans la corbeille."
+
+#: tmm.php:150 tmm.php:151
+msgid "Team updated."
+msgstr "&Eacute;quipe modifi&eacute;e."
+
+#: tmm.php:152
+msgid "Team published."
+msgstr "&Eacute;quipe publi&eacute;e."
+
+#: tmm.php:153
+msgid "Team saved."
+msgstr "&Eacute;quipe sauvegard&eacute;e."
+
+#: tmm.php:154
+msgid "Team draft updated."
+msgstr "Brouillon d&#x27;&eacute;quipe sauvegard&eacute;e."
+
+#~ msgid ""
+#~ "There is a new version of %1$s available. <a target=\"_blank\" class="
+#~ "\"thickbox\" href=\"%2$s\">View version %3$s details</a>."
+#~ msgstr ""
+#~ "Une nouvelle version de %1$s est disponible. <a target=\"_blank\" class="
+#~ "\"thickbox\" href=\"%2$s\">Voir les %3$s infos</a>."
+
+#~ msgid ""
+#~ "There is a new version of %1$s available. <a target=\"_blank\" class="
+#~ "\"thickbox\" href=\"%2$s\">View version %3$s details</a> or <a href=\"%4$s"
+#~ "\">update now</a>."
+#~ msgstr ""
+#~ "Une nouvelle version de %1$s est disponible. <a target=\"_blank\" class="
+#~ "\"thickbox\" href=\"%2$s\">Voir les %3$s infos</a> or <a href=\"%4$s"
+#~ "\">mettre &agrave; jour</a>."
+
+#~ msgid "You do not have permission to install plugin updates"
+#~ msgstr ""
+#~ "Vous n&#x27;&ecirc;tes pas autoris&eacute; &agrave; mettre ce plugin "
+#~ "&Agrave; jour"
+
+#~ msgid "Error"
+#~ msgstr "Erreur"
+
+#~ msgid "PRO version"
+#~ msgstr "Version PRO"
+
+#~ msgid "Complementary box title"
+#~ msgstr "Titre des informations compl&eacute;mentaires"
+
+#~ msgid "Add a title for your complementary info box"
+#~ msgstr "Ajouter un titre pour les informations compl&eacute;mentaires"
+
+#~ msgid ""
+#~ "This adds a little link below the description/bio, it will reveal the "
+#~ "complementary info text when a visitor hovers over it."
+#~ msgstr ""
+#~ "Ajoute un lien sous la description qui affichera le texte compl&eacute;"
+#~ "mentaire lorsque la souris passera dessus."
+
+#~ msgid "Complementary box text"
+#~ msgstr "Texte des informations compl&eacute;mentaires"
+
+#~ msgid "Text that will show when the title is hovered over"
+#~ msgstr "Texte qui appara&icirc;tra lorsque la souris passe sur le titre"
+
+#~ msgid "Member color"
+#~ msgstr "Couleur du membre"
+
+#~ msgid "Color for this member"
+#~ msgstr "Choisir une couleur pour ce membre"
+
+#~ msgid "Upload hover photo"
+#~ msgstr "Uploader une photo secondaire"
+
+#~ msgid "Add a photo that will replace the first one on hover"
+#~ msgstr ""
+#~ "Ajouter une photo qui remplacera la premi&egrave;re au passage de la "
+#~ "souris"
+
+#~ msgid "1 members per line"
+#~ msgstr "1 membre par ligne"
+
+#~ msgid "5 members per line"
+#~ msgstr "5 membres par ligne"
+
+#~ msgid "Photo shape"
+#~ msgstr "Forme des photos"
+
+#~ msgid "Rounded photos"
+#~ msgstr "Photos arrondies"
+
+#~ msgid "Squared photos"
+#~ msgstr "Photos carr&eacute;es"
+
+#~ msgid "Photo borders"
+#~ msgstr "Bordure des photos"
+
+#~ msgid "Add/remove borders around your photos"
+#~ msgstr "Ajouter/supprimer les bordures"
+
+#~ msgid "Yes"
+#~ msgstr "Oui"
+
+#~ msgid "No"
+#~ msgstr "Non"
+
+#~ msgid "Photo position"
+#~ msgstr "Position des photos"
+
+#~ msgid "Choose where your photos should appear"
+#~ msgstr "Choisissez o&ugrave; vos photos apparaissent"
+
+#~ msgid "Floating at the top"
+#~ msgstr "Flottante en haut"
+
+#~ msgid "Inside the box"
+#~ msgstr "&Agrave; l&#x27;int&eacute;rieur"
+
+#~ msgid "Photo filter"
+#~ msgstr "Filtre photo"
+
+#~ msgid "Add a filter to your photos in a simple click"
+#~ msgstr "Ajouter un filtre aux photos en un clic"
+
+#~ msgid "Vintage filter"
+#~ msgstr "Filtre vintage"
+
+#~ msgid "Black & White filter"
+#~ msgstr "Filtre noir et blanc"
+
+#~ msgid "Saturated filter"
+#~ msgstr "Filtre saturation"
+
+#~ msgid "Top border size"
+#~ msgstr "Taille de la bordure haut"
+
+#~ msgid "In pixels, without the 'px'"
+#~ msgstr "En pixels, sans le ‘px’"
+
+#~ msgid "License activation"
+#~ msgstr "Activer licence"
+
+#~ msgid "Activate your license"
+#~ msgstr "Activer votre licence"
+
+#~ msgid ""
+#~ "Activating your license allows you to receive automatic updates for a "
+#~ "year.<br/>This is <strong>NOT</strong> required for the plugin to "
+#~ "properly work."
+#~ msgstr ""
+#~ "Activer votre licence vous permettra de recevoir des mises &agrave; jour "
+#~ "automatiques pendant un an.<br/>Vous n&#x27;avez <strong>pas besoin</"
+#~ "strong> de l&#x27;activation pour que le plugin fonctionne."
+
+#~ msgid "License Key"
+#~ msgstr "Licence"
+
+#~ msgid "Activate license"
+#~ msgstr "Activer"
+
+#~ msgid "Activated"
+#~ msgstr "Activ&eacute;e"
+
+#~ msgid "Deactivate license"
+#~ msgstr "D&eacute;sactiver licence"
+
+#~ msgid "Display you Team"
+#~ msgstr "Afficher une &Eacute;quipe"
