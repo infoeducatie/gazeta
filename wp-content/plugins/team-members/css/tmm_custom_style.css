@@ -12,8 +12,8 @@
     margin-top:70px;
     margin-bottom:30px;
     height:auto;
-    float: left; 
-    text-align:center; 
+    float: left;
+    text-align:center;
     -webkit-box-shadow: 1px 0px 2px 0px rgba(0,0,0,0.05);
     -moz-box-shadow: 1px 0px 2px 0px rgba(0,0,0,0.05);
     box-shadow: 1px 0px 2px 0px rgba(0,0,0,0.05);
@@ -42,8 +42,8 @@
 .tmm .tmm_4_columns .tmm_member {width: 23%;}
 
 .tmm .tmm_member .tmm_photo {
-    width:150px; 
-    height:150px; 
+    width:150px;
+    height:150px;
     border:none;
     -webkit-box-shadow: 2px 0px 2px 0px rgba(0,0,0,0.10);
     -moz-box-shadow: 2px 0px 2px 0px rgba(0,0,0,0.10);
@@ -54,8 +54,8 @@
 }
 
 .tmm .tmm_4_columns .tmm_member .tmm_photo {
-    width:100px; 
-    height:100px; 
+    width:100px;
+    height:100px;
     margin-top:-50px;
     border-radius:40px !important;
     border:5px solid whitesmoke;
@@ -63,17 +63,17 @@
 
 .tmm .tmm_member .tmm_textblock .tmm_scblock {padding-top:10px;}
 .tmm .tmm_member .tmm_textblock {padding:10px 12px;}
-.tmm .tmm_member .tmm_textblock .tmm_sociallink {clear:both; margin-bottom:20px; border:none;}
+.tmm .tmm_member .tmm_textblock .tmm_sociallink {clear:both; margin-bottom:20px; border:none; box-shadow:0 0 0;}
 .tmm .tmm_member .tmm_textblock .tmm_sociallink img {
-    display:inline-block; 
-    border:none; width:24px; 
-    height:24px; 
-    box-shadow: 0 0 0 0;  
+    display:inline-block;
+    border:none; width:24px;
+    height:24px;
+    box-shadow: 0 0 0 0;
     margin:10px 4px;
 }
 
 .tmm .tmm_4_columns .tmm_member .tmm_textblock .tmm_sociallink img {width:21px; height:21px; margin:6px 3px;}
-.tmm .tmm_member .tmm_textblock .tmm_sociallink img:hover {opacity:0.8;} 
+.tmm .tmm_member .tmm_textblock .tmm_sociallink img:hover {opacity:0.8;}
 
 .tmm .tmm_names {font-size:21px; margin-bottom:8px; margin-top:10px; font-weight:300; line-height:24px;}
 .tmm .tmm_4_columns .tmm_names {font-size:17px;}
@@ -89,53 +89,53 @@
     .tmm .tmm_columns_containers_desktop {display:none; clear:none;}
     .tmm_two_containers_tablet {display:block; clear:both;}
 
-    .tmm .tmm_2_columns .tmm_member, 
-    .tmm .tmm_3_columns .tmm_member, 
-    .tmm .tmm_4_columns .tmm_member { 
+    .tmm .tmm_2_columns .tmm_member,
+    .tmm .tmm_3_columns .tmm_member,
+    .tmm .tmm_4_columns .tmm_member {
         width: 40%; margin-left:5%; margin-right:5%;
         margin-top:70px;
         margin-bottom:30px;
     }
-    
+
     .tmm .tmm_names {font-size:17px; margin-bottom:8px; margin-top:10px; font-weight:300; line-height:24px;}
     .tmm .tmm_4_columns .tmm_names {font-size:17px;}
     .tmm .tmm_job {font-size:13px; color:#a2a5a4; text-transform:uppercase;}
-    
+
     .tmm .tmm_desc {padding:10px; margin-top:19px; margin-bottom:10px; font-size:15px; line-height:23px;}
     .tmm .tmm_4_columns .tmm_desc {margin-top:14px; margin-bottom:8px; font-size:14px; line-height: 23px;}
-    
+
     .tmm .tmm_2_columns .tmm_member .tmm_photo,
     .tmm .tmm_3_columns .tmm_member .tmm_photo,
     .tmm .tmm_4_columns .tmm_member .tmm_photo {
-        width:130px; 
-        height:130px; 
+        width:130px;
+        height:130px;
         border-radius:50px !important;
         border:8px solid whitesmoke;
         margin-top:-65px;
     }
-    
+
 }
 
 /* MOBILE  */
 @media only screen and (max-width: 40em) {
     .tmm .tmm_columns_containers_desktop {display:none; clear:none;}
 	.tmm .tmm_member {width: 96%; margin:0 2%; margin-top:70px; margin-bottom:30px;}
-    .tmm .tmm_2_columns .tmm_member, 
-    .tmm .tmm_3_columns .tmm_member, 
+    .tmm .tmm_2_columns .tmm_member,
+    .tmm .tmm_3_columns .tmm_member,
     .tmm .tmm_4_columns .tmm_member {
-        width: 96%; 
-        margin:0 2%; 
+        width: 96%;
+        margin:0 2%;
         margin-top:90px;
         margin-bottom:10px;
     }
-    
+
     .tmm .tmm_4_columns .tmm_names {font-size:20px;}
-    
+
     .tmm .tmm_2_columns .tmm_member .tmm_photo,
     .tmm .tmm_3_columns .tmm_member .tmm_photo,
     .tmm .tmm_4_columns .tmm_member .tmm_photo {
-        width:160px; 
-        height:160px; 
+        width:160px;
+        height:160px;
         border-radius:60px !important;
         border:8px solid whitesmoke;
         margin-top:-80px;
