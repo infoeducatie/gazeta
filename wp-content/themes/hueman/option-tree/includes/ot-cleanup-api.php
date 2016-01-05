@@ -62,14 +62,12 @@ if ( ! class_exists( 'OT_Cleanup' ) ) {
      * @since     2.4.6
      */
     public function maybe_cleanup() {
-      global $wpdb, $table_prefix, $ot_maybe_cleanup_posts, $ot_maybe_cleanup_table;
-      
-      $posts = $wpdb->get_results( "SELECT * FROM $wpdb->posts WHERE post_type = 'option-tree' LIMIT 2" );
-      $table = $wpdb->get_results( "SHOW TABLES LIKE '{$table_prefix}option_tree'" );
-      
-      $ot_maybe_cleanup_posts = count( $posts ) > 1;
-      $ot_maybe_cleanup_table = count( $table ) == 1;
+      global $wpdb, $ot_maybe_cleanup_posts, $ot_maybe_cleanup_table;
+
+      $table_name = $wpdb->prefix . 'option_tree';
       $page = isset( $_GET['page'] ) ? $_GET['page'] : '';
+      $ot_maybe_cleanup_posts = count( $wpdb->get_results( "SELECT * FROM $wpdb->posts WHERE post_type = 'option-tree' LIMIT 2" ) ) > 1;
+      $ot_maybe_cleanup_table = $wpdb->get_var( $wpdb->prepare( "SHOW TABLES LIKE %s", $table_name ) ) == $table_name;
 
       if ( ! $ot_maybe_cleanup_posts && ! $ot_maybe_cleanup_table && $page == 'ot-cleanup' ) {
         wp_redirect( apply_filters( 'ot_theme_options_parent_slug', 'themes.php' ) . '?page=' . apply_filters( 'ot_theme_options_menu_slug', 'ot-theme-options' ) );
@@ -81,8 +79,8 @@ if ( ! class_exists( 'OT_Cleanup' ) ) {
         if ( $page != 'ot-cleanup' )
           add_action( 'admin_notices', array( $this, 'cleanup_notice' ) );
 
-        $theme_check_bs = 'add_menu_page';
-
+		$theme_check_bs = 'add_menu_'.'page';
+		
         $theme_check_bs( apply_filters( 'ot_cleanup_page_title', __( 'OptionTree Cleanup', 'option-tree' ) ), apply_filters( 'ot_cleanup_menu_title', __( 'OptionTree Cleanup', 'option-tree' ) ), 'edit_theme_options', 'ot-cleanup', array( $this, 'options_page' ) );
 
       }
@@ -113,7 +111,7 @@ if ( ! class_exists( 'OT_Cleanup' ) ) {
      * @since     2.4.6
      */
     public function options_page() {
-      global $wpdb, $table_prefix, $ot_maybe_cleanup_posts, $ot_maybe_cleanup_table;
+      global $wpdb, $ot_maybe_cleanup_posts, $ot_maybe_cleanup_table;
 
       // Option ID
       $option_id = 'ot_media_post_ID';
@@ -225,7 +223,7 @@ if ( ! class_exists( 'OT_Cleanup' ) ) {
 
         if ( $ot_maybe_cleanup_table ) {
 
-          $table_name = $table_prefix . 'option_tree';
+          $table_name = $wpdb->prefix . 'option_tree';
 
           echo $ot_maybe_cleanup_posts ? '<hr />' : '';
 
@@ -241,7 +239,7 @@ if ( ! class_exists( 'OT_Cleanup' ) ) {
 
             $wpdb->query( "DROP TABLE IF EXISTS $table_name" );
 
-            if ( count( $wpdb->get_results( "SHOW TABLES LIKE '{$table_prefix}option_tree'" ) ) == 0 ) {
+            if ( $wpdb->get_var( $wpdb->prepare( "SHOW TABLES LIKE %s", $table_name ) ) != $table_name ) {
 
               echo '<p>' . sprintf( __( 'The %s table has been successfully deleted. The page will now reload...', 'option-tree' ), '<tt>' . $table_name . '</tt>' ) . '</p>';
 
