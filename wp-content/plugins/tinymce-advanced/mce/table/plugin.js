@@ -63,10 +63,12 @@
 	}
 
 	function expose(ids) {
-		for (var i = 0; i < ids.length; i++) {
-			var target = exports;
-			var id = ids[i];
-			var fragments = id.split(/[.\/]/);
+		var i, target, id, fragments, privateModules;
+
+		for (i = 0; i < ids.length; i++) {
+			target = exports;
+			id = ids[i];
+			fragments = id.split(/[.\/]/);
 
 			for (var fi = 0; fi < fragments.length - 1; ++fi) {
 				if (target[fragments[fi]] === undefined) {
@@ -77,6 +79,21 @@
 			}
 
 			target[fragments[fragments.length - 1]] = modules[id];
+		}
+		
+		// Expose private modules for unit tests
+		if (exports.AMDLC_TESTS) {
+			privateModules = exports.privateModules || {};
+
+			for (id in modules) {
+				privateModules[id] = modules[id];
+			}
+
+			for (i = 0; i < ids.length; i++) {
+				delete privateModules[ids[i]];
+			}
+
+			exports.privateModules = privateModules;
 		}
 	}
 
@@ -146,6 +163,10 @@ define("tinymce/tableplugin/TableGrid", [
 
 	return function(editor, table) {
 		var grid, gridWidth, startPos, endPos, selectedCell, selection = editor.selection, dom = selection.dom;
+
+		function isEditorBody(node) {
+			return node === editor.getBody();
+		}
 
 		function buildGrid() {
 			var startY = 0;
@@ -247,6 +268,10 @@ define("tinymce/tableplugin/TableGrid", [
 
 		function deleteTable() {
 			var rng = dom.createRng();
+
+			if (isEditorBody(table)) {
+				return;
+			}
 
 			rng.setStartAfter(table);
 			rng.setEndAfter(table);
@@ -619,8 +644,34 @@ define("tinymce/tableplugin/TableGrid", [
 			});
 		}
 
+		function getSelectedCells(grid) {
+			return Tools.grep(getAllCells(grid), isCellSelected);
+		}
+
+		function getAllCells(grid) {
+			var cells = [];
+
+			each(grid, function(row) {
+				each(row, function(cell) {
+					cells.push(cell);
+				});
+			});
+
+			return cells;
+		}
+
 		function deleteCols() {
 			var cols = [];
+
+			if (isEditorBody(table)) {
+				if (grid[0].length == 1) {
+					return;
+				}
+
+				if (getSelectedCells(grid).length == getAllCells(grid).length) {
+					return;
+				}
+			}
 
 			// Get selected column indexes
 			each(grid, function(row) {
@@ -687,6 +738,10 @@ define("tinymce/tableplugin/TableGrid", [
 			// Get selected rows and move selection out of scope
 			rows = getSelectedRows();
 
+			if (isEditorBody(table) && rows.length == table.rows.length) {
+				return;
+			}
+
 			// Delete all selected rows
 			each(rows.reverse(), function(tr) {
 				deleteRow(tr);
@@ -697,6 +752,10 @@ define("tinymce/tableplugin/TableGrid", [
 
 		function cutRows() {
 			var rows = getSelectedRows();
+
+			if (isEditorBody(table) && rows.length == table.rows.length) {
+				return;
+			}
 
 			dom.remove(rows);
 			cleanup();
@@ -948,11 +1007,12 @@ define("tinymce/tableplugin/TableGrid", [
 			return false;
 		}
 
-		table = table || dom.getParent(selection.getStart(), 'table');
+		table = table || dom.getParent(selection.getStart(true), 'table');
 
 		buildGrid();
 
-		selectedCell = dom.getParent(selection.getStart(), 'th,td');
+		selectedCell = dom.getParent(selection.getStart(true), 'th,td');
+
 		if (selectedCell) {
 			startPos = getPos(selectedCell);
 			endPos = findEndPos();
@@ -1349,12 +1409,14 @@ define("tinymce/tableplugin/Quirks", [
 
 						e.preventDefault();
 
-						if (tableCells.length == selectedTableCells.length) {
-							editor.execCommand('mceTableDelete');
-						} else {
-							Tools.each(selectedTableCells, clearCell);
-							placeCaretInCell(selectedTableCells[0]);
-						}
+						editor.undoManager.transact(function() {
+							if (tableCells.length == selectedTableCells.length) {
+								editor.execCommand('mceTableDelete');
+							} else {
+								Tools.each(selectedTableCells, clearCell);
+								placeCaretInCell(selectedTableCells[0]);
+							}
+						});
 					}
 				}
 			});
