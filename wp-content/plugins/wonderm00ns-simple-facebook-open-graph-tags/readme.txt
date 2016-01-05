@@ -1,10 +1,10 @@
 === Facebook Open Graph, Google+ and Twitter Card Tags ===
 Contributors: webdados, wonderm00n
 Donate link: http://blog.wonderm00n.com/2011/10/14/wordpress-plugin-simple-facebook-open-graph-tags/
-Tags: facebook, open graph, open graph protocol, seo, share, social, meta, twitter card, twitter, schema, google+, g+, google, google plus, image, like, meta, search engine optimization
+Tags: facebook, open graph, open graph protocol, share, social, meta, rss, twitter card, twitter, schema, google+, g+, google, google plus, image, like, seo, search engine optimization, woocommerce, yoast seo, subheading, php7
 Requires at least: 3.5
-Tested up to: 4.0.1
-Stable tag: 1.6.3
+Tested up to: 4.4
+Stable tag: 1.7
 Inserts Facebook Open Graph, Google+/Schema.org, Twitter and other Meta Tags into your WordPress Website for more efficient sharing results.
 
 == Description ==
@@ -65,17 +65,56 @@ It allows the user to choose which tags are, or not, included and also the defau
 = 3rd Party Integration: =
 
 * **[WordPress SEO by Yoast](http://wordpress.org/plugins/wordpress-seo/)**: Allows you to use title, url (canonical) and description from WPSEO plugin.
+* **[WooCommerce](https://wordpress.org/plugins/woocommerce/)**: Allows you to use the Product Category thumbnails as Open Graph Image and have Product Gallery images as additional Open Graph Images
 * **[SubHeading](http://wordpress.org/extend/plugins/subheading/)**: Add the SubHeading to the post/page title.
 * **[Business Directory Plugin](http://wordpress.org/extend/plugins/business-directory-plugin/)**: Allows you to use BDP listing contents as Open Graph Tags.
 
 
 == Installation ==
 
-1. Upload the `wonderm00n-open-graph` to the `/wp-content/plugins/` directory
+1. Use the included automatic install feature on your WordPress admin panel and search for “Facebook Open Graph, Google+ and Twitter Card Tags”.
 2. Activate the plugin through the `Plugins` menu in WordPress
-3. Got to `Options`, `Facebook Open Graph Tags` to set it up
+3. Got to `Options`, `Facebook Open Graph, Google+ and Twitter Card Tags` to set it up
+
+== Frequently Asked Questions ==
+
+= WordPress SEO (by Yoast) shows up a big nasty warning if both plugins are active. Is the world in danger if I keep both plugins active? =
+
+No it isn't.
+You can (and, in our opinion, you should) use both plugins. If you want to use WordPress SEO for your SEO needs and our plugin for social media meta tags you just have to go to `SEO - Social` and disable settings for Facebook, Twitter and Google+. Then set up our plugin as you wish and you're ready to go.
+We like to work with everybody, so (if you want to) our plugin can even integrate with WordPress SEO and use it's title, description and canonical URL.
+
+= Facebook is not showing up the correct image when I share a post. What can I do? =
+
+1. Are you using a big enough image? The minimum image size is 200x200 pixels but we recommend 1200x630.
+2. Are you sure you only have one og:image tag on the source code? Make sure you're not using more than one plugin to set OG tags?
+3. Go to the [Facebook URL Debugger](https://developers.facebook.com/tools/debug/), insert your URL, click `Debug`. Then click on `Fetch new scrape information` to make sure Facebook gets the current version of your HTML code and not a cached version. If the image that shows up on the preview (bottom of the page) is the correct one, then the tags are well set and it "should" be the one that Facebook uses when sharing the post. If it still does not use the correct image when sharing, despite the debugger shows it correctly, there's nothing more we can do about that. That's just Facebook being Facebook.
+
+= When I save/edit my post I get the "Facebook Open Graph Tags cache NOT updated/purged" error. Should I worry? =
+
+Each time you edit a post, if the option "Try to update Facebook Open Graph Tags cache when saving the post" is activated, we'll try to notify Facebook of the changes so it clears up it's cache and read the new Open Graph tags of this specific URL.
+If this is a new post and it's the first time you're saving it, the error is "normal" and you should ignore it (wer're looking at a workaround to not show you this error).
+If this is not a new post and it's not the first time you're saving it, and if this happens always, then maybe your server does not support calling remote URLs with PHP and you should disable the "Try to update Facebook Open Graph Tags cache when saving the post" option. In that scenario we recommend you to use the [Facebook URL Debugger](https://developers.facebook.com/tools/debug/) to `Fetch new scrape information` each time you update your post.
+
+= Can this plugin get content from "random plugin"? =
+
+If there's a popular plugin you think we could get content from to use on the meta tags, use the support forum to tell us that.
+If you are a plugin or theme author you can always use our filters `fb_og_title`, `fb_og_desc`, `fb_og_image`, `fb_og_image_additional` and `fb_og_locale` to customize the Open Graph (and other) meta tags output.
+
+= Do you provide email support? =
+
+We DO NOT provide email support for this plugin. If you send us an email asking for support you'll be invited to:
+1. Post the question on the [support forum](https://wordpress.org/support/plugin/wonderm00ns-simple-facebook-open-graph-tags)
+2. Or we can give you a quote on premium email/phone support if you prefer to
 
 == Changelog ==
+
+= 1.7 =
+* WordPress 4.4, WooCommerce 2.4.12 and PHP 7 compatibility check - All good!
+* NEW WooCommerce integration: Category thumbnail images and additional product images as Open Graph Images
+* New `fb_og_image_additional` filter so other plugins/themes can add additional Open Graph Images
+* Hide our meta box on some custom post types, and add a new `fb_og_metabox_exclude_types` filter so other plugins/themes can hide our metabox on their CPTs
+* Several tweaks on the settings page
 
 = 1.6.3 =
 - Added the fb_og_locale filter so that plugins or themes can override the Open Graph locale tag

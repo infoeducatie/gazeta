@@ -69,6 +69,8 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 			$usersettings['fb_adv_notify_fb']= 					intval(webdados_fb_open_graph_post('fb_adv_notify_fb'));
 			$usersettings['fb_adv_supress_fb_notice']= 			intval(webdados_fb_open_graph_post('fb_adv_supress_fb_notice'));
 			$usersettings['fb_twitter_card_type']= 				trim(webdados_fb_open_graph_post('fb_twitter_card_type'));
+			$usersettings['fb_wc_usecategthumb']= 				intval(webdados_fb_open_graph_post('fb_wc_usecategthumb'));
+			$usersettings['fb_wc_useproductgallery']= 			intval(webdados_fb_open_graph_post('fb_wc_useproductgallery'));
 			//Update
 			update_option('wonderm00n_open_graph_settings', $usersettings);
 			//WPML - Register custom website description
@@ -85,7 +87,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 	<div class="wrap">
 		
 	<?php screen_icon(); ?>
-	<h2><?php echo $webdados_fb_open_graph_plugin_name; ?> (<?php echo $webdados_fb_open_graph_plugin_version; ?>)</h2>
+	<h1><?php echo $webdados_fb_open_graph_plugin_name; ?> (<?php echo $webdados_fb_open_graph_plugin_version; ?>)</h1>
 	<br class="clear"/>
 	<p><?php _e('Please set some default values and which tags should, or should not, be included. It may be necessary to exclude some tags if other plugins are already including them.', 'wd-fb-og'); ?></p>
 	
@@ -98,7 +100,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 			<form name="form1" method="post">
 				
 				<div id="webdados_fb_open_graph-settings" class="postbox">
-					<h3 id="settings"><?php _e('Settings'); ?></h3>
+					<h3 class="hndle"><?php _e('Settings'); ?></h3>
 					<div class="inside">
 						<table width="100%" class="form-table">
 							<tr>
@@ -127,7 +129,9 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 								<td>
 									<input type="text" name="fb_admin_id" id="fb_admin_id" size="30" value="<?php echo trim(esc_attr($fb_admin_id)); ?>"/>
 									<br/>
-									<?php _e('Comma separated if more than one', 'wd-fb-og'); ?>
+									<small>
+										<?php _e('Comma separated if more than one', 'wd-fb-og'); ?>
+									</small>
 								</td>
 							</tr>
 							<tr>
@@ -192,17 +196,19 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 										?>
 									</select>
 									<br/>
-									<?php
-									if ($loadedOnline) {
-										_e('List loaded from Facebook (online)', 'wd-fb-og');
-									} else {
-										if ($loadedOffline) {
-											_e('List loaded from local cache (offline)', 'wd-fb-og'); ?> - <a href="?page=wonderm00n-open-graph.php&amp;localeOnline=1" onClick="return(confirm('<?php _e('You\\\'l lose any changes you haven\\\'t saved. Are you sure?', 'wd-fb-og'); ?>'));"><?php _e('Reload from Facebook', 'wd-fb-og'); ?></a><?php
+									<small>
+										<?php
+										if ($loadedOnline) {
+											_e('List loaded from Facebook (online)', 'wd-fb-og');
 										} else {
-											_e('List not loaded', 'wd-fb-og');
+											if ($loadedOffline) {
+												_e('List loaded from local cache (offline)', 'wd-fb-og'); ?> - <a href="?page=wonderm00n-open-graph.php&amp;localeOnline=1" onClick="return(confirm('<?php _e('You\\\'l lose any changes you haven\\\'t saved. Are you sure?', 'wd-fb-og'); ?>'));"><?php _e('Reload from Facebook', 'wd-fb-og'); ?></a><?php
+											} else {
+												_e('List not loaded', 'wd-fb-og');
+											}
 										}
-									}
-									?>
+										?>
+									</small>
 								</td>
 							</tr>
 							<tr>
@@ -228,9 +234,11 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 								<td>
 									<input type="checkbox" name="fb_title_show_schema" id="fb_title_show_schema" value="1" <?php echo (intval($fb_title_show_schema)==1 ? ' checked="checked"' : ''); ?>/>
 									<br/>
-									<i>&lt;meta itemprop="name" content="..."/&gt;</i>
-									<br/>
-									<?php _e('Recommended for Google+ sharing purposes if no other plugin is setting it already', 'wd-fb-og');?>
+									<small>
+										<i>&lt;meta itemprop="name" content="..."/&gt;</i>
+										<br/>
+										<?php _e('Recommended for Google+ sharing purposes if no other plugin is setting it already', 'wd-fb-og');?>
+									</small>
 								</td>
 							</tr>
 							<tr class="fb_title_options">
@@ -238,9 +246,11 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 								<td>
 									<input type="checkbox" name="fb_title_show_twitter" id="fb_title_show_twitter" value="1" <?php echo (intval($fb_title_show_twitter)==1 ? ' checked="checked"' : ''); ?>/>
 									<br/>
-									<i>&lt;meta name="twitter:title" content=..."/&gt;</i>
-									<br/>
-									<?php _e('Recommended for Twitter sharing purposes if no other plugin is setting it already', 'wd-fb-og');?>
+									<small>
+										<i>&lt;meta name="twitter:title" content=..."/&gt;</i>
+										<br/>
+										<?php _e('Recommended for Twitter sharing purposes if no other plugin is setting it already', 'wd-fb-og');?>
+									</small>
 								</td>
 							</tr>
 							<tr>
@@ -263,7 +273,9 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 								<td>
 									<input type="checkbox" name="fb_url_add_trailing" id="fb_url_add_trailing" value="1" <?php echo (intval($fb_url_add_trailing)==1 ? ' checked="checked"' : ''); ?> onclick="showUrlTrail();"/>
 									<br/>
-									<?php _e('On the homepage will be', 'wd-fb-og');?>: <i><?php echo get_option('siteurl'); ?><span id="fb_url_add_trailing_example">/</span></i>
+									<small>
+										<?php _e('On the homepage will be', 'wd-fb-og');?>: <i><?php echo get_option('siteurl'); ?><span id="fb_url_add_trailing_example">/</span></i>
+									</small>
 								</td>
 							</tr>
 							<tr class="fb_url_options">
@@ -271,7 +283,9 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 								<td>
 									<input type="checkbox" name="fb_url_canonical" id="fb_url_canonical" value="1" <?php echo (intval($fb_url_canonical)==1 ? ' checked="checked"' : ''); ?>/>
 									<br/>
-									<i>&lt;link rel="canonical" href="..."/&gt;</i>
+									<small>
+										<i>&lt;link rel="canonical" href="..."/&gt;</i>
+									</small>
 								</td>
 							</tr>
 							<tr>
@@ -282,7 +296,9 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 								<td>
 									<input type="checkbox" name="fb_type_show" id="fb_type_show" value="1" <?php echo (intval($fb_type_show)==1 ? ' checked="checked"' : ''); ?> onclick="showTypeOptions();"/>
 									<br/>
-									<?php printf( __('Will be "%1$s" for posts and pages and "%2$s" or "%3$s"; for the homepage', 'wd-fb-og'), 'article', 'website', 'blog' );?>
+									<small>
+										<?php printf( __('Will be "%1$s" for posts and pages and "%2$s" or "%3$s"; for the homepage', 'wd-fb-og'), 'article', 'website', 'blog' );?>
+									</small>
 								</td>
 							</tr>
 							<tr class="fb_type_options">
@@ -303,7 +319,9 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 								<td>
 									<input type="checkbox" name="fb_article_dates_show" id="fb_article_dates_show" value="1" <?php echo (intval($fb_article_dates_show)==1 ? ' checked="checked"' : ''); ?>/>
 									<br/>
-									<?php _e('Works for posts only', 'wd-fb-og'); ?>
+									<small>
+										<?php _e('Works for posts only', 'wd-fb-og'); ?>
+									</small>
 								</td>
 							</tr>
 							<tr>
@@ -314,7 +332,9 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 								<td>
 									<input type="checkbox" name="fb_article_sections_show" id="fb_article_sections_show" value="1" <?php echo (intval($fb_article_sections_show)==1 ? ' checked="checked"' : ''); ?>/>
 									<br/>
-									<?php _e('Works for posts only', 'wd-fb-og'); ?>, <?php _e('from the categories', 'wd-fb-og'); ?>
+									<small>
+										<?php _e('Works for posts only', 'wd-fb-og'); ?>, <?php _e('from the categories', 'wd-fb-og'); ?>
+									</small>
 								</td>
 							</tr>
 							<tr>
@@ -325,7 +345,9 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 									<td>
 										<input type="checkbox" name="fb_publisher_show" id="fb_publisher_show" value="1" <?php echo (intval($fb_publisher_show)==1 ? ' checked="checked"' : ''); ?> onclick="showPublisherOptions();"/>
 										<br/>
-										<?php _e('Links the website to the publisher Facebook Page.', 'wd-fb-og');?>
+										<small>
+											<?php _e('Links the website to the publisher Facebook Page.', 'wd-fb-og');?>
+										</small>
 									</td>
 								</tr>
 								<tr class="fb_publisher_options">
@@ -333,7 +355,9 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 									<td>
 										<input type="text" name="fb_publisher" id="fb_publisher" size="50" value="<?php echo trim(esc_attr($fb_publisher)); ?>"/>
 										<br/>
-										<?php _e('Full URL with http://', 'wd-fb-og');?>
+										<small>
+											<?php _e('Full URL with http://', 'wd-fb-og');?>
+										</small>
 									</td>
 								</tr>
 								<tr>
@@ -341,7 +365,9 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 									<td>
 										<input type="checkbox" name="fb_publisher_show_schema" id="fb_publisher_show_schema" value="1" <?php echo (intval($fb_publisher_show_schema)==1 ? ' checked="checked"' : ''); ?> onclick="showPublisherSchemaOptions();"/>
 										<br/>
-										<?php _e('Links the website to the publisher Google+ Page.', 'wd-fb-og');?>
+										<small>
+											<?php _e('Links the website to the publisher Google+ Page.', 'wd-fb-og');?>
+										</small>
 									</td>
 								</tr>
 								<tr class="fb_publisher_schema_options">
@@ -349,7 +375,9 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 									<td>
 										<input type="text" name="fb_publisher_schema" id="fb_publisher_schema" size="50" value="<?php echo trim(esc_attr($fb_publisher_schema)); ?>"/>
 										<br/>
-										<?php _e('Full URL with http://', 'wd-fb-og');?>
+										<small>
+											<?php _e('Full URL with http://', 'wd-fb-og');?>
+										</small>
 									</td>
 								</tr>
 								<tr>
@@ -357,7 +385,9 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 									<td>
 										<input type="checkbox" name="fb_publisher_show_twitter" id="fb_publisher_show_twitter" value="1" <?php echo (intval($fb_publisher_show_twitter)==1 ? ' checked="checked"' : ''); ?> onclick="showPublisherTwitterOptions();"/>
 										<br/>
-										<?php _e('Links the website to the publisher Twitter Username.', 'wd-fb-og');?>
+										<small>
+											<?php _e('Links the website to the publisher Twitter Username.', 'wd-fb-og');?>
+										</small>
 									</td>
 								</tr>
 								<tr class="fb_publisher_twitter_options">
@@ -365,7 +395,9 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 									<td>
 										<input type="text" name="fb_publisher_twitteruser" id="fb_publisher_twitteruser" size="20" value="<?php echo trim(esc_attr($fb_publisher_twitteruser)); ?>"/>
 										<br/>
-										<?php _e('Twitter username (without @)', 'wd-fb-og');?>
+										<small>
+											<?php _e('Twitter username (without @)', 'wd-fb-og');?>
+										</small>
 									</td>
 								</tr>
 								<tr>
@@ -377,7 +409,9 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 									<td>
 										<input type="checkbox" name="fb_author_show" id="fb_author_show" value="1" <?php echo (intval($fb_author_show)==1 ? ' checked="checked"' : ''); ?> onclick="showAuthorOptions();"/>
 										<br/>
-										<?php _e('Links the article to the author Facebook Profile. The user\'s Facebook profile URL must be filled in.', 'wd-fb-og');?>
+										<small>
+											<?php _e('Links the article to the author Facebook Profile. The user\'s Facebook profile URL must be filled in.', 'wd-fb-og');?>
+										</small>
 									</td>
 								</tr>
 								<tr class="fb_author_options">
@@ -385,9 +419,11 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 									<td>
 										<input type="checkbox" name="fb_author_show_meta" id="fb_author_show_meta" value="1" <?php echo (intval($fb_author_show_meta)==1 ? ' checked="checked"' : ''); ?>/>
 										<br/>
-										<i>&lt;meta name="author" content="..."/&gt;</i>
-										<br/>
-										<?php _e('Sets the article author name', 'wd-fb-og');?>
+										<small>
+											<i>&lt;meta name="author" content="..."/&gt;</i>
+											<br/>
+											<?php _e('Sets the article author name', 'wd-fb-og');?>
+										</small>
 									</td>
 								</tr>
 								<tr class="fb_author_options">
@@ -395,9 +431,11 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 									<td>
 										<input type="checkbox" name="fb_author_show_linkrelgp" id="fb_author_show_linkrelgp" value="1" <?php echo (intval($fb_author_show_linkrelgp)==1 ? ' checked="checked"' : ''); ?>/>
 										<br/>
-										<i>&lt;link rel="author" href="..."/&gt;</i>
-										<br/>
-										<?php _e('Links the article to the author Google+ Profile (authorship). The user\'s Google+ profile URL must be filled in.', 'wd-fb-og');?>
+										<small>
+											<i>&lt;link rel="author" href="..."/&gt;</i>
+											<br/>
+											<?php _e('Links the article to the author Google+ Profile (authorship). The user\'s Google+ profile URL must be filled in.', 'wd-fb-og');?>
+										</small>
 									</td>
 								</tr>
 								<tr class="fb_author_options">
@@ -405,9 +443,11 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 									<td>
 										<input type="checkbox" name="fb_author_show_twitter" id="fb_author_show_twitter" value="1" <?php echo (intval($fb_author_show_twitter)==1 ? ' checked="checked"' : ''); ?>/>
 										<br/>
-										<i>&lt;meta name="twitter:creator" content="@..."/&gt;</i>
-										<br/>
-										<?php _e('Links the article to the author Twitter profile. The user\'s Twitter user must be filled in.', 'wd-fb-og');?>
+										<small>
+											<i>&lt;meta name="twitter:creator" content="@..."/&gt;</i>
+											<br/>
+											<?php _e('Links the article to the author Twitter profile. The user\'s Twitter user must be filled in.', 'wd-fb-og');?>
+										</small>
 									</td>
 								</tr>
 								<tr class="fb_author_options">
@@ -415,7 +455,9 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 									<td>
 										<input type="checkbox" name="fb_author_hide_on_pages" id="fb_author_hide_on_pages" value="1" <?php echo (intval($fb_author_hide_on_pages)==1 ? ' checked="checked"' : ''); ?>/>
 										<br/>
-										<?php _e('Hides all author tags on pages.', 'wd-fb-og');?>
+										<small>
+											<?php _e('Hides all author tags on pages.', 'wd-fb-og');?>
+										</small>
 									</td>
 								</tr>
 								<tr>
@@ -433,9 +475,11 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 									<td>
 										<input type="checkbox" name="fb_desc_show_meta" id="fb_desc_show_meta" value="1" <?php echo (intval($fb_desc_show_meta)==1 ? ' checked="checked"' : ''); ?>/>
 										<br/>
-										<i>&lt;meta name="description" content="..."/&gt;</i>
-										<br/>
-										<?php _e('Recommended for SEO purposes if no other plugin is setting it already', 'wd-fb-og');?>
+										<small>
+											<i>&lt;meta name="description" content="..."/&gt;</i>
+											<br/>
+											<?php _e('Recommended for SEO purposes if no other plugin is setting it already', 'wd-fb-og');?>
+										</small>
 									</td>
 								</tr>
 								<tr class="fb_description_options">
@@ -443,9 +487,11 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 									<td>
 										<input type="checkbox" name="fb_desc_show_schema" id="fb_desc_show_schema" value="1" <?php echo (intval($fb_desc_show_schema)==1 ? ' checked="checked"' : ''); ?>/>
 										<br/>
-										<i>&lt;meta itemprop="description" content="..."/&gt;</i>
-										<br/>
-										<?php _e('Recommended for Google+ sharing purposes if no other plugin is setting it already', 'wd-fb-og');?>
+										<small>
+											<i>&lt;meta itemprop="description" content="..."/&gt;</i>
+											<br/>
+											<?php _e('Recommended for Google+ sharing purposes if no other plugin is setting it already', 'wd-fb-og');?>
+										</small>
 									</td>
 								</tr>
 								<tr class="fb_description_options">
@@ -453,9 +499,11 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 									<td>
 										<input type="checkbox" name="fb_desc_show_twitter" id="fb_desc_show_twitter" value="1" <?php echo (intval($fb_desc_show_twitter)==1 ? ' checked="checked"' : ''); ?>/>
 										<br/>
-										<i>&lt;meta name="twitter:description" content"..."/&gt;</i>
-										<br/>
-										<?php _e('Recommended for Twitter sharing purposes if no other plugin is setting it already', 'wd-fb-og');?>
+										<small>
+											<i>&lt;meta name="twitter:description" content"..."/&gt;</i>
+											<br/>
+											<?php _e('Recommended for Twitter sharing purposes if no other plugin is setting it already', 'wd-fb-og');?>
+										</small>
 									</td>
 								</tr>
 								<tr class="fb_description_options">
@@ -463,7 +511,9 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 									<td>
 										<input type="text" name="fb_desc_chars" id="fb_desc_chars" size="3" maxlength="3" value="<?php echo (intval($fb_desc_chars)>0 ? intval($fb_desc_chars) : ''); ?>"/> characters,
 										<br/>
-										<?php _e('0 or blank for no maximum length', 'wd-fb-og');?>
+										<small>
+											<?php _e('0 or blank for no maximum length', 'wd-fb-og');?>
+										</small>
 									</td>
 								</tr>
 								<tr class="fb_description_options">
@@ -487,11 +537,15 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 												if (function_exists('icl_object_id') && function_exists('icl_register_string')) {
 													?>
 													<br/>
-													<?php
-													printf(
-														__('WPML users: Set the default language description here, save changes and then go to <a href="%s">WPML &gt; String translation</a> to set it for other languages.', 'wd-fb-og'),
-														'admin.php?page=wpml-string-translation/menu/string-translation.php&amp;context=wd-fb-og'
-													); 
+													<small>
+														<?php
+														printf(
+															__('WPML users: Set the default language description here, save changes and then go to <a href="%s">WPML &gt; String translation</a> to set it for other languages.', 'wd-fb-og'),
+															'admin.php?page=wpml-string-translation/menu/string-translation.php&amp;context=wd-fb-og'
+														);
+													?>
+													</small>
+													<?php 
 												}
 												?>
 											</div>
@@ -506,7 +560,9 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 									<td>
 										<input type="checkbox" name="fb_image_show" id="fb_image_show" value="1" <?php echo (intval($fb_image_show)==1 ? ' checked="checked"' : ''); ?> onclick="showImageOptions();"/>
 										<br/>
-										<?php _e('All images MUST have at least 200px on both dimensions in order to Facebook to load them at all.<br/>1200x630px for optimal results.<br/>Minimum of 600x315px is recommended.', 'wd-fb-og');?>
+										<small>
+											<?php _e('All images MUST have at least 200px on both dimensions in order to Facebook to load them at all.<br/>1200x630px for optimal results.<br/>Minimum of 600x315px is recommended.', 'wd-fb-og');?>
+										</small>
 									</td>
 								</tr>
 								<tr class="fb_image_options">
@@ -514,7 +570,9 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 									<td>
 										<input type="checkbox" name="fb_image_size_show" id="fb_image_size_show" value="1" <?php echo (intval($fb_image_size_show)==1 ? ' checked="checked"' : ''); ?>/>
 										<br/>
-										<?php _e('Recommended only if Facebook is having problems loading the image when the post is shared for the first time.', 'wd-fb-og');?>
+										<small>
+											<?php _e('Recommended only if Facebook is having problems loading the image when the post is shared for the first time.', 'wd-fb-og');?>
+										</small>
 									</td>
 								</tr>
 								<tr class="fb_image_options">
@@ -522,9 +580,11 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 									<td>
 										<input type="checkbox" name="fb_image_show_schema" id="fb_image_show_schema" value="1" <?php echo (intval($fb_image_show_schema)==1 ? ' checked="checked"' : ''); ?>/>
 										<br/>
-										<i>&lt;meta itemprop="image" content="..."/&gt;</i>
-										<br/>
-										<?php _e('Recommended for Google+ sharing purposes if no other plugin is setting it already', 'wd-fb-og');?>
+										<small>
+											<i>&lt;meta itemprop="image" content="..."/&gt;</i>
+											<br/>
+											<?php _e('Recommended for Google+ sharing purposes if no other plugin is setting it already', 'wd-fb-og');?>
+										</small>
 									</td>
 								</tr>
 								<tr class="fb_image_options">
@@ -532,9 +592,11 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 									<td>
 										<input type="checkbox" name="fb_image_show_twitter" id="fb_image_show_twitter" value="1" <?php echo (intval($fb_image_show_twitter)==1 ? ' checked="checked"' : ''); ?>/>
 										<br/>
-										<i>&lt;meta name="twitter:image:src" content="..."/&gt;</i>
-										<br/>
-										<?php _e('Recommended for Twitter sharing purposes if no other plugin is setting it already', 'wd-fb-og');?>
+										<small>
+											<i>&lt;meta name="twitter:image:src" content="..."/&gt;</i>
+											<br/>
+											<?php _e('Recommended for Twitter sharing purposes if no other plugin is setting it already', 'wd-fb-og');?>
+										</small>
 									</td>
 								</tr>
 								<tr class="fb_image_options">
@@ -543,9 +605,11 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 										<input type="text" name="fb_image" id="fb_image" size="50" value="<?php echo trim(esc_attr($fb_image)); ?>"/>
 										<input id="fb_image_button" class="button" type="button" value="Upload/Choose image" />
 										<br/>
-										<?php _e('Full URL with http://', 'wd-fb-og');?>
-										<br/>
-										<?php _e('Recommended size: 1200x630px', 'wd-fb-og'); ?>
+										<small>
+											<?php _e('Full URL with http://', 'wd-fb-og');?>
+											<br/>
+											<?php _e('Recommended size: 1200x630px', 'wd-fb-og'); ?>
+										</small>
 									</td>
 								</tr>
 								<tr class="fb_image_options">
@@ -553,7 +617,9 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 									<td>
 										<input type="checkbox" name="fb_image_rss" id="fb_image_rss" value="1" <?php echo (intval($fb_image_rss)==1 ? ' checked="checked"' : ''); ?> onclick="showImageOptions();"/>
 										<br/>
-										<?php _e('For auto-posting apps like RSS Graffiti, twitterfeed, ...', 'wd-fb-og');?>
+										<small>
+											<?php _e('For auto-posting apps like RSS Graffiti, twitterfeed, ...', 'wd-fb-og');?>
+										</small>
 									</td>
 								</tr>
 								<tr class="fb_image_options">
@@ -561,23 +627,23 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 									<td>
 										<div>
 											1) <input type="checkbox" name="fb_image_use_specific" id="fb_image_use_specific" value="1" <?php echo (intval($fb_image_use_specific)==1 ? ' checked="checked"' : ''); ?>/>
-											<?php _e('Image will be fetched from the specific "Open Graph Image" custom field on the post', 'wd-fb-og');?>
+											<small><?php _e('Image will be fetched from the specific "Open Graph Image" custom field on the post', 'wd-fb-og');?></small>
 										</div>
 										<div>
 											2) <input type="checkbox" name="fb_image_use_featured" id="fb_image_use_featured" value="1" <?php echo (intval($fb_image_use_featured)==1 ? ' checked="checked"' : ''); ?>/>
-											<?php _e('If it\'s not set, image will be fetched from post/page featured/thumbnail picture', 'wd-fb-og');?>
+											<small><?php _e('If it\'s not set, image will be fetched from post/page featured/thumbnail picture', 'wd-fb-og');?></small>
 										</div>
 										<div>
 											3) <input type="checkbox" name="fb_image_use_content" id="fb_image_use_content" value="1" <?php echo (intval($fb_image_use_content)==1 ? ' checked="checked"' : ''); ?>/>
-											<?php _e('If it doesn\'t exist, use the first image from the post/page content', 'wd-fb-og');?>
+											<small><?php _e('If it doesn\'t exist, use the first image from the post/page content', 'wd-fb-og');?></small>
 										</div>
 										<div>
 											4) <input type="checkbox" name="fb_image_use_media" id="fb_image_use_media" value="1" <?php echo (intval($fb_image_use_media)==1 ? ' checked="checked"' : ''); ?>/>
-											<?php _e('If it doesn\'t exist, use first image from the post/page media gallery', 'wd-fb-og');?>
+											<small><?php _e('If it doesn\'t exist, use first image from the post/page media gallery', 'wd-fb-og');?></small>
 										</div>
 										<div>
 											5) <input type="checkbox" name="fb_image_use_default" id="fb_image_use_default" value="1" <?php echo (intval($fb_image_use_default)==1 ? ' checked="checked"' : ''); ?>/>
-											<?php _e('If it doesn\'t exist, use the default image above', 'wd-fb-og');?>
+											<small><?php _e('If it doesn\'t exist, use the default image above', 'wd-fb-og');?></small>
 										</div>
 									</td>
 								</tr>
@@ -598,7 +664,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 				</div>
 
 				<div id="webdados_fb_open_graph-thirdparty" class="postbox">
-					<h3 id="thirdparty"><?php _e('3rd Party Integration', 'wd-fb-og');?></h3>
+					<h3 class="hndle"><?php _e('3rd Party Integration', 'wd-fb-og');?></h3>
 					<div class="inside">
 						<?php
 						$thirdparty=false;
@@ -608,16 +674,49 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 							?>
 							<hr/>
 							<a name="wpseo"></a>
-							<h4><a href="http://wordpress.org/plugins/wordpress-seo/" target="_blank">WordPress SEO by Yoast</a></h4>
+							<h4><a href="https://wordpress.org/plugins/wordpress-seo/" target="_blank">WordPress SEO by Yoast</a></h4>
 							<p><?php _e('It\'s HIGHLY recommended to go to <a href="admin.php?page=wpseo_social" target="_blank">SEO &gt; Social</a> and disable "Add Open Graph meta data", "Add Twitter card meta data" and "Add Google+ specific post meta data"', 'wd-fb-og'); ?> <?php _e('even if you don\'t enable integration bellow. You will get duplicate tags if you don\'t do this.', 'wd-fb-og'); ?></p>
 							<table width="100%" class="form-table">
-									<tr>
-										<th scope="row"><i class="dashicons-before dashicons-admin-site"></i><?php _e('Use title, url (canonical) and description from WPSEO', 'wd-fb-og');?></th>
-										<td>
-											<input type="checkbox" name="fb_show_wpseoyoast" id="fb_show_wpseoyoast" value="1" <?php echo (intval($fb_show_wpseoyoast)==1 ? ' checked="checked"' : ''); ?>/>
-										</td>
-									</tr>
-								</table>
+								<tr>
+									<th scope="row"><i class="dashicons-before dashicons-admin-site"></i><?php _e('Use title, url (canonical) and description from WPSEO', 'wd-fb-og');?></th>
+									<td>
+										<input type="checkbox" name="fb_show_wpseoyoast" id="fb_show_wpseoyoast" value="1" <?php echo (intval($fb_show_wpseoyoast)==1 ? ' checked="checked"' : ''); ?>/>
+									</td>
+								</tr>
+							</table>
+							<?php
+						}
+						//WooCommerce
+						if ( class_exists('woocommerce') ) {
+							$thirdparty=true;
+							?>
+							<hr/>
+							<a name="woocommerce"></a>
+							<h4><a href="https://wordpress.org/plugins/woocommerce/" target="_blank">WooCommerce</a></h4>
+							<table width="100%" class="form-table">
+								<tr>
+									<th scope="row"><i class="dashicons-before dashicons-cart"></i><?php _e('Use Product Category thumbnail as Open Graph Image', 'wd-fb-og');?></th>
+									<td>
+										<input type="checkbox" name="fb_wc_usecategthumb" id="fb_wc_usecategthumb" value="1" <?php echo (intval($fb_wc_usecategthumb)==1 ? ' checked="checked"' : ''); ?>/>
+										<br/>
+										<small>
+											<?php _e('Recommended if you set large thumbnails for Product Categories and want to use them as Open Graph Images on listing pages', 'wd-fb-og');?>
+										</small>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row"><i class="dashicons-before dashicons-cart"></i><?php _e('Use Product Gallery images as additional Open Graph Images', 'wd-fb-og');?></th>
+									<td>
+										<input type="checkbox" name="fb_wc_useproductgallery" id="fb_wc_useproductgallery" value="1" <?php echo (intval($fb_wc_useproductgallery)==1 ? ' checked="checked"' : ''); ?>/>
+										<br/>
+										<small>
+											<?php _e('Experimental', 'wd-fb-og');?>
+											- 
+											<?php _e('Uses additional Product Gallery images so, when the product is shared on Facebook, the user can choose what image to use', 'wd-fb-og');?>
+										</small>
+									</td>
+								</tr>
+							</table>
 							<?php
 						}
 						//SubHeading
@@ -625,7 +724,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 							$thirdparty=true;
 							?>
 							<hr/>
-							<h4><a href="http://wordpress.org/extend/plugins/subheading/" target="_blank">SubHeading</a></h4>
+							<h4><a href="https://wordpress.org/extend/plugins/subheading/" target="_blank">SubHeading</a></h4>
 							<table width="100%" class="form-table">
 									<tr>
 										<th scope="row"><i class="dashicons-before dashicons-admin-site"></i><?php _e('Add SubHeading to Post/Page title', 'wd-fb-og');?></th>
@@ -641,14 +740,16 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 							$thirdparty=true;
 							?>
 							<hr/>
-							<h4><a href="http://wordpress.org/extend/plugins/business-directory-plugin/" target="_blank">Business Directory Plugin</a></h4>
+							<h4><a href="https://wordpress.org/extend/plugins/business-directory-plugin/" target="_blank">Business Directory Plugin</a></h4>
 							<table width="100%" class="form-table">
 									<tr>
 										<th scope="row"><i class="dashicons-before dashicons-admin-site"></i><?php _e('Use BDP listing contents as OG tags', 'wd-fb-og');?></th>
 										<td>
 											<input type="checkbox" name="fb_show_businessdirectoryplugin" id="fb_show_businessdirectoryplugin" value="1" <?php echo (intval($fb_show_businessdirectoryplugin)==1 ? ' checked="checked"' : ''); ?>/>
 											<br/>
-											<?php _e('Setting "Include URL", "Set Canonical URL", "Include Description" and "Include Image" options above is HIGHLY recommended', 'wd-fb-og');?>
+											<small>
+												<?php _e('Setting "Include URL", "Set Canonical URL", "Include Description" and "Include Image" options above is HIGHLY recommended', 'wd-fb-og');?>
+											</small>
 										</td>
 									</tr>
 								</table>
@@ -659,9 +760,10 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 							<p><?php _e('You don\'t have any compatible 3rd Party plugin installed/active.', 'wd-fb-og');?></p>
 							<p><?php _e('This plugin is currently compatible with:', 'wd-fb-og');?></p>
 							<ul>
-								<li><a href="http://wordpress.org/extend/plugins/wordpress-seo/" target="_blank">WordPress SEO by Yoast</a></li>
-								<li><a href="http://wordpress.org/extend/plugins/subheading/" target="_blank">SubHeading</a></li>
-								<li><a href="http://wordpress.org/extend/plugins/business-directory-plugin/" target="_blank">Business Directory Plugin</a></li>
+								<li><a href="https://wordpress.org/extend/plugins/wordpress-seo/" target="_blank">WordPress SEO by Yoast</a></li>
+								<li><a href="https://wordpress.org/plugins/woocommerce/" target="_blank">WooCommerce</a></li>
+								<li><a href="https://wordpress.org/extend/plugins/subheading/" target="_blank">SubHeading</a></li>
+								<li><a href="https://wordpress.org/extend/plugins/business-directory-plugin/" target="_blank">Business Directory Plugin</a></li>
 							</ul>
 							<?php
 						}
@@ -670,7 +772,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 				</div>
 
 				<div id="webdados_fb_open_graph-advanced" class="postbox">
-					<h3 id="advanced"><?php _e('Advanced settings', 'wd-fb-og');?></h3>
+					<h3 class="hndle"><?php _e('Advanced settings', 'wd-fb-og');?></h3>
 					<div class="inside">
 						<p><?php _e('Don\'t mess with this unless you know what you\'re doing', 'wd-fb-og');?></p>
 						<table width="100%" class="form-table">
@@ -679,7 +781,9 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 								<td>
 									<input type="checkbox" name="fb_adv_force_local" id="fb_adv_force_local" value="1" <?php echo (intval($fb_adv_force_local)==1 ? ' checked="checked"' : ''); ?>/>
 									<br/>
-									<?php _e('May cause problems with some multisite configurations but fix "HTTP request failed" errors', 'wd-fb-og');?>
+									<small>
+										<?php _e('May cause problems with some multisite configurations but fix "HTTP request failed" errors', 'wd-fb-og');?>
+									</small>
 								</td>
 							</tr>
 							<tr>
@@ -708,6 +812,9 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 	</div>
 	
 	<?php
+
+		$out_link_utm='?utm_source=fb_og_wp_plugin_settings&amp;utm_medium=link&amp;utm_campaign=fb_og_wp_plugin';
+
 		$links[0]['text']=__('Test your URLs at Facebook URL Linter / Debugger', 'wd-fb-og');
 		$links[0]['url']='https://developers.facebook.com/tools/debug';
 		
@@ -721,13 +828,13 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 		$links[20]['url']='http://ogp.me/';
 
 		$links[25]['text']=__('About Twitter Cards', 'wd-fb-og');
-		$links[25]['url']='hhttps://dev.twitter.com/cards/getting-started';
+		$links[25]['url']='https://dev.twitter.com/cards/getting-started';
 
 		$links[30]['text']=__('Plugin official URL', 'wd-fb-og');
-		$links[30]['url']='http://www.webdados.pt/produtos-e-servicos/internet/desenvolvimento-wordpress/facebook-open-graph-meta-tags-wordpress/?utm_source=fb_og_wp_plugin_settings&amp;utm_medium=link&amp;utm_campaign=fb_og_wp_plugin';
+		$links[30]['url']='http://www.webdados.pt/produtos-e-servicos/internet/desenvolvimento-wordpress/facebook-open-graph-meta-tags-wordpress/'.$out_link_utm;
 
 		$links[40]['text']=__('Author\'s website: Webdados', 'wd-fb-og');
-		$links[40]['url']='http://www.webdados.pt/?utm_source=fb_og_wp_plugin_settings&amp;utm_medium=link&amp;utm_campaign=fb_og_wp_plugin';
+		$links[40]['url']='http://www.webdados.pt/'.$out_link_utm;
 
 		$links[50]['text']=__('Author\'s Facebook page: Webdados', 'wd-fb-og');
 		$links[50]['url']='http://www.facebook.com/Webdados';
@@ -738,17 +845,24 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 	<div class="postbox-container og_right_col">
 		
 		<div id="poststuff">
-			<div id="webdados_fb_open_graph_links" class="postbox">
-				<h3 id="settings"><?php _e('Rate this plugin', 'wd-fb-og');?></h3>
+			<div class="postbox">
+				<h3 class="hndle"><?php _e('About this plugin', 'wd-fb-og');?></h3>
 				<div class="inside">
-					<?php _e('If you like this plugin,', 'wd-fb-og');?> <a href="http://wordpress.org/extend/plugins/wonderm00ns-simple-facebook-open-graph-tags/" target="_blank"><?php _e('please give it a high Rating', 'wd-fb-og');?></a>.
+					<h4><?php _e('Support forum', 'wd-fb-og'); ?>:</h4>
+					<p><a href="https://wordpress.org/support/plugin/wonderm00ns-simple-facebook-open-graph-tags" target="_blank">WordPress.org</a></p>
+					<h4><?php _e('Premium technical support or custom WordPress development', 'wd-fb-og'); ?>:</h4>
+					<p id="webdadoslink"><a href="http://www.webdados.pt/contactos/<?php echo esc_attr($out_link_utm); ?>" title="<?php echo esc_attr(sprintf(__('Please contact %s', 'wd-fb-og'), 'Webdados')); ?>" target="_blank"><img src="<?php echo plugins_url('webdados.png', __FILE__); ?>" width="200"/></a></p>
+					<h4><?php _e('Please rate our plugin at WordPress.org', 'wd-fb-og'); ?>:</h4>
+					<a href="https://wordpress.org/support/view/plugin-reviews/wonderm00ns-simple-facebook-open-graph-tags?filter=5#postform" target="_blank" style="text-align: center; display: block;">
+						<div class="star-rating"><div class="star star-full"></div><div class="star star-full"></div><div class="star star-full"></div><div class="star star-full"></div><div class="star star-full"></div></div>
+					</a>
 				</div>
 			</div>
 		</div>
 		
 		<div id="poststuff">
-			<div id="webdados_fb_open_graph_links" class="postbox">
-				<h3 id="settings"><?php _e('Useful links', 'wd-fb-og');?></h3>
+			<div class="postbox">
+				<h3 class="hndle"><?php _e('Useful links', 'wd-fb-og');?></h3>
 				<div class="inside">
 					<ul>
 						<?php foreach($links as $link) { ?>
@@ -761,7 +875,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 	
 		<div id="poststuff">
 			<div id="webdados_fb_open_graph_donation" class="postbox">
-				<h3 id="settings"><?php _e('Donate', 'wd-fb-og');?></h3>
+				<h3 class="hndle"><?php _e('Donate', 'wd-fb-og');?></h3>
 				<div class="inside">
 					<p><?php _e('If you find this plugin useful and want to make a contribution towards future development please consider making a small, or big ;-), donation.', 'wd-fb-og');?></p>
 					<center><form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
@@ -769,7 +883,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 						<input type="hidden" name="business" value="wonderm00n@gmail.com">
 						<input type="hidden" name="lc" value="PT">
 						<input type="hidden" name="item_name" value="Marco Almeida (Wonderm00n)">
-						<input type="hidden" name="item_number" value="wonderm00n_open_graph">
+						<input type="hidden" name="item_number" value="facebook_open_graph_plugin">
 						<input type="hidden" name="currency_code" value="USD">
 						<input type="hidden" name="bn" value="PP-DonationsBF:btn_donateCC_LG.gif:NonHosted">
 						<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
@@ -782,7 +896,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 	</div>
 	
 	<div class="clear">
-		<p><br/>&copy 2011<?php if(date('Y')>2011) echo '-'.date('Y'); ?> <a href="http://www.webdados.pt/?utm_source=fb_og_wp_plugin_settings&amp;utm_medium=link&amp;utm_campaign=fb_og_wp_plugin" target="_blank">Webdados</a> &amp; <a href="http://wonderm00n.com/?utm_source=fb_og_wp_plugin_settings&amp;utm_medium=link&amp;utm_campaign=fb_og_wp_plugin" target="_blank">Marco Almeida (Wonderm00n)</a></p>
+		<p><br/>&copy 2011<?php if(date('Y')>2011) echo '-'.date('Y'); ?> <a href="http://www.webdados.pt/<?php echo esc_attr($out_link_utm); ?>" target="_blank">Webdados</a> &amp; <a href="http://wonderm00n.com/<?php echo esc_attr($out_link_utm); ?>" target="_blank">Marco Almeida (Wonderm00n)</a></p>
 	</div>
 		
 	</div>
@@ -945,12 +1059,16 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 		.og_right_col #poststuff {
 			min-width: 0;
 		}
+		#webdadoslink a {
+			display: block;
+		}
+		#webdadoslink a img {
+			display: block;
+			margin: auto;
+		}
 		table.form-table tr th,
 		table.form-table tr td {
 			line-height: 1.5;
-		}
-		table.form-table tr th {
-			font-weight: bold;
 		}
 		table.form-table tr th[scope=row] {
 			min-width: 300px;
@@ -981,5 +1099,8 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 		table.form-table .dashicons-admin-site,
 		table.form-table .dashicons-admin-generic {
 			color: #666;
+		}
+		.inside hr:first-child {
+			display: none;
 		}
 	</style>
