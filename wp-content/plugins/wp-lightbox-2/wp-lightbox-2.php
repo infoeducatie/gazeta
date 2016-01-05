@@ -3,7 +3,7 @@
  * Plugin Name: WP Lightbox 2
  * Plugin URI: http://wpdevart.com/wordpress-lightbox-plugin
  * Description: WP Lightbox 2 is awesome tool for adding responsive lightbox (overlay) effect for images and also create lightbox for photo albums/galleries on your WordPress blog. WordPress Lightbox is one of the most useful plugins for your website.
- * Version: 3.0.5
+ * Version: 3.0.6.2
  * Author:Syed Balkhi
  * Author URI: http://syedbalkhi.com
  * License: GNU General Public License, v2 (or newer)
@@ -153,7 +153,8 @@ function jqlb_autoexpand_rel_wlightbox($content) {
 	if(get_option('jqlb_automate') == 1){
 		global $post;	
 		$id = ($post->ID) ? $post->ID : -1;
-		$content = jqlb_do_regexp($content, $id);
+		$content = jqlb_do_regexp($content, $id); //legacy regex function when images don't have rel tags
+		$content = wplbtwo_do_regexp($content, $id);
 	}			
 	return $content;
 }
@@ -164,13 +165,30 @@ function jqlb_apply_lightbox($content, $id = -1){
 	return jqlb_do_regexp($content, $id);
 }
 
-/* automatically insert rel="lightbox[nameofpost]" to every image with no manual work. 
-	if there are already rel="lightbox[something]" attributes, they are not clobbered. 
+/* automatically insert rel="lightbox[nameofpost]" to every image with no manual work.
+	if there are already rel="lightbox[something]" attributes, they are not clobbered.
 	Michael Tyson, you are a regular expressions god! - http://atastypixel.com */
 function jqlb_do_regexp($content, $id){
 	$id = esc_attr($id);
-	$pattern = "/(<a(?![^>]*?rel=['\"]lightbox.*)[^>]*?href=['\"][^'\"]+?\.(?:bmp|gif|jpg|jpeg|png)\?{0,1}\S{0,}['\"][^\>]*)>/i";
+	$pattern = "/(<a(?![^>]*?rel=['\"]lightbox.*)(?![^>]*?rel=.*)[^>]*?href=['\"][^'\"]+?\.(?:bmp|gif|jpg|jpeg|png)\?{0,1}\S{0,}['\"][^\>]*)>/i";
 	$replacement = '$1 rel="lightbox['.$id.']">';
+	return preg_replace($pattern, $replacement, $content);
+}
+
+/**
+ * Automatically includes 'lightbox[$id]' into rel tag of images.
+ *
+ * @param $content
+ * @param $id
+ *
+ * @return mixed
+ *
+ * @since 3.0.6.2
+ */
+function wplbtwo_do_regexp($content, $id){
+	$id = esc_attr($id);
+	$pattern = "/(<a(?![^>]*?rel=['\"]lightbox.*)[^>]*?href=['\"][^'\"]+?\.(?:bmp|gif|jpg|jpeg|png)\?{0,1}\S{0,}['\"][^\>]*)(rel=['\"])(.*?)>/i";
+	$replacement = '$1 $2lightbox['.$id.'] $3>';
 	return preg_replace($pattern, $replacement, $content);
 }
 

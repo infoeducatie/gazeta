@@ -4,7 +4,7 @@ Plugin Site: http://www.wpbeginner.com/
 Donate link: http://www.wpbeginner.com/
 Tags: lightbox, image, gallery, photo gallery, lightbox popup, responsive lightbox, wordpress lightbox, lightbox gallery, gallery lightbox, wordpress image lightbox, image lightbox, popup lightbox, wordpress slideshow lightbox, lightbox image, popup images, popup image, wordpress video gallery lightbox,  google map lightbox popup, swipe, google map lightbox, popup bar, popup block
 Requires at least: 3.0
-Tested up to: 4.3
+Tested up to: 4.4
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -94,6 +94,15 @@ This plugin was created by <a href="https://syedbalkhi.com" rel="friend" title="
 5.  [WordPress Lightbox](https://wordpress.org/plugins/wp-lightbox-2) Front-end
 
 == Changelog ==
+
+= 3.0.6.2 =
+* Add checks for images without rel tags and fix all the things.
+
+= 3.0.6.1 = 
+* Prevent double quotes on automatic rel attributes
+
+= 3.0.6 =
+* Fix: WordPress 4.4 compatibility
 
 = 3.0.5 =
 * Fix: WordPress 4.3 compatibility
