@@ -68,7 +68,7 @@ msgstr "Rezultatele căutării pentru: %s"
 msgid "the WordPress team"
 msgstr "echipa WordPress"
 
-#: inc/customizer.php:147
+#: inc/customizer.php:168
 msgid "Blue"
 msgstr "Albastru"
 
@@ -77,19 +77,19 @@ msgctxt "Used before category names."
 msgid "Categories"
 msgstr "Categorii"
 
-#: inc/customizer.php:103
+#: inc/customizer.php:124
 msgid "Dark"
 msgstr "Închis"
 
-#: inc/customizer.php:92
+#: inc/customizer.php:113
 msgid "Default"
 msgstr "Implicit"
 
-#: inc/customizer.php:125
+#: inc/customizer.php:146
 msgid "Pink"
 msgstr "Roz"
 
-#: inc/customizer.php:136
+#: inc/customizer.php:157
 msgid "Purple"
 msgstr "Violet"
 
@@ -102,7 +102,7 @@ msgstr "Etichete"
 msgid "Twenty Fifteen"
 msgstr "Twenty Fifteen"
 
-#: inc/customizer.php:114
+#: inc/customizer.php:135
 msgid "Yellow"
 msgstr "Galben"
 
@@ -220,7 +220,7 @@ msgstr "Ne pare rau, căutarea nu are nici un rezultat. Vă rugăm să încerca�
 msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
 msgstr "Nu s-a putut găsi conținutul căutat. Probabil o căutare sau una dintre legăturile de mai jos pot ajuta."
 
-#. #-#-#-#-#  twentyfifteen.pot (Twenty Fifteen 1.3)  #-#-#-#-#
+#. #-#-#-#-#  twentyfifteen.pot (Twenty Fifteen 1.4)  #-#-#-#-#
 #. Author URI of the plugin/theme
 #: footer.php:25
 msgid "https://wordpress.org/"
