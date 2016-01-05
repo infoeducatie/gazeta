@@ -2,8 +2,8 @@
 Contributors: smashballoon
 Tags: Facebook, Facebook feed, Facebook posts, Facebook wall, Facebook events, Facebook page, Facebook group, Facebook groups, Facebook fans, Facebook likes, Facebook followers, Facebooks, Face book, posts, Facebook postings, Facebook feeds, Facebook pages, Facebook Like Box, Facebook plugin, Facebook plug-in, Facebook walls, Facebook hashtag, Facebook embed, Customizable Facebook Feed, custom, customizable, seo, responsive, mobile, social media
 Requires at least: 3.0
-Tested up to: 4.3
-Stable tag: 2.3.6
+Tested up to: 4.4
+Stable tag: 2.3.10
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -361,6 +361,22 @@ Credit iMarketing Factory - "The Importance of Facebook for Small Businesses"
 9. It's super easy to display your Facebook feed in any page or post
 
 == Changelog ==
+= 2.3.10 =
+* Fix: If you're experiencing an issue with your Facebook feed not automatically updating successfully then please update the plugin and enable the following setting: Custom Facebook Feed > Customize > Misc > Misc Settings > Force cache to clear on interval. If you set this setting to 'Yes' then it should force your plugin cache to clear either every hour, 12 hours, or 24 hours, depending on how often you have the plugin set to check Facebook for new posts.
+
+= 2.3.9 =
+* Fix: Fixed an issue caused by the recent Facebook API 2.5 update where the posts wouldn't display when using a brand new Access Token
+
+= 2.3.8 =
+* Fix: Fixed a positioning issue with the Facebook "Like Box / Page Plugin" widget caused by a recent Facebook update which was causing it to overlap on top of other content
+* Fix: Hashtags containing Chinese characters are now linked
+* Fix: Fixed a minor issue in shared link posts where the post text linked to the shared link URL instead of the post on Facebook
+* Tweak: Added a timezone for Sydney, Australia
+
+= 2.3.7 =
+* Fix: Fixed an issue caused by the WordPress 4.3 update where feeds from very long page IDs wouldn't update correctly due to the cache not clearing when expired
+* Fix: Removed specific encoding parameters from the cURL request method to prevent encoding issues on some servers
+
 = 2.3.6 =
 * New: Added a couple of new customization options for the Facebook Like Box/Page Plugin which allow you to select a small/slim header for the Like Box and hide the call-to-action button (if available)
 * Fix: The plugin now works with Access Tokens which use the new recently-released version 2.4 of the Facebook API
