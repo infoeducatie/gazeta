@@ -68,6 +68,11 @@ input.warning:hover, a.warning:hover {
   white-space: nowrap;
 }
 
+#ure_container {
+    float: left;
+    width: 100%;
+}
+
 .ure-sidebar {
   float: right;
 }
@@ -82,7 +87,6 @@ input.warning:hover, a.warning:hover {
 
 #ure_form_controls {
   float: left;
-  width: 40%;
 }
 
 #ure_toolbar {
