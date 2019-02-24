@@ -3,8 +3,8 @@
 Contributors: PressLabs
 Donate link: https://www.presslabs.com/gitium/
 Tags: git, version, versioning, deployment, version-control, github, bitbucket, travis, code, revision, testing, development, branch, production, staging, debug, plugin, gitium, presslabs, simple
-Requires at least: 3.9
-Tested up to: 4.8
+Requires at least: 4.0
+Tested up to: 5.0
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -67,20 +67,33 @@ The behavior in case of conflicts is to overwrite the changes on the `origin` re
 
 You can ping the webhook url after a push to automatically deploy the new code. The webhook url can be found under `Gitium` menu, `Settings` section. This url also plays well with Github or Bitbucket webhooks.
 
-= Does it works on multi site setups? =
+= Does it work on multi site setups? =
 
-Gitium does not support multisite setups at the moment.
+Yes, Gitium is working on multi site setups.
 
 = How does gitium handle submodules? =
 
 Submodules are currently not supported.
 
 == Changelog ==
+= 1.0.2 =
+* Full PHP 7+ compatibility
+* Hotfix - Fixed the blank pages being displayed instead of success of failure messages;
+* Hotfix - Fixed the push process when other remote branches had changes;
+* Hotfix - Fixed the missing ssh / key handling with fatal errors during activation;
+* Added - More success messages in certain cases.
+
+= 1.0.1 =
+* Hotfix - Fix race condition on Code Editor Save
+
+= 1.0 =
+* Fixed WP 4.9 Compatibility
+
 = 1.0-rc12 =
 * Bumped plugin version
 
 = 1.0-rc11 =
-* Hotfixed an erorr that prevented gitium to error_log properly.
+* Hotfixed an error that prevented gitium to error_log properly.
 
 = 1.0-rc10 =
 * Bumped wordpress tested version

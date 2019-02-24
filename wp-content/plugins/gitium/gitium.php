@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Gitium
- * Version: 1.0-rc12
+ * Version: 1.0.2
  * Author: Presslabs
  * Author URI: https://www.presslabs.com
  * License: GPL2
@@ -27,7 +27,7 @@
 
 define( 'GITIUM_LAST_COMMITS', 20 );
 define( 'GITIUM_MIN_GIT_VER', '1.7' );
-define( 'GITIUM_MIN_PHP_VER', '5.3' );
+define( 'GITIUM_MIN_PHP_VER', '5.6' );
 
 if ( is_multisite() ) {
 	define( 'GITIUM_ADMIN_MENU_ACTION', 'network_admin_menu' );
@@ -238,6 +238,8 @@ add_filter( 'upgrader_post_install', 'gitium_upgrader_post_install', 10, 3 );
 function gitium_auto_push( $msg_prepend = '' ) {
 	global $git;
 	list( , $git_private_key ) = gitium_get_keypair();
+	if ( ! $git_private_key )
+		return;
 	$git->set_key( $git_private_key );
 
 	$commits = gitium_group_commit_modified_plugins_and_themes( $msg_prepend );
@@ -302,20 +304,56 @@ function gitium_check_for_themes_deletions() { // Handle theme deletion
 }
 add_action( 'load-themes.php', 'gitium_check_for_themes_deletions' );
 
-// Hook to theme/plugin edit page
-function gitium_hook_plugin_and_theme_editor_page( $hook ) {
-	switch ( $hook ) {
-		case 'plugin-editor.php':
-			if ( isset( $_GET['a'] ) && 'te' == $_GET['a'] ) { gitium_auto_push(); }
-		break;
+// Deprecated function - backward compatibility
+function gitium_hook_plugin_and_theme_editor_page( $hook )
+{
+    switch ($hook) {
+        case 'plugin-editor.php':
+            if (isset($_GET['a']) && 'te' == $_GET['a']) {
+                gitium_auto_push();
+            }
+            break;
 
-		case 'theme-editor.php':
-			if ( isset( $_GET['updated'] ) && 'true' == $_GET['updated'] ) { gitium_auto_push(); }
-		break;
-	}
-	return;
+        case 'theme-editor.php':
+            if (isset($_GET['updated']) && 'true' == $_GET['updated']) {
+                gitium_auto_push();
+            }
+            break;
+    }
+
+    return;
 }
-add_action( 'admin_enqueue_scripts', 'gitium_hook_plugin_and_theme_editor_page' );
+
+/*
+ * We execute the "gitium_auto_push" on "wp_die_ajax_handler" filter to make sure we are
+ * at the end of our request and the latest file is saved on disk.
+ */
+function gitium_check_ajax_success_call($callback)
+{
+    gitium_auto_push();
+
+    return $callback;
+}
+
+/*
+ * We add this filer on "wp_die_ajax_handler" since our action executes before the actual file is saved on disk
+ * which results in a race condition that would commit only the previously saved data not the
+ * currently saved one.
+ */
+function add_filter_for_ajax_save()
+{
+	add_filter('wp_die_ajax_handler', 'gitium_check_ajax_success_call', 1);
+}
+
+/*
+ * We need to apply different filters while checking for WP version to maintain
+ * backworks compatibility since the Code Editor has changed drastically
+ * with the 4.9 WP update.
+ */
+if ( version_compare( $GLOBALS['wp_version'], '4.9', '>=' ) )
+    add_action( 'wp_ajax_edit-theme-plugin-file', 'add_filter_for_ajax_save', 1, 0 );
+else
+    add_action( 'admin_enqueue_scripts', 'gitium_hook_plugin_and_theme_editor_page' );
 
 function gitium_options_page_check() {
 	global $git;
