@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 add_action('admin_menu', 'wpnm_admin_add_page');
 /**

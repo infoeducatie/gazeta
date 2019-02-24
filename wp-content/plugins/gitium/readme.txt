@@ -1,15 +1,15 @@
 === Gitium ===
 
 Contributors: PressLabs
-Donate link: http://www.presslabs.com/gitium/
+Donate link: https://www.presslabs.com/gitium/
 Tags: git, version, versioning, deployment, version-control, github, bitbucket, travis, code, revision, testing, development, branch, production, staging, debug, plugin, gitium, presslabs, simple
 Requires at least: 3.9
-Tested up to: 4.1.2
-Stable tag: 0.5.2-beta
+Tested up to: 4.8
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Automatic git version control and deployment for your plugins and themes integrated into wp-admin.
+
 
 == Description ==
 
@@ -19,7 +19,8 @@ Gitium is designed with sane development environments in mind, allowing staging 
 
 Gitium requires `git` command line tool with a minimum version of 1.7 installed on the server and the `proc_open` PHP function enabled.
 
-Gitium is the latest element discovered at [PressLabs](http://www.presslabs.com/gitium/).
+You can find more documentation on [Presslabs](https://www.presslabs.com/help/gitium/general).
+
 
 == Screenshots ==
 
@@ -28,6 +29,7 @@ Gitium is the latest element discovered at [PressLabs](http://www.presslabs.com/
 3. Setup step 3: Add remote repository
 4. Setup step 4: Choose following branch
 5. Commit local changes
+
 
 == Installation ==
 
@@ -38,17 +40,24 @@ Gitium is the latest element discovered at [PressLabs](http://www.presslabs.com/
 
 Alternatively, go into your WordPress dashboard and click on Plugins -> Add Plugin and search for `Gitium`. Then, click on Install and, after that, on Activate Now.
 
+
 = Usage =
 
-Activate the plugin and follow the on-screen instructions under the `Code` menu.
+Activate the plugin and follow the on-screen instructions under the `Gitium` menu.
 
 _IMPORTANT_: Gitium does its best not to version your WordPress core, neither your `/wp-content/uploads` folder.
 
 == Frequently Asked Questions ==
 
+= Could not connect to remote repository? =
+
+If you encounter this kind of error you can try to fix it by setting the proper username of the .git directory.
+
+Example: chown -R www-data:www-data .git
+
 = Is this plugin considered stable? =
 
-Right now this plugin is considered alpha quality and should be used in production environments only by adventurous kinds.
+Yes, we consider the plugin stable after extensive usage in production environments at Presslabs, with hundreds of users and powering sites with hundreds of millions of pageviews per month.
 
 = What will happen in case of conflicts? =
 
@@ -56,7 +65,7 @@ The behavior in case of conflicts is to overwrite the changes on the `origin` re
 
 = How to deploy automatically after a push? =
 
-You can ping the webhook url after a push to automatically deploy the new code. The webhook url can be found under `Code` menu. This url also plays well with Github or Bitbucket webhooks.
+You can ping the webhook url after a push to automatically deploy the new code. The webhook url can be found under `Gitium` menu, `Settings` section. This url also plays well with Github or Bitbucket webhooks.
 
 = Does it works on multi site setups? =
 
@@ -66,8 +75,97 @@ Gitium does not support multisite setups at the moment.
 
 Submodules are currently not supported.
 
-
 == Changelog ==
+= 1.0-rc12 =
+* Bumped plugin version
+
+= 1.0-rc11 =
+* Hotfixed an erorr that prevented gitium to error_log properly.
+
+= 1.0-rc10 =
+* Bumped wordpress tested version
+
+= 1.0-rc9 =
+* PHP7 compat and wp-cli
+
+= 1.0-rc8 =
+* Fix some indents
+* Add some more tests
+* Fix the submenu configure logic
+
+= 1.0-rc7 =
+* Test remote url from git wrapper
+* Remove the phpmd package from test environment
+* Set WP_DEBUG to false on tests
+* Refactoring
+* Abort the cherry-pick - changes are already there
+* Fix the race condition
+* Add acquire and release logs for gitium lock
+* Add explanations to merge with accept mine logic
+
+= 1.0-rc6 =
+* Delete all transients and options on uninstall hook
+* Add transients to is_versions and get_remote_tracking_branch functions
+* Update the composer
+* Check requirements before show the admin menu
+* Put the logs off by default(on test env)
+* Fix redirect issue and display errors
+* Create wordpress docker env command
+* PHP Warning: unlink #114
+
+= 1.0-rc5 =
+* Fix delete plugin/theme bug on 4.6
+* Update the readme file
+
+= 1.0-rc4 =
+* Fix merge with accept mine behind commits bug
+
+= 1.0-rc3 =
+* Add support for multisite
+* Fix PHP error on merge & push
+
+= 1.0-rc2 =
+* Change the default lockfile location
+* Fix a PHP Warning
+
+= 1.0-rc1 =
+* Update the logic of merge and push
+* Add lock mechanism for fetch and merge
+* Fix repo stuck on merge_local branch
+* Tested up to 4.5.3
+
+= 0.5.8-beta =
+* Add documentation for 'Could not connect to remote repository?'
+* Fix the update theme from Dashboard commit message & the install plugin commit message
+* Fix install/delete plugin/theme commit message
+* Add a test and rewrite the tests
+* Tested up to 4.5.2
+
+= 0.5.7-beta =
+* Fix bug deleting plugins/themes causes wrong commit message
+* Fix bug wrong commit message
+* Fix bug updated function to stop maintenance mode hang
+* Fix bug undefined variable 'new_versions'
+* Add 'Merge changes' button for gitium webhook
+* Add gitium documentation for docker
+* Add more tests
+
+= 0.5.6-beta =
+* Fix compatibility issues with wp-cli
+
+= 0.5.5-beta =
+* Fix bug plugin deletion from plugins page did not trigger commit
+
+= 0.5.4-beta =
+* Fix bug missing changes on similarly named plugins
+* Add requirements notices
+* Add requirements help section
+
+= 0.5.3-beta =
+* Fix paths with spaces bug
+* Add a Disconnect from repo button
+* Fix POST var `path` conflicts
+* Fix travis tests
 
 = 0.5.2-beta =
 * Add Contextual Help to Configuration page

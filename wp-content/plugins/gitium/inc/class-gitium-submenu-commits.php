@@ -1,5 +1,5 @@
 <?php
-/*  Copyright 2014-2015 Presslabs SRL <ping@presslabs.com>
+/*  Copyright 2014-2016 Presslabs SRL <ping@presslabs.com>
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License, version 2, as
@@ -19,7 +19,7 @@ class Gitium_Submenu_Commits extends Gitium_Menu {
 
 	public function __construct() {
 		parent::__construct( $this->gitium_menu_slug, $this->commits_menu_slug );
-		add_action( 'admin_menu', array( $this, 'admin_menu' ) );
+		add_action( GITIUM_ADMIN_MENU_ACTION, array( $this, 'admin_menu' ) );
 	}
 
 	public function admin_menu() {
@@ -27,7 +27,7 @@ class Gitium_Submenu_Commits extends Gitium_Menu {
 			$this->menu_slug,
 			__( 'Git Commits', 'gitium' ),
 			__( 'Commits', 'gitium' ),
-			'manage_options',
+			GITIUM_MANAGE_OPTIONS_CAPABILITY,
 			$this->submenu_slug,
 			array( $this, 'page' )
 		);

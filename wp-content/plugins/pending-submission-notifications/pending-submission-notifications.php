@@ -1,14 +1,14 @@
 <?php
 /**
  * @package Pending_Submission_Notification
- * @version 1.0
+ * @version 1.1
  */
 /*
 Plugin Name: Pending Submission Notification
 Plugin URI: http://lifeofadesigner.com
 Description: Send email notifications to the admin whenever a new article is submitted for review by a contributor
 Author: Razvan Horeanga
-Version: 1.0
+Version: 1.1
 Author URI: http://lifeofadesigner.com
 */
 
@@ -63,11 +63,15 @@ if ($new_status == 'pending' && user_can($post->post_author, 'edit_posts') && !u
 	$edit_link = get_edit_post_link($post->ID, '');
 	$preview_link = get_permalink($post->ID) . '&preview=true';
 	$username = get_userdata($post->post_author);
+	$username_last_edit = get_the_modified_author($post->ID);
+	$post_modified = $post->post_modified;
 	$subject = 'New submission pending review: "' . $post->post_title . '"';
 	$message = 'A new submission is pending review.';
 	$message .= "\r\n\r\n";
 	$message .= "Author: $username->user_login\r\n";
-	$message .= "Title: $post->post_title";
+	$message .= "Title: $post->post_title\r\n";
+	$message .= "Last Edited By: $username_last_edit\r\n";
+	$message .= "Last Edited Date: $post->post_modified";
 	$message .= "\r\n\r\n";
 	$message .= "Edit the submission: $edit_link\r\n";
 	$message .= "Preview it: $preview_link";

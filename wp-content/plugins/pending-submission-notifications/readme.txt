@@ -3,8 +3,8 @@ Contributors: razvanh
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=27TSHEJDTCTSQ
 Tags: notifications, pending submissions, submit for review, email notification, pending notification
 Requires at least: 3.8
-Tested up to: 4.0
-Stable tag: 1.0
+Tested up to: 4.7
+Stable tag: 1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -14,7 +14,7 @@ Email notifications for pending review content submission.
 
 This enables email notifications of pending review submissions. By default the email goes to the admin email set on your Settings page.
 
-You can set the email(s) that should receive these notifications Under Settings>Pending Submission Notifications
+You can set the email(s) that should receive these notifications Under Settings>Pending Submission Notifications. You can add multiple email addresses, using commas to separate them.
 
 When a submission is approved by an admin, an email notification is sent to the contributor.
 
@@ -32,6 +32,8 @@ For more info visit http://lifeofadesigner.com/
 
 == Changelog ==
 
-= 1.0 =
+= 1.1 =
+*Added information about last user to edit the post and the timestamp of last edit.
 
+= 1.0 =
 *Initial release

@@ -1,4 +1,4 @@
-<?php 
+<?php
 /*
  * Removes options from database when plugin is deleted.
  *  

@@ -1,5 +1,5 @@
 <?php
-/*  Copyright 2014-2015 Presslabs SRL <ping@presslabs.com>
+/*  Copyright 2014-2016 Presslabs SRL <ping@presslabs.com>
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License, version 2, as
@@ -20,12 +20,13 @@ class Gitium_Submenu_Configure extends Gitium_Menu {
 	public function __construct() {
 		parent::__construct( $this->gitium_menu_slug, $this->gitium_menu_slug );
 
-		if ( current_user_can( 'manage_options' ) ) {
-			add_action( 'admin_menu', array( $this, 'admin_menu' ) );
+		if ( current_user_can( GITIUM_MANAGE_OPTIONS_CAPABILITY ) ) {
+			add_action( GITIUM_ADMIN_MENU_ACTION, array( $this, 'admin_menu' ) );
 			add_action( 'admin_init', array( $this, 'regenerate_keypair' ) );
 			add_action( 'admin_init', array( $this, 'gitium_warning' ) );
 			add_action( 'admin_init', array( $this, 'init_repo' ) );
 			add_action( 'admin_init', array( $this, 'choose_branch' ) );
+			add_action( 'admin_init', array( $this, 'disconnect_repository' ) );
 		}
 	}
 
@@ -33,7 +34,7 @@ class Gitium_Submenu_Configure extends Gitium_Menu {
 		add_menu_page(
 			__( 'Git Configuration', 'gitium' ),
 			'Gitium',
-			'manage_options',
+			GITIUM_MANAGE_OPTIONS_CAPABILITY,
 			$this->menu_slug,
 			array( $this, 'page' ),
 			plugins_url( 'img/gitium.png', dirname( __FILE__ ) )
@@ -43,7 +44,7 @@ class Gitium_Submenu_Configure extends Gitium_Menu {
 			$this->menu_slug,
 			__( 'Git Configuration', 'gitium' ),
 			__( 'Configuration', 'gitium' ),
-			'manage_options',
+			GITIUM_MANAGE_OPTIONS_CAPABILITY,
 			$this->menu_slug,
 			array( $this, 'page' )
 		);
@@ -51,7 +52,8 @@ class Gitium_Submenu_Configure extends Gitium_Menu {
 	}
 
 	public function regenerate_keypair() {
-		if ( ! isset( $_POST['GitiumSubmitRegenerateKeypair'] ) ) {
+	    $submit_keypair = filter_input(INPUT_POST, 'GitiumSubmitRegenerateKeypair', FILTER_SANITIZE_STRING);
+		if ( ! isset( $submit_keypair ) ) {
 			return;
 		}
 		check_admin_referer( 'gitium-admin' );
@@ -60,7 +62,8 @@ class Gitium_Submenu_Configure extends Gitium_Menu {
 	}
 
 	public function gitium_warning() {
-		if ( ! isset( $_POST['GitiumSubmitWarning'] ) ) {
+		$submit_warning = filter_input(INPUT_POST, 'GitiumSubmitWarning', FILTER_SANITIZE_STRING);
+		if ( ! isset( $submit_warning ) ) {
 			return;
 		}
 		check_admin_referer( 'gitium-admin' );
@@ -85,29 +88,35 @@ class Gitium_Submenu_Configure extends Gitium_Menu {
 	}
 
 	public function init_repo() {
-		if ( ! isset( $_POST['GitiumSubmitFetch'] ) || ! isset( $_POST['remote_url'] ) ) {
+		$remote_url = filter_input(INPUT_POST, 'remote_url', FILTER_SANITIZE_STRING);
+	    $gitium_submit_fetch = filter_input(INPUT_POST, 'GitiumSubmitFetch', FILTER_SANITIZE_STRING);
+		if ( ! isset( $gitium_submit_fetch ) || ! isset( $remote_url ) ) {
 			return;
 		}
 		check_admin_referer( 'gitium-admin' );
 
-		if ( empty( $_POST['remote_url'] ) ) {
+		if ( empty( $remote_url ) ) {
 			$this->redirect( __( 'Please specify a valid repo.', 'gitium' ) );
 		}
-		if ( $this->init_process( $_POST['remote_url'] ) ) {
+		if ( $this->init_process( $remote_url ) ) {
 			$this->success_redirect();
 		} else {
-			$this->redirect( __( 'Could not push to remote', 'gitium' ) . ' ' . $_POST['remote_url'] );
+			global $git;
+			$this->redirect( __( 'Could not push to remote: ', 'gitium' ) . $remote_url . ' ERROR: ' . serialize( $git->get_last_error() ) );
 		}
 	}
 
 	public function choose_branch() {
-		if ( ! isset( $_POST['GitiumSubmitMergeAndPush'] ) || ! isset( $_POST['tracking_branch'] ) ) {
+	    $gitium_submit_merge_push = filter_input(INPUT_POST, 'GitiumSubmitMergeAndPush', FILTER_SANITIZE_STRING);
+        $tracking_branch = filter_input(INPUT_POST, 'tracking_branch', FILTER_SANITIZE_STRING);
+		if ( ! isset( $gitium_submit_merge_push ) || ! isset( $tracking_branch ) ) {
 			return;
 		}
 		check_admin_referer( 'gitium-admin' );
 		$this->git->add();
 
-		$branch       = $_POST['tracking_branch'];
+		$branch = $tracking_branch;
+		set_transient( 'gitium_remote_tracking_branch', $branch );
 		$current_user = wp_get_current_user();
 
 		$commit = $this->git->commit( __( 'Merged existing code from ', 'gitium' ) . get_home_url(), $current_user->display_name, $current_user->user_email );
@@ -215,6 +224,9 @@ class Gitium_Submenu_Configure extends Gitium_Menu {
 		<input type="submit" name="GitiumSubmitMergeAndPush" class="button-primary" value="<?php _e( 'Merge & Push', 'gitium' ); ?>" />
 		</p>
 		</form>
+		<?php
+			$this->show_disconnect_repository_button();
+		?>
 		</div>
 		<?php
 	}
@@ -226,7 +238,7 @@ class Gitium_Submenu_Configure extends Gitium_Menu {
 			return $this->setup_warning();
 		}
 
-		if ( ! $this->git->is_versioned() ) {
+		if ( ! $this->git->is_status_working() || ! $this->git->get_remote_url() ) {
 			return $this->setup_step_1();
 		}
 
@@ -235,5 +247,7 @@ class Gitium_Submenu_Configure extends Gitium_Menu {
 		}
 
 		_gitium_status( true );
+		gitium_update_is_status_working();
+		gitium_update_remote_tracking_branch();
 	}
 }

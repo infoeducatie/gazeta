@@ -1,15 +1,15 @@
 <?php
-/*
+/**
  * Plugin Name: Gitium
- * Version: 0.5.2-beta
- * Author: PressLabs
- * Author URI: http://www.presslabs.com
+ * Version: 1.0-rc12
+ * Author: Presslabs
+ * Author URI: https://www.presslabs.com
  * License: GPL2
  * Description: Keep all your code on git version control system.
  * Text Domain: gitium
  * Domain Path: /languages/
  */
-/*  Copyright 2014-2015 PressLabs SRL <ping@presslabs.com>
+/*  Copyright 2014-2016 Presslabs SRL <ping@presslabs.com>
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License, version 2, as
@@ -26,9 +26,22 @@
 */
 
 define( 'GITIUM_LAST_COMMITS', 20 );
+define( 'GITIUM_MIN_GIT_VER', '1.7' );
+define( 'GITIUM_MIN_PHP_VER', '5.3' );
+
+if ( is_multisite() ) {
+	define( 'GITIUM_ADMIN_MENU_ACTION', 'network_admin_menu' );
+	define( 'GITIUM_ADMIN_NOTICES_ACTION', 'network_admin_notices' );
+	define( 'GITIUM_MANAGE_OPTIONS_CAPABILITY', 'manage_network_options' );
+} else {
+	define( 'GITIUM_ADMIN_MENU_ACTION', 'admin_menu' );
+	define( 'GITIUM_ADMIN_NOTICES_ACTION', 'admin_notices' );
+	define( 'GITIUM_MANAGE_OPTIONS_CAPABILITY', 'manage_options' );
+}
 
 require_once __DIR__ . '/functions.php';
 require_once __DIR__ . '/inc/class-git-wrapper.php';
+require_once __DIR__ . '/inc/class-gitium-requirements.php';
 require_once __DIR__ . '/inc/class-gitium-admin.php';
 require_once __DIR__ . '/inc/class-gitium-help.php';
 require_once __DIR__ . '/inc/class-gitium-menu.php';
@@ -38,9 +51,6 @@ require_once __DIR__ . '/inc/class-gitium-submenu-status.php';
 require_once __DIR__ . '/inc/class-gitium-submenu-commits.php';
 require_once __DIR__ . '/inc/class-gitium-submenu-settings.php';
 
-/**
- * Load plugin textdomain.
- */
 function gitium_load_textdomain() {
 	load_plugin_textdomain( 'gitium', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 }
@@ -63,6 +73,25 @@ function _gitium_make_ssh_git_file_exe() {
 }
 register_activation_hook( __FILE__, '_gitium_make_ssh_git_file_exe' );
 
+function gitium_deactivation() {
+	delete_transient( 'gitium_git_version' );
+}
+register_deactivation_hook( __FILE__, 'gitium_deactivation' );
+
+function gitium_uninstall_hook() {
+	delete_transient( 'gitium_remote_tracking_branch' );
+	delete_transient( 'gitium_remote_disconnected' );
+	delete_transient( 'gitium_uncommited_changes' );
+	delete_transient( 'gitium_git_version' );
+	delete_transient( 'gitium_versions' );
+	delete_transient( 'gitium_menu_bubble' );
+	delete_transient( 'gitium_is_status_working' );
+
+	delete_option( 'gitium_keypair' );
+	delete_option( 'gitium_webhook_key' );
+}
+register_uninstall_hook( __FILE__, 'gitium_uninstall_hook' );
+
 /* Array
 (
     [themes] => Array
@@ -77,6 +106,8 @@ register_activation_hook( __FILE__, '_gitium_make_ssh_git_file_exe' );
 
 ) */
 function gitium_update_versions() {
+	$new_versions = [];
+
 	// get all themes from WP
 	$all_themes = wp_get_themes( array( 'allowed' => true ) );
 	foreach ( $all_themes as $theme_name => $theme ) :
@@ -117,6 +148,7 @@ function gitium_update_versions() {
 	if ( ! empty( $plugin_versions ) ) {
 		$new_versions['plugins'] = $plugin_versions;
 	}
+
 	set_transient( 'gitium_versions', $new_versions );
 
 	return $new_versions;
@@ -126,9 +158,43 @@ add_action( 'load-plugins.php', 'gitium_update_versions', 999 );
 function gitium_upgrader_post_install( $res, $hook_extra, $result ) {
 	_gitium_make_ssh_git_file_exe();
 
-	$type    = isset( $hook_extra['theme']) ? 'theme' : 'plugin';
-	$action  = isset( $hook_extra['action']) ? $hook_extra['action'] : 'updated';
-	$action  = ( 'install' === $action ) ? 'installed' : $action ;
+	$action = null;
+	$type   = null;
+
+	// install logic
+	if ( isset( $hook_extra['type'] ) && ( 'plugin' === $hook_extra['type'] ) ) {
+		$action = 'installed';
+		$type   = 'plugin';
+	} else if ( isset( $hook_extra['type'] ) && ( 'theme' === $hook_extra['type'] ) ) {
+		$action = 'installed';
+		$type   = 'theme';
+        }
+
+	// update/upgrade logic
+	if ( isset( $hook_extra['plugin'] ) ) {
+		$action = 'updated';
+		$type   = 'plugin';
+	} else if ( isset( $hook_extra['theme'] ) ) {
+		$action = 'updated';
+		$type   = 'theme';
+	}
+
+	// get action if missed above
+	if ( isset( $hook_extra['action'] ) ) {
+		$action = $hook_extra['action'];
+		if ( 'install' === $action ) {
+			$action = 'installed';
+		}
+		if ( 'update' === $action ) {
+			$action = 'updated';
+		}
+	}
+
+	if ( WP_DEBUG ) {
+		error_log( __FUNCTION__ . ':hook_extra:' . serialize( $hook_extra ) );
+		error_log( __FUNCTION__ . ':action:type:' . $action . ':' . $type );
+	}
+
 	$git_dir = $result['destination'];
 	$version = '';
 
@@ -191,11 +257,43 @@ function gitium_check_after_deactivate_modifications( $plugin ) {
 add_action( 'deactivated_plugin', 'gitium_check_after_deactivate_modifications', 999 );
 
 function gitium_check_for_plugin_deletions() { // Handle plugin deletion
-	if ( isset( $_GET['deleted'] ) && 'true' == $_GET['deleted'] ) {
+    // $_GET['deleted'] used to resemble if a plugin has been deleted (true)
+    // ...meanwhile commit b28dd45f3dad19f0e06c546fdc89ed5b24bacd72 in github.com/WordPress/WordPress...
+    // Now it resembles the number of deleted plugins (a number). Thanks WP
+	if ( isset( $_GET['deleted'] ) && ( 1 <= (int) $_GET['deleted'] || 'true' == $_GET['deleted'] ) ) {
 		gitium_auto_push();
 	}
 }
 add_action( 'load-plugins.php', 'gitium_check_for_plugin_deletions' );
+
+add_action( 'wp_ajax_wp-plugin-delete-success', 'gitium_auto_push' );
+add_action( 'wp_ajax_wp-theme-delete-success', 'gitium_auto_push' );
+
+function gitium_wp_plugin_delete_success() {
+?>
+	<script type='text/javascript'>
+			jQuery(document).ready(function() {
+					jQuery(document).on( 'wp-plugin-delete-success', function() {
+							jQuery.post(ajaxurl, data={'action': 'wp-plugin-delete-success'});
+					});
+			});
+	</script>
+<?php
+}
+add_action( 'admin_head', 'gitium_wp_plugin_delete_success' );
+
+function gitium_wp_theme_delete_success() {
+?>
+	<script type='text/javascript'>
+			jQuery(document).ready(function() {
+					jQuery(document).on( 'wp-theme-delete-success', function() {
+							jQuery.post(ajaxurl, data={'action': 'wp-theme-delete-success'});
+					});
+			});
+	</script>
+<?php
+}
+add_action( 'admin_head', 'gitium_wp_theme_delete_success' );
 
 function gitium_check_for_themes_deletions() { // Handle theme deletion
 	if ( isset( $_GET['deleted'] ) && 'true' == $_GET['deleted'] ) {
@@ -225,25 +323,8 @@ function gitium_options_page_check() {
 	return true;
 }
 
-function gitium_require_minimum_version() {
-	if ( current_user_can( 'manage_options' ) && ( ! gitium_has_the_minimum_version() ) ) :
-		global $git;
-		$server_git_version = $git->get_version();
-		if ( empty( $server_git_version ) ) {
-			$git_message = 'There is no git installed on this server.';
-		} else {
-			$git_message = "The git version `$server_git_version` was found on the server.";
-		}
-		set_transient( 'gitium_git_version', $server_git_version );
-		?><div class="error-nag error">
-			<p>Gitium requires minimum git version `1.7`! <?php echo $git_message; ?></p>
-		</div><?php
-	endif;
-}
-add_action( 'admin_notices', 'gitium_require_minimum_version' );
-
 function gitium_remote_disconnected_notice() {
-	if ( current_user_can( 'manage_options' ) && $message = get_transient( 'gitium_remote_disconnected' ) ) : ?>
+	if ( current_user_can( GITIUM_MANAGE_OPTIONS_CAPABILITY ) && $message = get_transient( 'gitium_remote_disconnected' ) ) : ?>
 		<div class="error-nag error">
 			<p>
 				Could not connect to remote repository.

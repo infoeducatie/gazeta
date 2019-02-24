@@ -1,4 +1,4 @@
-<?php 
+<?php
 /*
 Plugin Name: WP Admin Bar Removal
 Plugin URI: http://slangji.wordpress.com/wp-admin-bar-removal/

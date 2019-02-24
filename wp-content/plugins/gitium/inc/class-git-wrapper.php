@@ -1,5 +1,5 @@
 <?php
-/*  Copyright 2014-2015 Presslabs SRL <ping@presslabs.com>
+/*  Copyright 2014-2016 Presslabs SRL <ping@presslabs.com>
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License, version 2, as
@@ -15,10 +15,7 @@
     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-class Git_Wrapper {
-
-	private $last_error = '';
-	private $gitignore  = <<<EOF
+define('GITIGNORE', <<<EOF
 *.log
 *.swp
 *.back
@@ -87,36 +84,47 @@ wp-includes/
 /wp-signup.php
 /wp-trackback.php
 /xmlrpc.php
-EOF;
+EOF
+);
+
+
+class Git_Wrapper {
+
+	private $last_error = '';
+	private $gitignore  = GITIGNORE;
 
 	function __construct( $repo_dir ) {
 		$this->repo_dir    = $repo_dir;
 		$this->private_key = '';
 	}
 
-	function _git_rrmdir( $dir ) {
-		if ( ! empty( $dir ) && is_dir( $dir ) ) {
-			$files = array_diff( scandir( $dir ), array( '.', '..' ) );
-			foreach ( $files as $file ) {
-				( is_dir( "$dir/$file" ) ) ? $this->_git_rrmdir( "$dir/$file" ) : unlink( "$dir/$file" );
-			}
-			return rmdir( $dir );
+	function _rrmdir( $dir ) {
+		if ( empty( $dir ) || ! is_dir( $dir ) ) {
+			return false;
 		}
+
+		$files = array_diff( scandir( $dir ), array( '.', '..' ) );
+		foreach ( $files as $file ) {
+			$filepath = realpath("$dir/$file");
+			( is_dir( $filepath ) ) ? $this->_rrmdir( $filepath ) : unlink( $filepath );
+		}
+		return rmdir( $dir );
 	}
 
 	function _log() {
 		if ( ! defined( 'WP_DEBUG' ) || ! WP_DEBUG ) { return; }
 
+		$output = '';
 		if ( func_num_args() == 1 && is_string( func_get_arg( 0 ) ) ) {
-			error_log( func_get_arg( 0 ) );
+			$output .= var_export(func_get_arg( 0 ), true);
 		} else {
-			ob_start();
 			$args = func_get_args();
 			foreach ( $args as $arg ) {
-				var_dump( $arg );
+				$output .= var_export($arg, true).'/n/n';
 			}
-			ob_get_clean();
 		}
+
+		error_log($output);
 	}
 
 	function _git_temp_key_file() {
@@ -196,7 +204,7 @@ EOF;
 		return ( 0 == $return );
 	}
 
-	function is_versioned() {
+	function is_status_working() {
 		list( $return, ) = $this->_call( 'status', '-s' );
 		return ( 0 == $return );
 	}
@@ -231,8 +239,28 @@ EOF;
 		return ( 0 == $return );
 	}
 
+	function is_dot_git_dir( $dir ) {
+		$realpath   = realpath( $dir );
+		$git_config = realpath( $realpath . '/config' );
+		$git_index  = realpath( $realpath . '/index' );
+		if ( ! empty( $realpath ) && is_dir( $realpath ) && file_exists( $git_config ) && file_exists( $git_index ) ) {
+			return True;
+		}
+		return False;
+	}
+
 	function cleanup() {
-		$this->_git_rrmdir( $this->repo_dir . '/.git' );
+		$dot_git_dir = realpath( $this->repo_dir . '/.git' );
+		if ( $this->is_dot_git_dir( $dot_git_dir ) && $this->_rrmdir( $dot_git_dir ) ) {
+			if ( WP_DEBUG ) {
+				error_log( "Gitium cleanup successfull. Removed '$dot_git_dir'." );
+			}
+			return True;
+		}
+		if ( WP_DEBUG ) {
+			error_log( "Gitium cleanup failed. '$dot_git_dir' is not a .git dir." );
+		}
+		return False;
 	}
 
 	function add_remote_url( $url ) {
@@ -246,6 +274,11 @@ EOF;
 			return $response[0];
 		}
 		return '';
+	}
+
+	function remove_remote() {
+		list( $return, ) = $this->_call( 'remote', 'rm', 'origin');
+		return ( 0 == $return );
 	}
 
 	function get_remote_tracking_branch() {
@@ -293,11 +326,26 @@ EOF;
 		return ( $return !== 0 ? false : join( "\n", $response ) );
 	}
 
+	private function strpos_haystack_array( $haystack, $needle, $offset=0 ) {
+		if ( ! is_array( $haystack ) ) { $haystack = array( $haystack ); }
+
+		foreach ( $haystack as $query ) {
+			if ( strpos( $query, $needle, $offset) !== false ) { return true; }
+		}
+		return false;
+	}
+
 	private function cherry_pick( $commits ) {
 		foreach ( $commits as $commit ) {
 			if ( empty( $commit ) ) { return false; }
 
-			list( $return, ) = $this->_call( 'cherry-pick', $commit );
+			list( $return, $response ) = $this->_call( 'cherry-pick', $commit );
+
+			// abort the cherry-pick if the changes are already pushed
+			if ( false !== $this->strpos_haystack_array( $response, 'previous cherry-pick is now empty' ) ) {
+				$this->_call( 'cherry-pick', '--abort' );
+				continue;
+			}
 
 			if ( $return != 0 ) {
 				$this->_resolve_merge_conflicts( $this->get_commit_message( $commit ) );
@@ -308,30 +356,51 @@ EOF;
 	function merge_with_accept_mine() {
 		do_action( 'gitium_before_merge_with_accept_mine' );
 
+		// get all commits given by arguments
 		$commits = func_get_args();
 		if ( 1 == func_num_args() && is_array( $commits[0] ) ) {
 			$commits = $commits[0];
 		}
+
+		// get ahead commits
 		$ahead_commits = $this->get_ahead_commits();
+
+		// combine all commits with the ahead commits
 		$commits = array_unique( array_merge( array_reverse( $commits ), $ahead_commits ) );
 		$commits = array_reverse( $commits );
 
+		// get the remote branch
 		$remote_branch = $this->get_remote_tracking_branch();
+
+		// get the local branch
 		$local_branch  = $this->get_local_branch();
 
+		// rename the local branch to 'merge_local'
 		$this->_call( 'branch', '-m', 'merge_local' );
+
+		// local branch set up to track remote branch
 		$this->_call( 'branch', $local_branch, $remote_branch );
-		$this->_call( 'checkout', $local_branch );
-		$this->cherry_pick( $commits );
+
+		// checkout to the $local_branch
+		list( $return, ) = $this->_call( 'checkout', $local_branch );
+		if ( $return != 0 ) {
+			$this->_call( 'branch', '-M', $local_branch );
+			return false;
+		}
+
+		// don't cherry pick if there are no commits
+		if ( count( $commits ) > 0 ) {
+			$this->cherry_pick( $commits );
+		}
 
 		if ( $this->successfully_merged() ) { // git status without states: AA, DD, UA, AU ...
+			// delete the 'merge_local' branch
 			$this->_call( 'branch', '-D', 'merge_local' );
 			return true;
 		} else {
 			$this->_call( 'cherry-pick', '--abort' );
-			$this->create_branch( 'merge_local' );
-			$this->_call( 'branch', '-D', $local_branch );
-			$this->_call( 'branch', '-m', $local_branch );
+			$this->_call( 'checkout', '-b', 'merge_local' );
+			$this->_call( 'branch', '-M', $local_branch );
 			return false;
 		}
 	}
@@ -371,11 +440,6 @@ EOF;
 		$response = array_map( 'trim', $response );
 		$response = array_map( create_function( '$b', 'return str_replace("origin/","",$b);' ), $response );
 		return $response;
-	}
-
-	function create_branch( $branch ) {
-		list( $return, ) = $this->_call( 'checkout', '-b', $branch );
-		return ( $return == 0 );
 	}
 
 	function add() {
@@ -440,16 +504,22 @@ EOF;
 		}
 		$new_response = array();
 		if ( ! empty( $response ) ) {
-			foreach ( $response as $item ) :
-				$y    = substr( $item, 1, 1 ); // Y shows the status of the work tree
-				$file = substr( $item, 3 );
+			foreach ( $response as $line ) :
+				$work_tree_status = substr( $line, 1, 1 );
+				$path = substr( $line, 3 );
 
-				if ( 'D' == $y ) {
+				if ( ( '"' == $path[0] ) && ('"' == $path[strlen( $path ) - 1] ) ) {
+					// git status --porcelain will put quotes around paths with whitespaces
+					// we don't want the quotes, let's get rid of them
+					$path = substr( $path, 1, strlen( $path ) - 2 );
+				}
+
+				if ( 'D' == $work_tree_status ) {
 					$action = 'deleted';
 				} else {
 					$action = 'modified';
 				}
-				$new_response[ $file ] = $action;
+				$new_response[ $path ] = $action;
 			endforeach;
 		}
 		return $new_response;
@@ -465,27 +535,27 @@ EOF;
 		if ( 0 !== $return ) {
 			return array( '', array() );
 		}
-		$new_response = array();
 
+		$new_response = array();
 		if ( ! empty( $response ) ) {
 			$branch_status = array_shift( $response );
-			foreach ( $response as $idx => $item ) :
-				if ( ! empty( $from ) ) {
-					unset( $from );
-					continue;
-				}
-				unset($x, $y, $to, $from);
-				if ( empty( $item ) ) { continue; } // ignore empty elements like the last item
-				if ( '#' == $item[0] ) { continue; } // ignore branch status
+			foreach ( $response as $idx => $line ) :
+				unset( $index_status, $work_tree_status, $path, $new_path, $old_path );
 
-				$x    = substr( $item, 0, 1 ); // X shows the status of the index
-				$y    = substr( $item, 1, 1 ); // Y shows the status of the work tree
-				$to   = substr( $item, 3 );
-				$from = '';
-				if ( 'R' == $x ) {
-					$from = $response[ $idx + 1 ];
+				if ( empty( $line ) ) { continue; } // ignore empty lines like the last item
+				if ( '#' == $line[0] ) { continue; } // ignore branch status
+
+				$index_status     = substr( $line, 0, 1 );
+				$work_tree_status = substr( $line, 1, 1 );
+				$path             = substr( $line, 3 );
+
+				$old_path = '';
+				$new_path = explode( '->', $path );
+				if ( ( 'R' === $index_status ) && ( ! empty( $new_path[1] ) ) ) {
+					$old_path = trim( $new_path[0] );
+					$path     = trim( $new_path[1] );
 				}
-				$new_response[ $to ] = trim( "$x$y $from" );
+				$new_response[ $path ] = trim( $index_status . $work_tree_status . ' ' . $old_path );
 			endforeach;
 		}
 
@@ -599,4 +669,8 @@ EOF;
 if ( ! defined( 'GIT_DIR' ) ) {
 	define( 'GIT_DIR', dirname( WP_CONTENT_DIR ) );
 }
+
+# global is needed here for wp-cli as it includes/exec files inside a function scope
+# this forces the context to really be global :\.
+global $git;
 $git = new Git_Wrapper( GIT_DIR );

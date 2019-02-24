@@ -234,3 +234,198 @@
 #toplevel_page_cff-top .toplevel_page_cff-top .wp-menu-image:before{
 	content: "\f305";
 }
+
+
+#cff-admin #cff_width_options{
+	margin-top: 10px;
+	display: none;
+}
+#cff-admin #cff_width_options label{
+	font-size: 13px;
+	position: relative;
+	top: -2px;
+}
+
+/* Quick links */
+#cff-admin .cff_contents_links{
+	float: left;
+	clear: both;
+	width: 100%;
+	padding-bottom: 12px;
+	border-bottom: 1px solid #ccc;
+	margin-bottom: 15px;
+}
+#cff-admin .cff_contents_links a,
+#cff-admin .cff_contents_links span{
+	display: block;
+	float: left;
+	padding: 2px 5px;
+}
+#cff-admin .cff_contents_links span{
+	padding-left: 0;
+}
+
+/* Shortcode tooltips */
+#cff-admin label{
+	position: relative;
+}
+#cff-admin th{
+	position: relative;
+}
+#cff-admin .cff_shortcode{
+	display: none;
+	position: absolute;
+	z-index: 10;
+	font-size: 11px;
+	float: left;
+	width: auto;
+	white-space: pre-line;
+	line-height: 1.4;
+}
+#cff-admin .cff_shortcode_symbol{
+	position: absolute;
+	right: -24px;
+	bottom: 0px;
+  padding: 2px 4px 3px 3px;
+	width: auto;
+	font-size: 11px;
+	margin-left: 5px;
+}
+
+/* Update notice */
+/*.sb_instagram_notice{
+	position: relative;
+	clear: both;
+	width: 96%;
+	margin: 20px 0;
+	background: #F7E6E6;
+	padding: 15px 1.5%;
+	border: 1px solid #BA7B7B;
+	color: #592626;
+
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+.sb_instagram_notice .sb_instagram_notice_title{
+	font-size: 18px;
+	padding-bottom: 5px;
+}
+.sb_instagram_notice p{
+	padding: 0;
+	margin: 0;
+	font-size: 14px;
+}
+.sb_instagram_dismiss{
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	color: #dd3d36;
+	text-decoration: none;
+}*/
+
+/* Review notice */
+.cff_review_notice{
+    position: relative;
+    overflow: hidden;
+    max-width: 870px;
+    margin-top: 10px;
+    padding: 10px 10px 7px 10px;
+
+    background: #E6F0E8;
+    border: 1px solid #6AB074;
+    color: #214F28;
+}
+.cff_review_notice img{
+    width: 84px;
+    margin: 0 0 0 -100% !important;
+
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+}
+.cff_review_notice .cff-notice-text{
+    float: left;
+    clear: none;
+    width: 100%;
+    padding: 4px 0;
+}
+.cff_review_notice p{
+    float: left;
+    clear: both;
+    width: auto;
+    margin: 0 0 0 100px !important;
+    padding: 4px 40px 4px 0;
+}
+.cff_review_notice a{
+    display: inline-block;
+    padding: 0 8px;
+    color: #178529;
+}
+.cff_review_notice a:hover,
+.cff_review_notice a:focus{
+    color: #0c7abf;
+}
+.cff_review_notice .cff-links{
+    margin: 0 0 0 92px !important;
+    padding: 4px 0 0 0;
+}
+.cff_review_notice .cff_notice_close{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
+    line-height: 1;
+}
+.cff_review_notice .cff_notice_close:hover,
+.cff_review_notice .cff_notice_close:focus{
+    color: #a34100;
+}
+
+
+/* Support page */
+#cff-admin .cff_support{
+	overflow: hidden;
+	margin-bottom: 20px;
+	width: 70%;
+}
+#cff-admin .cff_support p{
+	width: 100%;
+	float: left;
+	clear: both;
+	margin: 0 0 20px 0;
+}
+#cff-admin .cff-support-title{
+	font-weight: bold;
+	font-size: 16px;
+	display: block;
+	padding-bottom: 5px;
+}
+#cff-admin .cff-support-faqs{
+	float: left;
+	clear: both;
+	width: 100%;
+	padding-left: 5%;
+	margin: -10px 0 10px 0;
+}
+#cff-admin .cff-support-faqs ul{
+	float: left;
+	width: 250px;
+	margin-right: 0;
+}
+#cff-admin .cff-support-faqs .cff-faq-col-1{
+	width: 200px;
+}
+#cff-admin .cff-support-faqs ul li{
+	font-size: 13px;
+	margin-bottom: 4px;
+}
+#cff-admin .cff-support-faqs .fa-chevron-right{
+	font-size: 8px;
+	margin-left: 4px;
+}
+#cff-admin #cff-support-video{
+	margin-top: 10px;
+	border: 1px solid #ddd;
+	display: none;
+}

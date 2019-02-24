@@ -3,7 +3,7 @@
 Plugin Name: Crayon Syntax Highlighter
 Plugin URI: https://github.com/aramk/crayon-syntax-highlighter
 Description: Supports multiple languages, themes, highlighting from a URL, local file or post text.
-Version: 2.7.1
+Version: 2.8.4
 Author: Aram Kocharyan
 Author URI: http://aramk.com/
 Text Domain: crayon-syntax-highlighter
@@ -33,11 +33,12 @@ if (CRAYON_THEME_EDITOR) {
 }
 require_once('crayon_settings_wp.class.php');
 
-if (defined('ABSPATH')) {
-    // Used to get plugin version info
-    require_once(ABSPATH . 'wp-admin/includes/plugin.php');
-    crayon_set_info(get_plugin_data(__FILE__));
-}
+crayon_set_info(array(
+	'Version' => '_2.7.2_beta',
+	'Date' => '25th April, 2015',
+	'AuthorName' => 'Aram Kocharyan',
+	'PluginURI' => 'https://github.com/aramk/crayon-syntax-highlighter',
+));
 
 /* The plugin class that manages all other classes and integrates Crayon with WP */
 
@@ -189,7 +190,7 @@ class CrayonWP {
     }
 
     /* For manually highlighting code, useful for other PHP contexts */
-    public static function highlight($code, $add_tags = FALSE) {
+    public static function highlight($code, $add_tags = FALSE, $output_text = FALSE) {
         $captures = CrayonWP::capture_crayons(0, $code);
         $the_captures = $captures['capture'];
         if (count($the_captures) == 0 && $add_tags) {
@@ -199,6 +200,8 @@ class CrayonWP {
             $the_captures = $captures['capture'];
         }
         $the_content = $captures['content'];
+        $the_content = CrayonUtil::strip_tags_blacklist($the_content, array('script'));
+        $the_content = CrayonUtil::strip_event_attributes($the_content);
         foreach ($the_captures as $id => $capture) {
             $atts = $capture['atts'];
             $no_enqueue = array(
@@ -211,6 +214,11 @@ class CrayonWP {
             $the_content = CrayonUtil::preg_replace_escape_back(self::regex_with_id($id), $crayon_formatted, $the_content, 1, $count);
         }
 
+        if ($output_text) {
+            header('Content-Type: text/plain');
+        } else {
+            header('Content-Type: text/html');
+        }
         return $the_content;
     }
 
@@ -220,7 +228,7 @@ class CrayonWP {
             $code = isset($_GET['code']) ? $_GET['code'] : null;
         }
         if ($code) {
-            echo self::highlight($code);
+            echo self::highlight($code, FALSE, TRUE);
         } else {
             echo "No code specified.";
         }
@@ -834,7 +842,7 @@ class CrayonWP {
      * Check if the $ notation has been used to ignore [crayon] tags within posts and remove all matches
      * Can also remove if used without $ as a regular crayon
      *
-     * @depreciated
+     * @deprecated
      */
     public static function crayon_remove_ignore($the_content, $ignore_flag = '$') {
         if ($ignore_flag == FALSE) {
@@ -1154,15 +1162,6 @@ class CrayonWP {
 
     public static function basename() {
         return plugin_basename(__FILE__);
-    }
-
-    // This should never be called through AJAX, only server side, since WP will not be loaded
-    public static function wp_load_path() {
-        if (defined('ABSPATH')) {
-            return ABSPATH . 'wp-load.php';
-        } else {
-            CrayonLog::syslog('wp_load_path could not find value for ABSPATH');
-        }
     }
 
     public static function pre_excerpt($e) {

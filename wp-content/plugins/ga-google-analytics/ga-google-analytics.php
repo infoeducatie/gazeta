@@ -5,41 +5,59 @@
 	Description: Adds your Google Analytics Tracking Code to your WordPress site.
 	Tags: analytics, ga, google, google analytics, tracking, statistics, stats
 	Author: Jeff Starr
-	Author URI: http://monzilla.biz/
-	Donate link: http://m0n.co/donate
+	Author URI: https://plugin-planet.com/
+	Donate link: https://m0n.co/donate
 	Contributors: specialk
 	Requires at least: 4.1
-	Tested up to: 4.4
-	Stable tag: trunk
-	Version: 20151109
+	Tested up to: 4.8
+	Stable tag: 20170731
+	Version: 20170731
 	Text Domain: gap
-	Domain Path: /languages/
+	Domain Path: /languages
 	License: GPL v2 or later
+*/
+
+/*
+	This program is free software; you can redistribute it and/or
+	modify it under the terms of the GNU General Public License
+	as published by the Free Software Foundation; either version 
+	2 of the License, or (at your option) any later version.
+	
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+	
+	You should have received a copy of the GNU General Public License
+	with this program. If not, visit: https://www.gnu.org/licenses/
+	
+	Copyright 2017 Monzilla Media. All rights reserved.
 */
 
 if (!defined('ABSPATH')) die();
 
 $gap_wp_vers = '4.1';
-$gap_version = '20151109';
-$gap_plugin  = __('GA Google Analytics', 'gap');
+$gap_version = '20170731';
+$gap_plugin  = esc_html__('GA Google Analytics', 'gap');
 $gap_options = get_option('gap_options');
 $gap_path    = plugin_basename(__FILE__); // 'ga-google-analytics/ga-google-analytics.php';
 $gap_homeurl = 'https://perishablepress.com/ga-google-analytics/';
 
 // i18n
 function gap_i18n_init() {
-	load_plugin_textdomain('gap', false, dirname(plugin_basename(__FILE__)) . '/languages/');
+	load_plugin_textdomain('gap', false, dirname(plugin_basename(__FILE__)) .'/languages/');
 }
 add_action('plugins_loaded', 'gap_i18n_init');
 
 // require minimum version of WordPress
 function gap_require_wp_version() {
-	global $wp_version, $gap_path, $gap_plugin, $gap_wp_vers;
+	global $gap_path, $gap_plugin, $gap_wp_vers;
+	$wp_version = get_bloginfo('version');
 	if (version_compare($wp_version, $gap_wp_vers, '<')) {
 		if (is_plugin_active($gap_path)) {
 			deactivate_plugins($gap_path);
-			$msg =  '<strong>' . $gap_plugin . '</strong> ' . __('requires WordPress ', 'gap') . $gap_wp_vers . __(' or higher, and has been deactivated!', 'gap') . '<br />';
-			$msg .= __('Please return to the ', 'gap') . '<a href="' . admin_url() . '">' . __('WordPress Admin area', 'gap') . '</a> ' . __('to upgrade WordPress and try again.', 'gap');
+			$msg =  '<strong>' . $gap_plugin . '</strong> ' . esc_html__('requires WordPress ', 'gap') . $gap_wp_vers . esc_html__(' or higher, and has been deactivated!', 'gap') . '<br />';
+			$msg .= esc_html__('Please return to the ', 'gap') . '<a href="' . admin_url() . '">' . esc_html__('WordPress Admin area', 'gap') . '</a> ' . esc_html__('to upgrade WordPress and try again.', 'gap');
 			wp_die($msg);
 		}
 	}
@@ -49,8 +67,10 @@ if (isset($_GET['activate']) && $_GET['activate'] == 'true') {
 }
 
 // Google Analytics Tracking Code
-function google_analytics_tracking_code() { 
+function google_analytics_tracking_code() {
+	
 	$options = get_option('gap_options');
+	
 	extract($options);
 	
 	// universal
@@ -126,22 +146,34 @@ if (isset($gap_options['gap_location']) && $gap_options['gap_location'] == 'head
 function gap_plugin_action_links($links, $file) {
 	global $gap_path;
 	if ($file == $gap_path) {
-		$gap_links = '<a href="' . get_admin_url() . 'options-general.php?page=' . $gap_path . '">' . __('Settings', 'gap') .'</a>';
+		$gap_links = '<a href="' . get_admin_url() . 'options-general.php?page=' . $gap_path . '">' . esc_html__('Settings', 'gap') .'</a>';
 		array_unshift($links, $gap_links);
 	}
 	return $links;
 }
 add_filter ('plugin_action_links', 'gap_plugin_action_links', 10, 2);
 
+
+
 // rate plugin link
 function add_gap_links($links, $file) {
+	
 	if ($file == plugin_basename(__FILE__)) {
-		$rate_url = 'http://wordpress.org/support/view/plugin-reviews/' . basename(dirname(__FILE__)) . '?rate=5#postform';
-		$links[] = '<a href="' . $rate_url . '" target="_blank" title="Click here to rate and review this plugin on WordPress.org">Rate this plugin</a>';
+		
+		$href  = 'https://wordpress.org/support/plugin/ga-google-analytics/reviews/?rate=5#new-post';
+		$title = esc_html__('Give us a 5-star rating at WordPress.org', 'gap');
+		$text  = esc_html__('Rate this plugin', 'gap') .'&nbsp;&raquo;';
+		
+		$links[] = '<a target="_blank" href="'. $href .'" title="'. $title .'">'. $text .'</a>';
+		
 	}
+	
 	return $links;
+	
 }
 add_filter('plugin_row_meta', 'add_gap_links', 10, 2);
+
+
 
 // delete plugin settings
 function gap_delete_plugin_options() {
@@ -267,18 +299,18 @@ function gap_validate_options($input) {
 $gap_location = array(
 	'header' => array(
 		'value' => 'header',
-		'label' => __('Include code in the document head (via wp_head)', 'gap')
+		'label' => esc_html__('Include code in the document head (via wp_head)', 'gap')
 	),
 	'footer' => array(
 		'value' => 'footer',
-		'label' => __('Include code in the document footer (via wp_footer)', 'gap')
+		'label' => esc_html__('Include code in the document footer (via wp_footer)', 'gap')
 	),
 );
 
 // add the options page
 function gap_add_options_page() {
 	global $gap_plugin;
-	add_options_page($gap_plugin, 'GA Plugin', 'manage_options', __FILE__, 'gap_render_form');
+	add_options_page($gap_plugin, 'Google Analytics', 'manage_options', __FILE__, 'gap_render_form');
 }
 add_action ('admin_menu', 'gap_add_options_page');
 
@@ -293,16 +325,24 @@ function gap_render_form() {
 		.dismiss-alert { margin: 15px; }
 		.dismiss-alert-wrap { display: inline-block; padding: 7px 0 10px 0; }
 		.dismiss-alert .description { display: inline-block; margin: -2px 15px 0 0; }
-		.mm-panel-overview { padding: 0 15px 10px 100px; background: url(<?php echo plugins_url(); ?>/ga-google-analytics/gap-logo.png) no-repeat 15px 0; }
+		.mm-panel-overview {
+			padding: 0 15px 10px 100px; 
+			background-image: url(<?php echo plugins_url(); ?>/ga-google-analytics/gap-logo.jpg);
+			background-repeat: no-repeat; background-position: 15px 0; background-size: 80px 80px;
+			}
 		
-		#mm-plugin-options h1 small { font-size: 60%; }
+		.mm-panel-usage { padding-bottom: 10px; }
+		
+		#mm-plugin-options h1 small { line-height: 12px; font-size: 12px; color: #bbb; }
 		#mm-plugin-options h2 { margin: 0; padding: 12px 0 12px 15px; font-size: 16px; cursor: pointer; }
 		#mm-plugin-options h3 { margin: 20px 15px; font-size: 14px; }
 		
 		#mm-plugin-options p { margin-left: 15px; }
 		#mm-plugin-options p.mm-alt { margin: 15px 0; }
-		#mm-plugin-options .mm-item-caption { font-size: 11px; }
-		#mm-plugin-options ul { margin: 15px 15px 15px 40px; }
+		#mm-plugin-options .mm-item-caption,
+		#mm-plugin-options .mm-item-caption code { font-size: 11px; }
+		#mm-plugin-options ul,
+		#mm-plugin-options ol { margin: 15px 15px 15px 40px; }
 		#mm-plugin-options li { margin: 10px 0; list-style-type: disc; }
 		#mm-plugin-options abbr { cursor: help; border-bottom: 1px dotted #dfdfdf; }
 		
@@ -314,20 +354,20 @@ function gap_render_form() {
 		.mm-radio-inputs { margin: 7px 0; }
 		.mm-radio-inputs span { padding-left: 5px; }
 
-		#setting-error-settings_updated { margin: 10px 0; }
-		#setting-error-settings_updated p { margin: 5px; }
+		#setting-error-settings_updated { margin: 8px 0 15px 0; }
+		#setting-error-settings_updated p { margin: 7px 0; }
 		#mm-plugin-options .button-primary { margin: 0 0 15px 15px; }
 
 		#mm-panel-toggle { margin: 5px 0; }
 		#mm-credit-info { margin-top: -5px; }
-		#mm-iframe-wrap { width: 100%; height: 250px; overflow: hidden; }
+		#mm-iframe-wrap { width: 100%; height: 225px; overflow: hidden; }
 		#mm-iframe-wrap iframe { width: 100%; height: 100%; overflow: hidden; margin: 0; padding: 0; }
 	</style>
 
 	<div id="mm-plugin-options" class="wrap">
 		<h1><?php echo $gap_plugin; ?> <small><?php echo 'v' . $gap_version; ?></small></h1>
-		<div id="mm-panel-toggle"><a href="<?php get_admin_url() . 'options-general.php?page=' . $gap_path; ?>"><?php _e('Toggle all panels', 'gap'); ?></a></div>
-
+		<div id="mm-panel-toggle"><a href="<?php get_admin_url() . 'options-general.php?page=' . $gap_path; ?>"><?php esc_html_e('Toggle all panels', 'gap'); ?></a></div>
+		
 		<form method="post" action="options.php">
 			<?php $gap_options = get_option('gap_options'); settings_fields('gap_plugin_options'); ?>
 
@@ -335,22 +375,22 @@ function gap_render_form() {
 				<div class="meta-box-sortables ui-sortable">
 					
 					<div id="mm-panel-alert"<?php echo $display_alert; ?> class="postbox">
-						<h2><?php _e('Important', 'gap'); ?></h2>
+						<h2><?php esc_html_e('Important', 'gap'); ?></h2>
 						<div class="toggle">
 							<div class="mm-panel-alert">
 								<p>
-									<?php _e('Universal Analytics is now the standard for Google Analytics. 
-									Please read the following info and migrate by enabling Universal Analytics in the plugin settings. 
-									Universal Analytics will be the default setting in an future version of this plugin.', 'gap'); ?>
+									<?php esc_html_e('Universal Analytics is now the standard for Google Analytics.', 'gap'); ?> 
+									<?php esc_html_e('Please read the following info and migrate by enabling Universal Analytics in the plugin settings.', 'gap'); ?> 
+									<?php esc_html_e('Universal Analytics will be the default setting in an future version of this plugin (probably in 2017).', 'gap'); ?>
 								</p>
 								<ul>
-									<li><a target="_blank" href="https://developers.google.com/analytics/devguides/collection/analyticsjs/"><?php _e('Learn about Universal Analytics', 'gap'); ?></a></li>
-									<li><a target="_blank" href="https://developers.google.com/analytics/devguides/collection/upgrade/"><?php _e('Universal Analytics Upgrade Center', 'gap'); ?></a></li>
+									<li><a target="_blank" href="https://developers.google.com/analytics/devguides/collection/analyticsjs/"><?php esc_html_e('Learn about Universal Analytics', 'gap'); ?></a></li>
+									<li><a target="_blank" href="https://developers.google.com/analytics/devguides/collection/upgrade/"><?php esc_html_e('Universal Analytics Upgrade Center', 'gap'); ?></a></li>
 								</ul>
 								<div class="dismiss-alert">
 									<div class="dismiss-alert-wrap">
 										<input class="input-alert" name="gap_options[version_alert]" type="checkbox" value="1" <?php if (isset($gap_options['version_alert'])) checked('1', $gap_options['version_alert']); ?> />  
-										<label class="description" for="gap_options[version_alert]"><?php _e('Dismiss notice', 'gap') ?></label>
+										<label class="description" for="gap_options[version_alert]"><?php esc_html_e('Dismiss notice', 'gap') ?></label>
 									</div>
 								</div>
 							</div>
@@ -358,90 +398,104 @@ function gap_render_form() {
 					</div>
 					
 					<div id="mm-panel-overview" class="postbox">
-						<h2><?php _e('Overview', 'gap'); ?></h2>
-						<div class="toggle">
+						<h2><?php esc_html_e('Overview', 'gap'); ?></h2>
+						<div class="toggle<?php if (isset($_GET["settings-updated"])) { echo ' default-hidden'; } ?>">
 							<div class="mm-panel-overview">
-								<p>
-									<strong><?php echo $gap_plugin; ?></strong> <?php _e('(GA Plugin) adds Google Analytics Tracking Code to your WordPress site.', 'gap'); ?>
-									<?php _e('Enter your GA ID, save your options, and done. Log into your Google Analytics account to view your stats.', 'gap'); ?>
-								</p>
+								<p><?php esc_html_e('This plugin adds the GA Tracking Code to your site. Log in to your Google account to view your stats.', 'gap'); ?></p>
 								<ul>
-									<li><?php _e('To enter your GA ID, visit', 'gap'); ?> <a id="mm-panel-primary-link" href="#mm-panel-primary"><?php _e('GA Plugin Options', 'gap'); ?></a>.</li>
-									<li><?php _e('To restore default settings, visit', 'gap'); ?> <a id="mm-restore-settings-link" href="#mm-restore-settings"><?php _e('Restore Default Options', 'gap'); ?></a>.</li>
-									<li>
-										<?php _e('For more information check the', 'gap'); ?> <a target="_blank" href="<?php echo plugins_url('/ga-google-analytics/readme.txt', dirname(__FILE__)); ?>">readme.txt</a> 
-										<?php _e('and', 'gap'); ?> <a target="_blank" href="<?php echo $gap_homeurl; ?>"><?php _e('GA Plugin Homepage', 'gap'); ?></a>.
-									</li>
-									<li><?php _e('If you like this plugin, please', 'gap'); ?> 
-										<a href="http://wordpress.org/support/view/plugin-reviews/<?php echo basename(dirname(__FILE__)); ?>?rate=5#postform" title="<?php _e('Click here to rate and review this plugin on WordPress.org', 'gap'); ?>" target="_blank">
-											<?php _e('rate it at the Plugin Directory', 'gap'); ?>&nbsp;&raquo;
-										</a>
-									</li>
+									<li><a id="mm-panel-usage-link" href="#mm-panel-usage"><?php esc_html_e('How to Use', 'gap'); ?></a></li>
+									<li><a id="mm-panel-primary-link" href="#mm-panel-primary"><?php esc_html_e('Plugin Settings', 'gap'); ?></a></li>
+									<li><a target="_blank" href="https://wordpress.org/support/plugin/ga-google-analytics"><?php esc_html_e('Plugin Homepage', 'gap'); ?></a></li>
 								</ul>
-								<p><small><?php _e('Note that it can take 24-48 hours after adding the tracking code before any analytical data appears in your', 'gap'); ?> 
-										<a target="_blank" href="http://www.google.com/analytics/">Google Analytics account</a>. 
-										<?php _e('To check that the GA tacking code is included, look at the source code of your web page(s). Learn more at the', 'gap'); ?> 
-										<a target="_blank" href="https://support.google.com/analytics/?hl=en#topic=3544906">Google Analytics Help Center</a>.
-								</small></p>
+								<p>
+									<?php esc_html_e('If you like this plugin, please', 'gap'); ?> 
+									<a target="_blank" href="https://wordpress.org/support/plugin/ga-google-analytics/reviews/?rate=5#new-post" title="<?php esc_attr_e('THANK YOU for your support!', 'gap'); ?>">
+										<?php esc_html_e('give it a 5-star rating', 'gap'); ?>&nbsp;&raquo;
+									</a>
+								</p>
 							</div>
 						</div>
 					</div>
+					
+					<div id="mm-panel-usage" class="postbox">
+						<h2><?php esc_html_e('How to Use', 'gap'); ?></h2>
+						<div class="toggle default-hidden">
+							<div class="mm-panel-usage">
+								<p><?php esc_html_e('How to use', 'gap'); ?> <?php echo $gap_plugin; ?>:</p>
+								<ol>
+									<li><?php esc_html_e('In the plugin settings, enter your GA Property ID.', 'gap'); ?></li>
+									<li><?php esc_html_e('In the plugin settings, enable either "Legacy Analytics" or "Universal Analytics".', 'gap'); ?></li>
+									<li><?php esc_html_e('Configure other settings (optional) as desired and save your changes.', 'gap'); ?></li>
+									<li><?php esc_html_e('After 24-48 hours, you can log into your Google Analytics account to view your stats.', 'gap'); ?></li>
+								</ol>
+								<p>
+									<small>
+										<?php esc_html_e('Note that it can take 24-48 hours after adding the tracking code before any analytical data appears in your', 'gap'); ?> 
+										<a target="_blank" href="http://www.google.com/analytics/"><?php esc_html_e('Google Analytics account', 'gap'); ?></a>. 
+										<?php esc_html_e('To check that the GA tacking code is included, look at the source code of your web page(s). Learn more at the', 'gap'); ?> 
+										<a target="_blank" href="https://support.google.com/analytics/?hl=en#topic=3544906"><?php esc_html_e('Google Analytics Help Center', 'gap'); ?></a>.
+									</small>
+								</p>
+							</div>
+						</div>
+					</div>
+					
 					<div id="mm-panel-primary" class="postbox">
-						<h2><?php _e('GA Plugin Options', 'gap'); ?></h2>
+						<h2><?php esc_html_e('Plugin Settings', 'gap'); ?></h2>
 						<div class="toggle<?php if (!isset($_GET["settings-updated"])) { echo ' default-hidden'; } ?>">
-							<p><?php _e('Enter your Tracking Code and enable/disable the plugin.', 'gap'); ?></p>
+							<p><?php esc_html_e('Enter your Tracking Code and choose your options.', 'gap'); ?></p>
 							<div class="mm-table-wrap">
 								<table class="widefat mm-table">
 									<tr>
-										<th scope="row"><label class="description" for="gap_options[gap_id]"><?php _e('GA property ID', 'gap') ?></label></th>
+										<th scope="row"><label class="description" for="gap_options[gap_id]"><?php esc_html_e('GA Property ID', 'gap') ?></label></th>
 										<td><input type="text" size="20" maxlength="20" name="gap_options[gap_id]" value="<?php echo $gap_options['gap_id']; ?>" /></td>
 									</tr>
 									<tr>
-										<th scope="row"><label class="description" for="gap_options[gap_enable]"><?php _e('Enable Google Analytics', 'gap') ?></label></th>
+										<th scope="row"><label class="description" for="gap_options[gap_enable]"><?php esc_html_e('Enable Analytics', 'gap') ?></label></th>
 										<td>
 											<input name="gap_options[gap_enable]" type="checkbox" value="1" <?php if (isset($gap_options['gap_enable'])) checked('1', $gap_options['gap_enable']); ?> /> 
-											<?php _e('Include the', 'gap'); ?> 
-											<a target="_blank" href="http://code.google.com/apis/analytics/docs/tracking/asyncUsageGuide.html">GA Tracking Code</a> 
-											<?php _e('in your web pages?', 'gap') ?>
+											<?php esc_html_e('Enable Google Analytics on your site. Uses', 'gap'); ?> 
+											<a target="_blank" href="http://code.google.com/apis/analytics/docs/tracking/asyncUsageGuide.html"><?php esc_html_e('Legacy Analytics', 'gap'); ?></a> 
+											<?php esc_html_e('by default. To use Universal Analytics, check this box and enable the next setting.', 'gap'); ?>
 										</td>
 									</tr>
 									<tr>
-										<th scope="row"><label class="description" for="gap_options[gap_universal]"><?php _e('Enable Universal Analytics', 'gap') ?></label></th>
+										<th scope="row"><label class="description" for="gap_options[gap_universal]"><?php esc_html_e('Universal Analytics', 'gap') ?></label></th>
 										<td>
 											<input name="gap_options[gap_universal]" type="checkbox" value="1" <?php if (isset($gap_options['gap_universal'])) checked('1', $gap_options['gap_universal']); ?> /> 
-											<?php _e('Enable support for', 'gap'); ?> <a target="_blank" href="https://developers.google.com/analytics/devguides/collection/analyticsjs/"><?php _e('Universal Analytics', 'gap'); ?></a>
+											<?php esc_html_e('Enable', 'gap'); ?> <a target="_blank" href="https://developers.google.com/analytics/devguides/collection/analyticsjs/"><?php esc_html_e('Universal Analytics', 'gap'); ?></a>
 										</td>
 									</tr>
 									<tr>
-										<th scope="row"><label class="description" for="gap_options[gap_display_ads]"><?php _e('Enable Display Advertising', 'gap') ?></label></th>
+										<th scope="row"><label class="description" for="gap_options[gap_display_ads]"><?php esc_html_e('Display Advertising', 'gap') ?></label></th>
 										<td>
 											<input name="gap_options[gap_display_ads]" type="checkbox" value="1" <?php if (isset($gap_options['gap_display_ads'])) checked('1', $gap_options['gap_display_ads']); ?> /> 
-											<?php _e('Enable support for', 'gap'); ?> <a target="_blank" href="https://support.google.com/analytics/answer/2444872"><?php _e('Display Advertising', 'gap'); ?></a>
+											<?php esc_html_e('Enable support for', 'gap'); ?> <a target="_blank" href="https://support.google.com/analytics/answer/2444872"><?php esc_html_e('Display Advertising', 'gap'); ?></a>
 										</td>
 									</tr>
 									<tr>
-										<th scope="row"><label class="description" for="gap_options[link_attr]"><?php _e('Enable Link Attribution', 'gap') ?></label></th>
+										<th scope="row"><label class="description" for="gap_options[link_attr]"><?php esc_html_e('Link Attribution', 'gap') ?></label></th>
 										<td>
 											<input name="gap_options[link_attr]" type="checkbox" value="1" <?php if (isset($gap_options['link_attr'])) checked('1', $gap_options['link_attr']); ?> /> 
-											<?php _e('Enable support for', 'gap'); ?> <a target="_blank" href="https://support.google.com/analytics/answer/2558867?hl=en"><?php _e('Enhanced Link Attribution', 'gap'); ?></a>
+											<?php esc_html_e('Enable support for', 'gap'); ?> <a target="_blank" href="https://support.google.com/analytics/answer/2558867?hl=en"><?php esc_html_e('Enhanced Link Attribution', 'gap'); ?></a>
 										</td>
 									</tr>
 									<tr>
-										<th scope="row"><label class="description" for="gap_options[gap_anonymize]"><?php _e('IP Anonymization', 'gap') ?></label></th>
+										<th scope="row"><label class="description" for="gap_options[gap_anonymize]"><?php esc_html_e('IP Anonymization', 'gap') ?></label></th>
 										<td>
 											<input name="gap_options[gap_anonymize]" type="checkbox" value="1" <?php if (isset($gap_options['gap_anonymize'])) checked('1', $gap_options['gap_anonymize']); ?> /> 
-											<?php _e('Enable support for', 'gap'); ?> <a target="_blank" href="https://developers.google.com/analytics/devguides/collection/analyticsjs/ip-anonymization"><?php _e('IP Anonymization', 'gap'); ?></a>
+											<?php esc_html_e('Enable support for', 'gap'); ?> <a target="_blank" href="https://developers.google.com/analytics/devguides/collection/analyticsjs/ip-anonymization"><?php esc_html_e('IP Anonymization', 'gap'); ?></a>
 										</td>
 									</tr>
 									<tr>
-										<th scope="row"><label class="description" for="gap_options[gap_force_ssl]"><?php _e('Force SSL', 'gap') ?></label></th>
+										<th scope="row"><label class="description" for="gap_options[gap_force_ssl]"><?php esc_html_e('Force SSL', 'gap') ?></label></th>
 										<td>
 											<input name="gap_options[gap_force_ssl]" type="checkbox" value="1" <?php if (isset($gap_options['gap_force_ssl'])) checked('1', $gap_options['gap_force_ssl']); ?> />
-											<?php _e('Enable support for', 'gap'); ?> <a href="https://developers.google.com/analytics/devguides/collection/analyticsjs/field-reference#forceSSL">Force SSL</a>
+											<?php esc_html_e('Enable support for', 'gap'); ?> <a href="https://developers.google.com/analytics/devguides/collection/analyticsjs/field-reference#forceSSL">Force SSL</a>
 										</td>
 									</tr>
 									<tr>
-										<th scope="row"><label class="description" for="gap_options[gap_location]"><?php _e('Code Location', 'gap'); ?></label></th>
+										<th scope="row"><label class="description" for="gap_options[gap_location]"><?php esc_html_e('Code Location', 'gap'); ?></label></th>
 										<td>
 											<?php if (!isset($checked)) $checked = '';
 												foreach ($gap_location as $gap_loc) {
@@ -454,94 +508,105 @@ function gap_render_form() {
 														}
 													} ?>
 													<div class="mm-radio-inputs">
-														<input type="radio" name="gap_options[gap_location]" value="<?php esc_attr_e($gap_loc['value']); ?>" <?php echo $checked; ?> /> 
+														<input type="radio" name="gap_options[gap_location]" value="<?php echo esc_attr($gap_loc['value']); ?>" <?php echo $checked; ?> /> 
 														<span><?php echo $gap_loc['label']; ?></span>
 													</div>
 											<?php } ?>
 											<div class="mm-item-caption">
-												<?php _e('Tip: Google recommends including the Tracking Code in the document header, but including it in the footer can benefit page performance.
-														If in doubt, go with the default option to include the code in the header.', 'gap'); ?>
+												<?php esc_html_e('Tip: Google recommends including the Tracking Code in the document header, but including it in the footer can benefit page performance.', 'gap'); ?> 
+												<?php esc_html_e('If in doubt, go with the default option to include the code in the header.', 'gap'); ?>
 											</div>
 										</td>
 									</tr>
 									<tr>
-										<th scope="row"><label class="description" for="gap_options[gap_custom]"><?php _e('Custom', 'gap'); ?> <code>&lt;head&gt;</code> <?php _e('Code', 'gap'); ?></label></th>
+										<th scope="row"><label class="description" for="gap_options[gap_custom]"><?php esc_html_e('Custom', 'gap'); ?> <code>&lt;head&gt;</code> <?php esc_html_e('Code', 'gap'); ?></label></th>
 										<td>
 											<textarea type="textarea" rows="3" cols="50" name="gap_options[gap_custom]"><?php if (isset($gap_options['gap_custom'])) echo esc_textarea($gap_options['gap_custom']); ?></textarea>
-											<div class="mm-item-caption"><?php _e('Here you may specify any markup to be displayed in the &lt;head&gt; section. Leave blank to disable.', 'gap'); ?></div>
+											<div class="mm-item-caption">
+												<?php esc_html_e('Here you may specify any markup to be displayed in the', 'gap'); ?> 
+												<code>&lt;head&gt;</code> <?php esc_html_e('section. Leave blank to disable.', 'gap'); ?>
+											</div>
 										</td>
 									</tr>
 									<tr>
-										<th scope="row"><label class="description" for="gap_options[tracker_object]"><?php _e('Custom Tracker Objects', 'gap'); ?></label></th>
+										<th scope="row"><label class="description" for="gap_options[tracker_object]"><?php esc_html_e('Custom Tracker Objects', 'gap'); ?></label></th>
 										<td>
 											<textarea type="textarea" rows="3" cols="50" name="gap_options[tracker_object]"><?php if (isset($gap_options['tracker_object'])) echo esc_textarea($gap_options['tracker_object']); ?></textarea>
 											<div class="mm-item-caption"> 
-												<?php _e('Any code entered here will be added to the primary ga(\'create\') function as the fourth parameter.', 'gap'); ?> 
-												<a target="_blank" href="https://developers.google.com/analytics/devguides/collection/analyticsjs/creating-trackers"><?php _e('Learn more about creating trackers', 'gap'); ?></a>.
+												<?php esc_html_e('Any code entered here will be added to the primary', 'gap'); ?> 
+												<code>ga('create')</code> <?php esc_html_e('function as the fourth parameter.', 'gap'); ?> 
+												<a target="_blank" href="https://developers.google.com/analytics/devguides/collection/analyticsjs/creating-trackers"><?php esc_html_e('Learn more about creating trackers', 'gap'); ?></a>.
 											</div>
 										</td>
 									</tr>
 									<tr>
-										<th scope="row"><label class="description" for="gap_options[gap_custom_code]"><?php _e('Custom GA Code', 'gap'); ?></label></th>
+										<th scope="row"><label class="description" for="gap_options[gap_custom_code]"><?php esc_html_e('Custom GA Code', 'gap'); ?></label></th>
 										<td>
 											<textarea type="textarea" rows="3" cols="50" name="gap_options[gap_custom_code]"><?php if (isset($gap_options['gap_custom_code'])) echo esc_textarea($gap_options['gap_custom_code']); ?></textarea>
 											<div class="mm-item-caption"> 
-												<?php _e('Any code entered here will be added to the GA code snippet. For example, this is useful for', 'gap'); ?> 
-												<a target="_blank" href="https://developers.google.com/analytics/devguides/collection/analyticsjs/creating-trackers#working_with_multiple_trackers"><?php _e('creating multiple trackers', 'gap'); ?></a>.
+												<?php esc_html_e('Any code entered here will be added to the GA code snippet. For example, this is useful for', 'gap'); ?> 
+												<a target="_blank" href="https://developers.google.com/analytics/devguides/collection/analyticsjs/creating-trackers#working_with_multiple_trackers"><?php esc_html_e('creating multiple trackers', 'gap'); ?></a>.
 											</div>
 										</td>
 									</tr>
 									<tr>
-										<th scope="row"><label class="description" for="gap_options[admin_area]"><?php _e('Admin Area', 'gap') ?></label></th>
+										<th scope="row"><label class="description" for="gap_options[admin_area]"><?php esc_html_e('Admin Area', 'gap') ?></label></th>
 										<td>
 											<input name="gap_options[admin_area]" type="checkbox" value="1" <?php if (isset($gap_options['admin_area'])) checked('1', $gap_options['admin_area']); ?> /> 
-											<?php _e('Enable GA in the WordPress Admin Area', 'gap'); ?>
+											<?php esc_html_e('Enable GA in the WordPress Admin Area', 'gap'); ?>
 										</td>
 									</tr>
 									<tr>
-										<th scope="row"><label class="description" for="gap_options[disable_admin]"><?php _e('Admin Users', 'gap') ?></label></th>
+										<th scope="row"><label class="description" for="gap_options[disable_admin]"><?php esc_html_e('Admin Users', 'gap') ?></label></th>
 										<td>
 											<input name="gap_options[disable_admin]" type="checkbox" value="1" <?php if (isset($gap_options['disable_admin'])) checked('1', $gap_options['disable_admin']); ?> /> 
-											<?php _e('Disable GA on the frontend for Admin-level users', 'gap') ?>
+											<?php esc_html_e('Disable GA on the frontend for Admin-level users', 'gap') ?>
 										</td>
 									</tr>
 								</table>
 							</div>
-							<input type="submit" class="button-primary" value="<?php _e('Save Settings', 'gap'); ?>" />
+							<input type="submit" class="button-primary" value="<?php esc_attr_e('Save Settings', 'gap'); ?>" />
 						</div>
 					</div>
+					
 					<div id="mm-restore-settings" class="postbox">
-						<h2><?php _e('Restore Default Options', 'gap'); ?></h2>
+						<h2><?php esc_html_e('Restore Defaults', 'gap'); ?></h2>
 						<div class="toggle<?php if (!isset($_GET["settings-updated"])) { echo ' default-hidden'; } ?>">
 							<p>
 								<input name="gap_options[default_options]" type="checkbox" value="1" id="mm_restore_defaults" <?php if (isset($gap_options['default_options'])) checked('1', $gap_options['default_options']); ?> /> 
-								<label class="description" for="gap_options[default_options]"><?php _e('Restore default options upon plugin deactivation/reactivation.', 'gap'); ?></label>
+								<label class="description" for="gap_options[default_options]"><?php esc_html_e('Restore default options upon plugin deactivation/reactivation.', 'gap'); ?></label>
 							</p>
 							<p>
 								<small>
-									<?php _e('<strong>Tip:</strong> leave this option unchecked to remember your settings. Or, to go ahead and restore all default options, check the box, save your settings, and then deactivate/reactivate the plugin.', 'gap'); ?>
+									<strong><?php esc_html_e('Tip:', 'gap'); ?> </strong> <?php esc_html_e('leave this option unchecked to remember your settings.', 'gap'); ?> 
+									<?php esc_html_e('Or, to go ahead and restore all default options, check the box, save your settings, and then deactivate/reactivate the plugin.', 'gap'); ?>
 								</small>
 							</p>
-							<input type="submit" class="button-primary" value="<?php _e('Save Settings', 'gap'); ?>" />
+							<input type="submit" class="button-primary" value="<?php esc_attr_e('Save Settings', 'gap'); ?>" />
 						</div>
 					</div>
+					
 					<div id="mm-panel-current" class="postbox">
-						<h2><?php _e('Updates &amp; Info', 'gap'); ?></h2>
+						<h2><?php esc_html_e('Show Support', 'gap'); ?></h2>
 						<div class="toggle">
 							<div id="mm-iframe-wrap">
-								<iframe src="https://perishablepress.com/current/index-gap.html"></iframe>
+								<iframe src="https://perishablepress.com/current/data.php?current=gap"></iframe>
 							</div>
 						</div>
 					</div>
+					
 				</div>
 			</div>
+			
 			<div id="mm-credit-info">
 				<a target="_blank" href="<?php echo $gap_homeurl; ?>" title="<?php echo $gap_plugin; ?> Homepage"><?php echo $gap_plugin; ?></a> by 
-				<a target="_blank" href="http://twitter.com/perishable" title="Jeff Starr on Twitter">Jeff Starr</a> @ 
-				<a target="_blank" href="http://monzilla.biz/" title="Obsessive Web Design &amp; Development">Monzilla Media</a>
+				<a target="_blank" href="https://twitter.com/perishable" title="Jeff Starr on Twitter">Jeff Starr</a> @ 
+				<a target="_blank" href="https://monzillamedia.com/" title="Obsessive Web Design &amp; Development">Monzilla Media</a>
 			</div>
+			
 		</form>
 	</div>
+	
 	<script type="text/javascript">
 		jQuery(document).ready(function(){
 			// toggle panels
@@ -553,26 +618,26 @@ function gap_render_form() {
 			jQuery('h2').click(function(){
 				jQuery(this).next().slideToggle(300);
 			});
+			jQuery('#mm-panel-usage-link').click(function(){
+				jQuery('.toggle').hide();
+				jQuery('#mm-panel-usage .toggle').slideToggle(300);
+				return true;
+			});
 			jQuery('#mm-panel-primary-link').click(function(){
 				jQuery('.toggle').hide();
 				jQuery('#mm-panel-primary .toggle').slideToggle(300);
 				return true;
 			});
-			jQuery('#mm-restore-settings-link').click(function(){
-				jQuery('.toggle').hide();
-				jQuery('#mm-restore-settings .toggle').slideToggle(300);
-				return true;
-			});
 			//dismiss_alert
 			if (!jQuery('.dismiss-alert-wrap input').is(':checked')){
 				jQuery('.dismiss-alert-wrap input').one('click',function(){
-					jQuery('.dismiss-alert-wrap').after('<input type="submit" class="button-secondary" value="<?php _e('Save Preference', 'gap'); ?>" />');
+					jQuery('.dismiss-alert-wrap').after('<input type="submit" class="button-secondary" value="<?php esc_attr_e('Save Preference', 'gap'); ?>" />');
 				});
 			}
 			// prevent accidents
 			if (!jQuery('#mm_restore_defaults').is(':checked')){
 				jQuery('#mm_restore_defaults').click(function(event){
-					var r = confirm("<?php _e('Are you sure you want to restore all default options? (this action cannot be undone)', 'gap'); ?>");
+					var r = confirm("<?php esc_html_e('Are you sure you want to restore all default options? (this action cannot be undone)', 'gap'); ?>");
 					if (r == true){  
 						jQuery('#mm_restore_defaults').attr('checked', true);
 					} else {
@@ -584,4 +649,3 @@ function gap_render_form() {
 	</script>
 
 <?php }
-

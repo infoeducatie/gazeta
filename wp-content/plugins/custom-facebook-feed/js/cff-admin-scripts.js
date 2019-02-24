@@ -1,4 +1,4 @@
-jQuery(document).ready(function() {
+jQuery(document).ready(function($) {
 	
 	//Tooltips
 	jQuery('#cff-admin .cff-tooltip-link').click(function(){
@@ -88,7 +88,58 @@ jQuery(document).ready(function() {
 		}
 	});
 
-    //Add the color picker
+  //Add the color picker
 	if( jQuery('.cff-colorpicker').length > 0 ) jQuery('.cff-colorpicker').wpColorPicker();
+
+
+	//Mobile width
+	var cff_feed_width = jQuery('#cff-admin #cff_feed_width').val(),
+			$cff_width_options = jQuery('#cff-admin #cff_width_options');
+
+	if (typeof cff_feed_width !== 'undefined') {
+		//Show initially if a width is set
+		if(cff_feed_width.length > 1 && cff_feed_width !== '100%') $cff_width_options.show();
+
+		jQuery('#cff_feed_width').change(function(){
+			cff_feed_width = jQuery(this).val();
+
+			if( cff_feed_width.length < 2 || cff_feed_width == '100%' ) {
+				$cff_width_options.slideUp();			
+			} else {
+				$cff_width_options.slideDown();
+			}
+		});
+	}
+
+	//Scroll to hash for quick links
+  jQuery('#cff-admin a').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = jQuery(this.hash);
+      target = target.length ? target : this.hash.slice(1);
+      if (target.length) {
+        jQuery('html,body').animate({
+          scrollTop: target.offset().top
+        }, 500);
+        return false;
+      }
+    }
+  });
+
+  //Shortcode tooltips
+  jQuery('#cff-admin label').click(function(){
+    var $sbi_shortcode = jQuery(this).siblings('.cff_shortcode');
+    if($sbi_shortcode.is(':visible')){
+      jQuery(this).siblings('.cff_shortcode').css('display','none');
+    } else {
+      jQuery(this).siblings('.cff_shortcode').css('display','block');
+    }  
+  });
+  jQuery('#cff-admin label').hover(function(){
+    if( jQuery(this).siblings('.cff_shortcode').length > 0 ){
+      jQuery(this).attr('title', 'Click for shortcode option').append('<code class="cff_shortcode_symbol">[]</code>');
+    }
+  }, function(){
+    jQuery(this).find('.cff_shortcode_symbol').remove();
+  });
 
 });

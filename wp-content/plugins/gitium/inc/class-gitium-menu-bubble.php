@@ -1,5 +1,5 @@
 <?php
-/*  Copyright 2014-2015 Presslabs SRL <ping@presslabs.com>
+/*  Copyright 2014-2016 Presslabs SRL <ping@presslabs.com>
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License, version 2, as
@@ -19,14 +19,13 @@ class Gitium_Menu_Bubble extends Gitium_Menu {
 
 	public function __construct() {
 		parent::__construct( $this->gitium_menu_slug, $this->gitium_menu_slug );
-		add_action( 'admin_menu', array( $this, 'add_menu_bubble' ) );
+		add_action( GITIUM_ADMIN_MENU_ACTION, array( $this, 'add_menu_bubble' ) );
 	}
 
 	public function add_menu_bubble() {
-		global $git;
 		global $menu;
 
-		if ( ! $git->is_versioned()  ) {
+		if ( ! _gitium_is_status_working()  ) {
 			foreach ( $menu as $key => $value  ) {
 				if ( $this->menu_slug == $menu[ $key ][2] ) {
 					$menu_bubble = get_transient( 'gitium_menu_bubble' );

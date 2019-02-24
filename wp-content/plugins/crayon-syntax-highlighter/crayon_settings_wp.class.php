@@ -64,7 +64,7 @@ class CrayonSettingsWP {
         add_action("admin_print_styles-post-new.php", 'CrayonSettingsWP::admin_styles');
         add_action("admin_print_styles-post.php", 'CrayonSettingsWP::admin_styles');
 
-        // TODO depreciated since WP 3.3, remove eventually
+        // TODO deprecated since WP 3.3, remove eventually
         global $wp_version;
         if ($wp_version >= '3.3') {
             add_action("load-$admin_page", 'CrayonSettingsWP::help_screen');
@@ -1095,7 +1095,7 @@ class Human {
         self::checkbox(array(CrayonSettings::BACKQUOTE, crayon__('Capture `backquotes` as &lt;code&gt;') . self::help_button('http://aramk.com/blog/2012/03/07/inline-crayons/')));
         self::checkbox(array(CrayonSettings::CAPTURE_PRE, crayon__('Capture &lt;pre&gt; tags as Crayons') . self::help_button('http://aramk.com/blog/2011/12/27/mini-tags-in-crayon/')));
 
-        echo '<div class="note" style="width: 350px;">', sprintf(crayon__("Using this markup for Mini Tags and Inline tags is now %sdepreciated%s! Use the %sTag Editor%s instead and convert legacy tags."), '<a href="http://aramk.com/blog/2011/12/27/mini-tags-in-crayon/" target="_blank">', '</a>', '<a href="http://aramk.com/blog/2012/03/25/crayon-tag-editor/‎" target="_blank">', '</a>'), '</div>';
+        echo '<div class="note" style="width: 350px;">', sprintf(crayon__("Using this markup for Mini Tags and Inline tags is now %sdeprecated%s! Use the %sTag Editor%s instead and convert legacy tags."), '<a href="http://aramk.com/blog/2011/12/27/mini-tags-in-crayon/" target="_blank">', '</a>', '<a href="http://aramk.com/blog/2012/03/25/crayon-tag-editor/" target="_blank">', '</a>'), '</div>';
         self::checkbox(array(CrayonSettings::CAPTURE_MINI_TAG, crayon__('Capture Mini Tags like [php][/php] as Crayons.') . self::help_button('http://aramk.com/blog/2011/12/27/mini-tags-in-crayon/')));
         self::checkbox(array(CrayonSettings::INLINE_TAG_CAPTURE, crayon__('Capture Inline Tags like {php}{/php} inside sentences.') . self::help_button('http://aramk.com/blog/2012/03/07/inline-crayons/')));
         self::checkbox(array(CrayonSettings::PLAIN_TAG, crayon__('Enable [plain][/plain] tag.') . self::help_button('http://aramk.com/blog/2011/12/27/mini-tags-in-crayon/')));
@@ -1200,15 +1200,16 @@ class Human {
             Chinese Simplified (<a href="http://smerpup.com/" target="_blank">Dezhi Liu</a>, <a href="http://neverno.me/" target="_blank">Jash Yin</a>),
             Chinese Traditional (<a href="http://www.arefly.com/" target="_blank">Arefly</a>),
             Dutch (<a href="https://twitter.com/RobinRoelofsen" target="_blank">Robin Roelofsen</a>, <a href="https://twitter.com/#!/chilionsnoek" target="_blank">Chilion Snoek</a>),
-            French (<a href="http://tech.dupeu.pl" target="_blank">Victor Felder</a>),
+            French (<a href="https://vhf.github.io" target="_blank">Victor Felder</a>),
             Finnish (<a href="https://github.com/vahalan" target="_blank">vahalan</a>),
             German (<a href="http://www.technologyblog.de/" target="_blank">Stephan Knau&#223;</a>),
             Italian (<a href="http://www.federicobellucci.net/" target="_blank">Federico Bellucci</a>),
             Japanese (<a href="https://twitter.com/#!/west_323" target="_blank">@west_323</a>),
             Korean (<a href="https://github.com/dokenzy" target="_blank">dokenzy</a>),
             Lithuanian (Vincent G),
+            Norwegian (<a href="http://www.jackalworks.com/blogg" target="_blank">Jackalworks</a>),
             Persian (MahdiY),
-            Polish (<a href="https://github.com/toszcze" target="_blank">Bartosz Romanowski</a>),
+            Polish (<a href="https://github.com/toszcze" target="_blank">Bartosz Romanowski</a>, <a href="http://rob006.net/" target="_blank">Robert Korulczyk</a>),
             Portuguese (<a href="http://www.adonai.eti.br" target="_blank">Adonai S. Canez</a>),
             Russian (<a href="http://simplelib.com/" target="_blank">Minimus</a>, Di_Skyer),
             Slovak (<a href="https://twitter.com/#!/webhostgeeks" target="_blank">webhostgeeks</a>),

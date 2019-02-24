@@ -1,5 +1,4 @@
-<?php get_header(); ?>
-
+<?php get_header(); ?> 
 <!-- Include Facebook SDK only on articles page -->
 <div id="fb-root"></div>
 

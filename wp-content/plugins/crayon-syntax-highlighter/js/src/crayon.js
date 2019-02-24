@@ -70,10 +70,6 @@
     var CRAYON_COPY_BUTTON = '.crayon-copy-button';
     var CRAYON_PLAIN_BUTTON = '.crayon-plain-button';
 
-    $(document).ready(function () {
-        CrayonSyntax.init();
-    });
-
     CrayonSyntax = new function () {
         var base = this;
         var crayons = new Object();
@@ -410,7 +406,7 @@
                 return makeUID(uid);
             }
             var settings = crayons[uid].popup_settings;
-            if (settings.data) {
+            if (settings && settings.data) {
                 // Already done
                 return;
             }
@@ -1150,4 +1146,7 @@
 
     };
 
+    $(document).ready(function () {
+        CrayonSyntax.init();
+    });
 })(jQueryCrayon);

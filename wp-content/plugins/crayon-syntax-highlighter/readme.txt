@@ -16,8 +16,8 @@ It can highlight from a URL, or Wordpress post text. Crayon makes it easy to man
 custom language elements with regular expressions.
 It also supports some neat features like:
 
-* Integrated <a href="http://aramk.com/blog/2012/12/27/crayon-theme-editor/‎" target="_blank">Theme Editor!</a>
-* <a href="http://aramk.com/blog/2012/03/25/crayon-tag-editor/‎" target="_blank">Tag Editor</a> in both Visual & HTML editors
+* Integrated <a href="http://aramk.com/blog/2012/12/27/crayon-theme-editor/" target="_blank">Theme Editor!</a>
+* <a href="http://aramk.com/blog/2012/03/25/crayon-tag-editor/" target="_blank">Tag Editor</a> in both Visual & HTML editors
 * Toggled plain code
 * Toggled line numbers
 * Copy/paste code
@@ -28,14 +28,14 @@ It also supports some neat features like:
 * bbPress 2 support
 * <a href="http://aramk.com/blog/2012/09/26/converting-legacy-tags-to-pre/" target="_blank">Converting legacy code in blog posts/comments to &lt;pre&gt;</a>
 * Remote request caching
-* <a href="http://aramk.com/blog/2011/12/25/mixed-language-highlighting-in-crayon‎" target="_blank">Mixed Language Highlighting</a> in a single Crayon
+* <a href="http://aramk.com/blog/2011/12/25/mixed-language-highlighting-in-crayon" target="_blank">Mixed Language Highlighting</a> in a single Crayon
 * <a href="http://aramk.com/blog/2011/12/27/mini-tags-in-crayon/" target="_blank">Mini Tags</a> like [php][/php]
-* <a href="http://aramk.com/blog/2012/03/07/inline-crayons‎" target="_blank">Inline Tags</a> floating in sentences
+* <a href="http://aramk.com/blog/2012/03/07/inline-crayons/" target="_blank">Inline Tags</a> floating in sentences
 * Crayons in comments
 * &#96;Backquotes&#96; become &lt;code&gt;
 * &lt;pre&gt; tag support, option to use <code>setting-value</code> in the class attribute
 * Valid HTML 5 markup
-* <a href="http://aramk.com/blog/2012/03/25/crayon-tag-editor/‎" target="_blank">Visual & HTML editor compatible</a>
+* <a href="http://aramk.com/blog/2012/03/25/crayon-tag-editor/" target="_blank">Visual & HTML editor compatible</a>
 * Mobile/touchscreen device detection
 * Mouse event interaction (showing plain code on double click, toolbar on mouseover)
 * Tab sizes
@@ -44,7 +44,7 @@ It also supports some neat features like:
 * Retina buttons
 * Striped lines
 * Line marking (for important lines)
-* <a href="http://aramk.com/blog/2012/09/02/line-ranges-in-crayon‎" target="_blank">Line ranges (showing only parts of the code)</a>
+* <a href="http://aramk.com/blog/2012/09/02/line-ranges-in-crayon/" target="_blank">Line ranges (showing only parts of the code)</a>
 * Starting line number (default is 1)
 * File extension detection
 * Live Preview in settings
@@ -91,12 +91,14 @@ See the <a href="http://aramk.com/blog/2011/09/23/crayon-language-file-specifica
 * Delphi Web Script (thanks to <a href="http://www.smartmobilestudio.com" target="_blank">smartmobilestudio</a>)
 * Diff (thanks to <a href="http://omniavin.co/post/262" target="_blank">omniavin</a>)
 * Erlang (thanks to <a href="http://netroid.de/" target="_blank">Daniel</a>)
+* Fabric Engine KL (thanks to <a href="https://github.com/AndrewHazelden" target="_blank">Andrew Hazelden</a>)
 * Go
 * Haskell
 * HTML (XML/XHTML)
 * INI
 * Lisp
 * Lua
+* Maya MEL (thanks to <a href="https://github.com/AndrewHazelden" target="_blank">Andrew Hazelden</a>)
 * Microsoft Registry (thanks to <a href="http://techexplored.com/2012/03/21/crayon-syntax-highlighter-reg-support/" target="_blank">techexplored.com</a>)
 * MIVA Script
 * Monkey (thanks to <a href="https://github.com/devolonter" target="_blank">Devolonter</a>)
@@ -134,14 +136,15 @@ See the <a href="http://aramk.com/blog/2011/09/23/crayon-language-file-specifica
 * Chinese Traditional (thanks to <a href="http://www.arefly.com/" target="_blank">Arefly</a>)
 * Dutch (thanks to <a href="https://twitter.com/RobinRoelofsen" target="_blank">Robin Roelofsen</a> & <a href="https://twitter.com/#!/chilionsnoek" target="_blank">Chilion Snoek</a>)
 * Finnish (thanks to <a href="https://github.com/vahalan" target="_blank">vahalan</a>)
-* French (thanks to <a href="http://tech.dupeu.pl" target="_blank">Victor Felder</a>)
+* French (thanks to <a href="https://vhf.github.io" target="_blank">Victor Felder</a>)
 * German (thanks to <a href="http://www.technologyblog.de/" target="_blank">Stephan Knau&szlig;</a>)
 * Italian (thanks to <a href="http://www.federicobellucci.net/" target="_blank">Federico Bellucci</a>)
 * Japanese (thanks to <a href="https://twitter.com/#!/west_323" target="_blank">@west_323</a>)
 * Korean (thanks to <a href="https://github.com/dokenzy" target="_blank">dokenzy</a>)
 * Lithuanian (thanks to Vincent G)
+* Norwegian (thanks to <a href="http://www.jackalworks.com/blogg" target="_blank">Jackalworks</a>)
 * Persian (thanks to MahdiY)
-* Polish (thanks to <a href="https://github.com/toszcze" target="_blank">Bartosz Romanowski</a>)
+* Polish (thanks to <a href="https://github.com/toszcze" target="_blank">Bartosz Romanowski</a>, <a href="http://rob006.net/" target="_blank">Robert Korulczyk</a>)
 * Portuguese (thanks to <a href="http://www.adonai.eti.br" target="_blank">Adonai S. Canez</a>)
 * Russian (thanks to <a href="http://simplelib.com" target="_blank">Minimus</a> & <a href="http://atlocal.net/" target="_blank">Di_Skyer</a>)
 * Slovak (thanks to Branco, <a href="https://twitter.com/#!/webhostgeeks" target="_blank">webhostgeeks/</a>)
@@ -156,15 +159,15 @@ See the <a href="http://aramk.com/blog/2011/09/23/crayon-language-file-specifica
 
 These are helpful for discovering new features.
 
-* <a href="http://aramk.com/blog/2012/09/26/internal-post-management-crayon/‎" target="_blank">Internal Post Management in Crayon</a>
+* <a href="http://aramk.com/blog/2012/09/26/internal-post-management-crayon/" target="_blank">Internal Post Management in Crayon</a>
 * <a href="http://aramk.com/blog/2012/09/26/converting-legacy-tags-to-pre/" target="_blank">Converting Legacy Tags to &lt;pre&gt;</a>
 * <a href="http://aramk.com/blog/2012/09/08/crayon-with-bbpress/" target="_blank">Crayon with bbPress</a>
-* <a href="http://aramk.com/blog/2012/09/02/line-ranges-in-crayon‎" target="_blank">Line Ranges in Crayon</a>
-* <a href="http://aramk.com/blog/2012/03/25/crayon-tag-editor/‎" target="_blank">Crayon Tag Editor</a>
-* <a href="http://aramk.com/blog/2011/12/25/mixed-language-highlighting-in-crayon‎" target="_blank">Mixed Language Highlighting in Crayon</a>
+* <a href="http://aramk.com/blog/2012/09/02/line-ranges-in-crayon/" target="_blank">Line Ranges in Crayon</a>
+* <a href="http://aramk.com/blog/2012/03/25/crayon-tag-editor/" target="_blank">Crayon Tag Editor</a>
+* <a href="http://aramk.com/blog/2011/12/25/mixed-language-highlighting-in-crayon/" target="_blank">Mixed Language Highlighting in Crayon</a>
 * <a href="http://aramk.com/blog/2011/12/27/mini-tags-in-crayon/" target="_blank">Mini Tags And Plain Tags In Crayon</a>
-* <a href="http://aramk.com/blog/2012/03/07/inline-crayons‎" target="_blank">Inline Tags</a>
-* <a href="http://aramk.com/blog/2012/01/07/enqueuing-themes-and-fonts-in-crayon" target="_blank">Enqueuing Themes and Fonts in Crayon</a>
+* <a href="http://aramk.com/blog/2012/03/07/inline-crayons/" target="_blank">Inline Tags</a>
+* <a href="http://aramk.com/blog/2012/01/07/enqueuing-themes-and-fonts-in-crayon/" target="_blank">Enqueuing Themes and Fonts in Crayon</a>
 
 **The Press**
 
@@ -198,9 +201,21 @@ A handful of articles from others written about Crayon, thanks guys!
 
 Thanks to all those who donate to the project:
 
+* Joe Sabate, Spain
+* Kai Chen, Canada
+* Chen Kaiyuan, China
+* Kamarul Musa, Malaysia
+* WallyWare, Inc., (https://pi-plates.com), USA
+* Stéphane Rochat, (http://stephanerochat.ch), Switzerland
+* Brennan Hale-Matthews, Canada
+* Robert Giczewski, (http://www.lazydaemon.de/), Germany
+* Hoke Media, (http://hoke.media/), USA
+* Matthew Hood, Australia
+* Brian Williams, USA
+* Christian Martens, (http://insgesamt.net/), Germany
 * Nilesh Govindrajan, (http://nileshgr.com/), India
 * ZengChun Yang, China
-* Alan Kaplan, (http://www.akaplan.com/blog), US
+* Alan Kaplan, (http://www.akaplan.com/blog), USA
 * Christopher Yarbrough, (http://chrisyarbrough.com/), Germany
 * Johann Weiher, (http://codequartett.de/), Germany
 * Samuel Deering, Australia
@@ -297,6 +312,44 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 5. Theme Editor.
 
 == Changelog ==
+
+= 2.8.4 =
+* ADDED:
+    * CrayonWP::highlight() can return plain text instead of HTML. Used for AJAX requests to prevent
+      XSS vulnerabilities.
+* FIXED:
+    * Support for tags (e.g. formatting) in the HTML for CrayonWP::highlight(). This affects
+      bbPress. Only script tags and event attributes are stripped.
+
+= 2.8.3 =
+* FIXED:
+    * header() use in CrayonWP::highlight()
+
+= 2.8.2 =
+* ADDED:
+    * Plain white theme (thanks to http://vhbelvadi.com).
+
+= 2.8.1 =
+* ADDED:
+    * Coy theme.
+* FIXED:
+    * Strip tags in output content for CrayonWP::highlight()
+
+= 2.8.0 =
+* ADDED:
+    * Qtcreator theme.
+    * Norwegian translation.
+    * Amity theme.
+    * Flat-UI theme.
+    * Powershell theme.
+    * Mm Dark Blue theme.
+    * Prism Like theme.
+    * Kaderu theme.
+    * Kayote theme.
+    * Xcode theme.
+    * Source Code Pro font.
+* FIXED:
+    * Polish translation and other fixes (thanks to https://github.com/rob006).
 
 = 2.7.1 =
 * FIXED:
@@ -730,7 +783,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 * Integrated Tag Editor with Fancybox, switched from the discontinued ThickBox, a fair amount of changes took place.
 * Crayon should now appear pretty much anywhere TinyMCE does, and this can be tweaked to add more options later.
 * Added setting to disable Tag Editor on front end, and/or disable its settings.
-* Added the ability to specify <a href="http://aramk.com/blog/2012/09/02/line-ranges-in-crayon‎" target="_blank">line ranges</a>
+* Added the ability to specify <a href="http://aramk.com/blog/2012/09/02/line-ranges-in-crayon/" target="_blank">line ranges</a>
 * Added Microsoft Registry language thanks to <a href="http://techexplored.com/2012/03/21/crayon-syntax-highlighter-reg-support/" target="_blank">techexplored.com</a>
 * Added MIVA Script language
 * Added Transact-SQL language
@@ -1022,7 +1075,7 @@ Contact me at http://twitter.com/crayonsyntax or crayon.syntax@gmail.com.
 * Renamed Japanese GNU language code from ja_JP to ja.
 
 = 1.7.0 =
-* Added the ability to highlight multiple languages in a single Crayon! http://aramk.com/blog/2011/12/25/mixed-language-highlighting-in-crayon‎
+* Added the ability to highlight multiple languages in a single Crayon! http://aramk.com/blog/2011/12/25/mixed-language-highlighting-in-crayon/
 * A bunch of language improvements, a few CSS improvements, etc.
 
 = 1.6.6 =

@@ -1,5 +1,5 @@
 <?php
-/*  Copyright 2014-2015 Presslabs SRL <ping@presslabs.com>
+/*  Copyright 2014-2016 Presslabs SRL <ping@presslabs.com>
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License, version 2, as
@@ -19,7 +19,7 @@ class Gitium_Submenu_Settings extends Gitium_Menu {
 
 	public function __construct() {
 		parent::__construct( $this->gitium_menu_slug, $this->settings_menu_slug );
-		add_action( 'admin_menu', array( $this, 'admin_menu' ) );
+		add_action( GITIUM_ADMIN_MENU_ACTION, array( $this, 'admin_menu' ) );
 		add_action( 'admin_init', array( $this, 'save' ) );
 		add_action( 'admin_init', array( $this, 'regenerate_webhook' ) );
 		add_action( 'admin_init', array( $this, 'regenerate_public_key' ) );
@@ -30,7 +30,7 @@ class Gitium_Submenu_Settings extends Gitium_Menu {
 			$this->menu_slug,
 			'Settings',
 			__( 'Settings' ),
-			'manage_options',
+			GITIUM_MANAGE_OPTIONS_CAPABILITY,
 			$this->submenu_slug,
 			array( $this, 'page' )
 		);
@@ -38,7 +38,8 @@ class Gitium_Submenu_Settings extends Gitium_Menu {
 	}
 
 	public function regenerate_webhook() {
-		if ( ! isset( $_POST['GitiumSubmitRegenerateWebhook'] ) ) {
+		$gitium_regen_webhook = filter_input(INPUT_POST, 'GitiumSubmitRegenerateWebhook', FILTER_SANITIZE_STRING);
+		if ( ! isset( $gitium_regen_webhook ) ) {
 			return;
 		}
 		check_admin_referer( 'gitium-settings' );
@@ -47,7 +48,8 @@ class Gitium_Submenu_Settings extends Gitium_Menu {
 	}
 
 	public function regenerate_public_key() {
-		if ( ! isset( $_POST['GitiumSubmitRegeneratePublicKey'] ) ) {
+		$submit_regenerate_pub_key = filter_input(INPUT_POST, 'GitiumSubmitRegeneratePublicKey', FILTER_SANITIZE_STRING);
+		if ( ! isset( $submit_regenerate_pub_key ) ) {
 			return;
 		}
 		check_admin_referer( 'gitium-settings' );
@@ -62,7 +64,8 @@ class Gitium_Submenu_Settings extends Gitium_Menu {
 			<td>
 			  <p><code id="webhook-url"><?php echo esc_url( gitium_get_webhook() ); ?></code>
 			  <?php if ( ! defined( 'GIT_WEBHOOK_URL' ) || GIT_WEBHOOK_URL == '' ) : ?>
-			  <input type="submit" name="GitiumSubmitRegenerateWebhook" class="button" value="<?php _e( 'Regenerate Webhook', 'gitium' ); ?>" /></p>
+			  <input type="submit" name="GitiumSubmitRegenerateWebhook" class="button" value="<?php _e( 'Regenerate Webhook', 'gitium' ); ?>" />
+                          <a class="button" href="<?php echo esc_url( gitium_get_webhook() ); ?>" target="_blank">Merge changes</a></p>
 			  <?php endif; ?>
 			  <p class="description"><?php _e( 'Pinging this URL triggers an update from remote repository.', 'gitium' ); ?></p>
 			</td>
@@ -96,12 +99,14 @@ class Gitium_Submenu_Settings extends Gitium_Menu {
 	}
 
 	public function save() {
-		if ( ! isset( $_POST['GitiumSubmitSave'] ) || ! isset( $_POST['gitignore_content'] ) ) {
+	    $submit_save = filter_input(INPUT_POST, 'GitiumSubmitSave', FILTER_SANITIZE_STRING);
+	    $gitignore_content = filter_input(INPUT_POST, 'gitignore_content', FILTER_SANITIZE_STRING);
+		if ( ! isset( $submit_save ) || ! isset( $gitignore_content ) ) {
 			return;
 		}
 		check_admin_referer( 'gitium-settings' );
 
-		if ( $this->git->set_gitignore( $_POST['gitignore_content'] ) ) {
+		if ( $this->git->set_gitignore( $gitignore_content ) ) {
 			gitium_commit_and_push_gitignore_file();
 			$this->success_redirect( __( 'The file `.gitignore` is saved!', 'gitium' ), $this->settings_menu_slug );
 		} else {

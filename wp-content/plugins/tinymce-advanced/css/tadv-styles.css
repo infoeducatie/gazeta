@@ -1,4 +1,10 @@
-
+/**
+ * This file is part of the TinyMCE Advanced WordPress plugin and is released under the same license.
+ * For more information please see tinymce-advanced.php.
+ *
+ * Copyright (c) 2007-2016 Andrew Ozz. All rights reserved.
+ */
+ 
 .tadv-more-plugins label {
 	font-weight: bold;
 	padding: 0 10px;
@@ -9,7 +15,7 @@
 }
 
 .advanced-options {
-	margin-bottom: 20px;
+	margin: 20px 0;
 	border: 1px solid #ccc;
 	padding: 0 15px;
 }
@@ -78,7 +84,8 @@ ul.container,
 	color: #555;
 }
 
-.tadvitem i.mce-ico.mce-i-ltr {
+.tadvitem i.mce-ico.mce-i-ltr,
+.tadvitem i.mce-ico.mce-i-tadv_mark {
 	font-family: tinymce;
 	font-size: 16px;
 	vertical-align: text-top;
@@ -86,6 +93,15 @@ ul.container,
 
 .tadvitem i.mce-ico.mce-i-ltr:before {
 	content: "\e02f";
+}
+
+.tadvitem i.mce-ico.mce-i-tadv_mark:before {
+    content: "\e01a";
+}
+
+.tadvitem i.mce-ico.mce-i-tadv_mark {
+    text-shadow: none;
+    background: #ddd;
 }
 
 #tadv-mce-menu {
@@ -140,6 +156,12 @@ ul.container,
 	margin: 0 0 10px;
 	background-color: #fff;
 	border: 1px solid #bbb;
+}
+
+#unuseddiv.highlighted,
+.tadvdropzone.highlighted {
+	background-color: #efefe9;
+    border-color: #aaa;
 }
 
 .tadvdropzone .descr {
@@ -275,4 +297,9 @@ div.tadv-error {
 
 .tadvdropzone .tadv-placeholder {
 	height: 28px;
+}
+
+.tadv-error {
+	color: #d54e21;
+	font-weight: bold;
 }

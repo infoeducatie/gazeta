@@ -1,70 +1,73 @@
 === Social Login ===
-Contributors: ClaudeSchlesser
-Tags: social login, social connect, facebook, linkedin, livejournal, google, yahoo, twitter, openid, paypal, google, instagram, widget, plugin, social network login, comments
+Contributors: OneAll.com, ClaudeSchlesser
+Tags: social login, social networks, login, register, comment, social network login, buddypress, facebook, google, openid, twitter, linkedin, instagram, pinterest, instagram, vkontakte, github, steam, dribbble, twitch.tv
 Requires at least: 3.0
-Tested up to: 4.2.4
-Stable tag: 5.0
+Tested up to: 4.8
+Stable tag: 5.3
 
-Allow your visitors to comment and login with social networks like Twitter, Facebook, Paypal, LinkedIn, Instagram, OpenID, VKontakte, Google, Yahoo
+Social Login allows your users to comment, register and login with 30+ Social Networks like Twitter, Facebook, Paypal, LinkedIn, Instagram, OpenID, VKontakte, Google, Pinterest ... 
 
 == Description ==
 
-Social Login is a professionally developed and free Wordpress (BuddyPress compatible) plugin that allows your visitors to comment, 
-login and register with 25+ Social Networks like for example Facebook, Twitter, Google, LinkedIn, PayPal, LiveJournal, Instagram, Вконтакте and Yahoo.<br /><br />
-<strong>Make your blog social!</strong><br />
+= Social Login Plugin =
 
-<strong>Choose where to add the Social Login Plugin:</strong>
-<ul>
- <li>On the comment formular</li>
- <li>On the login page</li>
- <li>On the registration page</li>
- <li>In your sidebar</li>
- <li>With a shortcode</li>
-</ul>
+Social Login is a **professionally developed** and free Wordpress plugin that allows your visitors to **comment, login and register with 30+ Social Networks** like for example Facebook, Twitter, Google, LinkedIn, PayPal, LiveJournal, Instagram, Вконтакте or Yahoo amongst other.
 
-<strong>Optionally add the Social Login widget:</strong>
-<ul>
- <li>A login widget that you can easily attach to your sidebar is provided</li>
-</ul>
+**Seamlessly Integrates**<br />
+Social Login is fully customizable and seamlessly integrates with your existing login/registration system so that your users don't have to start from scratch. Existing existing accounts can add/remove their social network accounts in their WordPress profile settings and then also use the linked social networks to login.
 
-<strong>Select the Social Networks/Providers:</strong>
-<ul>
- <li>Amazon</li>
- <li>Battle.net</li>
- <li>Blogger</li>
- <li>Disqus</li>
- <li>Facebook</li>
- <li>Foursquare</li>
- <li>Github.com</li>
- <li>Google</li>
- <li>Instagram</li>
- <li>LinkedIn</li>
- <li>LiveJournal</li>
- <li>Mail.ru</li>
- <li>Odnoklassniki</li>
- <li>OpenID</li>
- <li>PayPal</li>
- <li>Reddit</li>
- <li>Skyrock.com</li>		
- <li>StackExchange</li>
- <li>Steam</li>
- <li>Twitch.tv</li>
- <li>Twitter</li>
- <li>Vimeo</li>
- <li>VKontakte</li>
- <li>Windows Live</li>
- <li>WordPress.com</li>
- <li>Yahoo</li>
- <li>YouTube</li>
-</ul>
- 
+**Eliminates Spam and Bot Registrations**<br />
+Get rid of long and complicated forms, improve your data quality and instantly eliminate spam and bot registrations. Social Login increases registration rates by up to 50% and provides permission-based access to users' social network profile data, allowing you to start delivering a personalized experience.
 
-<strong>Increase your wordpress/buddypress user engagement in a few simple steps with the Social Login Plugin!</strong>
-Our users love it! Check out the <a href="http://wordpress.org/extend/plugins/oa-social-login/other_notes/">testimonials</a>!<br />
+**Robust and Maintenance Free**<br />
+Do not take the risk of loosing any users or customers due to outdated social network integrations. Unlike other Social Login providers we monitor the APIs and technologies of the different social networks and update our service as soon as changes arise.
 
-The Social Login Plugin is maintained by <a href="http://www.oneall.com">OneAll</a>, a technology company offering a set of web-delivered
-tools and services for establishing and optimizing a site's connection with social networks and identity providers such as Facebook, Twitter, 
-Google, Yahoo!, LinkedIn, Paypal, Instagram amongst others.
+By using OneAll you can be sure that your social media integration will always run smoothly and with the most up-to-date calls.
+
+**Fully Customizable**<br />
+You can easily configure which social accounts to enable/disable for login and on which areas of the website social login should be displayed:
+* On the comment formular
+* On the login page
+* On the registration page
+* In your sidebar
+* With a shortcode
+
+**30+ Social Networks**
+* Amazon
+* Battle.net
+* Blogger
+* Disqus
+* Dribbble
+* Facebook
+* Foursquare
+* Github.com
+* Google
+* Instagram
+* LinkedIn
+* LiveJournal
+* Mail.ru
+* Odnoklassniki
+* OpenID
+* PayPal
+* Pinterest
+* PixelPin 
+* Reddit
+* Skyrock.com		
+* StackExchange
+* Steam
+* Twitch.tv
+* Twitter
+* Vimeo
+* VKontakte
+* Windows Live
+* WordPress.com
+* Yahoo
+* YouTube
+
+**Professionally Developed and Maintained**
+Social Login is maintained by [OneAll](http://www.oneall.com), a technology company offering a set of web-delivered tools to simplify the integration of 30+ social networks into business and personal websites and apps. 
+
+The OneAll API unifies 30+ Social Networks and consolidates the most powerful social network features in a single solution. You can work with multiple social networks at once and you will obtain a standardized field structure for data received from any of the social networks. Save time and development resources and focus on your core business. 
 
 == Installation ==
 
@@ -85,17 +88,17 @@ In order to enable the plugin you must connect with the OneAll API and create a 
 = Do I have to add template tags to my theme? =
 
 You should not have to change your templates. 
-The Social Login seamlessly integrates into your blog by using predefined hooks.
+The Social Login plugin seamlessly integrates into your blog by using standard WordPress hooks.
 
-= Does Social Login can be embedded through a shortcode? =
+= Can Social Login be embedded through a shortcode? =
 
-The Social Login shortcode `[oa_social_login]` can be used in any page or post within your blog.
-The shortcode will automatically be replaced by the icons of the chosen
-social network providers.
+The Social Login shortcode `[oa_social_login]` can be used in any page or post within your WordPress blog.
+The shortcode will automatically be replaced by the icons of the social networks that you have
+enabled in the Social Login settings in your WordPress administration area.
 
 = I have a custom template and the plugin is not displayed correctly =
 
-The plugin uses predefined hooks. If your theme does not support these hooks,
+Social Login uses standard WordPress hooks. If your theme does not support these hooks,
 you can add the Social Login form manually to your theme by inserting the following code 
 in your template (at the location where it should be displayed, i.e. above the comments).
 
@@ -105,21 +108,21 @@ Do not hesitate to contact us if you need further assistance.
 
 = My users cannot login or leave comment with VKontakte (Вконтакте) =
 
-Per default WordPress does not allow to use special characters in usernames.
+Per default WordPress does not allow the use of special characters in usernames.
 If you encounter any problems with users having cyrillic characters in their
 usernames, please consider installing the following plugin to fix the problem:
 <a href="http://wordpress.org/extend/plugins/wordpress-special-characters-in-usernames/">Wordpress Special Characters In Usernames</a>
 
 = Do I have to change my Rewrite Settings? =
 
-The plugins does not rely on mod_rewrite and does not need any additional rules.
+Social Login does not rely on mod_rewrite and does not need any additional rules.
 It should work out of the box.
 
 
 = Where can I report bugs, leave my feedback and get support? =
 
 Our team answers your questions at:<br />
-http://www.oneall.com/company/contact-us/
+http://support.oneall.com/forums/
 
 The plugin documentation is available at:<br />
 http://docs.oneall.com/plugins/guide/social-login-wordpress/
@@ -134,12 +137,27 @@ http://docs.oneall.com/plugins/guide/social-login-wordpress/
 
 == Changelog ==
 
+= 5.3 =
+* New icon set added
+* Social Login interface improved
+* Social Network avatar removed when unlinking account
+* Social Link reviewed and improved
+* Undefined index fixed
+
+= 5.2 =
+* Buddypress avatar bugfix
+* Do not create users without email addresses when plugin set to request emails
+* Support for WP_PROXY_HOST added
+* Filter for callback uri added
+* More pannel added
+
 = 5.0 =
 * Social Network "Battle.net" added
 * Social Link Hooks/Nonce added
 * WooCommerce Actions added
 * Login/Registration URL filters added
 * Cache bug fixed
+* WooCommerce Social Login Twice on Register Form
 * Some minor bugs fixed
 
 = 4.6 =
@@ -306,6 +324,10 @@ http://docs.oneall.com/plugins/guide/social-login-wordpress/
 == Testimonials ==
 
 <strong>Used by thousands of users around the world!</strong>
+
+<em>The plugin in is one of the best I've seen so far. Extremely easy to implement and run. The support is great too. 
+No concerns on my side. Keep it up!</em>
+<strong>livia</strong>
 
 <em>Loving the service, seen a massive increase in painless signups to my blog. Thanks!</em>
 <strong>Richard B.</strong>

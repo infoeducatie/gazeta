@@ -1,5 +1,5 @@
 <?php
-/*  Copyright 2014-2015 PressLabs SRL <ping@presslabs.com>
+/*  Copyright 2014-2016 Presslabs SRL <ping@presslabs.com>
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License, version 2, as
@@ -14,6 +14,11 @@
     along with this program; if not, write to the Free Software
     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
+
+function gitium_error_log( $message ) {
+	if ( ! defined( 'WP_DEBUG' ) || ! WP_DEBUG ) { return; }
+	error_log( "gitium_error_log: $message" );
+}
 
 function wp_content_is_versioned() {
 	return file_exists( WP_CONTENT_DIR . '/.git' );
@@ -68,41 +73,60 @@ function _gitium_format_message( $name, $version = false, $prefix = '' ) {
 	return $commit_message;
 }
 
-function _gitium_module_by_path( $path ) {
-	/*
-  wp-content/themes/twentyten/style.css => array(
-    'base_path' => wp-content/themes/twentyten
-    'type' => 'theme'
-    'name' => 'TwentyTen'
-    'varsion' => 1.12
-  )
-  wp-content/themes/twentyten/img/foo.png => array(
-    'base_path' => wp-content/themes/twentyten
-    'type' => 'theme'
-    'name' => 'TwentyTen'
-    'varsion' => 1.12
-  )
-  wp-content/plugins/foo.php => array(
-    'base_path' => wp-content/plugins/foo.php
-    'type' => 'plugin'
-    'name' => 'Foo'
-    'varsion' => 2.0
+/**
+ * This function return the basic info about a path.
+ *
+ * base_path - means the path after wp-content dir (themes/plugins)
+ * type      - can be file/theme/plugin
+ * name      - the file name of the path, if it is a file, or the theme/plugin name
+ * version   - the theme/plugin version, othewise null
+ */
+/* Some examples:
+
+  with 'wp-content/themes/twentyten/style.css' will return:
+  array(
+    'base_path' => 'wp-content/themes/twentyten'
+    'type'      => 'theme'
+    'name'      => 'TwentyTen'
+    'version'   => '1.12'
   )
 
-  wp-content/plugins/autover/autover.php => array(
-    'base_path' => wp-content/plugins/autover
-    'type' => 'plugin'
-    'name' => 'autover'
-    'varsion' => 3.12
+  with 'wp-content/themes/twentyten/img/foo.png' will return:
+  array(
+    'base_path' => 'wp-content/themes/twentyten'
+    'type'      => 'theme'
+    'name'      => 'TwentyTen'
+    'version'   => '1.12'
   )
-  wp-content/plugins/autover/ => array(
-    'base_path' => wp-content/plugins/autover
-    'type' => 'plugin'
-    'name' => 'autover'
-    'varsion' => 3.12
+
+  with 'wp-content/plugins/foo.php' will return:
+  array(
+    'base_path' => 'wp-content/plugins/foo.php'
+    'type'      => 'plugin'
+    'name'      => 'Foo'
+    'varsion'   => '2.0'
   )
-	*/
+
+  with 'wp-content/plugins/autover/autover.php' will return:
+  array(
+    'base_path' => 'wp-content/plugins/autover'
+    'type'      => 'plugin'
+    'name'      => 'autover'
+    'version'   => '3.12'
+  )
+
+  with 'wp-content/plugins/autover/' will return:
+  array(
+    'base_path' => 'wp-content/plugins/autover'
+    'type'      => 'plugin'
+    'name'      => 'autover'
+    'version'   => '3.12'
+  )
+*/
+function _gitium_module_by_path( $path ) {
 	$versions = gitium_get_versions();
+
+	// default values
 	$module   = array(
 		'base_path' => $path,
 		'type'      => 'file',
@@ -110,34 +134,43 @@ function _gitium_module_by_path( $path ) {
 		'version'   => null,
 	);
 
-	if ( 0 === strpos( $path, 'wp-content/themes/' ) ) {
+	// find the base_path
+	$split_path = explode( '/', $path );
+	if ( 2 < count( $split_path ) ) {
+		$module['base_path'] = "{$split_path[0]}/{$split_path[1]}/{$split_path[2]}";
+	}
+
+	// find other data for theme
+	if ( array_key_exists( 'themes', $versions ) && 0 === strpos( $path, 'wp-content/themes/' ) ) {
 		$module['type'] = 'theme';
 		foreach ( $versions['themes'] as $theme => $data ) {
-			if ( 0 === strpos( $path, 'wp-content/themes/' . $theme ) ) {
-				$module['base_path'] = 'wp-content/themes/' . $theme;
-				$module['name']      = $data['name'];
-				$module['version']   = $data['version'];
+			if ( 0 === strpos( $path, "wp-content/themes/$theme" ) ) {
+				$module['name']    = $data['name'];
+				$module['version'] = $data['version'];
 				break;
 			}
 		}
 	}
 
-	if ( 0 === strpos( $path, 'wp-content/plugins/' ) ) {
+	// find other data for plugin
+	if ( array_key_exists( 'plugins', $versions ) && 0 === strpos( $path, 'wp-content/plugins/' ) ) {
 		$module['type'] = 'plugin';
 		foreach ( $versions['plugins'] as $plugin => $data ) {
-			if ( basename( $plugin ) == $plugin ) {
-				$plugin_base_path = 'wp-content/plugins/' . $plugin;
-			} else {
-				$plugin_base_path = 'wp-content/plugins/' . dirname( $plugin );
-			}
-			if ( 0 === strpos( $path, $plugin_base_path ) ) {
-				$module['base_path'] = $plugin_base_path;
-				$module['name']      = $data['name'];
-				$module['version']   = $data['version'];
+			if ( '.' === dirname( $plugin ) ) { // single file plugin
+				if ( "wp-content/plugins/$plugin" === $path ) {
+					$module['base_path'] = $path;
+					$module['name']      = $data['name'];
+					$module['version']   = $data['version'];
+					break;
+				}
+			} else if ( 'wp-content/plugins/' . dirname( $plugin ) === $module['base_path'] ) {
+				$module['name']    = $data['name'];
+				$module['version'] = $data['version'];
 				break;
 			}
 		}
 	}
+
 	return $module;
 }
 
@@ -178,20 +211,51 @@ function gitium_commit_and_push_gitignore_file( $path = '' ) {
 	gitium_merge_and_push( $commit );
 }
 
+if ( ! function_exists( 'gitium_acquire_merge_lock' ) ) :
+	function gitium_acquire_merge_lock() {
+		$gitium_lock_path   = apply_filters( 'gitium_lock_path', '/tmp/.gitium-lock' );
+		$gitium_lock_handle = fopen( $gitium_lock_path, 'w+' );
+
+		$lock_timeout    = intval( ini_get( 'max_execution_time' ) ) > 10 ? intval( ini_get( 'max_execution_time' ) ) - 5 : 10;
+		$lock_timeout_ms = 10;
+		$lock_retries    = 0;
+		while ( ! flock( $gitium_lock_handle, LOCK_EX | LOCK_NB ) ) {
+			usleep( $lock_timeout_ms * 1000 );
+			$lock_retries++;
+			if ( $lock_retries * $lock_timeout_ms > $lock_timeout * 1000 ) {
+				return false; // timeout
+			}
+		}
+		gitium_error_log( __FUNCTION__ );
+		return array( $gitium_lock_path, $gitium_lock_handle );
+	}
+endif;
+
+if ( ! function_exists( 'gitium_release_merge_lock' ) ) :
+	function gitium_release_merge_lock( $lock ) {
+		list( $gitium_lock_path, $gitium_lock_handle ) = $lock;
+		gitium_error_log( __FUNCTION__ );
+		flock( $gitium_lock_handle, LOCK_UN );
+		fclose( $gitium_lock_handle );
+	}
+endif;
+
 // Merges the commits with remote and pushes them back
 function gitium_merge_and_push( $commits ) {
 	global $git;
 
+	$lock = gitium_acquire_merge_lock()
+		or trigger_error( 'Timeout when gitium lock was acquired', E_USER_WARNING );
+
 	if ( ! $git->fetch_ref() ) {
 		return false;
 	}
-	if ( ! $git->merge_with_accept_mine( $commits ) ) {
-		return false;
-	}
-	if ( ! $git->push() ) {
-		return false;
-	}
-	return true;
+
+	$merge_status = $git->merge_with_accept_mine( $commits );
+
+	gitium_release_merge_lock( $lock );
+
+	return $git->push() && $merge_status;
 }
 
 function gitium_check_after_event( $plugin, $event = 'activation' ) {
@@ -211,6 +275,37 @@ function gitium_check_after_event( $plugin, $event = 'activation' ) {
 	}
 }
 
+function gitium_update_remote_tracking_branch() {
+	global $git;
+	$remote_branch = $git->get_remote_tracking_branch();
+	set_transient( 'gitium_remote_tracking_branch', $remote_branch );
+
+	return $remote_branch;
+}
+
+function _gitium_get_remote_tracking_branch( $update_transient = false ) {
+	if ( ! $update_transient && ( false !== ( $remote_branch = get_transient( 'gitium_remote_tracking_branch' ) ) ) ) {
+		return $remote_branch;
+	} else {
+		return gitium_update_remote_tracking_branch();
+	}
+}
+
+function gitium_update_is_status_working() {
+	global $git;
+	$is_status_working = $git->is_status_working();
+	set_transient( 'gitium_is_status_working', $is_status_working );
+	return $is_status_working;
+}
+
+function _gitium_is_status_working( $update_transient = false ) {
+	if ( ! $update_transient && ( false !== ( $is_status_working = get_transient( 'gitium_is_status_working' ) ) ) ) {
+		return $is_status_working;
+	} else {
+		return gitium_update_is_status_working();
+	}
+}
+
 function _gitium_status( $update_transient = false ) {
 	global $git;
 
@@ -223,7 +318,7 @@ function _gitium_status( $update_transient = false ) {
 		set_transient( 'gitium_git_version', $git->get_version() );
 	}
 
-	if ( $git->is_versioned() && $git->get_remote_tracking_branch() ) {
+	if ( $git->is_status_working() && $git->get_remote_tracking_branch() ) {
 		if ( ! $git->fetch_ref() ) {
 			set_transient( 'gitium_remote_disconnected', $git->get_last_error() );
 		} else {
@@ -304,10 +399,6 @@ function gitium_get_webhook() {
 	$key = gitium_get_webhook_key();
 	$url = add_query_arg( 'key', $key, plugins_url( 'gitium-webhook.php', __FILE__ ) );
 	return apply_filters( 'gitium_webhook_url', $url, $key );
-}
-
-function gitium_has_the_minimum_version() {
-	return '1.7' <= substr( get_transient( 'gitium_git_version' ), 0, 3 );
 }
 
 function gitium_admin_init() {

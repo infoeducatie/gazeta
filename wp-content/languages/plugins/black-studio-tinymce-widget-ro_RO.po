@@ -1,0 +1,122 @@
+# Translation of Stable (latest release) in Romanian
+# This file is distributed under the same license as the Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2016-02-05 13:29:39+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < 20)) ? 1 : 2);\n"
+"X-Generator: GlotPress/1.0-alpha-1100\n"
+"Project-Id-Version: Stable (latest release)\n"
+
+#. translators: title of the widget
+#: includes/class-widget.php:27
+msgid "Visual Editor"
+msgstr "Editor vizual"
+
+#: includes/class-widget.php:126
+msgid "Title:"
+msgstr "Titlu:"
+
+#. Author URI of the plugin/theme
+msgid "http://www.blackstudio.it"
+msgstr "http://www.blackstudio.it"
+
+#. Author of the plugin/theme
+msgid "Black Studio"
+msgstr "Black Studio"
+
+#. translators: description of the widget, shown in available widgets
+#: includes/class-widget.php:29
+msgid "Arbitrary text or HTML with visual editor"
+msgstr "Text arbitrar sau HTML cu editor vizual"
+
+#: includes/class-widget.php:133
+msgid "Automatically add paragraphs"
+msgstr "Adaugă paragrafe automat"
+
+#. Plugin URI of the plugin/theme
+msgid "https://wordpress.org/plugins/black-studio-tinymce-widget/"
+msgstr "https://wordpress.org/plugins/black-studio-tinymce-widget/"
+
+#: includes/class-compatibility-wordpress.php:335
+msgid "Visual"
+msgstr "Vizual"
+
+#. translators: text used for the icon that shows the plugin links
+#: includes/class-admin.php:364
+msgid "About Black Studio TinyMCE Widget plugin"
+msgstr "Despre modulul Black Studio TinyMCE Widget"
+
+#: includes/class-compatibility-wordpress.php:334
+msgid "HTML"
+msgstr "HTML"
+
+#. #-#-#-#-#  tmp-black-studio-tinymce-widget.pot (Black Studio TinyMCE Widget
+#. 2.2.8)  #-#-#-#-#
+#. translators: title for the dismissable admin pointer tooltip (same as plugin
+#. name)
+#. #-#-#-#-#  tmp-black-studio-tinymce-widget.pot (Black Studio TinyMCE Widget
+#. 2.2.8)  #-#-#-#-#
+#. Plugin Name of the plugin/theme
+#: includes/class-admin-pointer.php:165
+msgid "Black Studio TinyMCE Widget"
+msgstr "Black Studio TinyMCE Widget"
+
+#. translators: text used for support faq link
+#: includes/class-admin.php:336
+msgid "FAQ"
+msgstr "RIF"
+
+#. translators: text used for follow on twitter link
+#: includes/class-admin.php:342
+msgid "Follow"
+msgstr "Urmărește "
+
+#: black-studio-tinymce-widget.php:193 includes/class-admin-pointer.php:63
+#: includes/class-admin.php:72 includes/class-compatibility-plugins.php:62
+#: includes/class-compatibility-wordpress.php:65
+#: includes/class-compatibility.php:95 includes/class-text-filters.php:71
+msgid "Cheatin&#8217; uh?"
+msgstr "Trișezi, ha?"
+
+#. translators: error message shown when multiple instance of the plugin are
+#. detected
+#: black-studio-tinymce-widget.php:279
+msgid "ERROR: Multiple instances of the Black Studio TinyMCE Widget plugin were detected. Please activate only one instance at a time."
+msgstr "EROARE: Au fost detectate exemple multiple ale modulului Black Studio TinyMCE Widget. Te rog să activezi numai un exemplu, odată."
+
+#. translators: text for the dismissable admin pointer tooltip
+#: includes/class-admin-pointer.php:167
+msgid "The Visual Editor widget allows you to insert rich text and media objects in your sidebars"
+msgstr "Editorul vizual îți permite să introduci text bogat și elemente media în barele laterale."
+
+#. translators: error message shown when a duplicated widget ID is detected
+#: includes/class-admin.php:246
+msgid "ERROR: Duplicate widget ID detected. To avoid content loss, please create a new widget with the same content and then delete this one."
+msgstr "EROARE: a fost detectat un ID piesă duplicat. Pentru a evita pierderea de conținut, te rog să creezi o piesă nouă cu același conținut și apoi s-o ștergi pe aceasta."
+
+#. translators: text used for plugin home link
+#: includes/class-admin.php:334
+msgid "Home"
+msgstr "Prima pagină"
+
+#. translators: text used for support forum link
+#: includes/class-admin.php:338
+msgid "Support"
+msgstr "Suport"
+
+#. translators: text used for reviews link
+#: includes/class-admin.php:340
+msgid "Rate"
+msgstr "Evaluare"
+
+#. translators: text used for donation link
+#: includes/class-admin.php:344
+msgid "Donate"
+msgstr "Donează"
+
+#. Description of the plugin/theme
+msgid "Adds a new \"Visual Editor\" widget type based on the native WordPress TinyMCE editor."
+msgstr "Adaugă un nou \"Editor vizual\" ca tip de piesă, bazat pe editorul nativ WordPress TinyMCE."

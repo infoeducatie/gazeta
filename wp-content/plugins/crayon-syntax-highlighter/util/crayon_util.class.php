@@ -541,7 +541,7 @@ EOT;
     }
 
     // Returns path according to detected use of forwardslash/backslash
-    // Depreciated from regular use after v.1.1.1
+    // Deprecated from regular use after v.1.1.1
     public static function path($path, $detect) {
         $slash = self::detect_slash($detect);
         return str_replace(array('\\', '/'), $slash, $path);
@@ -661,7 +661,7 @@ EOT;
     public static function version_parts($version) {
         preg_match('#[\d+\.]+#msi', $version, $match);
         if (count($match[0])) {
-            return split('\.', $match[0]);
+            return explode('.', $match[0]);
         } else {
             return array();
         }
@@ -827,6 +827,30 @@ EOT;
             $atts .= $k . $assign . $quote . $v . $quote . $glue;
         }
         return $atts;
+    }
+
+    // Strips only the given tags in the given HTML string.
+    public static function strip_tags_blacklist($html, $tags) {
+        foreach ($tags as $tag) {
+            $regex = '#<\s*\b' . $tag . '\b[^>]*>.*?<\s*/\s*'. $tag . '\b[^>]*>?#msi';
+            $html = preg_replace($regex, '', $html);
+        }
+        return $html;
+    }
+
+    // Strips the given attributes found in the given HTML string.
+    public static function strip_attributes($html, $atts) {
+        foreach ($atts as $att) {
+            $regex = '#\b' . $att . '\b(\s*=\s*[\'"][^\'"]*[\'"])?(?=[^<]*>)#msi';
+            $html = preg_replace($regex, '', $html);
+        }
+        return $html;
+    }
+
+    // Strips all event attributes on DOM elements (prefixe with "on").
+    public static function strip_event_attributes($html) {
+        $regex = '#\bon\w+\b(\s*=\s*[\'"][^\'"]*[\'"])?(?=[^<]*>)#msi';
+        return preg_replace($regex, '', $html);
     }
 
 }

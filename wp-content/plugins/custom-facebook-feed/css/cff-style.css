@@ -60,11 +60,11 @@
   display: none;
 }
 /* Links */
-#cff a {
+#cff.cff-default-styles a {
   text-decoration: none;
 }
-#cff a:hover,
-#cff a:focus {
+#cff.cff-default-styles a:hover,
+#cff.cff-default-styles a:focus {
   text-decoration: underline;
 }
 #cff .cff-post-text-link{
@@ -77,7 +77,6 @@
   clear: both;
   padding: 0;
   margin: 5px 0;
-  line-height: 1.4;
   white-space: pre;
   white-space: pre-wrap;
   white-space: pre-line;
@@ -87,11 +86,16 @@
   white-space: -hp-pre-wrap;
   word-wrap: break-word;
 }
+#cff.cff-default-styles h3, #cff.cff-default-styles h4, #cff.cff-default-styles h5, #cff.cff-default-styles h6, #cff.cff-default-styles p{
+  line-height: 1.4;
+}
 /* Date */
 #cff .cff-date{
   float: left;
   min-width: 50px;
   width: auto;
+}
+#cff.cff-default-styles .cff-date{
   font-size: 11px;
 }
 /************/
@@ -130,7 +134,10 @@
   padding-left: 50px;
   float: none;
 }
-#cff .cff-author a{
+#cff.cff-default-styles .cff-author .cff-author-text span{
+  font-weight: 1.2;
+}
+#cff.cff-default-styles .cff-author a{
   text-decoration: none;
 }
 
@@ -144,12 +151,16 @@
   clear: both;
   width: auto;
   margin: 0 0 0 50px;
+}
+#cff.cff-default-styles .cff-author .cff-author-text *{
   font-weight: bold;
 }
 #cff .cff-author .cff-date{
   color: #9197a3;
-  font-weight: normal;
   margin-top: 0px;
+}
+#cff.cff-default-styles .cff-author .cff-date{
+  font-weight: normal;
 }
 #cff .cff-author .cff-page-name.cff-author-date{
   float: left;
@@ -166,7 +177,7 @@
 #cff .cff-expand{
   display: none;
 }
-#cff .cff-expand a{
+#cff.cff-default-styles .cff-expand a{
   font-size: 11px;
   font-weight: normal;
 }
@@ -209,6 +220,8 @@
   clear: both;
   width: 100%;
   display: block;
+}
+#cff.cff-default-styles .cff-link-title{
   font-weight: bold;
 }
 #cff p.cff-link-title{
@@ -222,8 +235,10 @@
   padding: 0 0 5px 0;
 }
 #cff .cff-link-caption{
-  font-size: 12px;
   margin: 0;
+}
+#cff.cff-default-styles .cff-link-caption{
+  font-size: 12px;
 }
 #cff .cff-text-link.cff-no-image{
   width: 100%;
@@ -238,13 +253,17 @@
 }
 #cff .cff-details h5{
   margin: 0 0 5px 0;
+}
+#cff.cff-default-styles .cff-details h5{
   font-size: 16px;
 }
-#cff .cff-details p{
+#cff.cff-default-styles .cff-details p{
   font-size: 14px;
 }
 #cff .cff-details .cff-info{
   padding: 10px 0 0 0;
+}
+#cff.cff-default-styles .cff-details .cff-info{
   line-height: 1.2;
 }
 /* Video */
@@ -259,15 +278,16 @@
   clear: none;
   padding: 5px 0 0 0;
   margin: 0;
+}
+#cff.cff-default-styles .cff-post-links{
   font-size: 11px;
 }
-
 
 #cff .cff-post-links.cff-left{
   float: left;
   margin: 8px 0;
 }
-#cff .cff-post-links a{
+#cff.cff-default-styles .cff-post-links a{
   font-size: 11px;
 }
 #cff .cff-post-links a:first-child{
@@ -288,8 +308,8 @@
   position: absolute;
   z-index: 1000;
   bottom: 22px;
-  right: -51px;
-  width: 135px;
+  right: -53px;
+  width: 140px;
   padding: 5px 5px 4px 5px;
   margin: 0;
   background: #333;
@@ -407,10 +427,10 @@
 }
 
 /* Credit link */
-#cff .cff-credit{
+#cff.cff-default-styles .cff-credit{
   font-size: 11px;
 }
-#cff .cff-credit a{
+#cff.cff-default-styles .cff-credit a{
   text-decoration: none;
 }
 #cff .cff-credit img{
@@ -420,4 +440,11 @@
 #cff .cff-credit .fa{
   padding-right: 5px;
   font-size: 13px;
+}
+
+/* On mobile make the min-width 100% */
+@media all and (max-width: 640px){
+  #cff.cff-width-resp{
+    width: 100% !important;
+  }
 }

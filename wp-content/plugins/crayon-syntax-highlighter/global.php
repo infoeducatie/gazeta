@@ -23,7 +23,7 @@ $CRAYON_WEBSITE = 'https://github.com/aramk/crayon-syntax-highlighter';
 $CRAYON_EMAIL = 'crayon.syntax@gmail.com';
 $CRAYON_TWITTER = 'http://twitter.com/crayonsyntax';
 $CRAYON_GIT = 'http://github.com/aramk/crayon-syntax-highlighter';
-$CRAYON_PLUGIN_WP = 'http://wordpress.org/extend/plugins/crayon-syntax-highlighter';
+$CRAYON_PLUGIN_WP = 'https://wordpress.org/plugins/crayon-syntax-highlighter/';
 
 // XXX Used to name the class
 
@@ -111,7 +111,6 @@ define('CRAYON_THEMES_PHP', CRAYON_ROOT_PATH . 'crayon_themes.class.php');
 define('CRAYON_FONTS_PHP', CRAYON_ROOT_PATH . 'crayon_fonts.class.php');
 define('CRAYON_RESOURCE_PHP', CRAYON_ROOT_PATH . 'crayon_resource.class.php');
 define('CRAYON_UTIL_PHP', CRAYON_UTIL_DIR . 'crayon_util.class.php');
-define('CRAYON_EXCEPTIONS_PHP', CRAYON_UTIL_DIR . 'exceptions.php');
 define('CRAYON_TIMER_PHP', CRAYON_UTIL_DIR . 'crayon_timer.class.php');
 define('CRAYON_LOG_PHP', CRAYON_UTIL_DIR . 'crayon_log.class.php');
 
@@ -173,10 +172,8 @@ function crayon_set_info($info_array) {
         return;
     }
     crayon_set_info_key('Version', $info_array, $CRAYON_VERSION);
-    if (($date = @filemtime(CRAYON_README_FILE)) !== FALSE) {
-        $CRAYON_DATE = date("jS F, Y", $date);
-    }
-    crayon_set_info_key('AuthorName', $info_array, $CRAYON_A);
+    crayon_set_info_key('Date', $info_array, $CRAYON_DATE);
+    crayon_set_info_key('AuthorName', $info_array, $CRAYON_AUTHOR);
     crayon_set_info_key('PluginURI', $info_array, $CRAYON_WEBSITE);
 }
 

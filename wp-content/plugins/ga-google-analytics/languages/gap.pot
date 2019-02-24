@@ -1,11 +1,10 @@
-# Loco Gettext template
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: GA Google Analytics\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: Sun Mar 15 2015 00:12:22 GMT-0700 (PDT)\n"
-"POT-Revision-Date: Mon Nov 09 2015 22:53:26 GMT-0800 (PST)\n"
+"POT-Creation-Date: 2017-03-24 19:12+0000\n"
+"POT-Revision-Date: Wed Aug 31 2016 16:01:29 GMT-0700 (PDT)\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -24,15 +23,347 @@ msgstr ""
 "esc_html_x:1,2c;comments_number_link:2,3;t:1;st:1;trans:1;transChoice:1,2\n"
 "X-Generator: Loco - https://localise.biz/"
 
+#. Name of the plugin
+#: ga-google-analytics.php:24
 msgid "GA Google Analytics"
 msgstr ""
 
-#. URI of the plugin
-msgid "https://perishablepress.com/google-analytics-plugin"
+#: ga-google-analytics.php:42
+msgid "requires WordPress "
+msgstr ""
+
+#: ga-google-analytics.php:42
+msgid " or higher, and has been deactivated!"
+msgstr ""
+
+#: ga-google-analytics.php:43
+msgid "Please return to the "
+msgstr ""
+
+#: ga-google-analytics.php:43
+msgid "WordPress Admin area"
+msgstr ""
+
+#: ga-google-analytics.php:43
+msgid "to upgrade WordPress and try again."
+msgstr ""
+
+#: ga-google-analytics.php:132
+msgid "Settings"
+msgstr ""
+
+#: ga-google-analytics.php:147
+msgid "Give us a 5-star rating at WordPress.org"
+msgstr ""
+
+#: ga-google-analytics.php:148
+msgid "Rate this plugin"
+msgstr ""
+
+#: ga-google-analytics.php:285
+msgid "Include code in the document head (via wp_head)"
+msgstr ""
+
+#: ga-google-analytics.php:289
+msgid "Include code in the document footer (via wp_footer)"
+msgstr ""
+
+#: ga-google-analytics.php:352
+msgid "Toggle all panels"
+msgstr ""
+
+#: ga-google-analytics.php:361
+msgid "Important"
+msgstr ""
+
+#: ga-google-analytics.php:365
+msgid "Universal Analytics is now the standard for Google Analytics."
+msgstr ""
+
+#: ga-google-analytics.php:366
+msgid ""
+"Please read the following info and migrate by enabling Universal Analytics "
+"in the plugin settings."
+msgstr ""
+
+#: ga-google-analytics.php:367
+msgid ""
+"Universal Analytics will be the default setting in an future version of this "
+"plugin (probably in 2017)."
+msgstr ""
+
+#: ga-google-analytics.php:370
+msgid "Learn about Universal Analytics"
+msgstr ""
+
+#: ga-google-analytics.php:371
+msgid "Universal Analytics Upgrade Center"
+msgstr ""
+
+#: ga-google-analytics.php:376
+msgid "Dismiss notice"
+msgstr ""
+
+#: ga-google-analytics.php:384
+msgid "Overview"
+msgstr ""
+
+#: ga-google-analytics.php:387
+msgid ""
+"This plugin adds the GA Tracking Code to your site. Log in to your Google "
+"account to view your stats."
+msgstr ""
+
+#: ga-google-analytics.php:389 ga-google-analytics.php:404
+msgid "How to Use"
+msgstr ""
+
+#: ga-google-analytics.php:390 ga-google-analytics.php:427
+msgid "Plugin Settings"
+msgstr ""
+
+#: ga-google-analytics.php:391
+msgid "Plugin Homepage"
+msgstr ""
+
+#: ga-google-analytics.php:394
+msgid "If you like this plugin, please"
+msgstr ""
+
+#: ga-google-analytics.php:395
+msgid "THANK YOU for your support!"
+msgstr ""
+
+#: ga-google-analytics.php:396
+msgid "give it a 5-star rating"
+msgstr ""
+
+#: ga-google-analytics.php:407
+msgid "How to use"
+msgstr ""
+
+#: ga-google-analytics.php:409
+msgid "In the plugin settings, enter your GA Property ID."
+msgstr ""
+
+#: ga-google-analytics.php:410
+msgid ""
+"In the plugin settings, enable either \"Legacy Analytics\" or \"Universal "
+"Analytics\"."
+msgstr ""
+
+#: ga-google-analytics.php:411
+msgid "Configure other settings (optional) as desired and save your changes."
+msgstr ""
+
+#: ga-google-analytics.php:412
+msgid ""
+"After 24-48 hours, you can log into your Google Analytics account to view "
+"your stats."
+msgstr ""
+
+#: ga-google-analytics.php:416
+msgid ""
+"Note that it can take 24-48 hours after adding the tracking code before any "
+"analytical data appears in your"
+msgstr ""
+
+#: ga-google-analytics.php:417
+msgid "Google Analytics account"
+msgstr ""
+
+#: ga-google-analytics.php:418
+msgid ""
+"To check that the GA tacking code is included, look at the source code of "
+"your web page(s). Learn more at the"
+msgstr ""
+
+#: ga-google-analytics.php:419
+msgid "Google Analytics Help Center"
+msgstr ""
+
+#: ga-google-analytics.php:429
+msgid "Enter your Tracking Code and choose your options."
+msgstr ""
+
+#: ga-google-analytics.php:433
+msgid "GA Property ID"
+msgstr ""
+
+#: ga-google-analytics.php:437
+msgid "Enable Analytics"
+msgstr ""
+
+#: ga-google-analytics.php:440
+msgid "Enable Google Analytics on your site. Uses"
+msgstr ""
+
+#: ga-google-analytics.php:441
+msgid "Legacy Analytics"
+msgstr ""
+
+#: ga-google-analytics.php:442
+msgid ""
+"by default. To use Universal Analytics, check this box and enable the next "
+"setting."
+msgstr ""
+
+#: ga-google-analytics.php:446 ga-google-analytics.php:449
+msgid "Universal Analytics"
+msgstr ""
+
+#: ga-google-analytics.php:449
+msgid "Enable"
+msgstr ""
+
+#: ga-google-analytics.php:453 ga-google-analytics.php:456
+msgid "Display Advertising"
+msgstr ""
+
+#: ga-google-analytics.php:456 ga-google-analytics.php:463 
+#: ga-google-analytics.php:470 ga-google-analytics.php:477
+msgid "Enable support for"
+msgstr ""
+
+#: ga-google-analytics.php:460
+msgid "Link Attribution"
+msgstr ""
+
+#: ga-google-analytics.php:463
+msgid "Enhanced Link Attribution"
+msgstr ""
+
+#: ga-google-analytics.php:467 ga-google-analytics.php:470
+msgid "IP Anonymization"
+msgstr ""
+
+#: ga-google-analytics.php:474
+msgid "Force SSL"
+msgstr ""
+
+#: ga-google-analytics.php:481
+msgid "Code Location"
+msgstr ""
+
+#: ga-google-analytics.php:499
+msgid ""
+"Tip: Google recommends including the Tracking Code in the document header, "
+"but including it in the footer can benefit page performance."
+msgstr ""
+
+#: ga-google-analytics.php:500
+msgid ""
+"If in doubt, go with the default option to include the code in the header."
+msgstr ""
+
+#: ga-google-analytics.php:505
+msgid "Custom"
+msgstr ""
+
+#: ga-google-analytics.php:505
+msgid "Code"
+msgstr ""
+
+#: ga-google-analytics.php:509
+msgid "Here you may specify any markup to be displayed in the"
+msgstr ""
+
+#: ga-google-analytics.php:510
+msgid "section. Leave blank to disable."
+msgstr ""
+
+#: ga-google-analytics.php:515
+msgid "Custom Tracker Objects"
+msgstr ""
+
+#: ga-google-analytics.php:519
+msgid "Any code entered here will be added to the primary"
+msgstr ""
+
+#: ga-google-analytics.php:520
+msgid "function as the fourth parameter."
+msgstr ""
+
+#: ga-google-analytics.php:521
+msgid "Learn more about creating trackers"
+msgstr ""
+
+#: ga-google-analytics.php:526
+msgid "Custom GA Code"
+msgstr ""
+
+#: ga-google-analytics.php:530
+msgid ""
+"Any code entered here will be added to the GA code snippet. For example, "
+"this is useful for"
+msgstr ""
+
+#: ga-google-analytics.php:531
+msgid "creating multiple trackers"
+msgstr ""
+
+#: ga-google-analytics.php:536
+msgid "Admin Area"
+msgstr ""
+
+#: ga-google-analytics.php:539
+msgid "Enable GA in the WordPress Admin Area"
+msgstr ""
+
+#: ga-google-analytics.php:543
+msgid "Admin Users"
+msgstr ""
+
+#: ga-google-analytics.php:546
+msgid "Disable GA on the frontend for Admin-level users"
+msgstr ""
+
+#: ga-google-analytics.php:551 ga-google-analytics.php:568
+msgid "Save Settings"
+msgstr ""
+
+#: ga-google-analytics.php:556
+msgid "Restore Defaults"
+msgstr ""
+
+#: ga-google-analytics.php:560
+msgid "Restore default options upon plugin deactivation/reactivation."
+msgstr ""
+
+#: ga-google-analytics.php:564
+msgid "Tip:"
+msgstr ""
+
+#: ga-google-analytics.php:564
+msgid "leave this option unchecked to remember your settings."
+msgstr ""
+
+#: ga-google-analytics.php:565
+msgid ""
+"Or, to go ahead and restore all default options, check the box, save your "
+"settings, and then deactivate/reactivate the plugin."
+msgstr ""
+
+#: ga-google-analytics.php:573
+msgid "Show Support"
+msgstr ""
+
+#: ga-google-analytics.php:617
+msgid "Save Preference"
+msgstr ""
+
+#: ga-google-analytics.php:623
+msgid ""
+"Are you sure you want to restore all default options? (this action cannot be "
+"undone)"
 msgstr ""
 
 #. Description of the plugin
 msgid "Adds your Google Analytics Tracking Code to your WordPress site."
+msgstr ""
+
+#. URI of the plugin
+msgid "https://perishablepress.com/google-analytics-plugin/"
 msgstr ""
 
 #. Author of the plugin
@@ -40,288 +371,5 @@ msgid "Jeff Starr"
 msgstr ""
 
 #. Author URI of the plugin
-msgid "http://monzilla.biz"
-msgstr ""
-
-#: ../ga-google-analytics.php:41
-msgid "requires WordPress "
-msgstr ""
-
-#: ../ga-google-analytics.php:41
-msgid " or higher, and has been deactivated!"
-msgstr ""
-
-#: ../ga-google-analytics.php:42
-msgid "Please return to the "
-msgstr ""
-
-#: ../ga-google-analytics.php:42
-msgid "WordPress Admin area"
-msgstr ""
-
-#: ../ga-google-analytics.php:42
-msgid "to upgrade WordPress and try again."
-msgstr ""
-
-#: ../ga-google-analytics.php:129
-msgid "Settings"
-msgstr ""
-
-#: ../ga-google-analytics.php:270
-msgid "Include code in the document head (via wp_head)"
-msgstr ""
-
-#: ../ga-google-analytics.php:274
-msgid "Include code in the document footer (via wp_footer)"
-msgstr ""
-
-#: ../ga-google-analytics.php:329
-msgid "Toggle all panels"
-msgstr ""
-
-#: ../ga-google-analytics.php:338
-msgid "Important"
-msgstr ""
-
-#: ../ga-google-analytics.php:342
-msgid ""
-"Universal Analytics is now the standard for Google Analytics. \n"
-"									Please read the following info and migrate by enabling Universal "
-"Analytics in the plugin settings. \n"
-"									Universal Analytics will be the default setting in an future "
-"version of this plugin."
-msgstr ""
-
-#: ../ga-google-analytics.php:347
-msgid "Learn about Universal Analytics"
-msgstr ""
-
-#: ../ga-google-analytics.php:348
-msgid "Universal Analytics Upgrade Center"
-msgstr ""
-
-#: ../ga-google-analytics.php:353
-msgid "Dismiss notice"
-msgstr ""
-
-#: ../ga-google-analytics.php:361
-msgid "Overview"
-msgstr ""
-
-#: ../ga-google-analytics.php:365
-msgid "(GA Plugin) adds Google Analytics Tracking Code to your WordPress site."
-msgstr ""
-
-#: ../ga-google-analytics.php:366
-msgid ""
-"Enter your GA ID, save your options, and done. Log into your Google "
-"Analytics account to view your stats."
-msgstr ""
-
-#: ../ga-google-analytics.php:369
-msgid "To enter your GA ID, visit"
-msgstr ""
-
-#: ../ga-google-analytics.php:369 ../ga-google-analytics.php:390
-msgid "GA Plugin Options"
-msgstr ""
-
-#: ../ga-google-analytics.php:370
-msgid "To restore default settings, visit"
-msgstr ""
-
-#: ../ga-google-analytics.php:370 ../ga-google-analytics.php:514
-msgid "Restore Default Options"
-msgstr ""
-
-#: ../ga-google-analytics.php:372
-msgid "For more information check the"
-msgstr ""
-
-#: ../ga-google-analytics.php:373
-msgid "and"
-msgstr ""
-
-#: ../ga-google-analytics.php:373
-msgid "GA Plugin Homepage"
-msgstr ""
-
-#: ../ga-google-analytics.php:375
-msgid "If you like this plugin, please"
-msgstr ""
-
-#: ../ga-google-analytics.php:376
-msgid "Click here to rate and review this plugin on WordPress.org"
-msgstr ""
-
-#: ../ga-google-analytics.php:377
-msgid "rate it at the Plugin Directory"
-msgstr ""
-
-#: ../ga-google-analytics.php:381
-msgid ""
-"Note that it can take 24-48 hours after adding the tracking code before any "
-"analytical data appears in your"
-msgstr ""
-
-#: ../ga-google-analytics.php:383
-msgid ""
-"To check that the GA tacking code is included, look at the source code of "
-"your web page(s). Learn more at the"
-msgstr ""
-
-#: ../ga-google-analytics.php:392
-msgid "Enter your Tracking Code and enable/disable the plugin."
-msgstr ""
-
-#: ../ga-google-analytics.php:396
-msgid "GA property ID"
-msgstr ""
-
-#: ../ga-google-analytics.php:400
-msgid "Enable Google Analytics"
-msgstr ""
-
-#: ../ga-google-analytics.php:403
-msgid "Include the"
-msgstr ""
-
-#: ../ga-google-analytics.php:405
-msgid "in your web pages?"
-msgstr ""
-
-#: ../ga-google-analytics.php:409
-msgid "Enable Universal Analytics"
-msgstr ""
-
-#: ../ga-google-analytics.php:412 ../ga-google-analytics.php:419 ../ga-google-
-#: analytics.php:426 ../ga-google-analytics.php:433 ../ga-google-analytics.php:440
-msgid "Enable support for"
-msgstr ""
-
-#: ../ga-google-analytics.php:412
-msgid "Universal Analytics"
-msgstr ""
-
-#: ../ga-google-analytics.php:416
-msgid "Enable Display Advertising"
-msgstr ""
-
-#: ../ga-google-analytics.php:419
-msgid "Display Advertising"
-msgstr ""
-
-#: ../ga-google-analytics.php:423
-msgid "Enable Link Attribution"
-msgstr ""
-
-#: ../ga-google-analytics.php:426
-msgid "Enhanced Link Attribution"
-msgstr ""
-
-#: ../ga-google-analytics.php:430 ../ga-google-analytics.php:433
-msgid "IP Anonymization"
-msgstr ""
-
-#: ../ga-google-analytics.php:437
-msgid "Force SSL"
-msgstr ""
-
-#: ../ga-google-analytics.php:444
-msgid "Code Location"
-msgstr ""
-
-#: ../ga-google-analytics.php:462
-msgid ""
-"Tip: Google recommends including the Tracking Code in the document header, "
-"but including it in the footer can benefit page performance.\n"
-"														If in doubt, go with the default option to include the code in "
-"the header."
-msgstr ""
-
-#: ../ga-google-analytics.php:468
-msgid "Custom"
-msgstr ""
-
-#: ../ga-google-analytics.php:468
-msgid "Code"
-msgstr ""
-
-#: ../ga-google-analytics.php:471
-msgid ""
-"Here you may specify any markup to be displayed in the &lt;head&gt; section. "
-"Leave blank to disable."
-msgstr ""
-
-#: ../ga-google-analytics.php:475
-msgid "Custom Tracker Objects"
-msgstr ""
-
-#: ../ga-google-analytics.php:479
-msgid ""
-"Any code entered here will be added to the primary ga('create') function as "
-"the fourth parameter."
-msgstr ""
-
-#: ../ga-google-analytics.php:480
-msgid "Learn more about creating trackers"
-msgstr ""
-
-#: ../ga-google-analytics.php:485
-msgid "Custom GA Code"
-msgstr ""
-
-#: ../ga-google-analytics.php:489
-msgid ""
-"Any code entered here will be added to the GA code snippet. For example, "
-"this is useful for"
-msgstr ""
-
-#: ../ga-google-analytics.php:490
-msgid "creating multiple trackers"
-msgstr ""
-
-#: ../ga-google-analytics.php:495
-msgid "Admin Area"
-msgstr ""
-
-#: ../ga-google-analytics.php:498
-msgid "Enable GA in the WordPress Admin Area"
-msgstr ""
-
-#: ../ga-google-analytics.php:502
-msgid "Admin Users"
-msgstr ""
-
-#: ../ga-google-analytics.php:505
-msgid "Disable GA on the frontend for Admin-level users"
-msgstr ""
-
-#: ../ga-google-analytics.php:510 ../ga-google-analytics.php:525
-msgid "Save Settings"
-msgstr ""
-
-#: ../ga-google-analytics.php:518
-msgid "Restore default options upon plugin deactivation/reactivation."
-msgstr ""
-
-#: ../ga-google-analytics.php:522
-msgid ""
-"<strong>Tip:</strong> leave this option unchecked to remember your settings. "
-"Or, to go ahead and restore all default options, check the box, save your "
-"settings, and then deactivate/reactivate the plugin."
-msgstr ""
-
-#: ../ga-google-analytics.php:529
-msgid "Updates &amp; Info"
-msgstr ""
-
-#: ../ga-google-analytics.php:569
-msgid "Save Preference"
-msgstr ""
-
-#: ../ga-google-analytics.php:575
-msgid ""
-"Are you sure you want to restore all default options? (this action cannot be "
-"undone)"
+msgid "https://plugin-planet.com/"
 msgstr ""
