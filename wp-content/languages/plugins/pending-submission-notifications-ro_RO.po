@@ -1,0 +1,95 @@
+# Translation of Plugins - Pending Submission Notifications - Stable (latest release) in Romanian
+# This file is distributed under the same license as the Plugins - Pending Submission Notifications - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2018-02-22 09:17:05+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < 20)) ? 1 : 2);\n"
+"X-Generator: GlotPress/2.4.0-alpha\n"
+"Language: ro\n"
+"Project-Id-Version: Plugins - Pending Submission Notifications - Stable (latest release)\n"
+
+#. Author of the plugin/theme
+msgid "Razvan Horeanga"
+msgstr "Razvan Horeanga"
+
+#. Description of the plugin/theme
+msgid "Send email notifications to the admin whenever a new article is submitted for review by a contributor"
+msgstr "Trimite notificări prin email administratorului când un articol nou este trimis pentru verificare de către un contributor."
+
+#. #-#-#-#-#  pending-submission-notifications-code.pot (Pending Submission
+#. Notification 1.2)  #-#-#-#-#
+#. Plugin URI of the plugin/theme
+#. #-#-#-#-#  pending-submission-notifications-code.pot (Pending Submission
+#. Notification 1.2)  #-#-#-#-#
+#. Author URI of the plugin/theme
+msgid "http://lifeofadesigner.com"
+msgstr "http://lifeofadesigner.com"
+
+#. Plugin Name of the plugin/theme
+msgid "Pending Submission Notification"
+msgstr "Pending Submission Notification"
+
+#: pending-submission-notifications.php:57
+#: trunk/pending-submission-notifications.php:57
+msgid "was just published "
+msgstr "a fost publicat"
+
+#: pending-submission-notifications.php:56
+#: trunk/pending-submission-notifications.php:56
+msgid "Your submission is now live! "
+msgstr "Trimiterea ta este live acum!"
+
+#: pending-submission-notifications.php:50
+#: trunk/pending-submission-notifications.php:50
+msgid "Preview the submission"
+msgstr "Previzualizează trimiterea"
+
+#: pending-submission-notifications.php:49
+#: trunk/pending-submission-notifications.php:49
+msgid "Edit the submission"
+msgstr "Editează trimiterea"
+
+#: pending-submission-notifications.php:47
+#: trunk/pending-submission-notifications.php:47
+msgid "Last edit date"
+msgstr "Data ultimei editări"
+
+#: pending-submission-notifications.php:46
+#: trunk/pending-submission-notifications.php:46
+msgid "Last edited by"
+msgstr "Ultima editare de"
+
+#: pending-submission-notifications.php:45
+#: trunk/pending-submission-notifications.php:45
+msgid "Title"
+msgstr "Titlu"
+
+#: pending-submission-notifications.php:44
+#: trunk/pending-submission-notifications.php:44
+msgid "Author"
+msgstr "Autor"
+
+#: pending-submission-notifications.php:42
+#: trunk/pending-submission-notifications.php:42
+msgid "A new submission is pending review."
+msgstr "O trimitere nouă așteaptă verificarea."
+
+#: pending-submission-notifications.php:41
+#: trunk/pending-submission-notifications.php:41
+msgid "New submission pending review"
+msgstr "Trimitere nouă în așteptarea verificării"
+
+#: admin/admin.php:46 trunk/admin/admin.php:46
+msgid "Email Address"
+msgstr "Adresă email"
+
+#: admin/admin.php:40 trunk/admin/admin.php:40
+msgid "Who should receive an email notification for new submissions?"
+msgstr "Cine ar trebui să primească o notificare prin email pentru trimiteri noi?"
+
+#: admin/admin.php:39 trunk/admin/admin.php:39
+msgid "Pending Submission Notifications"
+msgstr "Pending Submission Notifications"
