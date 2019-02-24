@@ -1,11 +1,12 @@
-=== Social Login ===
+=== Social Login - Professional development and support ===
 Contributors: OneAll.com, ClaudeSchlesser
-Tags: social login, social networks, login, register, comment, social network login, buddypress, facebook, google, openid, twitter, linkedin, instagram, pinterest, instagram, vkontakte, github, steam, dribbble, twitch.tv
+Tags: social login, social network login, social connect, facebook login, twitter login, linkedin login
 Requires at least: 3.0
-Tested up to: 4.8
-Stable tag: 5.3
+Tested up to: 5.0
+Stable tag: 5.4.3
+License: GPLv2 or later
 
-Social Login allows your users to comment, register and login with 30+ Social Networks like Twitter, Facebook, Paypal, LinkedIn, Instagram, OpenID, VKontakte, Google, Pinterest ... 
+Social Login is fully GDPR compliant and allows your users to login, register and comment with 35+ Social Networks.
 
 == Description ==
 
@@ -13,13 +14,16 @@ Social Login allows your users to comment, register and login with 30+ Social Ne
 
 Social Login is a **professionally developed** and free Wordpress plugin that allows your visitors to **comment, login and register with 30+ Social Networks** like for example Facebook, Twitter, Google, LinkedIn, PayPal, LiveJournal, Instagram, Вконтакте or Yahoo amongst other.
 
-**Seamlessly Integrates**<br />
+**Data Protection Guarantee**<br />
+Social Login is fully compliant with all European and U.S. data protection laws. As required by the General Data Protection Regulation (GDPR) the OneAll Terms of Service include a Data Processing Agreement that we can countersign on request.
+
+**Seamless Integration**<br />
 Social Login is fully customizable and seamlessly integrates with your existing login/registration system so that your users don't have to start from scratch. Existing existing accounts can add/remove their social network accounts in their WordPress profile settings and then also use the linked social networks to login.
 
 **Eliminates Spam and Bot Registrations**<br />
 Get rid of long and complicated forms, improve your data quality and instantly eliminate spam and bot registrations. Social Login increases registration rates by up to 50% and provides permission-based access to users' social network profile data, allowing you to start delivering a personalized experience.
 
-**Robust and Maintenance Free**<br />
+**Maintenance Free**<br />
 Do not take the risk of loosing any users or customers due to outdated social network integrations. Unlike other Social Login providers we monitor the APIs and technologies of the different social networks and update our service as soon as changes arise.
 
 By using OneAll you can be sure that your social media integration will always run smoothly and with the most up-to-date calls.
@@ -32,10 +36,11 @@ You can easily configure which social accounts to enable/disable for login and o
 * In your sidebar
 * With a shortcode
 
-**30+ Social Networks**
+**35+ Social Networks**
 * Amazon
 * Battle.net
 * Blogger
+* Discord 
 * Disqus
 * Dribbble
 * Facebook
@@ -43,24 +48,30 @@ You can easily configure which social accounts to enable/disable for login and o
 * Github.com
 * Google
 * Instagram
+* Line
 * LinkedIn
 * LiveJournal
 * Mail.ru
+* Meetup
 * Odnoklassniki
 * OpenID
 * PayPal
 * Pinterest
 * PixelPin 
 * Reddit
-* Skyrock.com		
+* Skyrock.com
+* SoundCloud		
 * StackExchange
 * Steam
+* Tumblr
 * Twitch.tv
 * Twitter
 * Vimeo
 * VKontakte
+* Weibo
 * Windows Live
 * WordPress.com
+* XING
 * Yahoo
 * YouTube
 
@@ -136,6 +147,24 @@ http://docs.oneall.com/plugins/guide/social-login-wordpress/
 5. **Login** - Login formular with small buttons (Social Network Buttons are included)
 
 == Changelog ==
+
+= 5.4.3 =
+* Warning missing quotes fixed
+
+= 5.4.2 =
+* PHP 7.2+ compatibility fixes.
+
+= 5.4.1 =
+* User website URL truncated (WordPress restriction)
+
+= 5.4.0 =
+* Social Network "Discord" added
+* Social Network "Line" added
+* Social Network "Meetup" added
+* Social Network "SoundCloud" added
+* Social Network "Tumblr" added
+* Social Network "Weibo" added
+* Social Network "XING" added
 
 = 5.3 =
 * New icon set added
