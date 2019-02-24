@@ -24,3 +24,4 @@ debug.txt
 # google docs backups
 wp-content/gdbackup/
 wp-content/plugins/crayon-syntax-highlighter/log.txt
+wp-content/languages/admin-network-en_GB.po
