@@ -275,7 +275,15 @@ if ( ! class_exists( 'Black_Studio_TinyMCE_Admin' ) ) {
 		 * @since 2.0.0
 		 */
 		public function editor( $text, $editor_id, $name = '', $type = 'visual' ) {
+			global $wp_styles;
+			if ( is_a( $wp_styles, 'WP_Styles' ) ) {
+				$wp_styles->remove( 'editor-buttons' );
+			}
 			wp_editor( $text, $editor_id, array( 'textarea_name' => $name, 'default_editor' => $type == 'visual' ? 'tmce' : 'html' ) );
+			if ( is_a( $wp_styles, 'WP_Styles' ) ) {
+				$suffix = SCRIPT_DEBUG ? '' : '.min';
+				$wp_styles->add( 'editor-buttons', "/wp-includes/css/editor$suffix.css", array( 'dashicons' ) );
+			}
 		}
 
 		/**
@@ -345,7 +353,7 @@ if ( ! class_exists( 'Black_Studio_TinyMCE_Admin' ) ) {
 				/* translators: text used for follow on twitter link */
 				'https://twitter.com/blackstudioita' => __( 'Follow', 'black-studio-tinymce-widget' ),
 				/* translators: text used for donation link */
-				'http://www.blackstudio.it/en/wordpress-plugins/black-studio-tinymce-widget/' => __( 'Donate', 'black-studio-tinymce-widget' ),
+				'https://www.blackstudio.it/en/wordpress-plugins/black-studio-tinymce-widget/' => __( 'Donate', 'black-studio-tinymce-widget' ),
 			);
 		}
 
@@ -461,7 +469,7 @@ if ( ! class_exists( 'Black_Studio_TinyMCE_Admin' ) ) {
 				echo '</div>';
 			}
 		}
-		
+
 		/**
 		 * Store dismission of the "Visual Editor disabled" notice for the current user
 		 *
