@@ -1,17 +1,17 @@
 === Custom Facebook Feed ===
 Contributors: smashballoon
-Tags: Facebook, Facebook feed, Facebook posts, Facebook wall, Facebook group
+Tags: Facebook, Facebook feed, Facebook posts, Facebook wall, Facebook page
 Requires at least: 3.0
-Tested up to: 4.8
-Stable tag: 2.4.6
+Tested up to: 5.1
+Stable tag: 2.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-The Custom Facebook Feed allows you to display completely customizable Facebook feeds of any public Facebook page or group on your website
+The Custom Facebook Feed allows you to display completely customizable Facebook feeds of any public Facebook page on your website
 
 == Description ==
 
-Display a **completely customizable**, **responsive** and **search engine crawlable** version of your Facebook feed on your website. Completely match the look and feel of the site with tons of customization options!
+Display **completely customizable**, **responsive** and **search engine crawlable** Facebook feeds on your website. Display **multiple feeds** from **any public Facebook page**, and completely match the look and feel of the site with tons of customization options!
 
 *"The perfect plugin with amazing support! What else do you want? Get it!"* - [JoeJeffries](http://wordpress.org/support/topic/you-dont-already-have-this)
 
@@ -21,14 +21,14 @@ Display a **completely customizable**, **responsive** and **search engine crawla
 
 = Features =
 
+* **Super simple to set up** - 1 minute quick setup with no Facebook Developer App required
+* **Display feeds from ANY Facebook page** - even ones you aren't an admin of
 * **Completely Customizable** - By default the Facebook feed will adopt the style of your website, but can be completely customized to look however you like - with tons of styling and customization options!
 * Facebook feed content is **crawlable by search engines** adding SEO value to your site - other Facebook plugins embed the feed using iframes which are not crawlable
 * Completely **responsive** and mobile optimized - layout looks great on any screen size and in any container width
-* Display **feeds from multiple different Facebook pages/groups** and use the shortcode to embed them into a page, post or widget anywhere on your site
-* Show **events** from your Facebook feed with name, date/time, location and description
+* Display **feeds from multiple different Facebook pages** and use the shortcode to embed them into a page, post or widget anywhere on your site
 * Add your own **custom CSS**
 * **Caching** means that your Facebook posts load lightning fast. Set your own caching time - check for new posts on Facebook every few seconds, minutes, hours or days. You decide.
-* **Super simple to set up**. Just enter your Facebook page ID and you're done.
 * Show and hide certain parts of each Facebook post
 * Show or hide the Facebook profile picture and name of the author above each post
 * Display Facebook posts by just the page owner, everyone who posts on your Facebook page, or only other people
@@ -54,7 +54,7 @@ In order to maintain the free version of the plugin on an ongoing basis, and to 
 
 = Benefits of the Custom Facebook Feed plugin =
 
-* **Increase social engagement** between you and your users, customers, fans or group members
+* **Increase social engagement** between you and your users, customers, or fans
 * **Save time** by using the Custom Facebook Feed to generate dynamic, search engine crawlable content on your website
 * **Get more likes** by displaying your Facebook content directly on your site
 * **Improve your SEO** as all of that quality keyword-rich Facebook content from posts and comments is directly embedded into your website
@@ -76,29 +76,29 @@ In order to maintain the free version of the plugin on an ongoing basis, and to 
 
 For a full list of FAQs and help with troubleshooting please visit the **[FAQ & Troubleshooting](https://smashballoon.com/custom-facebook-feed/faq/)** section of the Smash Balloon website
 
-= How do I find the Page ID of my Facebook page or group? =
+= How do I find the Page ID of my Facebook page? =
 
 If you have a Facebook **page** with a URL like this: `https://www.facebook.com/smashballoon` then the Page ID is just `smashballoon`. If your page URL is structured like this: `https://www.facebook.com/pages/smashballoon/123654123654123` then the Page ID is actually the number at the end, so in this case `123654123654123`.
 
-If you have a Facebook **group** then use [this tool](http://lookup-id.com/ "Look Up my ID") to find your Group ID.
+Due to [recent changes](https://smashballoon.com/facebook-api-changes-april-4-2018/) to the Facebook API it is unfortunately no longer possible to display a feed from a Facebook Group.
 
 Copy and paste the ID into the [Pro demo](https://smashballoon.com/custom-facebook-feed/demo/) to test it.
 
 = Are there any limitations on which Facebook page or group feeds I can display? =
 
-The Facebook feed you're trying to display has to be from a publicly accessible Facebook page or group. This means that you can't display the feed from your own personal Facebook profile or private Facebook group. This is to do with Facebook's privacy policies. You can't display a non-public Facebook feed publicly.
+The Facebook feed you're trying to display has to be from a publicly accessible Facebook page. This means that you can't display the feed from your own personal Facebook profile or Facebook group. This is to do with Facebook's privacy policies. You can't display a non-public Facebook feed publicly.
 
 If your Facebook page has any restrictions on it (age, for example) then it means that people have to be signed into Facebook in order to view your page. This isn't desirable for most Facebook pages as it means that it isn't accessible by people who don't have a Facebook account and that your Facebook page can't be crawled and indexed by search engines.
 
 An easy way to determine whether your Facebook page is set to public is to sign out of your Facebook account and try to visit your page. If Facebook forces you to sign in to view your page then it isn't public. You can change your Facebook page to public in your Facebook page settings simply by removing any age or location restrictions you have on it ([screenshot](https://smashballoon.com/wp-content/uploads/2013/06/facebook-page-restrictions.png)), which will then allow the Custom Facebook Feed plugin to access and display your feed.
 
-= Can I display feeds from multiple Facebook pages or groups? =
+= Can I display feeds from multiple Facebook pages? =
 
 You can set your default Facebook Page ID on the Custom Facebook Feed settings page within the WordPress admin, you can then define different page IDs in the shortcodes you use to show multiple feeds from different Facebook pages. Just use the id option in your shortcode like so: [custom-facebook-feed id=another_page_id]. You can use as many shortcodes as you like with as many different IDs as you like.
 
 = Can I display the feed from a personal Facebook profile? =
 
-Due to Facebook's privacy policy you're not able to use the plugin to display all of your posts from a personal profile, only from a public page or group, as posts from a personal profile are protected for privacy reasons. You may have limited success in displaying certain posts from a personal profile but most posts are not able to be displayed.
+Due to Facebook's privacy policy you're not able to use the plugin to display all of your posts from a personal profile, only from a public page, as posts from a personal profile are protected for privacy reasons. You may have limited success in displaying certain posts from a personal profile but most posts are not able to be displayed.
 
 If you're using the profile to represent a business, organization, product, public figure or the like, then we'd advise converting your profile to a page per [Facebook's recommendation](http://www.facebook.com/help/175644189234902/), as there are many advantages to using pages over profiles.
 
@@ -218,7 +218,7 @@ You no longer need your own Access Token to use the Custom Facebook Feed Plugin,
 
 **1)** Go to [developers.facebook.com](http://developers.facebook.com "Facebook developers website") and click on Log In in the top right.  Log in using your personal Facebook credentials.
 
-**Note:** The personal Facebook account that you use to register as a Facebook developer does not need to be associated in any way with the Facebook page or Facebook group whose posts you want to display. You can use the Facebook Access Token you receive to display the Facebook posts from any public Facebook page or open Facebook group.
+**Note:** The personal Facebook account that you use to register as a Facebook developer does not need to be associated in any way with the Facebook page whose posts you want to display. You can use the Facebook Access Token you receive to display the Facebook posts from any public Facebook page.
 
 **Note:** You cannot log in to the Facebook Developer site using a Facebook Page or Facebook Business account. You must use the username and password from your personal Facebook profile. Facebook doesn't allow businesses to register as Facebook developers, only individuals.
 
@@ -264,6 +264,76 @@ You no longer need your own Access Token to use the Custom Facebook Feed Plugin,
 9. It's super easy to display your Facebook feed in any page or post
 
 == Changelog ==
+
+= 2.8 =
+* New: Added support for Notes in timeline feeds. If your timeline feed contains a note then the plugin will now get the content from the note and display it within the post.
+* New: Facebook call-to-action buttons - such as "Learn More", "Shop Now", and "Message Page" - are now supported in your posts. These text strings can be translated using the settings at: Facebook Feed > Customize > Custom Text/Translate
+* New: Added a setting that you can enable if you are displaying posts from a restricted (non-public) Facebook page. This will allow the page avatar to be displayed, and is located at: Facebook Feed > Customize > Misc > Misc Settings > Is Facebook Page restricted?
+* New: If a visitor posts to your page then their avatar will now be displayed and cached for 6 months. To clear the cache of these avatar images use the button located at: Facebook Feed > Customize > Misc > Misc Settings > Clear Avatar Cache
+* Tweak: The Timezone setting can now be set in the shortcode. Eg: `timezone="America/Los_Angeles"`
+* Tweak: Minor UI changes to the admin pages
+* Tweak: Reduced some of the data in the System Info
+* Fix: If you backdate a post it will now be ordered correctly in your feed
+* Fix: Fixed a theme conflict related to the Color Picker in the admins section
+* Verified compatibility with WordPress 5.0 and Gutenburg
+
+= 2.7.2 =
+* **Important:** If you are displaying a feed from a Facebook page which you are *not* an admin of then it is advised that you obtain a new Access Token in the plugin using the "Log in and get my Access Token" button. This will switch you from using the "SlickRemix" app to using our own "Smash Balloon" Facebook app which was recently approved by Facebook, and will prevent you from experiencing any potential interuptions in your feeds going forward. This will be the final time this is required.
+* Fix: Fixed a rare issue caused by some themes including the JavaScript file incorrectly
+
+= 2.7.1 =
+* Tweak: Made some adjustments to the Facebook Access Token login process
+
+= 2.7 =
+* New: Now easily get your own Facebook Access Token to avoid any Facebook connection issues. Simply click the blue Facebook "Log in and get my Access Token" button on the Custom Facebook Feed settings page and connect your Facebook account to get your token. The Access Token will work to get posts from ANY Facebook page. Thanks to our friends at SlickRemix for powering our new login and getting the plugin back up and running again!
+* Tweak: Removed the minimum caching time if you're using your own Facebook Page Access Token
+
+= 2.6.4 =
+* **Important:** If you are displaying Facebook posts from a Facebook page that **you are an admin of** then it is now highly recommended that you retrieve your own Facebook Access Token for that Facebook page to avoid any Facebook API rate limit errors. Simply follow these [step-by-step](https://smashballoon.com/custom-facebook-feed/page-token/) instructions to obtain one.
+
+= 2.6.3 =
+* Fix: Fixed an issue where Facebook API errors were being cached
+
+= 2.6.2 =
+* Fix: Replaced all HTTP links with HTTPS
+* Fix: Fixed a rare issue which affected the layout of other Facebook widgets
+* Fix: Automatically remove slashes at the end of the Facebook Page ID as it caused an error
+* Fix: The API response test in the System Info now only tests with your Facebook token if you have the "Use my own Access Token" setting enabled
+* Fix: Fixed an issue which caused an occasional Facebook API rate limit error
+
+= 2.6.1 =
+* Fix: Removed an unnecessary Facebook API call
+* Fix: Removed a PHP notice which was displayed under rare circumstances
+* Fix: Minor bug fixes
+
+= 2.6 =
+* Fix: Fixed an issue connecting to the Facebook API caused by a recent Facebook platform change
+* Tweak: Increased the minimum caching time to be 15 minutes to reduce Facebook API requests
+
+= 2.5.2 =
+* Important: Due to sudden changes in the Facebook API it is no longer possible to display posts from a Facebook Group. Please [see here](https://smashballoon.com/facebook-api-changes-april-4-2018/) for more information. We apologize for any frustration or inconvenience this has caused.
+* Removed: Due to Facebook API restrictions, it is no longer possible to display information about an event when it is posted or shared to your Facebook Page timeline.
+
+= 2.5.1 =
+* Fix: Prevented a PHP notice which would be displayed under rare circumstances
+* Fix: Replaced a function due to a deprecation in PHP 7.2
+
+= 2.5 =
+* New: Added the post story as part of the page/author name at the top of the post
+* New: Added an option to use minified versions of the plugin CSS and JavaScript files: `Facebook Feed > Customize > Misc > Misc Settings > Minify CSS and JavaScript files`
+* New: Added support for clearing the cache of major caching plugins when the Facebook feed cache is cleared. You can enable this by setting the following setting to be "Yes": `Facebook Feed > Customize > Misc > Misc Settings > Force cache to clear on interval`
+* Tweak: Improved the text truncation so that it applies to both the post text and description as one block of text and accounts for HTML link tags
+* Tweak: Added an "Auto" option to the Post Limit setting where it will automatically adjust the post limit based on the number of posts you choose to display
+* Tweak: Reorganized the settings pages to be more intuitive
+* Tweak: Added aria-hidden=true to icons to help improve accessibility
+* Tweak: The icon font stylesheet handle has been renamed so it will only be loaded once if another of our plugins is installed
+* Tweak: Error messages are now only shown to admins
+* Tweak: Added a setting to workaround a theme issue that affects the shortening of the post text. If you're experiencing an issue with the shortening of post text then you can enable the following setting: `Facebook Feed > Customize > Misc > Misc Settings > Fix text shortening issue`
+* Fix: Included a fallback in case the author name and avatar aren't available in visitor posts
+* Fix: Fixed an issue with apostrophes in the header not being escaped correctly
+* Fix: Fixed an issue with the icon font when Font Awesome 5 was added to a site
+* Fix: Added support for the @[ID:page-name] tagging format
+* Fix: The post description is now able to be displayed even if the post text is hidden
 
 = 2.4.6 =
 * Compatible with WordPress 4.8

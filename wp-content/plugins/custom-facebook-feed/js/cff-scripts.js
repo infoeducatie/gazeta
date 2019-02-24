@@ -1,7 +1,7 @@
 var cff_js_exists = (typeof cff_js_exists !== 'undefined') ? true : false;
 if(!cff_js_exists){
 
-	jQuery(document).ready(function() {
+	function cff_init(){
 		
 		jQuery('#cff .cff-item').each(function(){
 			var $self = jQuery(this);
@@ -19,21 +19,64 @@ if(!cff_js_exists){
 			}
 
 			//Expand post
-			var expanded = false,
+			var	expanded = false,
 				$post_text = $self.find('.cff-post-text .cff-text'),
 				text_limit = $self.closest('#cff').attr('data-char');
+
 			if (typeof text_limit === 'undefined' || text_limit == '') text_limit = 99999;
 			
 			//If the text is linked then use the text within the link
 			if ( $post_text.find('a.cff-post-text-link').length ) $post_text = $self.find('.cff-post-text .cff-text a');
 			var	full_text = $post_text.html();
 			if(full_text == undefined) full_text = '';
-			var short_text = full_text.substring(0,text_limit);
-			
+
+			//Truncate text taking HTML tags into account
+			var cff_trunc_regx = new RegExp(/(<[^>]*>)/g);
+			var cff_trunc_counter = 0;
+
+			//convert the string to array using the HTML tags as delimiter and keeping them as array elements
+			full_text_arr = full_text.split(cff_trunc_regx);
+
+			for (var i = 0, len = full_text_arr.length; i < len; i++) {
+				//ignore the array elements that are HTML tags
+				if ( !(cff_trunc_regx.test(full_text_arr[i])) ) {
+				  	//if the counter is 100, remove this element with text
+					if (cff_trunc_counter == text_limit) {
+				    	full_text_arr.splice(i, 1);
+				        continue; //ignore next commands and continue the for loop
+				    }
+				    //if the counter != 100, increase the counter with this element length
+				    cff_trunc_counter = cff_trunc_counter + full_text_arr[i].length;
+				    //if is over 100, slice the text of this element to match the total of 100 chars and set the counter to 100
+				    if (cff_trunc_counter > text_limit) {
+				      	var diff = cff_trunc_counter - text_limit;
+				        full_text_arr[i] = full_text_arr[i].slice(0, -diff);
+				        cff_trunc_counter = text_limit;
+
+				        //Show the 'See More' link if needed
+						if (full_text.length > text_limit) $self.find('.cff-expand').show();
+				    }
+				}
+			}
+
+			//new string from the array
+			var short_text = full_text_arr.join('');
+
+			//remove empty html tags from the array
+			short_text = short_text.replace(/(<(?!\/)[^>]+>)+(<\/[^>]+>)/g, "");
+
+			//If the short text cuts off in the middle of a <br> tag then remove the stray '<' which is displayed
+			var lastChar = short_text.substr(short_text.length - 1);
+			if(lastChar == '<') short_text = short_text.substring(0, short_text.length - 1);
+
+			//Remove any <br> tags from the end of the short_text
+			short_text = short_text.replace(/(<br>\s*)+$/,'');
+			short_text = short_text.replace(/(<img class="cff-linebreak">\s*)+$/,''); 
+
 			//Cut the text based on limits set
 			$post_text.html( short_text );
-			//Show the 'See More' link if needed
-			if (full_text.length > text_limit) $self.find('.cff-expand').show();
+
+
 			//Click function
 			$self.find('.cff-expand a').unbind('click').bind('click', function(e){
 				e.preventDefault();
@@ -49,14 +92,16 @@ if(!cff_js_exists){
 					$post_text.html( short_text );
 					expanded = false;
 					$more.show();
-					$less.hide();
+					$less.hide();			
 				}
-				//Add target attr to post text links via JS so aren't included in char count
-				$self.find('.cff-text a').add( $self.find('.cff-post-desc a') ).attr({
-					'target' : '_blank',
-					'rel' : 'nofollow'
-				});
 				cffLinkHashtags();
+				//Add target to links in text when expanded
+				$post_text.find('a').attr('target', '_blank');
+			});
+			//Add target attr to post text links via JS so aren't included in char count
+			$post_text.find('a').add( $self.find('.cff-post-desc a') ).attr({
+				'target' : '_blank',
+				'rel' : 'nofollow'
 			});
 
 			//Hide the shared link box if it's empty
@@ -83,6 +128,9 @@ if(!cff_js_exists){
 						return ' <a href="https://www.facebook.com/hashtag/'+ replacementString.substring(1) +'" target="_blank" rel="nofollow" style="color:#' + linkcolor + '">' + replacementString + '</a>';
 					}
 				}
+
+				//If it's not defined in the source code then set it to be true
+				if (typeof cfflinkhashtags == 'undefined') cfflinkhashtags = 'true';
 
 				if(cfflinkhashtags == 'true'){
 					//Replace hashtags in text
@@ -113,6 +161,8 @@ if(!cff_js_exists){
 
 			
 		}); //End .cff-item each
-	});
+
+	}
+	cff_init();
 
 } //End cff_js_exists check
