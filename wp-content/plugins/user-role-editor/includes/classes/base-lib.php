@@ -18,7 +18,6 @@ class URE_Base_Lib {
     protected $options = array(); // plugin options data
     protected $multisite = false;
     protected $active_for_network = false;
-    protected $blog_ids = null;
     protected $main_blog_id = 0;
 
     
@@ -40,8 +39,7 @@ class URE_Base_Lib {
 
         $this->multisite = function_exists('is_multisite') && is_multisite();
         if ($this->multisite) {
-            $this->blog_ids = $this->get_blog_ids();
-            // get Id of 1st (main) blog
+            // get Id of the 1st (main) blog
             $this->main_blog_id = $this->get_main_site();
         }
 
@@ -87,11 +85,14 @@ class URE_Base_Lib {
      * @global wpdb $wpdb
      * @return array
      */
-    protected function get_blog_ids() {
+    public function get_blog_ids() {
         global $wpdb;
 
         $network = get_current_site();        
-        $query = "SELECT blog_id FROM {$wpdb->blogs} WHERE site_id={$network->id} ORDER BY blog_id ASC";
+        $query = $wpdb->prepare(
+                    "SELECT blog_id FROM {$wpdb->blogs}
+                        WHERE site_id=%d ORDER BY blog_id ASC",
+                        array($network->id));
         $blog_ids = $wpdb->get_col($query);
 
         return $blog_ids;
@@ -118,7 +119,7 @@ class URE_Base_Lib {
 
         if ($message) {
             if ($error_style) {
-                echo '<div id="message" class="error" >';
+                echo '<div id="message" class="error">';
             } else {
                 echo '<div id="message" class="updated fade">';
             }
@@ -138,21 +139,32 @@ class URE_Base_Lib {
     public function get_request_var($var_name, $request_type = 'request', $var_type = 'string') {
 
         $result = 0;
-        if ($request_type == 'get') {
-            if (isset($_GET[$var_name])) {
-                $result = filter_var($_GET[$var_name], FILTER_SANITIZE_STRING);
+        $request_type = strtolower($request_type);
+        switch ($request_type) {
+            case 'get': {
+                if (isset($_GET[$var_name])) {
+                    $result = filter_var($_GET[$var_name], FILTER_SANITIZE_STRING);
+                }                
+                break;
             }
-        } else if ($request_type == 'post') {
-            if (isset($_POST[$var_name])) {
-                if ($var_type != 'checkbox') {
-                    $result = filter_var($_POST[$var_name], FILTER_SANITIZE_STRING);;
-                } else {
-                    $result = 1;
+            case 'post': {
+                if (isset($_POST[$var_name])) {
+                    if ($var_type!='checkbox') {
+                        $result = filter_var($_POST[$var_name], FILTER_SANITIZE_STRING);
+                    } else {
+                        $result = 1;
+                    }
                 }
+                break;
             }
-        } else {
-            if (isset($_REQUEST[$var_name])) {
-                $result = filter_var($_REQUEST[$var_name], FILTER_SANITIZE_STRING);
+            case 'request': {
+                if (isset($_REQUEST[$var_name])) {
+                    $result = filter_var($_REQUEST[$var_name], FILTER_SANITIZE_STRING);
+                }
+                break;
+            }
+            default: {
+                $result = -1;   //  Wrong request type value, possible mistake in a function call
             }
         }
 
@@ -169,6 +181,7 @@ class URE_Base_Lib {
     }
     // end of get_request_var()
 
+    
     /**
      * returns option value for option with name in $option_name
      */
@@ -262,8 +275,12 @@ class URE_Base_Lib {
      */
     public function get_short_list_str($full_list, $items_count=3) {
      
+        if (empty($full_list) || !is_array($full_list)) {
+            return '...';
+        }
+        
         $short_list = array(); $i = 0;
-        foreach($full_list as $key=>$item) {            
+        foreach($full_list as $item) {            
             if ($i>=$items_count) {
                 break;
             }
@@ -273,12 +290,42 @@ class URE_Base_Lib {
         
         $str = implode(', ', $short_list);
         if ($items_count<count($full_list)) {
-            $str .= '...';
+            $str .= ', ...';
         }
         
         return $str;
     }    
     //  end of get_short_list_str()
+    
+    
+    /**
+     * Prepare the list of integer or string values for usage in SQL query IN (val1, val2, ... , valN) claster
+     * @global wpdb $wpdb
+     * @param string $list_type: allowed values 'int', 'string'
+     * @param array $list_values: array of integers or strings
+     * @return string - comma separated values (CSV)
+     */
+    public static function esc_sql_in_list($list_type, $list_values) {
+        global $wpdb;
+        
+        if (empty($list_values) || !is_array($list_values) || count($list_values)==0) {
+            return '';
+        }
+        
+        if ($list_type=='int') {
+            $placeholder = '%d';   //  Integer
+        } else {
+            $placeholder = '%s';   // String
+        }
+        
+        $placeholders = array_fill(0, count($list_values), $placeholder);
+        $format_str = implode(',', $placeholders);
+        
+        $result = $wpdb->prepare($format_str, $list_values);
+        
+        return $result;        
+    }
+    // end of esc_sql_in_list()
     
     
     /**
@@ -304,4 +351,4 @@ class URE_Base_Lib {
     // end of __wakeup()
 
 }
-// end of Garvs_WP_Lib class
+// end of URE_Base_Lib class

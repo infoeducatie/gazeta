@@ -80,11 +80,12 @@ class URE_Protect_Admin {
             return false;
         }
 
-        $table_name = $this->lib->get_usermeta_table_name();
-        $meta_key = $wpdb->prefix . 'capabilities';
-        $query = "SELECT count(*)
-                FROM $table_name
-                WHERE user_id=$user_id AND meta_key='$meta_key' AND meta_value like '%administrator%'";
+        $meta_key = $wpdb->prefix .'capabilities';
+        $query = $wpdb->prepare(
+                "SELECT count(*)
+                    FROM {$wpdb->usermeta}
+                    WHERE user_id=%d AND meta_key=%s AND meta_value like %s", 
+                array($user_id, $meta_key, '%administrator%'));
         $has_admin_role = $wpdb->get_var($query);
         if ($has_admin_role > 0) {
             $result = true;
@@ -115,7 +116,14 @@ class URE_Protect_Admin {
      * @return array
      */
     public function not_edit_admin($allcaps, $caps, $name) {
-        $cap = (is_array($caps) & count($caps)>0) ? $caps[0] : $caps;
+        
+        if (is_array($caps) & count($caps)>0) {
+            // 1st element of this array not always has index 0. Use workaround to extract it.
+            $caps_v = array_values($caps);
+            $cap = $caps_v[0];
+        } else {
+            $cap = $caps;
+        }
         $checked_caps = array('edit_users', 'delete_users', 'remove_users');
         if (!in_array($cap, $checked_caps)) {
             return $allcaps;
@@ -124,7 +132,7 @@ class URE_Protect_Admin {
         $user_keys = array('user_id', 'user');
         foreach ($user_keys as $user_key) {
             $access_deny = false;
-            $user_id = $this->lib->get_request_var($user_key, 'get');
+            $user_id = (int) $this->lib->get_request_var($user_key, 'get', 'int');
             if (empty($user_id)) {  // check the next key
                 continue;
             }
@@ -166,12 +174,12 @@ class URE_Protect_Admin {
 
         // get user_id of users with 'Administrator' role  
         $current_user_id = get_current_user_id();
-        $tableName = $this->lib->get_usermeta_table_name();
         $meta_key = $wpdb->prefix . 'capabilities';
-        $admin_role_key = '%"administrator"%';
-        $query = "SELECT user_id
-              FROM $tableName
-              WHERE user_id!={$current_user_id} AND meta_key='{$meta_key}' AND meta_value like '{$admin_role_key}'";
+        $query = $wpdb->prepare(
+                    "SELECT user_id
+                        FROM {$wpdb->usermeta}
+                        WHERE user_id!=%d AND meta_key=%s AND meta_value like %s",
+                      array($current_user_id, $meta_key, '%administrator%'));
         $ids_arr = $wpdb->get_col($query);
         if (is_array($ids_arr) && count($ids_arr) > 0) {
             $ids = implode(',', $ids_arr);
@@ -180,6 +188,29 @@ class URE_Protect_Admin {
     }
     // end of exclude_administrators()
 
+        
+    private function extract_view_quantity($text) {
+        $match = array();
+        $result = preg_match('#\((.*?)\)#', $text, $match);
+        if ($result) {
+            $quantity = $match[1];
+        } else {
+            $quantity = 0;
+        }
+        
+        return $quantity;
+    }
+    // end of extract_view_quantity()
+    
+    
+    private function extract_int($str_val) {
+        $str_val1 = str_replace(',', '', $str_val);  // remove ',' from numbers like '2,015'
+        $int_val = (int) preg_replace('/[^\-\d]*(\-?\d*).*/','$1', $str_val1);  // extract numeric value strings like from '2015 bla-bla'
+        
+        return $int_val;
+    }
+    // end of extract_int()
+    
     
     /*
      * Exclude view of users with Administrator role
@@ -187,6 +218,21 @@ class URE_Protect_Admin {
      */
     public function exclude_admins_view($views) {
 
+        if (!isset($views['administrator'])) {
+            return $views;
+        }
+        
+        if (isset($views['all'])) {        
+            // Decrease quant of all users for a quant of hidden admins
+            $admins_orig_s = $this->extract_view_quantity($views['administrator']);
+            $admins_int = $this->extract_int($admins_orig_s);
+            $all_orig_s = $this->extract_view_quantity($views['all']);
+            $all_orig_int = $this->extract_int($all_orig_s);
+            $all_new_int = $all_orig_int - $admins_int;
+            $all_new_s = number_format_i18n($all_new_int);
+            $views['all'] = str_replace($all_orig_s, $all_new_s, $views['all']);
+        }
+        
         unset($views['administrator']);
 
         return $views;

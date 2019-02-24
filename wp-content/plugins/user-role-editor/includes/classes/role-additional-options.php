@@ -43,22 +43,6 @@ class URE_Role_Additional_Options {
         
         $data = get_option(self::STORAGE_ID, array());
 
-/*      
-        // It's enough to update the role via URE to achieve this, that why this code is commented:
-        // remove deactivated options
-        $modified = false;
-        foreach($data as $role=>$items) {
-            foreach($items as $item_id) {
-                if (!isset($this->items[$item_id])) {
-                    $modified = true;
-                    unset($data[$role][$item_id]);
-                }
-            }
-        }
-        if ($modified) {
-            put_option(self::STORAGE_ID, $data);
-        }
-*/        
         return $data;
     }    
     
@@ -78,11 +62,7 @@ class URE_Role_Additional_Options {
 
     
     public function set_active_items_hooks() {
-        
-        if (current_user_can('ure_edit_roles')) {
-            return;
-        }
-                
+                        
         $current_user = wp_get_current_user();
         foreach($current_user->roles as $role) {
             if (!isset($this->active_items[$role])) {
@@ -100,13 +80,25 @@ class URE_Role_Additional_Options {
     
     
     public function save($current_role) {
+        
+        $wp_roles = wp_roles();
         $this->active_items = self::get_active_items();
+        
+        // remove non-existing roles
+        foreach(array_keys($this->active_items) as $role_id) {
+            if (!isset($wp_roles->roles[$role_id])) {
+                unset($this->active_items[$role_id]);
+            }
+        }
+        
+        // Save additonal options section for the current role
         $this->active_items[$current_role] = array();
         foreach($this->items as $item) {
             if (isset($_POST[$item->id])) {
                 $this->active_items[$current_role][$item->id] = 1;
             }
         }
+        
         update_option(self::STORAGE_ID, $this->active_items);
         
     }
@@ -119,7 +111,7 @@ class URE_Role_Additional_Options {
     
     <hr />
     <?php echo esc_html__('Additional Options', 'user-role-editor');?>:
-    <table class="form-table" style="clear:none;" cellpadding="0" cellspacing="0">
+    <table id="additional_options" class="form-table" style="clear:none;" cellpadding="0" cellspacing="0">
         <tr>
             <td>
 

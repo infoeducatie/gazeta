@@ -52,13 +52,25 @@ class URE_Lib extends URE_Base_Lib {
     protected function __construct($options_id) {
                                            
         parent::__construct($options_id); 
-        $this->debug = defined('URE_DEBUG') && (URE_DEBUG==1 || URE_DEBUG==true);
- 
-        $this->bbpress = URE_bbPress::get_instance($this);
         
+        $this->debug = defined('URE_DEBUG') && (URE_DEBUG==1 || URE_DEBUG==true);
+        $this->get_bbpress();        
         $this->upgrade();
+        
     }
     // end of __construct()
+
+
+    protected function get_bbpress() {
+        
+        if ($this->bbpress===null) {
+            $this->bbpress = new URE_bbPress();
+        }
+        
+        return $this->bbpress;
+        
+    }
+    // end of get_bbpress()
     
     
     public static function get_instance($options_id = '') {
@@ -77,6 +89,10 @@ class URE_Lib extends URE_Base_Lib {
         
     
     protected function upgrade() {
+        
+        if (!is_admin()) {
+            return;
+        }
         
         $ure_version = $this->get_option('ure_version', '0');
         if (version_compare( $ure_version, URE_VERSION, '<' ) ) {
@@ -112,7 +128,7 @@ class URE_Lib extends URE_Base_Lib {
         $this->notification = $value;
         
     }
-    // end of esc_html()
+    // end of set_notification()
     
     
     public function set_apply_to_all($value) {
@@ -199,7 +215,7 @@ class URE_Lib extends URE_Base_Lib {
             
 
     /**
-     *  return front-end according to the context - role or user editor
+     *  Show main page according to the context - role or user editor
      */
     public function editor() {
 
@@ -287,21 +303,41 @@ class URE_Lib extends URE_Base_Lib {
     
     protected function init_current_role_name() {
         
-        if (!isset($this->roles[$_POST['user_role']])) {
+        $this->current_role = '';
+        $this->current_role_name = '';
+        if ( !isset( $_POST['user_role'] ) ) {
+            $mess = esc_html__('Error: ', 'user-role-editor') . esc_html__('Wrong request!', 'user-role-editor');
+        } else if ( !isset($this->roles[$_POST['user_role']]) ) {
             $mess = esc_html__('Error: ', 'user-role-editor') . esc_html__('Role', 'user-role-editor') . ' <em>' . esc_html($_POST['user_role']) . '</em> ' . 
-                    esc_html__('does not exist', 'user-role-editor');
-            $this->current_role = '';
-            $this->current_role_name = '';
+                    esc_html__('does not exist', 'user-role-editor');            
         } else {
             $this->current_role = $_POST['user_role'];
             $this->current_role_name = $this->roles[$this->current_role]['name'];
             $mess = '';
         }
         
-        return $mess;
-        
+        return $mess;        
     }
     // end of init_current_role_name()
+    
+    
+    // Add existing WPBakery Visial Composer () plugin capabilities from this role to the list of capabilities for save with this role update -
+    // Visual Composer capabilities are excluded from a role update as they may store not boolean values.
+    protected function restore_visual_composer_caps() {
+        
+        if (!isset($this->roles[$this->current_role]) || !is_array($this->roles[$this->current_role]['capabilities'])) {
+            return false;
+        }
+        
+        foreach($this->roles[$this->current_role]['capabilities'] as $cap=>$value) {
+            if (strpos($cap, 'vc_access_rules_')!==false) {
+                $this->capabilities_to_save[$cap] = $value;
+            }
+        }
+        
+        return true;
+    }
+    // end of restore_visual_composer_caps()
         
                 
     /**
@@ -315,6 +351,8 @@ class URE_Lib extends URE_Base_Lib {
                 $this->capabilities_to_save[$available_capability['inner']] = true;
             }
         }
+        
+        $this->restore_visual_composer_caps();
     }
     // end of prepare_capabilities_to_save()
     
@@ -340,7 +378,7 @@ class URE_Lib extends URE_Base_Lib {
                 if ($mess) {
                     $mess .= '<br/>';
                 }
-                $mess = esc_html__('Error occured during role(s) update', 'user-role-editor');
+                $mess = esc_html__('Error occurred during role(s) update', 'user-role-editor');
             }
         } else {
             if ($this->update_user($this->user_to_edit)) {
@@ -352,7 +390,7 @@ class URE_Lib extends URE_Base_Lib {
                 if ($mess) {
                     $mess .= '<br/>';
                 }
-                $mess = esc_html__('Error occured during user update', 'user-role-editor');
+                $mess = esc_html__('Error occurred during user update', 'user-role-editor');
             }
         }
         return $mess;
@@ -445,7 +483,7 @@ class URE_Lib extends URE_Base_Lib {
         } else {
             $value = get_site_transient('ure_caps_columns_quant');
             if ($value===false) {
-                $value = 1;
+                $value = $this->get_option('caps_columns_quant', 1);
             }
         }
         
@@ -455,7 +493,9 @@ class URE_Lib extends URE_Base_Lib {
     
 
     public function get_default_role() {
+        
         $this->wp_default_role = get_option('default_role');
+        
     }
     // end of get_default_role()
     
@@ -469,7 +509,7 @@ class URE_Lib extends URE_Base_Lib {
         $this->show_deprecated_caps = get_site_transient('ure_show_deprecated_caps');
         if (false === $this->show_deprecated_caps) {
             $this->show_deprecated_caps = $this->get_option('ure_show_deprecated_caps');
-            set_site_transient('ure_caps_readable', $this->caps_readable, self::TRANSIENT_EXPIRATION);
+            set_site_transient( 'ure_show_deprecated_caps', $this->show_deprecated_caps, URE_Lib::TRANSIENT_EXPIRATION );
         }
 
         $this->hide_pro_banner = $this->get_option('ure_hide_pro_banner', 0);
@@ -522,51 +562,7 @@ class URE_Lib extends URE_Base_Lib {
         return $last_role_id;
     }
     // end of get_last_role_id()
-    
-    
-    public function get_usermeta_table_name() {
-        global $wpdb;
         
-        $table_name = (!$this->multisite && defined('CUSTOM_USER_META_TABLE')) ? CUSTOM_USER_META_TABLE : $wpdb->usermeta;
-        
-        return $table_name;
-    }
-    // end of get_usermeta_table_name()
-    
-    
-    /**
-     * Check if user has "Administrator" role assigned
-     * 
-     * @global wpdb $wpdb
-     * @param int $user_id
-     * @return boolean returns true is user has Role "Administrator"
-     */
-    public function has_administrator_role($user_id) {
-        global $wpdb;
-
-        if (empty($user_id) || !is_numeric($user_id)) {
-            return false;
-        }
-
-        $table_name = $this->get_usermeta_table_name();
-        $meta_key = $wpdb->prefix . 'capabilities';
-        $query = "SELECT count(*)
-                FROM $table_name
-                WHERE user_id=$user_id AND meta_key='$meta_key' AND meta_value like '%administrator%'";
-        $has_admin_role = $wpdb->get_var($query);
-        if ($has_admin_role > 0) {
-            $result = true;
-        } else {
-            $result = false;
-        }
-        // cache checking result for the future use
-        $this->lib->user_to_check[$user_id] = $result;
-
-        return $result;
-    }
-
-    // end of has_administrator_role()
-
   
     /**
      * Checks if user is allowed to use User Role Editor
@@ -596,15 +592,12 @@ class URE_Lib extends URE_Base_Lib {
      * @return array
      */
     public function get_user_roles() {
-        global $wp_roles;
-        
-        if (!isset($wp_roles)) {
-            $wp_roles = new WP_Roles();
-        }                
 
-        if (!empty($this->bbpress)) {  // bbPress plugin is active
-            $this->roles = $this->bbpress->get_roles();
+        $bbpress = $this->get_bbpress();
+        if ($bbpress->is_active()) {  // bbPress plugin is active
+            $this->roles = $bbpress->get_roles();
         } else {
+            $wp_roles = wp_roles();
             $this->roles = $wp_roles->roles;
         }        
         
@@ -626,72 +619,21 @@ class URE_Lib extends URE_Base_Lib {
         if (empty($this->roles)) {
             $this->get_user_roles();
         }
-        if ($this->bbpress!==null) {
+        $bbpress = $this->get_bbpress();
+        if ($bbpress->is_active()) {
             remove_filter('editable_roles', 'bbp_filter_blog_editable_roles');
         }
         $roles = apply_filters('editable_roles', $this->roles);
-        if ($this->bbpress!==null) {
+        if ($bbpress->is_active()) {
             add_filter('editable_roles', 'bbp_filter_blog_editable_roles');
         }
         
         return $roles;
-
     }
     // end of get_editable_user_roles()
     
      
-/*    
-    // restores User Roles from the backup record
-    protected function restore_user_roles() 
-    {
-        global $wpdb, $wp_roles;
-
-        $error_message = 'Error! ' . __('Database operation error. Check log file.', 'user-role-editor');
-        $option_name = $wpdb->prefix . 'user_roles';
-        $backup_option_name = $wpdb->prefix . 'backup_user_roles';
-        $query = "select option_value
-              from $wpdb->options
-              where option_name='$backup_option_name'
-              limit 0, 1";
-        $option_value = $wpdb->get_var($query);
-        if ($wpdb->last_error) {
-            $this->log_event($wpdb->last_error, true);
-            return $error_message;
-        }
-        if ($option_value) {
-            $query = "update $wpdb->options
-                    set option_value='$option_value'
-                    where option_name='$option_name'
-                    limit 1";
-            $record = $wpdb->query($query);
-            if ($wpdb->last_error) {
-                $this->log_event($wpdb->last_error, true);
-                return $error_message;
-            }
-            $wp_roles = new WP_Roles();
-            $reload_link = wp_get_referer();
-            $reload_link = remove_query_arg('action', $reload_link);
-            $reload_link = esc_url_raw(add_query_arg('action', 'roles_restore_note', $reload_link));
-?>    
-            <script type="text/javascript" >
-              document.location = '<?php echo $reload_link; ?>';
-            </script>  
-            <?php
-            $mess = '';
-        } else {
-            $mess = __('No backup data. It is created automatically before the first role data update.', 'user-role-editor');
-        }
-        if (isset($_REQUEST['user_role'])) {
-            unset($_REQUEST['user_role']);
-        }
-
-        return $mess;
-    }
-    // end of restore_user_roles()
-*/
-
-    protected function convert_caps_to_readable($caps_name) 
-    {
+    protected function convert_caps_to_readable($caps_name) {
 
         $caps_name = str_replace('_', ' ', $caps_name);
         $caps_name = ucfirst($caps_name);
@@ -700,41 +642,29 @@ class URE_Lib extends URE_Base_Lib {
     }
     // ure_ConvertCapsToReadable
     
-            
-    public function make_roles_backup() {
-        global $wpdb;
+    /**
+     * Create backup record for the WordPress user roles
+     * Run once on URE activation
+     * 
+     * @global wpdb $wpdb
+     * @global WP_Roles $wp_roles
+     * @return type
+     */        
+    public function backup_wp_roles() {
+        global $wpdb, $wp_roles;
 
+        $site_id = get_current_blog_id();
+        $backup_roles_key = $wpdb->get_blog_prefix($site_id) .'backup_user_roles';
         // check if backup user roles record exists already
-        $backup_option_name = $wpdb->prefix . 'backup_user_roles';
-        $query = "select option_id
-              from $wpdb->options
-              where option_name='$backup_option_name'
-          limit 0, 1";
-        $option_id = $wpdb->get_var($query);
-        if ($wpdb->last_error) {
-            $this->log_event($wpdb->last_error, true);
-            return false;
+        $result = get_option($backup_roles_key, false);        
+        if (!empty($result)) {
+            return;
         }
-        if (!$option_id) {
-            $roles_option_name = $wpdb->prefix.'user_roles';
-            $query = "select option_value 
-                        from $wpdb->options 
-                        where option_name like '$roles_option_name' limit 0,1";
-            $serialized_roles = $wpdb->get_var($query);
-            // create user roles record backup            
-            $query = "insert into $wpdb->options
-                (option_name, option_value, autoload)
-                values ('$backup_option_name', '$serialized_roles', 'no')";
-            $record = $wpdb->query($query);
-            if ($wpdb->last_error) {
-                $this->log_event($wpdb->last_error, true);
-                return false;
-            }
-        }
+        
+        update_option($backup_roles_key, $wp_roles->roles, false);
 
-        return true;
     }
-    // end of ure_make_roles_backup()
+    // end of backup_wp_roles()
 
     
     protected function role_contains_caps_not_allowed_for_simple_admin($role_id) {
@@ -808,15 +738,27 @@ class URE_Lib extends URE_Base_Lib {
 
     
     /**
-     * return the array of unused user capabilities
-     * 
-     * @global WP_Roles $wp_roles
-     * @return array 
+     * Returns array of WPBakery Visual Composer plugin capabilities 
+     * extracted by 'vc_access_rules_' prefix
      */
-    public function get_caps_to_remove() {
-        global $wp_roles;
-
-        // build full capabilities list from all roles except Administrator 
+    public function get_visual_composer_caps($full_caps_list) {
+        $caps = array();
+        foreach(array_keys($full_caps_list) as $cap) {
+            if (strpos($cap, 'vc_access_rules_')!==false) {
+                $caps[$cap] = 1;
+            }
+        }
+        
+        return $caps;
+    }
+    // end of get_visual_composer_caps()
+    
+    /**
+     *  Build full capabilities list from all roles
+     */
+    private function get_full_caps_list_from_roles() {
+        $wp_roles = wp_roles();
+        // build full capabilities list from all roles
         $full_caps_list = array();
         foreach ($wp_roles->roles as $role) {
             // validate if capabilities is an array
@@ -828,29 +770,46 @@ class URE_Lib extends URE_Base_Lib {
                 }
             }
         }
-
+        
+        return $full_caps_list;
+    }
+    // end of get_full_caps_list_from_roles()
+    
+    
+    /**
+     * return the array of unused user capabilities
+     * 
+     * @global WP_Roles $wp_roles
+     * @return array 
+     */
+    public function get_caps_to_remove() {
+        $wp_roles = wp_roles();       
+        $full_caps_list = $this->get_full_caps_list_from_roles();
         $caps_to_exclude = $this->get_built_in_wp_caps();
         $ure_caps = URE_Own_Capabilities::get_caps();
-        $caps_to_exclude = array_merge($caps_to_exclude, $ure_caps);
+        $visual_composer_caps = $this->get_visual_composer_caps($full_caps_list);
+        $caps_to_exclude = array_merge($caps_to_exclude, $ure_caps, $visual_composer_caps);
 
         $caps_to_remove = array();
         foreach ($full_caps_list as $capability => $value) {
-            if (!isset($caps_to_exclude[$capability])) {    // do not touch built-in WP caps
-                // check roles
-                $cap_in_use = false;
-                foreach ($wp_roles->role_objects as $wp_role) {
-                    if ($wp_role->name != 'administrator') {
-                        if ($wp_role->has_cap($capability)) {
-                            $cap_in_use = true;
-                            break;
-                        }
+            if (isset($caps_to_exclude[$capability])) {    // do not touch built-in WP caps, URE own caps and Visual Composer caps
+                continue;
+            }
+            
+            // check roles
+            $cap_in_use = false;
+            foreach ($wp_roles->role_objects as $wp_role) {
+                if ($wp_role->name != 'administrator') {
+                    if ($wp_role->has_cap($capability)) {
+                        $cap_in_use = true;
+                        break;
                     }
                 }
-                if (!$cap_in_use) {
-                    $caps_to_remove[$capability] = 1;
-                }
             }
-        }
+            if (!$cap_in_use) {
+                $caps_to_remove[$capability] = 1;
+            }            
+        }   // foreach(...)
 
         return $caps_to_remove;
     }
@@ -994,11 +953,12 @@ class URE_Lib extends URE_Base_Lib {
      */
     protected function add_bbpress_caps() {
     
-        if (empty($this->bbpress)) {
+        $bbpress = $this->get_bbpress();
+        if (!$bbpress->is_active()) {
             return;
         }
-        
-        $caps = $this->bbpress->get_caps();
+                
+        $caps = $bbpress->get_caps();
         foreach ($caps as $cap) {
             $this->add_capability_to_full_caps_list($cap);
         }
@@ -1278,7 +1238,7 @@ class URE_Lib extends URE_Base_Lib {
             return false;
         }
         
-        $this->capabilities_to_save = $this->remove_caps_not_allowed_for_single_admin($this->capabilities_to_save);
+        $this->capabilities_to_save = $this->remove_caps_not_allowed_for_single_admin($this->capabilities_to_save);        
         $this->roles[$this->current_role]['name'] = $this->current_role_name;
         $this->roles[$this->current_role]['capabilities'] = $this->capabilities_to_save;
         $option_name = $wpdb->prefix . 'user_roles';
@@ -1298,7 +1258,7 @@ class URE_Lib extends URE_Base_Lib {
     
     /**
      * Update roles for all network using direct database access - quicker in several times
-     * 
+     * Execution speed is critical for large multi-site networks.
      * @global wpdb $wpdb
      * @return boolean
      */
@@ -1314,7 +1274,8 @@ class URE_Lib extends URE_Base_Lib {
         }
 
         $serialized_roles = serialize($this->roles);
-        foreach ($this->blog_ids as $blog_id) {
+        $blog_ids = $this->get_blog_ids();
+        foreach ($blog_ids as $blog_id) {
             $prefix = $wpdb->get_blog_prefix($blog_id);
             $options_table_name = $prefix . 'options';
             $option_name = $prefix . 'user_roles';
@@ -1324,7 +1285,6 @@ class URE_Lib extends URE_Base_Lib {
                 limit 1";
             $wpdb->query($query);
             if ($wpdb->last_error) {
-                $this->log_event($wpdb->last_error, true);
                 return false;
             }
             // @TODO: save role additional options
@@ -1353,7 +1313,8 @@ class URE_Lib extends URE_Base_Lib {
         
         $result = true;
         $old_blog = $wpdb->blogid;
-        foreach ($this->blog_ids as $blog_id) {
+        $blog_ids = $this->get_blog_ids();
+        foreach ($blog_ids as $blog_id) {
             switch_to_blog($blog_id);
             $this->roles = $this->get_user_roles();
             if (!isset($this->roles[$this->current_role])) { // add new role to this blog
@@ -1422,33 +1383,7 @@ class URE_Lib extends URE_Base_Lib {
         
         return true;
     }
-    // end of update_roles()
-
-    
-    /**
-     * Write message to the log file
-     * 
-     * @global type $wp_version
-     * @param string $message
-     * @param boolean $show_message
-     */
-    protected function log_event($message, $show_message = false) {
-        global $wp_version, $wpdb;
-
-        $file_name = URE_PLUGIN_DIR . 'user-role-editor.log';
-        $fh = fopen($file_name, 'a');
-        $cr = "\n";
-        $s = $cr . date("d-m-Y H:i:s") . $cr .
-                'WordPress version: ' . $wp_version . ', PHP version: ' . phpversion() . ', MySQL version: ' . $wpdb->db_version() . $cr;
-        fwrite($fh, $s);
-        fwrite($fh, $message . $cr);
-        fclose($fh);
-
-        if ($show_message) {
-            $this->show_message('Error! ' . esc_html__('Error is occur. Please check the log file.', 'user-role-editor'));
-        }
-    }
-    // end of log_event()
+    // end of update_roles()    
 
     
     /**
@@ -1674,25 +1609,26 @@ class URE_Lib extends URE_Base_Lib {
      * @return string
      */
     protected function change_default_role() {
-        global $wp_roles;
 
         if (!$this->multisite || is_network_admin()) {
             return 'Try to misuse the plugin functionality';
         }
+        
         $mess = '';
         if (!isset($wp_roles)) {
             $wp_roles = new WP_Roles();
+            $wp_roles = wp_roles();
         }
         if (!empty($_POST['user_role_id'])) {
             $user_role_id = $_POST['user_role_id'];
             unset($_POST['user_role_id']);
             if (isset($wp_roles->role_objects[$user_role_id]) && $user_role_id !== 'administrator') {
-                $result = update_option('default_role', $user_role_id);
-                if (empty($result)) {
-                    $mess = 'Error! ' . esc_html__('Error encountered during default role change operation', 'user-role-editor');
-                } else {
-                    $this->get_default_role();
+                update_option('default_role', $user_role_id);
+                $this->get_default_role();
+                if ($this->wp_default_role===$user_role_id) {
                     $mess = sprintf(esc_html__('Default role for new users is set to %s successfully', 'user-role-editor'), $wp_roles->role_names[$user_role_id]);
+                } else {
+                    $mess = 'Error! ' . esc_html__('Error encountered during default role change operation', 'user-role-editor');
                 }
             } elseif ($user_role_id === 'administrator') {
                 $mess = 'Error! ' . esc_html__('Can not set Administrator role as a default one', 'user-role-editor');
@@ -1872,9 +1808,7 @@ class URE_Lib extends URE_Base_Lib {
                 }
             }
         }
-
-        
-        
+                
         // add individual capabilities to user
         if (count($this->capabilities_to_save) > 0) {
             foreach ($this->capabilities_to_save as $key => $value) {
@@ -1882,8 +1816,9 @@ class URE_Lib extends URE_Base_Lib {
             }
         }
         $user->update_user_level_from_caps();
-        do_action('profile_update', $user->ID, $user);  // in order other plugins may hook to the user permissions update
-        
+                
+        do_action('ure_user_permissions_update', $user->ID, $user);  // in order other plugins may hook to the user permissions update
+                
         if ($this->apply_to_all) { // apply update to the all network
             if (!$this->network_update_user($user)) {
                 return false;
@@ -1934,7 +1869,11 @@ class URE_Lib extends URE_Base_Lib {
         if (is_array($roles) && count($roles) > 0) {
             $role_names = array();
             foreach ($roles as $role) {
-                $role_names[] = $wp_roles->roles[$role]['name'];
+                if (isset($wp_roles->roles[$role])) {
+                    $role_names[] = $wp_roles->roles[$role]['name'];
+                } else {
+                    $role_names[] = $role;
+                }
             }
             $output = implode(', ', $role_names);
         } else {
@@ -1997,8 +1936,8 @@ class URE_Lib extends URE_Base_Lib {
     // end of show_admin_role()
         
     
-    // returns true if $user has $capability assigned through the roles or directly
-    // returns true if user has role with name equal $capability
+    // returns true if editing user has $capability assigned through the roles or directly
+    // returns true if editing user has role with name equal $capability
     public function user_can($capability) {
         
         if (isset($this->user_to_edit->caps[$capability])) {
@@ -2053,13 +1992,13 @@ class URE_Lib extends URE_Base_Lib {
     // end of is_super_admin()
     
     
-    // Returns true if user is a real superadmin
+    // Returns true for any capability if user is a real superadmin under multisite
     // Returns true if user has $capability assigned through the roles or directly
     // Returns true if user has role with name equal $cap
     public function user_has_capability($user, $cap) {
         global $wp_roles;
 
-        if (!is_object($user) || empty($user->ID)) {
+        if (!is_object($user) || !is_a( $user, 'WP_User') || empty($user->ID)) {
             return false;
         }
         if ($this->multisite && !$this->raised_permissions && is_super_admin($user->ID)) {  // do not replace with $this->is_super_admin() to exclude recursion
@@ -2170,7 +2109,7 @@ class URE_Lib extends URE_Base_Lib {
     public function get_ure_page_url() {
         $page_url = URE_WP_ADMIN_URL . URE_PARENT . '?page=users-' . URE_PLUGIN_FILE;
         $object = $this->get_request_var('object', 'get');
-        $user_id = $this->get_request_var('user_id', 'get', 'int');
+        $user_id = (int) $this->get_request_var('user_id', 'get', 'int');
         if ($object=='user' && $user_id>0) {
             $page_url .= '&object=user&user_id='. $user_id;
         }
