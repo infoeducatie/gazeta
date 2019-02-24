@@ -1,8 +1,4 @@
 <?php
-/**
- * @package Facebook Open Graph, Google+ and Twitter Card Tags
- * @version 2.1.2
- */
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 

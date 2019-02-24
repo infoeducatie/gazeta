@@ -1,8 +1,4 @@
 <?php
-/**
- * @package Facebook Open Graph, Google+ and Twitter Card Tags
- * @version 2.1.2
- */
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
@@ -23,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 					</tr>
 					<tr>
 						<td colspan="2" class="info">
-							<i>&lt;meta itemprop="name" content="..."/&gt;</i>
+							<i>&lt;meta itemprop="name" content="..."/&gt;</i> <?php _e('and', 'wonderm00ns-simple-facebook-open-graph-tags'); ?> <i>&lt;meta itemprop="headline" content="..."/&gt;</i>
 							<br/>
 							- <?php printf( __( 'You can change this value using the <i>%1$s</i> filter', 'wonderm00ns-simple-facebook-open-graph-tags' ), 'fb_og_title' ); ?>
 						</td>
@@ -124,13 +120,28 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 					<tr>
 						<th><?php _e( 'Include Post/Page Author', 'wonderm00ns-simple-facebook-open-graph-tags' );?>:</th>
 						<td>
-							<small><?php _e('Google doesn\'t use it anymore', 'wonderm00ns-simple-facebook-open-graph-tags');?></small>
-							<input type="hidden" name="wonderm00n_open_graph_settings[fb_author_show_linkrelgp]" id="fb_author_show_linkrelgp" value="0"/>
+							<input type="checkbox" name="wonderm00n_open_graph_settings[fb_author_show_schema]" id="fb_author_show_schema" value="1" <?php echo (intval($options['fb_author_show_schema'])==1 ? ' checked="checked"' : ''); ?>/>
 						</td>
 					</tr>
 					<tr>
 						<td colspan="2" class="info">
-							- <a href="https://support.google.com/webmasters/answer/6083347" target="_blank">https://support.google.com/webmasters/answer/6083347</a>
+							<i>&lt;meta itemprop="author" content="..."/&gt;</i>
+							<br/>
+							- <?php _e('From the user Display name', 'wonderm00ns-simple-facebook-open-graph-tags');?>
+						</td>
+					</tr>
+					
+					<tr>
+						<th><?php _e( 'Include Published/Modified Dates', 'wonderm00ns-simple-facebook-open-graph-tags' );?>:</th>
+						<td>
+							<input type="checkbox" name="wonderm00n_open_graph_settings[fb_article_dates_show_schema]" id="fb_article_dates_show_schema" value="1" <?php echo (intval($options['fb_article_dates_show_schema'])==1 ? ' checked="checked"' : ''); ?>/>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2" class="info">
+							<i>&lt;itemprop="datePublished" content="..."/&gt;</i> <?php _e('and', 'wonderm00ns-simple-facebook-open-graph-tags'); ?> <i>&lt;meta itemprop="dateModified" content="..."/&gt;</i>
+							<br/>
+							- <?php _e( 'For posts only', 'wonderm00ns-simple-facebook-open-graph-tags' );?>
 						</td>
 					</tr>
 					

@@ -1,10 +1,4 @@
 <?php
-/**
- * @package Facebook Open Graph, Google+ and Twitter Card Tags
- * @version 2.1.2
- */
-
-	$out_link_utm='?utm_source=fb_og_wp_plugin_settings&amp;utm_medium=link&amp;utm_campaign=fb_og_wp_plugin';
 
 	$links = array(
 		0	=>	array(
@@ -29,19 +23,19 @@
 		),
 		30	=>	array(
 			'text'	=>	__('Plugin official URL', 'wonderm00ns-simple-facebook-open-graph-tags'),
-			'url'	=>	'http://www.webdados.pt/produtos-e-servicos/internet/desenvolvimento-wordpress/facebook-open-graph-meta-tags-wordpress/'.$out_link_utm,
+			'url'	=>	'https://www.webdados.pt/produtos-e-servicos/internet/desenvolvimento-wordpress/facebook-open-graph-meta-tags-wordpress/'.$out_link_utm,
 		),
 		40	=>	array(
 			'text'	=>	__('Author\'s website: Webdados', 'wonderm00ns-simple-facebook-open-graph-tags'),
-			'url'	=>	'http://www.webdados.pt/'.$out_link_utm,
+			'url'	=>	'https://www.webdados.pt/'.$out_link_utm,
 		),
 		50	=>	array(
 			'text'	=>	__('Author\'s Facebook page: Webdados', 'wonderm00ns-simple-facebook-open-graph-tags'),
-			'url'	=>	'http://www.facebook.com/Webdados',
+			'url'	=>	'https://www.facebook.com/Webdados',
 		),
 		60	=>	array(
 			'text'	=>	__('Author\'s Twitter account: @Wonderm00n<br/>(Webdados founder)', 'wonderm00ns-simple-facebook-open-graph-tags'),
-			'url'	=>	'http://twitter.com/wonderm00n',
+			'url'	=>	'https://twitter.com/wonderm00n',
 		),
 	);
 
@@ -56,7 +50,7 @@
 					<h4><?php _e('Support forum', 'wonderm00ns-simple-facebook-open-graph-tags'); ?>:</h4>
 					<p><a href="https://wordpress.org/support/plugin/wonderm00ns-simple-facebook-open-graph-tags" target="_blank">WordPress.org</a></p>
 					<h4><?php _e('Premium technical support or custom WordPress development', 'wonderm00ns-simple-facebook-open-graph-tags'); ?>:</h4>
-					<p id="webdadoslink"><a href="http://www.webdados.pt/contactos/<?php echo esc_attr($out_link_utm); ?>" title="<?php echo esc_attr(sprintf(__('Please contact %s', 'wonderm00ns-simple-facebook-open-graph-tags'), 'Webdados')); ?>" target="_blank"><img src="<?php echo plugins_url('webdados.png', __FILE__); ?>"/></a></p>
+					<p id="webdadoslink"><a href="https://www.webdados.pt/contactos/<?php echo esc_attr($out_link_utm); ?>" title="<?php echo esc_attr( sprintf( __( 'Please contact %s', 'wonderm00ns-simple-facebook-open-graph-tags' ), 'Webdados' ) ); ?>" target="_blank"><img src="<?php echo plugins_url( 'webdados.svg', __FILE__ ); ?>" width="200"/></a></p>
 					<h4><?php _e('Please rate our plugin at WordPress.org', 'wonderm00ns-simple-facebook-open-graph-tags'); ?>:</h4>
 					<a href="https://wordpress.org/support/view/plugin-reviews/wonderm00ns-simple-facebook-open-graph-tags?filter=5#postform" target="_blank" style="text-align: center; display: block;">
 						<div class="star-rating"><div class="star star-full"></div><div class="star star-full"></div><div class="star star-full"></div><div class="star star-full"></div><div class="star star-full"></div></div>
@@ -85,7 +79,10 @@
 						<input type="hidden" name="lc" value="PT">
 						<input type="hidden" name="item_name" value="Marco Almeida (Wonderm00n)">
 						<input type="hidden" name="item_number" value="facebook_open_graph_plugin">
-						<input type="hidden" name="currency_code" value="USD">
+						<select name="currency_code">
+							<option value="USD"><?php _e('Donate in US Dollars', 'wonderm00ns-simple-facebook-open-graph-tags'); ?></option>
+							<option value="EUR"><?php _e('Donate in Euros', 'wonderm00ns-simple-facebook-open-graph-tags'); ?></option>
+						</select>
 						<input type="hidden" name="bn" value="PP-DonationsBF:btn_donateCC_LG.gif:NonHosted">
 						<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
 						<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">

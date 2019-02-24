@@ -1,8 +1,4 @@
 <?php
-/**
- * @package Facebook Open Graph, Google+ and Twitter Card Tags
- * @version 2.1.2
- */
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
@@ -17,7 +13,7 @@ global $webdados_fb;
 		?>
 		<p>
 			<i class="dashicons-before dashicons-warning"></i>
-			<b><?php _e( 'Attention', 'wonderm00ns-simple-facebook-open-graph-tags' ); ?>:</b>
+			<strong><?php _e( 'Attention', 'wonderm00ns-simple-facebook-open-graph-tags' ); ?>:</strong>
 			<br/>
 			<?php _e( 'You currently have both Yoast SEO and All in One SEO Pack plugins active. This is no recommended.', 'wonderm00ns-simple-facebook-open-graph-tags' ); ?>
 		</p>
@@ -117,7 +113,7 @@ global $webdados_fb;
 						<tr>
 							<td colspan="2">
 								<i class="dashicons-before dashicons-warning"></i>
-								<b><?php _e( 'Attention', 'wonderm00ns-simple-facebook-open-graph-tags' ); ?>:</b>
+								<strong><?php _e( 'Attention', 'wonderm00ns-simple-facebook-open-graph-tags' ); ?>:</strong>
 								<br/>
 								<small>
 									<?php printf( __( 'Because you are using All in One SEO Pack, and to avoid duplicate social tags, you should disable their social settings at <a href="%s" target="_blank">MISSING LINK</a>.', 'wonderm00ns-simple-facebook-open-graph-tags' ), '#' ); ?>
@@ -189,6 +185,8 @@ global $webdados_fb;
 						<tr>
 							<td colspan="2" class="info">
 								- <?php _e('Recommended if you set large thumbnails for Product Categories and want to use them as Open Graph Images on category listing pages', 'wonderm00ns-simple-facebook-open-graph-tags'); ?>
+								<br/>
+								- <?php _e('This setting also applies to brand pages if WooCommerce Brands is installed', 'wonderm00ns-simple-facebook-open-graph-tags'); ?>
 							</td>
 						</tr>
 	

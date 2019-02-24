@@ -1,12 +1,10 @@
 <?php
-/**
- * @package Facebook Open Graph, Google+ and Twitter Card Tags
- * @version 2.1.2
- */
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 wp_enqueue_media();
+
+$out_link_utm='?utm_source='.urlencode(home_url()).'&amp;utm_medium=link&amp;utm_campaign=fb_og_wp_plugin';
 
 ?>
 <div class="wrap" id="webdados_fb_admin">
@@ -63,6 +61,12 @@ wp_enqueue_media();
 								<?php _e( '3rd party', 'wonderm00ns-simple-facebook-open-graph-tags' ) ?>
 							</a>
 						</li>
+						<li>
+							<a class="nav-tab" href="#tabs-7" data-tab-index="6">
+								<i class="dashicons-before dashicons-admin-tools"></i>
+								<?php _e( 'Tools', 'wonderm00ns-simple-facebook-open-graph-tags' ) ?>
+							</a>
+						</li>
 					</ul>
 				</h2>
 
@@ -88,6 +92,9 @@ wp_enqueue_media();
 					
 					<!-- 3rd party integrations -->
 					<?php include 'options-page-3rdparty.php'; ?>
+					
+					<!-- Tools -->
+					<?php include 'options-page-tools.php'; ?>
 
 					<div class="clear"></div>
 					<?php submit_button(); ?>
@@ -103,7 +110,7 @@ wp_enqueue_media();
 	
 
 	<div class="clear">
-		<p><br/>&copy 2011<?php if(date( 'Y' )>2011) echo '-'.date( 'Y' ); ?> <a href="http://www.webdados.pt/<?php echo esc_attr($out_link_utm); ?>" target="_blank">Webdados</a> &amp; <a href="http://wonderm00n.com/<?php echo esc_attr($out_link_utm); ?>" target="_blank">Marco Almeida (Wonderm00n)</a></p>
+		<p><br/>&copy; 2011-<?php echo date( 'Y' ); ?> <a href="https://www.webdados.pt/<?php echo esc_attr($out_link_utm); ?>" target="_blank">Webdados</a> &amp; <a href="https://wonderm00n.com/<?php echo esc_attr($out_link_utm); ?>" target="_blank">Marco Almeida (Wonderm00n)</a></p>
 	</div>
 
 

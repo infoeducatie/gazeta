@@ -1,8 +1,5 @@
 <?php
-/**
- * @package Facebook Open Graph, Google+ and Twitter Card Tags
- * @version 2.1.2
- */
+
 	define('WP_USE_THEMES', false);
 	require( '../../../wp-blog-header.php' );
 
@@ -78,7 +75,7 @@
 	function imagecreatefromfile( $filename ) {
 		try {
 	    	if (!file_exists($filename)) {
-	    	    throw new InvalidArgumentException('File "'.$filename.'" not found.');
+	    	    throw new InvalidArgumentException('File "'.htmlentities($filename).'" not found.');
 	    	}
 	    	switch ( strtolower( pathinfo( $filename, PATHINFO_EXTENSION ))) {
 	    	    case 'jpeg':
@@ -95,7 +92,7 @@
 	    	    break;
 		
 	    	    default:
-	    	        throw new InvalidArgumentException('File "'.$filename.'" is not valid jpg, png or gif image.');
+	    	        throw new InvalidArgumentException('File "'.htmlentities($filename).'" is not valid jpg, png or gif image.');
 	    	    break;
 	    	}
 	    } catch (Exception $e) {

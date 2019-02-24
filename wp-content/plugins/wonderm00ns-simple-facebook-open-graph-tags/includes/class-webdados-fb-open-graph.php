@@ -1,8 +1,4 @@
 <?php
-/**
- * @package Facebook Open Graph, Google+ and Twitter Card Tags
- * @version 2.1.2
- */
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
@@ -45,6 +41,7 @@ class Webdados_FB {
 			'fb_image_use_content' => 0,
 			'fb_image_use_media' => 0,
 			'fb_image_use_default' => 1,
+			'fb_image_use_mshot' => 0,
 			'fb_adv_disable_image_size' => 0,
 			//OG
 			'fb_title_show' => 1,
@@ -72,6 +69,8 @@ class Webdados_FB {
 			'fb_title_show_schema' => 1,
 			'fb_desc_show_schema' => 1,
 			'fb_image_show_schema' => 1,
+			'fb_author_show_schema' => 1,
+			'fb_article_dates_show_schema' => 1,
 			'fb_publisher_show_schema' => 1,
 			//SEO
 			//...
@@ -106,6 +105,7 @@ class Webdados_FB {
 			'fb_type_schema_homepage'			=>	'trim',
 			'fb_type_schema_post'				=>	'trim',
 			'fb_article_dates_show'				=>	'intval',
+			'fb_article_dates_show_schema'		=>	'intval',
 			'fb_article_sections_show'			=>	'intval',
 			'fb_publisher_show'					=>	'intval',
 			'fb_publisher'						=>	'trim',
@@ -114,6 +114,7 @@ class Webdados_FB {
 			'fb_publisher_show_twitter'			=>	'intval',
 			'fb_publisher_twitteruser'			=>	'trim',
 			'fb_author_show'					=>	'intval',
+			'fb_author_show_schema'				=>	'intval',
 			'fb_author_show_meta'				=>	'intval',
 			'fb_author_show_linkrelgp'			=>	'intval',
 			'fb_author_show_twitter'			=>	'intval',
@@ -138,6 +139,7 @@ class Webdados_FB {
 			'fb_image_use_content'				=>	'intval',
 			'fb_image_use_media'				=>	'intval',
 			'fb_image_use_default'				=>	'intval',
+			'fb_image_use_mshot'				=>	'intval',
 			'fb_adv_disable_image_size'			=>	'intval',
 			'fb_image_min_size'					=>	'intval',
 			'fb_show_wpseoyoast'				=>	'intval',
@@ -148,6 +150,8 @@ class Webdados_FB {
 			'fb_keep_data_uninstall'			=>	'intval',
 			'fb_adv_force_local'				=>	'intval',
 			'fb_adv_notify_fb'					=>	'intval',
+			'fb_adv_notify_fb_app_id'			=>	'trim',
+			'fb_adv_notify_fb_app_secret'		=>	'trim',
 			'fb_adv_supress_fb_notice'			=>	'intval',
 			'fb_twitter_card_type'				=>	'trim',
 			'fb_wc_usecategthumb'				=>	'intval',
@@ -164,6 +168,7 @@ class Webdados_FB {
 	/* Load Options */
 	private function load_options() {
 		$user_options = get_option( 'wonderm00n_open_graph_settings' );
+		if ( !is_array($user_options) ) $user_options = array();
 		$all_options = $this->all_options();
 		$default_options = $this->default_options();
 		if ( is_array( $all_options ) ) {
@@ -189,6 +194,11 @@ class Webdados_FB {
 				}
 			}
 		}
+		//Some defaults...
+		//Default type to 'website' - https://wordpress.org/support/topic/the-ogtype-blog-is-not-valid-anymore/
+		$user_options['fb_type_homepage'] = 'website';
+		//No GD? No overlay
+		if ( !extension_loaded('gd') ) $user_options['fb_image_overlay'] = 0;
 		return $user_options;
 	}
 
@@ -228,10 +238,13 @@ class Webdados_FB {
 		// Add metabox to posts
 		add_action( 'add_meta_boxes', array( $plugin_admin, 'add_meta_boxes' ) );
 		add_action( 'save_post', array( $plugin_admin, 'save_meta_boxes' ) );
+		// Admin notices
 		add_action( 'admin_notices', array( $plugin_admin, 'admin_notices' ) );
+		// Admin link to manually update cache
+		add_action( 'post_updated_messages', array( $plugin_admin, 'post_updated_messages' ) );
 		// Session start so we can know if the cache was cleared on Facebook
-		if(!session_id())
-			@session_start(); //We use @ because some other plugin could previously sent something to the browser
+		//if(!session_id())
+			//@session_start(); //We use @ because some other plugin could previously sent something to the browser
 	}
 
 	/* Public hooks */
@@ -349,6 +362,7 @@ class Webdados_FB {
 			'mr' => 'mr_IN',
 			'nl_NL_formal' => 'nl_NL',
 			'ps' => 'ps_AF',
+			'pt_PT_ao90' => 'pt_PT',
 			'sah' => 'ky_KG',
 			'sq' => 'sq_AL',
 			'te' => 'te_IN',

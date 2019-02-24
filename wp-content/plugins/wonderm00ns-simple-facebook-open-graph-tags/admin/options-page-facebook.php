@@ -1,8 +1,4 @@
 <?php
-/**
- * @package Facebook Open Graph, Google+ and Twitter Card Tags
- * @version 2.1.2
- */
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
@@ -122,14 +118,17 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 					<tr class="fb_type_options">
 						<th><?php _e( 'Homepage Type', 'wonderm00ns-simple-facebook-open-graph-tags' );?>:</th>
 						<td>
-							<select name="wonderm00n_open_graph_settings[fb_type_homepage]" id="fb_type_homepage">
+							website
+							<input type="hidden" name="wonderm00n_open_graph_settings[fb_type_homepage]" value="website"/>
+							<!--<select name="wonderm00n_open_graph_settings[fb_type_homepage]" id="fb_type_homepage">
 								<option value="website"<?php if (trim($options['fb_type_homepage'])=='' || trim($options['fb_type_homepage'])=='website') echo ' selected="selected"'; ?>>website</option>
 								<option value="blog"<?php if (trim($options['fb_type_homepage'])=='blog') echo ' selected="selected"'; ?>>blog</option>
-							</select>
+							</select>-->
 						</td>
 					</tr>
 					<tr class="fb_type_options">
 						<td colspan="2" class="info">
+							- <?php _e( 'Facebook does not support <i>blog</i> anymore, so we have to default to <i>website</i>', 'wonderm00ns-simple-facebook-open-graph-tags' ); ?>
 						</td>
 					</tr>
 					
@@ -225,7 +224,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 							//Online
 							if (!empty($_GET['localeOnline'])) {
 								if (intval($_GET['localeOnline'])==1) {
-									if ($ch = curl_init('http://www.facebook.com/translations/FacebookLocales.xml')) {
+									if ($ch = curl_init('https://www.facebook.com/translations/FacebookLocales.xml')) {
 										curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 										$fb_locales=curl_exec($ch);
 										if (curl_errno($ch)) {
@@ -282,7 +281,9 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 								_e('List loaded from Facebook (online)', 'wonderm00ns-simple-facebook-open-graph-tags');
 							} else {
 								if ($loadedOffline) {
-									_e('List loaded from local cache (offline)', 'wonderm00ns-simple-facebook-open-graph-tags'); ?> - <a href="?page=class-webdados-fb-open-graph-admin.php&amp;localeOnline=1" onClick="return(confirm('<?php _e('You\\\'l lose any changes you haven\\\'t saved. Are you sure?', 'wonderm00ns-simple-facebook-open-graph-tags'); ?>'));"><?php _e('Reload from Facebook', 'wonderm00ns-simple-facebook-open-graph-tags'); ?></a><?php
+									_e('List loaded from local cache (offline)', 'wonderm00ns-simple-facebook-open-graph-tags'); ?>
+									<!-- - <a href="?page=class-webdados-fb-open-graph-admin.php&amp;localeOnline=1" onClick="return(confirm('<?php _e('You\\\'l lose any changes you haven\\\'t saved. Are you sure?', 'wonderm00ns-simple-facebook-open-graph-tags'); ?>'));"><?php _e('Reload from Facebook', 'wonderm00ns-simple-facebook-open-graph-tags'); ?></a>-->
+									<?php
 								} else {
 									_e('List not loaded', 'wonderm00ns-simple-facebook-open-graph-tags');
 								}
@@ -376,6 +377,29 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 					<tr>
 						<td colspan="2" class="info">
 							- <?php _e( 'Try to clear the Facebook Open Graph Tags cache when saving a post or page, so the link preview on Facebook is immediately updated', 'wonderm00ns-simple-facebook-open-graph-tags' );?>
+						</td>
+					</tr>
+					
+					<tr class="fb_adv_notify_fb_options">
+						<th><?php _e( 'App ID', 'wonderm00ns-simple-facebook-open-graph-tags' );?>:</th>
+						<td>
+							<input type="text" name="wonderm00n_open_graph_settings[fb_adv_notify_fb_app_id]" id="fb_adv_notify_fb_app_id" size="20" value="<?php echo trim(esc_attr($options['fb_adv_notify_fb_app_id'])); ?>"/>
+						</td>
+					</tr>
+					
+					<tr class="fb_adv_notify_fb_options">
+						<th><?php _e( 'App Secret', 'wonderm00ns-simple-facebook-open-graph-tags' );?>:</th>
+						<td>
+							<input type="text" name="wonderm00n_open_graph_settings[fb_adv_notify_fb_app_secret]" id="fb_adv_notify_fb_app_secret" size="39" value="<?php echo trim(esc_attr($options['fb_adv_notify_fb_app_secret'])); ?>"/>
+						</td>
+					</tr>
+					<tr class="fb_adv_notify_fb_options">
+						<td colspan="2" class="info">
+							- <?php printf( __( 'Facebook no longer allows updating the cache anonymously, so you have to use a App ID and Secret to do it. <a href="%s" target="_blank">Read here</a> how to do it.', 'wonderm00ns-simple-facebook-open-graph-tags' ), esc_attr('https://www.webdados.pt/2017/12/successfully-update-facebook-cache-using-our-facebook-open-graph-plugin/'.$out_link_utm) ); ?>
+							<br/>
+							- <?php _e( 'If you are using the (now deprecated) <i>fb_og_update_cache_url</i> filter, this ID and Secret will NOT be used. You should stop using the filter and use these settings.', 'wonderm00ns-simple-facebook-open-graph-tags' ); ?>
+							<br/>
+							- <?php _e( 'Please do not ask for support regarding this feature. Everything is explained in the blog post linked above.', 'wonderm00ns-simple-facebook-open-graph-tags' ); ?>
 						</td>
 					</tr>
 					

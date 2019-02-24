@@ -1,10 +1,11 @@
-=== Facebook Open Graph, Google+ and Twitter Card Tags ===
+=== Open Graph for Facebook, Google+ and Twitter Card Tags ===
 Contributors: webdados, wonderm00n
-Donate link: http://blog.wonderm00n.com/2011/10/14/wordpress-plugin-simple-facebook-open-graph-tags/
-Tags: facebook, open graph, open graph protocol, share, social, meta, rss, twitter card, twitter, schema, google+, g+, google, google plus, image, like, seo, search engine optimization, woocommerce, yoast seo, wordpress seo, woocommerce, subheading, php7
+Donate link: http://bit.ly/donate_fb_opengraph
+Tags: facebook, open graph, open graph protocol, share, social, meta, rss, twitter card, twitter, schema, google+, g+, google, google plus, image, like, seo, search engine optimization, woocommerce, yoast seo, wordpress seo, woocommerce, subheading, php7, webdados
 Requires at least: 4.5
-Tested up to: 4.8.2
-Stable tag: 2.1.3
+Tested up to: 5.0.3
+Stable tag: 2.2.5
+
 Inserts Facebook Open Graph, Google+/Schema.org, Twitter and SEO Meta Tags into your WordPress Website for more efficient sharing results.
 
 == Description ==
@@ -21,7 +22,7 @@ It allows the user to choose which tags are, or not, included and also the defau
 
 BETA: It's also possible to add a overlay logo to the image. The plugin will resize and crop the original image to 1200x630 and then overlay the chosen 1200x630 PNG file over it. Can be usefull to add your brand to the image that shows up on Facebook shared links.
 
-Our settings page is discreetly kept under "Options", as it should, instead of taking up premium sapce on the main menu bar with colored, non WordPress styled, icons.
+Our settings page is discreetly kept under "Options", as it should, instead of taking up premium space on the main menu bar with colored, non WordPress styled, icons.
 
 = The (Facebook) Open Graph Tags that this plugin inserts are: =
 
@@ -55,9 +56,12 @@ Our settings page is discreetly kept under "Options", as it should, instead of t
 = The (Google+) Schema.org Tags that this plugin inserts are: =
 
 * **name**: Same as `og:title`.
+* **headline**: Same as `og:title`.
 * **description**: Same as `og:description`.
 * **image**: Same as `og:image`.
-* **author**: From the user (post author) Google+ profile URL.
+* **author**: From the user (post author) Display Name.
+* **datePublished**: Article published date (for posts only)
+* **dateModified**: Article modified time (for posts only)
 * **publisher**: The website Google+ Page URL. 
 
 = Other Tags: =
@@ -71,40 +75,52 @@ Our settings page is discreetly kept under "Options", as it should, instead of t
 
 = 3rd Party Integration: =
 
-* **[Yoast SEO](http://wordpress.org/plugins/wordpress-seo/)**: Allows you to use title, url (canonical) and description from the Yoast SEO plugin.
-* **[WooCommerce](https://wordpress.org/plugins/woocommerce/)**: On product pages sets `og:type` to "product" and adds the price including tax to the `product:price` tags. Also allows you to use the Product Category thumbnails as Open Graph Image and have Product Gallery images as additional Open Graph Images
-* **[SubHeading](http://wordpress.org/extend/plugins/subheading/)**: Add the SubHeading to the post/page title.
-* **[Business Directory Plugin](http://wordpress.org/extend/plugins/business-directory-plugin/)**: Allows you to use BDP listing contents as Open Graph Tags.
+* **[Yoast SEO](https://wordpress.org/plugins/wordpress-seo/)**: Allows you to use title, url (canonical) and description from the Yoast SEO plugin.
+* **[WooCommerce](https://wordpress.org/plugins/woocommerce/)**: On product pages sets `og:type` to "product" and adds the price including tax to the `product:price` and `product:availability` tags. Also allows you to use the Product Category thumbnails as Open Graph Image and have Product Gallery images as additional Open Graph Images
+* **[WooCommerce Brands](https://woocommerce.com/products/brands/)**: On brand pages uses the brand image as Open Graph Image 
+* **[SubHeading](https://wordpress.org/extend/plugins/subheading/)**: Add the SubHeading to the post/page title.
+* **[Business Directory Plugin](https://wordpress.org/extend/plugins/business-directory-plugin/)**: Allows you to use BDP listing contents as Open Graph Tags.
 
 
 == Installation ==
 
-1. Use the included automatic install feature on your WordPress admin panel and search for “Facebook Open Graph, Google+ and Twitter Card Tags”.
+1. Use the included automatic install feature on your WordPress admin panel and search for “Open Graph for Facebook, Google+ and Twitter Card Tags”.
 2. Activate the plugin through the `Plugins` menu in WordPress
-3. Got to `Options`, `Facebook Open Graph, Google+ and Twitter Card Tags` to set it up
+3. Go to `Options`, `Open Graph for Facebook, Google+ and Twitter Card Tags` to set it up
 
 == Frequently Asked Questions ==
-
-= Yoast SEO shows up a big nasty warning if both plugins are active. Is the world in danger if I keep both plugins active? =
-
-No it isn't.
-You can (and, in our opinion, you should) use both plugins. If you want to use Yoast SEO for your SEO needs and our plugin for social media meta tags you just have to go to "SEO > Social" and disable settings for Facebook, Twitter and Google+.
-If you don't find that option, because they've now made it harder to reach, you have to go to "SEO > Dashboard > Features > Advanced settings pages > choose Enabled and Save changes". Then you can reach "SEO > Social".
-Then set up our plugin as you wish and you're ready to go.
-We like to work with everybody, so (if you want to) our plugin can even integrate with Yoast SEO and use it's title, description and canonical URL on the Facebook, Google+ and Twitter tags.
 
 = Facebook is not showing up the correct image when I share a post. What can I do? =
 
 1. Are you using a big enough image? The minimum image size is 200x200 pixels but we recommend 1200x630.
 2. Are you sure you only have one `og:image` tag on the source code? Make sure you're not using more than one plugin to set OG tags?
-3. Go to the [Facebook Sharing Debugger](https://developers.facebook.com/tools/debug/), insert your URL, click `Debug`. Then click on `Scrape again` to make sure Facebook gets the current version of your HTML code and not a cached version. If the image that shows up on the preview (bottom of the page) is the correct one, then the tags are well set and it "should" be the one that Facebook uses when sharing the post. If it still does not use the correct image when sharing, despite the debugger shows it correctly, there's nothing more we can do about that. That's just Facebook being Facebook.
+3. Go to the [Facebook Sharing Debugger](https://developers.facebook.com/tools/debug/), insert your URL, click `Debug`. Then click on `Scrape Again` to make sure Facebook gets the current version of your HTML code and not a cached version. If the image that shows up on the preview (bottom of the page) is the correct one, then the tags are well set and it "should" be the one that Facebook uses when sharing the post. If it still does not use the correct image when sharing, despite the debugger shows it correctly, there's nothing more we can do about that. That's just Facebook being Facebook.
+
+= What is the "Manually update Facebook cache" button on the "Post updated" notice? =
+
+It's a shortcut to the Facebook Sharing Debugger, where you should click on `Scrape Again` to make sure Facebook gets the current version of your post or page.
 
 = When I save/edit my post I get the "Facebook Open Graph Tags cache NOT updated/purged" error. Should I worry? =
 
 Each time you edit a post, if the option "Try to update Facebook Open Graph Tags cache when saving the post" is activated, we'll try to notify Facebook of the changes so it clears up it's cache and read the new Open Graph tags of this specific URL.
 If this is a new post and it's the first time you're saving it, the error is "normal" and you should ignore it (we're looking at a workaround to not show you this error).
-If this is not a new post and it's not the first time you're saving it, and if this happens always, then maybe your server does not support calling remote URLs with PHP and you should disable the "Try to update Facebook Open Graph Tags cache when saving the post" option. In that scenario we recommend you to use the [Facebook Sharing Debugger](https://developers.facebook.com/tools/debug/) to `Fetch new scrape information` each time you update your post.
+If this is not a new post and it's not the first time you're saving it, and if this happens always, then maybe your server does not support calling remote URLs with PHP and you should disable the "Try to update Facebook Open Graph Tags cache when saving the post" option. In that scenario we recommend you to use the [Facebook Sharing Debugger](https://developers.facebook.com/tools/debug/) to `Scrape Again` each time you update your post.
 Sometimes the plugin just can't update the Facebook cache itself and you may need to do it manually on the link provided above.
+
+= Can I authenticate the call to Facebook, with my own app, when trying to update the cache, so I get rid of the "An access token is required to request this resource" error? =
+
+Yes, you can. Create a Facebook App and fill in the details on the "Facebook Open Graph Tags cache" panel of the plugin settings page.
+Do NOT ask us support on this. There is [a blog post on our website](https://www.webdados.pt/2017/12/successfully-update-facebook-cache-using-our-facebook-open-graph-plugin/) explaining everything you need to do.
+
+= Facebook says "The following required properties are missing: fb:app_id". Should I worry? =
+
+No. Move along.
+
+= How can I share my posts or products as Rich Pins on Pinterest? =
+
+Pinterest can read Open Graph tags, so no extra tags are needed to share your articles or WooCommerce products as Rich Pins.
+
+You need however to apply in order to whitelist your domain on Pinterest. Head to [this page](https://developers.pinterest.com/docs/rich-pins/overview/) and follow the instructions starting with "Set up". When in the validator, enter your URL, hit "Validate" and then choose "HTML tags" and hit "Apply now". It's then up to Pinterest to accept your application or not.
 
 = Can this plugin get content from "random plugin"? =
 
@@ -115,7 +131,22 @@ If you are a plugin or theme author you can always use our filters `fb_og_title`
 
 Chouck out this [code snippet](https://gist.github.com/webdados/ef5d5db01f01bee6041c2b2e0950d73a).
 
+= I'm getting a white screen of death / truncated HTML =
+
+Go to the plugin settings and check the `Do not get image size` option.
+This happens on some edge cases we haven't yet been able to identify.
+Update: Probably fixed for some users on 2.1.4.5 and completely on 2.2 (pending confirmation)
+
+= Yoast SEO shows up a big nasty warning if both plugins are active. Is the world in danger if I keep both plugins active? =
+
+No it isn't.
+You can (and, in our opinion, you should) use both plugins. If you want to use Yoast SEO for your SEO needs and our plugin for social media meta tags you just have to go to "SEO > Social" and disable settings for Facebook, Twitter and Google+.
+If you don't find that option, because they've now made it harder to reach, you have to go to "SEO > Dashboard > Features > Advanced settings pages > choose Enabled and Save changes". Then you can reach "SEO > Social".
+Then set up our plugin as you wish and you're ready to go.
+We like to work with everybody, so (if you want to) our plugin can even integrate with Yoast SEO and use it's title, description and canonical URL on the Facebook, Google+ and Twitter tags.
+
 = There's a similar plugin on the repository, by Heateor. Is this the same? =
+
 It's similar, yes. They've forked our plugin and gave no credits whatsoever for our original work.
 
 = Do you provide email support? =
@@ -125,6 +156,92 @@ We DO NOT provide email support for this plugin. If you send us an email asking 
 2. Or we can give you a quote on premium email/phone support if you prefer to
 
 == Changelog ==
+
+= 2.2.5 =
+* No `og:description` for password protected and private posts (Thanks for the heads up Benoît)
+* Tested with WordPress 5.0.3 and WooCommerce 3.5.3
+
+= 2.2.4.2 =
+* Small security fix
+
+= 2.2.4.1 =
+* Small security fix
+
+= 2.2.4 =
+* Added Pinterest information on que FAQ
+* Changed name to "Facebook Open Graph, Google+ and Twitter Card Tags"
+
+= 2.2.3.1 =
+* Tested with WooCommerce 3.3
+* Improved readme.txt
+
+= 2.2.3 =
+* Small bug fix introduced in 2.2 that would throw a PHP notice if no tool was selected when saving the settings (Thanks @osti47)
+* Clear image size cache (transients) on uninstall
+* Better debug for support purposes, which can be disabled by returning false on the `fb_og_enable_debug` filter
+* Bumped `Tested up to` tag
+
+= 2.2.2 =
+* NEW WooCommerce Brands integration: Uses the Brand thumbnail image if the "Use Category thumbnail as Image" option is enabled
+
+= 2.2.1 =
+* Added the Schema.org headline, author, datePublished and dateModified tags
+* Removed some unnecessary / duplicated `esc_attr` calls
+
+= 2.2 =
+* New "Tools" panel on the settings page
+* Tool to clear all the plugin transients, thus resetting size caching for all images (use it only )
+* Small bug fix when the settings aren't yet saved at least one time
+* When getting the image size, the full image is used again, instead of the partial 32Kb (that caused WSOD in some environments), but this can be overridden (and use the partial again) by returning false to the new `fb_og_image_size_use_partial` filter
+* Transient validity is now one week (now that we get the all image and the process can slow down the page load a bit), instead of one day
+* Fix when getting the image and description for the blog url when it's set as a page (Thanks @alexiswilke)
+* Ability to disable image size cache (transients) completely by returning false to the new filter `fb_og_image_size_cache` (which we do NOT recommend)
+* Improved the FAQ
+
+= 2.1.6.3 =
+* Fix the "Suppress cache notices" option (Thanks @digbymaass)
+
+= 2.1.6.2 =
+* Default `og:type` to `website` on non-singular pages because Facebook deprecated it (Thanks @alexiswilke)
+* Automatically disable the overlay feature if GD is not installed (Thanks @tiagomagalhaes)
+* Set `og:type` to `website` instead of `article` when a page is set as a blog page
+* Use image from the page (our custom field, featured, etc...) when a page is set as a blog page (Thanks @alexiswilke)
+* Use description from our custom field when a page is set as a blog page
+* Adds the `product:availability` tag for WooCommerce products (Thanks @steveokk)
+* Improved the FAQ
+
+= 2.1.6.1 =
+* Updated the error message when the Facebook cache is not updated, in order to include instructions and a link to setup the App ID and Secret
+
+= 2.1.6 =
+* Added new "App ID" and "App Secret" settings on the "Facebook Open Graph Tags cache" panel, so that the plugin tries to clear the Facebook cache authenticated with you own App details
+* Bumped `Tested up to` and `WC tested up to` tags
+* Improved the FAQ
+
+= 2.1.5 =
+* Stop showing the metabox or trying to update Facebook cache on non-publicly_queryable post types
+
+= 2.1.4.5 =
+* Set `CURLOPT_FOLLOWLOCATION` to `true` when trying to get image size via curl and avoid fatal errors (white screen of death) when the response returns 301 or 302 - Thanks [@neonkowy](https://wordpress.org/support/users/neonkowy/)
+
+= 2.1.4.4 =
+* Added the `fb_og_update_cache_url` filter so that developers can add their Facebook App ID and Secret to the URL when trying to update/clear cache on Facebook - Thanks [@l3lackcat](https://profiles.wordpress.org/amirullahmn)
+
+= 2.1.4.3 =
+* Added a "Share this on Facebook" button to the "Post updated" notice
+* Fixed some URLs and links from http:// to https://
+* Removed the option to load Facebook locales from their website as the URL now returns 404
+
+= 2.1.4.2 =
+* Added a "Manually update Facebook cache" button to the "Post updated" notice
+* Improved the FAQ
+
+= 2.1.4.1 =
+* Better information when showing up the "Facebook Open Graph Tags cache NOT updated/purged" error, as well as a link to update the cache manually
+* Improved the FAQ
+
+= 2.1.4 =
+* Changed the way the admin notices are generated so we do not have to use PHP sessions
 
 = 2.1.3 =
 * Fixed some PHP notices and warnings
